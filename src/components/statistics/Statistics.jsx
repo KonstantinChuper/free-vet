@@ -1,27 +1,30 @@
-import s from './statistics.module.css';
-import texts from '../../utils/ru_text'; // Импортируйте файл с текстами
+import React from "react";
+import { useTranslation } from "react-i18next";
+import s from "./statistics.module.css";
 
 const Statistics = () => {
+  const { t } = useTranslation();
+
   return (
     <section className={s.statistics}>
-      <h2>{texts.statistics.title}</h2>
+      <h2>{t("statistics.title")}</h2>
       <div className={s.stats}>
         <div className={s.statItem}>
           <span>203</span>
-          <p>{texts.statistics.helpedAnimals}</p>
+          <p>{t("statistics.helpedAnimals")}</p>
         </div>
         <div className={s.statItem}>
           <span>75</span>
-          <p>{texts.statistics.helpedThisMonth}</p>
+          <p>{t("statistics.helpedThisMonth")}</p>
         </div>
         <div className={s.statItem}>
           <span>550</span>
-          <p>{texts.statistics.donatedAmount}</p>
+          <p>{t("statistics.donatedAmount")}</p>
         </div>
       </div>
-      <h3>{texts.statistics.thankYou}</h3>
+      <h3>{t("statistics.thankYou")}</h3>
     </section>
   );
-}
+};
 
 export default Statistics;

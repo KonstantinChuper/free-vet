@@ -1,7 +1,7 @@
 import React from "react";
 import { Controller } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import s from "./codeInputBox.module.css";
-import texts from '../../utils/ru_text'; // Импортируем текст
 
 const CodeInputBox = ({
   control,
@@ -15,10 +15,12 @@ const CodeInputBox = ({
   handleResendCode,
   seconds,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className={s.inputBox}>
       <p className={s.codeText}>
-        {texts.codeInputBox.codeLabel} <span>&#42;</span>
+        {t("codeInputBox.codeLabel")} <span>&#42;</span>
       </p>
       <div className={s.codeInputs}>
         {Array.from({ length: 6 }).map((_, index) => (
@@ -47,19 +49,19 @@ const CodeInputBox = ({
         ))}
       </div>
       {errorVisible && codeError ? (
-        <p className={s.requestCodeError}>{texts.codeInputBox.requiredError}</p>
+        <p className={s.requestCodeError}>{t("codeInputBox.requiredError")}</p>
       ) : resendAvailable ? (
         <div className={s.requestCodeBox}>
           <p onClick={handleResendCode} className={s.resendCode}>
-            {texts.codeInputBox.resendText}
+            {t("codeInputBox.resendText")}
           </p>
           <button type="button" onClick={handleResendCode}>
-            {texts.codeInputBox.resendButton}
+            {t("codeInputBox.resendButton")}
           </button>
         </div>
       ) : (
         <div className={s.requestCodeBox}>
-          <p>{texts.codeInputBox.resendWait.replace('{{seconds}}', seconds)}</p>
+          <p>{t("codeInputBox.resendWait", { seconds })}</p>
         </div>
       )}
     </div>

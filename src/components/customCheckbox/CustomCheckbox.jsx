@@ -1,59 +1,58 @@
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';  // Импортируем prop-types для валидации пропсов
-import s from './customCheckbox.module.css';
-import checkbox_icon from '../../assets/checkbox/checkbox_icon.svg';  // Иконка для пустого чекбокса
-import checked_icon from '../../assets/checkbox/checked_icon.svg';    // Иконка для отмеченного чекбокса
-import texts from '../../utils/ru_text'; // Импортируем файл с текстами
+import React, { forwardRef } from "react";
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+import s from "./customCheckbox.module.css";
+import checkbox_icon from "../../assets/checkbox/checkbox_icon.svg";
+import checked_icon from "../../assets/checkbox/checked_icon.svg";
 
 const CustomCheckbox = forwardRef(({ checked, onChange, disabled, name }, ref) => {
-  // Обработчик клика
-  const handleClick = (e) => {
+  const { t } = useTranslation();
+
+  const handleClick = () => {
     if (!disabled) {
-      // Передаем имя и текущее состояние checked как событие
       onChange({ target: { name, checked: !checked } });
     }
   };
 
   return (
     <div
-      className={`${s.customCheckbox} ${disabled ? s.disabled : ''}`} // Добавляем стили для disabled состояния
+      className={`${s.customCheckbox} ${disabled ? s.disabled : ""}`}
       onClick={handleClick}
-      style={{ position: 'relative', cursor: disabled ? 'not-allowed' : 'pointer' }}
-      title={checked ? texts.customCheckbox.checkedTooltip : texts.customCheckbox.uncheckedTooltip} // Подсказка при наведении
+      style={{ position: "relative", cursor: disabled ? "not-allowed" : "pointer" }}
+      title={
+        checked
+          ? t("customCheckbox.checkedTooltip")
+          : t("customCheckbox.uncheckedTooltip")
+      }
     >
       <input
         type="checkbox"
-        checked={checked}  // Привязываем значение к состоянию
-        onChange={onChange}  // Вызов изменения состояния через onChange
+        checked={checked}
+        onChange={onChange}
         name={name}
         disabled={disabled}
-        ref={ref} // Присваиваем ref
+        ref={ref}
         className={s.checkboxInput}
-        style={{ display: 'none' }}  // Скрываем стандартный чекбокс
+        style={{ display: "none" }}
       />
-      <img
-        src={checkbox_icon}
-        alt="checkbox"
-        className={s.checkboxIcon}
-      />
+      <img src={checkbox_icon} alt="checkbox" className={s.checkboxIcon} />
       {checked && (
         <img
           src={checked_icon}
           alt="checked"
-          className={s.checkedIcon}  // Новый класс для стиля
-          style={{ position: 'absolute', top: "4px", left: "5px" }} // Позиционируем наложение
+          className={s.checkedIcon}
+          style={{ position: "absolute", top: "4px", left: "5px" }}
         />
       )}
     </div>
   );
 });
 
-// Добавляем валидацию пропсов
 CustomCheckbox.propTypes = {
-  checked: PropTypes.bool.isRequired,      // checked передается как булевый тип
-  onChange: PropTypes.func.isRequired,     // onChange передается как функция
-  disabled: PropTypes.bool,                // disabled может быть булевым типом
-  name: PropTypes.string.isRequired        // name передается как строка и является обязательным
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
 };
 
 export default CustomCheckbox;

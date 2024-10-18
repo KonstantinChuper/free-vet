@@ -40,19 +40,13 @@ const Q_choiceAnimalPage = () => {
   return (
     <div className={s.q_choiceAnimalPage}>
       <div className={s.q_choiceAnimalPage_header}>
-        <FormHeader
-          path="/main"
-          fontSize={36}
-          titleKey={texts.questionPage.title}
-        />
+        <FormHeader path="/main" fontSize={36} titleKey={texts.questionPage.title} />
         <Link to={"/main"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-line)"} />
-      <h5
-        dangerouslySetInnerHTML={{ __html: texts.questionPage.animalSelection }}
-      />{" "}
+      <h5 dangerouslySetInnerHTML={{ __html: texts.questionPage.animalSelection }} />{" "}
       {/* Используем текст из файла */}
       <QuestionPetList
         categories={[
@@ -79,9 +73,7 @@ const Q_choiceAnimalPage = () => {
         resetSelection={resetSelection}
       />
       <div className={s.q_choiceAnimalPage_newAnimal_box}>
-        <h5
-          dangerouslySetInnerHTML={{ __html: texts.questionPage.newAnimal }}
-        />{" "}
+        <h5 dangerouslySetInnerHTML={{ __html: texts.questionPage.newAnimal }} />{" "}
         {/* Используем текст из файла */}
         <div className={s.q_choiceAnimalPage_newAnimal_boxBtnTitle}>
           <div
@@ -89,9 +81,7 @@ const Q_choiceAnimalPage = () => {
             onClick={handleNewAnimalClick}
           >
             <img src={plus} alt="plus" />
-            <div
-              className={`${s.circle} ${isNewAnimalSelected ? s.selected : ""}`}
-            />
+            <div className={`${s.circle} ${isNewAnimalSelected ? s.selected : ""}`} />
           </div>
           <h5>{texts.questionPage.addAnimal}</h5>
         </div>

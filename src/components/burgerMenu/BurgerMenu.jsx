@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import s from './burgerMenu.module.css'; 
-import texts from '../../utils/ru_text'; // Импортируем текст
+import { useTranslation } from 'react-i18next';
+import s from './burgerMenu.module.css';
 
 const BurgerMenu = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,8 +22,8 @@ const BurgerMenu = () => {
           <div className={s.modalContent}>
             <span className={s.close} onClick={toggleMenu}>&times;</span>
             <ul>
-              <li>{texts.burgerMenu.editProfile}</li>
-              <li>{texts.burgerMenu.settings}</li>
+              <li>{t('burgerMenu.editProfile')}</li>
+              <li>{t('burgerMenu.settings')}</li>
             </ul>
           </div>
         </div>

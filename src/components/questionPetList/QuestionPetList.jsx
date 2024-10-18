@@ -1,37 +1,39 @@
-import s from './questionPetList.module.css';
-import { useState, useEffect } from 'react';
-import texts from '../../utils/ru_text'; // Импортируйте файл с текстами
+import s from "./questionPetList.module.css";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const QuestionPetList = ({ categories, onSelectImage, resetSelection }) => {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     if (resetSelection) {
-      setSelectedImage(null); // Сбрасываем выбранное животное при сбросе
+      setSelectedImage(null);
     }
   }, [resetSelection]);
 
   const handleImageClick = (categoryIndex, imageIndex, type) => {
-    const selected = `${categoryIndex}-${imageIndex}`; // уникальный идентификатор для выбранного животного
+    const selected = `${categoryIndex}-${imageIndex}`;
     if (selectedImage === selected) {
-      setSelectedImage(null); // если кликаем на выбранное животное, отменяем выбор
-      onSelectImage(null); // сбрасываем выбранное животное
+      setSelectedImage(null);
+      onSelectImage(null);
     } else {
-      setSelectedImage(selected); // устанавливаем новое выбранное животное
-      onSelectImage(type); // передаем тип выбранного животного
+      setSelectedImage(selected);
+      onSelectImage(type);
     }
   };
 
   return (
     <div className={s.container}>
-      <h2 className={s.questionTitle}
-        dangerouslySetInnerHTML={{__html:texts.questionPetList.title}}
+      <h2
+        className={s.questionTitle}
+        dangerouslySetInnerHTML={{ __html: t("questionPetList.title") }}
       />
       <div className="categoriesList">
         {categories.map((category, categoryIndex) => (
           <div key={categoryIndex} className={s.category}>
             <div className={s.categoriesTitleContainer}>
-              <h3 className={s.categoriesTitle}>{category.title}</h3>
+              <h3 className={s.categoriesTitle}>{t(category.title)}</h3>
               <div className={s.heartCircle}>
                 <svg
                   className={s[category.svgcolor]}
@@ -50,14 +52,12 @@ const QuestionPetList = ({ categories, onSelectImage, resetSelection }) => {
                 <div
                   key={imageIndex}
                   className={s.imageContainer}
-                  onClick={() =>
-                    handleImageClick(categoryIndex, imageIndex, image.type)
-                  }
+                  onClick={() => handleImageClick(categoryIndex, imageIndex, image.type)}
                 >
-                  <img src={image.src} alt={`${category.title} ${imageIndex}`} />
+                  <img src={image.src} alt={`${t(category.title)} ${imageIndex}`} />
                   <div
                     className={`${s.circle} ${
-                      selectedImage === `${categoryIndex}-${imageIndex}` ? s.selected : ''
+                      selectedImage === `${categoryIndex}-${imageIndex}` ? s.selected : ""
                     }`}
                   />
                 </div>

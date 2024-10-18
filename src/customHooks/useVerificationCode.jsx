@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
+//TODO заменить на реальный API, поменять "123456" на verificationCode
+
 const useVerificationCode = (initialSeconds = 90) => {
   const { handleSubmit, control, setValue, watch, reset } = useForm();
   const inputRefs = Array(6)
@@ -33,7 +35,9 @@ const useVerificationCode = (initialSeconds = 90) => {
   }, []);
 
   useEffect(() => {
-    const allFieldsFilled = Object.values(watchAllFields).every((val) => val && val.length === 1);
+    const allFieldsFilled = Object.values(watchAllFields).every(
+      (val) => val && val.length === 1
+    );
     setIsFormValid(allFieldsFilled);
   }, [watchAllFields]);
 

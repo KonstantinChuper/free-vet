@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import s from './customButton.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import s from "./customButton.module.css";
+import { useTranslation } from "react-i18next";
 
 const CustomButton = ({
   backgroundColor,
@@ -9,27 +10,29 @@ const CustomButton = ({
   text = "Submit",
   link = "/",
   color,
-  disabled, // передаём disabled как проп
-  customStyle = {}, // Добавлен новый проп для передачи любых стилей
+  disabled,
+  customStyle = {},
 }) => {
-  // Проверяем наличие родительского класса `disabled`
+  const { t } = useTranslation();
   const buttonClasses = disabled ? `${s.button} ${s.disabled}` : s.button;
 
   return (
     <Link
-      to={disabled ? "#" : link} // Блокируем переход, если кнопка неактивна
-      className={buttonClasses} // Применяем классы с учётом состояния
+      to={disabled ? "#" : link}
+      className={buttonClasses}
       style={{
-        backgroundColor: disabled ? backgroundColor : backgroundColor || "var(--color-main)", // Цвет для неактивного состояния
+        backgroundColor: disabled
+          ? backgroundColor
+          : backgroundColor || "var(--color-main)",
         border: border || "none",
         padding: padding || "16px 51px",
         color: color || "var(--color-text-white)",
         lineHeight: 1.1,
-        pointerEvents: disabled ? "none" : "auto", // Отключаем взаимодействие
-        ...customStyle, // Объединяем с переданными стилями
+        pointerEvents: disabled ? "none" : "auto",
+        ...customStyle,
       }}
     >
-      {text}
+      {text || t("customButton.submitText")}
     </Link>
   );
 };

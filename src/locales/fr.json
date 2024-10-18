@@ -1,0 +1,327 @@
+{
+  "authorizationPage": {
+    "bannerText": "Il est plus facile d'aider les animaux avec FreeVet !"
+  },
+  "authOptions": {
+    "register": "S'inscrire",
+    "or": "ou",
+    "login": "Se connecter"
+  },
+  "registrationPage": {
+    "header": "Créer un nouveau compte",
+    "addPhoto": "Ajouter une photo",
+    "nameLabel": "Nom",
+    "placeholderName": "Votre nom",
+    "nameErrorRequired": "Le nom est requis",
+    "nameErrorMinLength": "Minimum 2 caractères",
+    "phoneLabel": "Téléphone",
+    "phoneErrorRequired": "Le téléphone est requis",
+    "phoneErrorPattern": "Veuillez entrer un numéro de téléphone valide",
+    "submitButton": "Envoyer le code",
+    "privacyPolicyText": "En cliquant sur le bouton Envoyer le code, vous acceptez la<br></br>Politique de confidentialité"
+  },
+  "phoneLoginPage": {
+    "header": "Connexion par numéro de téléphone",
+    "subtitle": "Veuillez entrer le numéro de téléphone avec lequel vous vous êtes inscrit,<br></br>",
+    "lostAccess": "Accès perdu à votre téléphone ?",
+    "accessRestoration": "Contactez-nous pour restaurer l'accès",
+    "submitButton": "Envoyer le code"
+  },
+  "burgerMenu": {
+    "editProfile": "Modifier le profil",
+    "settings": "Paramètres"
+  },
+  "codeInputBox": {
+    "codeLabel": "Code",
+    "requiredError": "Vous avez entré un code incorrect ! Veuillez réessayer",
+    "resendText": "Vous n'avez pas reçu le code ?",
+    "resendButton": "Renvoyer le code",
+    "resendWait": "Vous pouvez demander le code à nouveau dans {{seconds}} secondes"
+  },
+  "customButton": {
+    "submitText": "Soumettre",
+    "disabledText": "Indisponible"
+  },
+  "customButtonSubmit": {
+    "submitText": "Soumettre",
+    "disabledText": "Indisponible"
+  },
+  "customCheckbox": {
+    "checkedTooltip": "La case est cochée",
+    "uncheckedTooltip": "La case n'est pas cochée"
+  },
+  "customInput": {
+    "defaultErrorMessage": "Veuillez remplir ce champ"
+  },
+  "customMessage": {
+    "questionTitle": "Question No.",
+    "awaitingResponse": "En attente de réponse",
+    "homelessAnimal": "Animal sans abri"
+  },
+  "customPetCard": {
+    "statusMessage": "Status:",
+    "weightLetter": "g"
+  },
+  "customStickTitle": {
+    "userText": "Utilisateur"
+  },
+  "fileUploader": {
+    "uploadLimitError": "Vous pouvez télécharger jusqu'à {{maxFiles}} fichiers.",
+    "unsupportedFileType": "Le fichier {{fileName}} a un type non pris en charge."
+  },
+  "footer": {
+    "main": "Accueil",
+    "profile": "Profil",
+    "donate": "Soutenir",
+    "service": "À propos du service"
+  },
+  "userRolePage": {
+    "header": "Statut de participant",
+    "role": "Choisissez votre rôle dans le service",
+    "helpWithFreeVet": "Qui prévoyez-vous d'aider avec FreeVet ?",
+    "helpHomelessAnimals": "Animaux sans abri",
+    "helpPets": "Animaux de compagnie",
+    "tellAboutYourself": "Parlez-nous de vous",
+    "volunteer": "Je suis bénévole",
+    "shelterWorker": "Je travaille dans un refuge",
+    "havePet": "J'ai un animal de compagnie",
+    "userStick": "Utilisateur",
+    "or": "ou",
+    "wantToJoin": "Voulez-vous rejoindre l'équipe FreeVet ?",
+    "vetDoctor": "Je suis vétérinaire",
+    "cynologist": "Je suis cynologue",
+    "zooPsychologist": "Je suis zoopsychologue",
+    "vetStick": "Spécialiste",
+    "saveBtn": "Enregistrer"
+  },
+  "l_createVetBookPage": {
+    "header": "Carnet vétérinaire",
+    "noBook": "Il semble que votre animal<br></br>n'a pas encore de carnet vétérinaire numérique :(",
+    "petName": "Nom de l'animal",
+    "namePlaceholder": "Entrez le nom de l'animal",
+    "addPhoto": "Ajouter une photo",
+    "petArt": "Type d'animal",
+    "petWeight": "Poids approximatif de l'animal",
+    "petGender": "Sexe de l'animal",
+    "vetBook_description": "Le carnet vétérinaire est une version numérique du passeport de l'animal<br></br>avec des fonctionnalités utiles,<br></br>simplifiant le processus de soins.",
+    "noCreateBtn": "Ne pas créer",
+    "createBtn": "Créer"
+  },
+  "form": {
+    "createAccount": "Créer un compte",
+    "name": "Nom",
+    "phone": "Téléphone",
+    "namePlaceholder": "Entrez votre nom",
+    "phonePlaceholder": "Entrez votre numéro de téléphone",
+    "addPhoto": "Ajouter une photo",
+    "selectRole": "Choisissez votre rôle",
+    "helpWithFreeVet": "Aider avec FreeVet",
+    "helpHomelessAnimals": "Aider les animaux sans abri",
+    "helpPets": "Aider les animaux de compagnie",
+    "tellAboutYourself": "Parlez-nous de vous",
+    "volunteer": "Bénévole",
+    "shelterWorker": "Travailleur de refuge",
+    "havePet": "J'ai un animal de compagnie",
+    "or": "ou",
+    "wantToJoin": "Voulez-vous nous rejoindre ?",
+    "vetDoctor": "Vétérinaire",
+    "cynologist": "Cynologue",
+    "zooPsychologist": "Zoopsychologue",
+    "phoneLogin": "La connexion par téléphone n'est pas encore implémentée"
+  },
+  "formHeader": {
+    "backButtonAlt": "Retour",
+    "title": "Créer un nouveau compte"
+  },
+  "questionPage": {
+    "title": "Poser une question",
+    "animalSelection": "Sélectionnez l'animal sur lequel vous souhaitez poser une question,<br />",
+    "newAnimal": "Animaux<br />sans carnets vétérinaires numériques",
+    "addAnimal": "Nouvel animal",
+    "continueButton": "Continuer"
+  },
+  "closeQuestionPage": {
+    "header": "Fermer la question",
+    "confirmation": "Êtes-vous sûr de vouloir fermer la question ?",
+    "ratingPrompt": "Veuillez évaluer les réponses du vétérinaire <br /> sur une échelle de 1 à 10, <br /> où 1 - pas du tout aimé, <br /> 10 - tout était super ! &#42",
+    "feedbackPrompt": "Vous pouvez laisser vos commentaires",
+    "submitButton": "Fermer la question"
+  },
+  "descriptionAnimalPage": {
+    "title": "Poser une question",
+    "addMedia": "Ajouter une photo et/ou une vidéo",
+    "petArt": "Type d'animal",
+    "petWeight": "Poids approximatif de l'animal",
+    "petGender": "Sexe de l'animal",
+    "homelessCheckbox": "L'animal est sans abri",
+    "continueButton": "Continuer",
+    "requiredSymbol": "*",
+    "validationMessages": {
+      "petArt": {
+        "required": "Le type d'animal est requis",
+        "minLength": "Minimum 2 caractères"
+      },
+      "petWeight": {
+        "required": "Le poids de l'animal est requis",
+        "minLength": "Minimum 2 caractères"
+      },
+      "petGender": {
+        "required": "Le sexe de l'animal est requis",
+        "minLength": "Minimum 2 caractères"
+      }
+    }
+  },
+  "sendQuestionPage": {
+    "header": "Poser une question",
+    "addedMedia": "Photos et/ou vidéos ajoutées",
+    "noPhotos": "Aucune photo disponible",
+    "petArt": "Type d'animal",
+    "petWeight": "Poids approximatif de l'animal",
+    "petGender": "Sexe de l'animal",
+    "homeless": "L'animal est sans abri : ",
+    "questionPlaceholder": "Entrez votre question",
+    "submitButton": "Soumettre la question",
+    "requiredField": "Champ requis"
+  },
+  "mainHeader": {
+    "title": "Bienvenue chez FreeVet",
+    "description": "Un service de l'écosystème TailBook qui vous permet de poser des questions à des vétérinaires qualifiés et expérimentés gratuitement et de recevoir des réponses."
+  },
+  "verificationPage": {
+    "header": "Vérification du téléphone",
+    "enterCode": "Veuillez entrer le code que vous avez reçu<br></br>sur le téléphone spécifié",
+    "confirm": "Confirmer"
+  },
+  "vetVerificationPage": {
+    "header": "Vérification",
+    "notAuthorized": "Il semble que vous n'êtes pas autorisé<br></br>dans le service en tant que spécialiste :(",
+    "additionalData": "Veuillez fournir des données supplémentaires,<br></br>pour votre autorisation en tant que spécialiste",
+    "nameLabel": "Nom complet",
+    "nameRequired": "Le nom est requis",
+    "nameMinLength": "Minimum deux caractères",
+    "documentsLabel": "Veuillez ajouter des documents,<br></br>confirmant vos qualifications",
+    "additionalInfoLabel": "Vous pouvez également fournir des informations supplémentaires",
+    "emailLabel": "Email",
+    "emailRequired": "L'email est requis",
+    "emailPattern": "Format d'email invalide",
+    "telegramLabel": "Telegram",
+    "telegramRequired": "Telegram est requis",
+    "telegramMinLength": "Minimum cinq caractères",
+    "specializationLabel": "Spécifiez votre spécialisation",
+    "specializationRequired": "La spécialisation est requise",
+    "specializationMinLength": "Minimum cinq caractères",
+    "petArtLabel": "Spécifiez les animaux (chats, chiens, etc.)<br></br>que vous spécialisez",
+    "petArtRequired": "Champ requis",
+    "petArtMinLength": "Minimum cinq caractères",
+    "dataReliability": "Je confirme l'exactitude des informations fournies",
+    "submitBtn": "Soumettre",
+    "cancelBtn": "Annuler"
+  },
+  "vetCodePage": {
+    "header": "Vérification",
+    "notAuthorized": "Il semble que vous n'êtes pas autorisé<br></br>dans le service en tant que spécialiste :(",
+    "enterCode": "Veuillez entrer le code que vous avez reçu<br></br>pour l'autorisation",
+    "cancel": "Annuler",
+    "submit": "Soumettre"
+  },
+  "opportunity": {
+    "title": "Opportunités",
+    "askQuestion": "Poser une question",
+    "clinicNavigator": "Navigateur de clinique vétérinaire",
+    "pharmacyNavigator": "Navigateur de pharmacie vétérinaire",
+    "veterinaryBooks": "Carnets vétérinaires",
+    "onlineReception": "Consultation en ligne",
+    "more": "Et bien plus encore",
+    "inDevelopment": "en développement"
+  },
+  "questionPetList": {
+    "title": "Animaux<br></br>avec carnets vétérinaires numériques"
+  },
+  "statistics": {
+    "title": "Statistiques d'assistance",
+    "helpedAnimals": "assistance fournie aux animaux",
+    "helpedThisMonth": "animaux aidés ce mois-ci",
+    "donatedAmount": "euros donnés pour le développement du projet",
+    "thankYou": "Merci pour votre soutien !"
+  },
+  "accordion": {
+    "title": "Description supplémentaire",
+    "breedlabel": "Race",
+    "breedplaceholder": "Croisé à poils longs",
+    "colorlabel": "Couleur",
+    "colorplaceholder": "Roux",
+    "agelabel": "Date de naissance",
+    "ageplaceholder": "01.10.2023",
+    "features": "Caractéristiques spéciales",
+    "featuresplaceholder": "Polydactyle",
+    "chipNumberLabel": "Numéro de puce",
+    "chipNumberPlaceholder": "11110120202010210202330340435040540",
+    "clinicLabel": "Clinique où la puce a été implantée",
+    "clinicPlaceholder": "MontVet Podgorica",
+    "chipLocationLabel": "Emplacement de l'implant de la puce",
+    "chipLocationPlaceholder": "Garrot",
+    "rabiesVaccination": "Vaccination contre la rage",
+    "vaccineLabel": "Vaccin*",
+    "vaccinePlaceholder": "Nobivac",
+    "seriesLabel": "Série*",
+    "seriesPlaceholder": "0989",
+    "expiryDateLabel": "Date d'expiration*",
+    "expiryDatePlaceholder": "01.01.2025",
+    "clinicVaccineLabel": "Clinique où le vaccin a été administré*",
+    "clinicVaccinePlaceholder": "MontVet Podgorica",
+    "vaccineDateLabel": "Date de vaccination*",
+    "vaccineDatePlaceholder": "10.01.2024",
+    "validityEndDateLabel": "Date de fin de validité*",
+    "validityEndDatePlaceholder": "10.01.2025",
+    "weightlabel": "Poids",
+    "weightplaceholder": "Entrez le poids",
+    "statuslabel": "Statut",
+    "statusplaceholder": "Entrez le statut",
+    "identification": "Identification",
+    "otherVaccinations": "Autres vaccinations",
+    "deworming": "Vermifugation",
+    "dewormingDrugLabel": "Vermifuge*",
+    "dewormingDrugPlaceholder": "Nobivac",
+    "dewormingDateLabel": "Date de vermifugation*",
+    "dewormingDatePlaceholder": "10.01.2024",
+    "clinicDewormingLabel": "Clinique où la vermifugation a été effectuée (ou auto-effectuée)",
+    "clinicDewormingPlaceholder": "MontVet Podgorica",
+    "ectoparasiteTreatment": "Traitement contre les ectoparasites",
+    "clinicalExamination": "Examen clinique",
+    "examinationDateLabel": "Date*",
+    "examinationDatePlaceholder": "10.01.2024",
+    "resultLabel": "Résultat",
+    "resultPlaceholder": "Sain, certificat délivré",
+    "registration": "Enregistrement",
+    "registrationClinicLabel": "Clinique",
+    "registrationClinicPlaceholder": "MontVet Podgorica",
+    "registrationNumberLabel": "Numéro d'enregistrement",
+    "registrationNumberPlaceholder": "1212039483984837583",
+    "files": "Fichiers",
+    "chipDateLabel": "Date d'implantation de la puce",
+    "chipDatePlaceholder": "10.01.2021",
+    "phototitle": "Ajouter une photo",
+    "photofileLabel": "Joindre un fichier",
+    "photolimitMessage": "Téléchargez jusqu'à {{maxFiles}} fichiers.",
+    "photounsupportedMessage": "Le fichier {{fileName}} a un type non pris en charge."
+  },
+  "inputPlaceholders": {
+    "breed_placeholder": "Croisé à poils longs",
+    "color_placeholder": "Roux",
+    "age_placeholder": "Entrez l'âge",
+    "weight_placeholder": "Entrez le poids",
+    "status_placeholder": "Entrez le statut"
+  },
+  "userPage": {
+    "userName": "Andrei Yeremin",
+    "userRoleVolunteer": "Je suis bénévole",
+    "userRolePetOwner": "J'ai un animal de compagnie",
+    "myQuestions": "Mes questions",
+    "allQuestions": "toutes",
+    "animalInfo": "Chat de rue etc...",
+    "vetBooks": "Carnets vétérinaires",
+    "allVetBooks": "tous",
+    "myAnimalsTitle": "Mes animaux",
+    "strayAnimalsTitle": "Animaux errants"
+  }
+}

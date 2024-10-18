@@ -1,9 +1,11 @@
-import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
-import s from './customInput.module.css';
-import texts from '../../utils/ru_text'; // Импортируем файл с текстами
+import React, { forwardRef } from "react";
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+import s from "./customInput.module.css";
 
 const CustomInput = forwardRef((props, ref) => {
+  const { t } = useTranslation();
+
   const {
     backgroundColor,
     border,
@@ -20,25 +22,31 @@ const CustomInput = forwardRef((props, ref) => {
   } = props;
 
   return (
-    <div style={{ marginBottom: '10px' }}> {/* Обертка для обработки отступов и ошибок */}
+    <div style={{ marginBottom: "10px" }}>
+      {" "}
+      {/* Обертка для обработки отступов и ошибок */}
       <input
-        className={s.customInput} 
+        className={s.customInput}
         style={{
-          backgroundColor: backgroundColor || 'var(--color-text-white)',
-          border: border || '0.5px solid',
-          borderColor: borderColor || 'var(--color-input-bg-grey)',
-          borderRadius: borderRadius || '10px',
-          padding: padding || '12px 10px',
-          color: color || 'var(--color-input-bg-grey)',
-          width: width || '100%',
-          margin: margin || '0',
+          backgroundColor: backgroundColor || "var(--color-text-white)",
+          border: border || "0.5px solid",
+          borderColor: borderColor || "var(--color-input-bg-grey)",
+          borderRadius: borderRadius || "10px",
+          padding: padding || "12px 10px",
+          color: color || "var(--color-input-bg-grey)",
+          width: width || "100%",
+          margin: margin || "0",
           lineHeight: 1.1,
         }}
         placeholder={placeholder}
-        ref={ref} // Forward the ref to the input
-        {...rest} // Apply the rest of the props (like required)
+        ref={ref}
+        {...rest}
       />
-      {showError && <p style={{ color: 'red', marginTop: '5px' }}>{errorMessage || texts.customInput.defaultErrorMessage}</p>} {/* Ошибка */}
+      {showError && (
+        <p style={{ color: "red", marginTop: "5px" }}>
+          {errorMessage || t("customInput.defaultErrorMessage")}
+        </p>
+      )}
     </div>
   );
 });

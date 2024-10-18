@@ -6,11 +6,10 @@ import CustomInput from "../../../components/customInput/CustomInput";
 import CustomButton from "../../../components/customButton/CustomButton";
 import FileUploader from "../../../components/fileUploader/FileUploader";
 import FormHeader from "../../../components/formHeader/FormHeader";
-import texts from "../../../utils/ru_text";
-
-
+import { useTranslation } from "react-i18next";
 
 const L_registrationPage = () => {
+  const { t } = useTranslation();
   const [image, setImage] = useState(null);
 
   const {
@@ -47,34 +46,36 @@ const L_registrationPage = () => {
   return (
     <form className={s.l_registrationPage} onSubmit={handleSubmit(onSubmit)}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <FormHeader 
-        path="/" 
-        titleKey={texts.registrationPage.header}
-        />
+        <FormHeader path="/" titleKey={t("registrationPage.header")} />
 
         <FileUploader maxFiles={1} boxSize={72} borderRadius={15} />
-        <p style={{ marginTop: "8px", textAlign: "center" }}>{texts.registrationPage.addPhoto}</p>
+        <p style={{ marginTop: "8px", textAlign: "center" }}>
+          {t("registrationPage.addPhoto")}
+        </p>
 
         <label style={{ alignSelf: "start" }}>
-          {texts.registrationPage.nameLabel} <span style={{ color: "#2A9D8F" }}>*</span>
+          {t("registrationPage.nameLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("name", {
-            required: texts.registrationPage.nameErrorRequired,
-            minLength: { value: 2, message: texts.registrationPage.nameErrorMinLength },
+            required: t("registrationPage.nameErrorRequired"),
+            minLength: { value: 2, message: t("registrationPage.nameErrorMinLength") },
           })}
-          placeholder={texts.registrationPage.placeholderName}
+          placeholder={t("registrationPage.placeholderName")}
           width={335}
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
 
         <label style={{ alignSelf: "start" }}>
-          {texts.registrationPage.phoneLabel} <span style={{ color: "#2A9D8F" }}>*</span>
+          {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("phone", {
-            required: texts.registrationPage.phoneErrorRequired,
-            pattern: { value: /^\+?[0-9]{10,}$/, message: texts.registrationPage.phoneErrorPattern },
+            required: t("registrationPage.phoneErrorRequired"),
+            pattern: {
+              value: /^\+?[0-9]{10,}$/,
+              message: t("registrationPage.phoneErrorPattern"),
+            },
           })}
           placeholder="+"
           width={335}
@@ -86,12 +87,13 @@ const L_registrationPage = () => {
         <CustomButton
           link="/verification"
           type="submit"
-          text={texts.registrationPage.submitButton}
+          text={t("registrationPage.submitButton")}
           padding="16px 78px"
           disabled={!isValid}
         />
-        <p className={s.privacyPolicy}
-         dangerouslySetInnerHTML={{__html: texts.registrationPage.privacyPolicyText}}
+        <p
+          className={s.privacyPolicy}
+          dangerouslySetInnerHTML={{ __html: t("registrationPage.privacyPolicyText") }}
         />
       </div>
     </form>

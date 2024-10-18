@@ -1,35 +1,38 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import LineHeader from "../../../components/lineHeader/LineHeader";
-import CustomInput from '../../../components/customInput/CustomInput';
+import CustomInput from "../../../components/customInput/CustomInput";
 import s from "./l_vetVerificationPage.module.css";
 import FileUploader from "../../../components/fileUploader/FileUploader";
 import CustomButton from "../../../components/customButton/CustomButton";
 import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
-import CustomTextarea from '../../../components/customTextarea/CustomTextarea';
-import texts from '../../../utils/ru_text';  // Импорт текстов
+import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 
 const L_vetVerificationPage = () => {
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors }, 
-    watch 
+  const { t } = useTranslation();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
   } = useForm({
     mode: "onChange",
   });
 
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [files, setFiles] = useState([]);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [isCreateButtonDisabled, setIsCreateButtonDisabled] = useState(true);
   const [isCancelButtonDisabled, setIsCancelButtonDisabled] = useState(false);
-  
-  const watchedName = watch('name');
-  const watchedEmail = watch('email');
-  const watchedTelegram = watch('telegram');
-  const watchedSpecialization = watch('specialization');
-  const watchedPetArt = watch('petArt');
+
+  const watchedName = watch("name");
+  const watchedEmail = watch("email");
+  const watchedTelegram = watch("telegram");
+  const watchedSpecialization = watch("specialization");
+  const watchedPetArt = watch("petArt");
 
   const handleChange = (e) => setText(e.target.value);
 
@@ -42,22 +45,30 @@ const L_vetVerificationPage = () => {
   };
 
   useEffect(() => {
-    const isFormValid = 
-      watchedName?.length > 1 && 
-      watchedEmail?.length > 0 && 
-      watchedTelegram?.length > 1 && 
-      watchedSpecialization?.length > 1 && 
+    const isFormValid =
+      watchedName?.length > 1 &&
+      watchedEmail?.length > 0 &&
+      watchedTelegram?.length > 1 &&
+      watchedSpecialization?.length > 1 &&
       watchedPetArt?.length > 1 &&
       files.length > 0 &&
       isCheckboxChecked;
 
     setIsCreateButtonDisabled(!isFormValid);
     setIsCancelButtonDisabled(isFormValid);
-  }, [watchedName, watchedEmail, watchedTelegram, watchedSpecialization, watchedPetArt, files, isCheckboxChecked]);
+  }, [
+    watchedName,
+    watchedEmail,
+    watchedTelegram,
+    watchedSpecialization,
+    watchedPetArt,
+    files,
+    isCheckboxChecked,
+  ]);
 
   const onSubmit = (data) => {
     if (!isCheckboxChecked) {
-      alert("Необходимо подтвердить достоверность сведений");
+      alert(t("vetVerificationPage.dataReliabilityAlert"));
       return;
     }
     console.log("Form submitted:", { ...data, text, files });
@@ -65,67 +76,74 @@ const L_vetVerificationPage = () => {
 
   return (
     <div className={s.l_vetVerificationPage}>
-      <h2>{texts.vetVerificationPage.header}</h2>
+      <h2>{t("vetVerificationPage.header")}</h2>
       <LineHeader showMiddleLine={false} />
 
-      <h5 dangerouslySetInnerHTML={{__html:texts.vetVerificationPage.notAuthorized}}/>
-      
-      <p className={s.l_vetVerificationPage_pGreen}
-        dangerouslySetInnerHTML={{__html:texts.vetVerificationPage.additionalData}}
+      <h5 dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.notAuthorized") }} />
+
+      <p
+        className={s.l_vetVerificationPage_pGreen}
+        dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.additionalData") }}
       />
 
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Имя и Фамилия */}
         <label style={{ alignSelf: "start" }}>
-          {texts.vetVerificationPage.nameLabel}<span style={{ color: "#2A9D8F" }}>*</span>
+          {t("vetVerificationPage.nameLabel")}
+          <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("name", {
-            required: texts.vetVerificationPage.nameRequired,
-            minLength: { value: 2, message: texts.vetVerificationPage.nameMinLength },
+            required: t("vetVerificationPage.nameRequired"),
+            minLength: { value: 2, message: t("vetVerificationPage.nameMinLength") },
           })}
-          color={'var(--color-text-dark)'}
-          placeholder="Имя и Фамилия"
+          color={"var(--color-text-dark)"}
+          placeholder={t("vetVerificationPage.namePlaceholder")}
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
 
         {/* Документы */}
-        <div style={{display: "flex"}}>
-          <label style={{ alignSelf: "start", lineHeight: 0.6 }}
-            dangerouslySetInnerHTML={{__html:texts.vetVerificationPage.documentsLabel}}
+        <div style={{ display: "flex" }}>
+          <label
+            style={{ alignSelf: "start", lineHeight: 0.6 }}
+            dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.documentsLabel") }}
           />
-          <span style={{ color: "#2A9D8F",position: "relative", top: "25px" }}>*</span>
+          <span style={{ color: "#2A9D8F", position: "relative", top: "25px" }}>*</span>
         </div>
         <FileUploader maxFiles={6} boxSize={50} borderRadius={5} onUpload={onUpload} />
 
         {/* Дополнительная информация */}
         <label style={{ alignSelf: "start" }}>
-          {texts.vetVerificationPage.additionalInfoLabel}
+          {t("vetVerificationPage.additionalInfoLabel")}
         </label>
         <CustomTextarea
           value={text}
           onChange={handleChange}
           rows={8}
           cols={50}
-          placeholder="Введите текст"
-          style={{borderColor: 'var(--color-input-bg-grey)', backgroundColor: 'var(--color-text-white)'}}
+          placeholder={t("vetVerificationPage.additionalInfoPlaceholder")}
+          style={{
+            borderColor: "var(--color-input-bg-grey)",
+            backgroundColor: "var(--color-text-white)",
+          }}
         />
 
         {/* Email */}
         <label style={{ alignSelf: "start" }}>
-          {texts.vetVerificationPage.emailLabel}<span style={{ color: "#2A9D8F" }}>*</span>
+          {t("vetVerificationPage.emailLabel")}
+          <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("email", {
-            required: texts.vetVerificationPage.emailRequired,
+            required: t("vetVerificationPage.emailRequired"),
             pattern: {
               value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: texts.vetVerificationPage.emailPattern
-            }
+              message: t("vetVerificationPage.emailPattern"),
+            },
           })}
-          color={'var(--color-text-dark)'}
+          color={"var(--color-text-dark)"}
           placeholder="Email"
           borderColor="var(--color-input-bg-grey)"
           width={335}
@@ -134,14 +152,15 @@ const L_vetVerificationPage = () => {
 
         {/* Telegram */}
         <label style={{ alignSelf: "start" }}>
-          {texts.vetVerificationPage.telegramLabel}<span style={{ color: "#2A9D8F" }}>*</span>
+          {t("vetVerificationPage.telegramLabel")}
+          <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("telegram", {
-            required: texts.vetVerificationPage.telegramRequired,
-            minLength: { value: 2, message: texts.vetVerificationPage.telegramMinLength },
+            required: t("vetVerificationPage.telegramRequired"),
+            minLength: { value: 2, message: t("vetVerificationPage.telegramMinLength") },
           })}
-          color={'var(--color-text-dark)'}
+          color={"var(--color-text-dark)"}
           placeholder="@"
           borderColor="var(--color-input-bg-grey)"
           width={335}
@@ -150,34 +169,41 @@ const L_vetVerificationPage = () => {
 
         {/* Специализация */}
         <label style={{ alignSelf: "start" }}>
-          {texts.vetVerificationPage.specializationLabel}<span style={{ color: "#2A9D8F" }}>*</span>
+          {t("vetVerificationPage.specializationLabel")}
+          <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("specialization", {
-            required: texts.vetVerificationPage.specializationRequired,
-            minLength: { value: 2, message: texts.vetVerificationPage.specializationMinLength },
+            required: t("vetVerificationPage.specializationRequired"),
+            minLength: {
+              value: 2,
+              message: t("vetVerificationPage.specializationMinLength"),
+            },
           })}
-          color={'var(--color-text-dark)'}
-          placeholder="ветеринарный врач / кинолог / зоопсихолог  / ..."
+          color={"var(--color-text-dark)"}
+          placeholder={t("vetVerificationPage.specializationPlaceholder")}
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
-        {errors.specialization && <p style={{ color: "red" }}>{errors.specialization.message}</p>}
+        {errors.specialization && (
+          <p style={{ color: "red" }}>{errors.specialization.message}</p>
+        )}
 
         {/* Вид животных */}
-        <div style={{display: "flex"}}>
-          <label style={{ alignSelf: "start", lineHeight: 0.6 }}
-            dangerouslySetInnerHTML={{__html:texts.vetVerificationPage.petArtLabel}}
+        <div style={{ display: "flex" }}>
+          <label
+            style={{ alignSelf: "start", lineHeight: 0.6 }}
+            dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.petArtLabel") }}
           />
-          <span style={{ color: "#2A9D8F",position: "relative", top: "25px" }}>*</span>
+          <span style={{ color: "#2A9D8F", position: "relative", top: "25px" }}>*</span>
         </div>
         <CustomInput
           {...register("petArt", {
-            required: texts.vetVerificationPage.petArtRequired,
-            minLength: { value: 2, message: texts.vetVerificationPage.petArtMinLength },
+            required: t("vetVerificationPage.petArtRequired"),
+            minLength: { value: 2, message: t("vetVerificationPage.petArtMinLength") },
           })}
-          color={'var(--color-text-dark)'}
-          placeholder="Кошки, собаки и т.д."
+          color={"var(--color-text-dark)"}
+          placeholder={t("vetVerificationPage.petArtPlaceholder")}
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
@@ -188,15 +214,22 @@ const L_vetVerificationPage = () => {
           <CustomCheckbox
             name="confirmation"
             checked={isCheckboxChecked}
-            onChange={handleConfirmationChange} // Добавлен onChange для обновления состояния чекбокса
+            onChange={handleConfirmationChange}
           />
-          <span>{texts.vetVerificationPage.dataReliability}</span>
+          <span>{t("vetVerificationPage.dataReliability")}</span>
         </span>
-        
-        {/* Кнопки */}
+
         <div className={s.buttonGroup}>
-          <CustomButton disabled={isCancelButtonDisabled} text={texts.vetVerificationPage.cancelBtn} type="button" />
-          <CustomButton disabled={isCreateButtonDisabled} text={texts.vetVerificationPage.submitBtn} type="submit" />
+          <CustomButton
+            disabled={isCancelButtonDisabled}
+            text={t("vetVerificationPage.cancelBtn")}
+            type="button"
+          />
+          <CustomButton
+            disabled={isCreateButtonDisabled}
+            text={t("vetVerificationPage.submitBtn")}
+            type="submit"
+          />
         </div>
       </form>
     </div>

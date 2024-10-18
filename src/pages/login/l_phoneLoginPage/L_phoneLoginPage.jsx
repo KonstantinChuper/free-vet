@@ -1,14 +1,15 @@
-import { useNavigate } from "react-router-dom"; // Импортируем useNavigate
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import s from "./l_phoneLoginPage.module.css";
 import { useForm } from "react-hook-form";
 import CustomInput from "../../../components/customInput/CustomInput";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { loginUserPhone } from "../../../utils/api.js";
-import texts from "../../../utils/ru_text";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit.jsx";
 
 const L_phoneLoginPage = () => {
-  const navigate = useNavigate(); // Инициализируем useNavigate
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -16,23 +17,21 @@ const L_phoneLoginPage = () => {
     formState: { errors, isValid },
     reset,
   } = useForm({
-    mode: "onChange", // Включаем валидацию в реальном времени
+    mode: "onChange",
   });
 
-  // Функция отправки формы
   const onSubmit = async (data) => {
-    console.log("Отправка формы:", data); // Лог для дебага
+    console.log("Отправка формы:", data);
     try {
       const formData = new FormData();
       formData.append("phone", data.phone);
 
-      const response = await loginUserPhone(formData); // Ждем ответа от API
-      console.log("Ответ от API:", response); // Лог ответа от API
+      const response = await loginUserPhone(formData);
+      console.log("Ответ от API:", response);
 
-      // Проверяем, что запрос был успешным (например, response.success может быть признаком успеха)
       if (response.success) {
-        reset(); // Сбрасываем форму
-        navigate("/verification"); // Перенаправляем на страницу верификации
+        reset();
+        navigate("/verification");
       } else {
         console.error("Ошибка логина, неверные данные.");
       }
@@ -44,35 +43,37 @@ const L_phoneLoginPage = () => {
   return (
     <form className={s.l_phoneLoginPage} onSubmit={handleSubmit(onSubmit)}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <FormHeader 
-          path="/" 
-          titleKey={texts.phoneLoginPage.header} 
+        <FormHeader path="/" titleKey={t("phoneLoginPage.header")} />
+        <p
+          className={s.l_phoneLoginPage_subtitle}
+          dangerouslySetInnerHTML={{ __html: t("phoneLoginPage.subtitle") }}
         />
-        <p className={s.l_phoneLoginPage_subtitle} dangerouslySetInnerHTML={{ __html: texts.phoneLoginPage.subtitle }} />
         <label style={{ alignSelf: "start" }}>
-          {texts.registrationPage.phoneLabel} <span style={{ color: "#2A9D8F" }}>*</span>
+          {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("phone", {
-            required: texts.registrationPage.phoneErrorRequired,
+            required: t("registrationPage.phoneErrorRequired"),
             pattern: {
-              value: /^\+?[0-9]{10,}$/, // Простая проверка на номер телефона
-              message: texts.registrationPage.phoneErrorPattern,
+              value: /^\+?[0-9]{10,}$/,
+              message: t("registrationPage.phoneErrorPattern"),
             },
           })}
           placeholder="+"
           width={335}
         />
         {errors.phone && <p style={{ color: "red" }}>{errors.phone.message}</p>}
-        <p className={s.l_phoneLoginPage_lostAccess}>{texts.phoneLoginPage.lostAccess}</p>
-        <p className={s.l_phoneLoginPage_accessRestoration}>{texts.phoneLoginPage.accessRestoration}</p>
+        <p className={s.l_phoneLoginPage_lostAccess}>{t("phoneLoginPage.lostAccess")}</p>
+        <p className={s.l_phoneLoginPage_accessRestoration}>
+          {t("phoneLoginPage.accessRestoration")}
+        </p>
       </div>
 
       <CustomButtonSubmit
         type="submit"
-        text={texts.registrationPage.submitButton}
+        text={t("registrationPage.submitButton")}
         padding="16px 78px"
-        disabled={!isValid} // Кнопка отключена, если форма не валидна
+        disabled={!isValid}
       />
     </form>
   );

@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import CustomButton from "../../../components/customButton/CustomButton";
 import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
-import CustomStickTitle from '../../../components/customStickTitle/CustomStickTitle';
+import CustomStickTitle from "../../../components/customStickTitle/CustomStickTitle";
 import FormHeader from "../../../components/formHeader/FormHeader";
-import texts from "../../../utils/ru_text.js"; // Импортируем текстовый файл
+import { useTranslation } from "react-i18next";
 
 const L_userRolePage = () => {
+  const { t } = useTranslation();
+
   const [userRoles, setUserRoles] = useState({
     homelessAnimals: false,
     pets: false,
@@ -26,15 +28,13 @@ const L_userRolePage = () => {
   const isUserRoleSelected = Object.values(userRoles).some((value) => value);
   const isVetRoleSelected = Object.values(vetRoles).some((value) => value);
 
-  // Проверка на выбор хотя бы одного поля
   const isAnyRoleSelected = isUserRoleSelected || isVetRoleSelected;
 
-  // Определяем ссылку для перехода на основе выбранной роли
-  const roleBasedLink = isUserRoleSelected 
-    ? "/verification/role/user/create-vetbook"  // Ссылка для пользователя
-    : isVetRoleSelected 
-      ? "/verification/role/vet/vet-verification" // Ссылка для ветеринара
-      : "/"; // Дефолтная ссылка
+  const roleBasedLink = isUserRoleSelected
+    ? "/verification/role/user/create-vetbook"
+    : isVetRoleSelected
+    ? "/verification/role/vet/vet-verification"
+    : "/";
 
   const handleUserRoleChange = (e) => {
     const { name, checked } = e.target;
@@ -90,13 +90,12 @@ const L_userRolePage = () => {
   return (
     <div className={s.l_userRolePage}>
       <div className={s.formHeader}>
-      <FormHeader path="/" fontSize={36} titleKey={texts.userRolePage.header}/>
+        <FormHeader path="/" fontSize={36} titleKey={t("userRolePage.header")} />
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={s.formBox}>
-          <h5 className={s.formBox_header}>{texts.userRolePage.role}</h5>
+          <h5 className={s.formBox_header}>{t("userRolePage.role")}</h5>
 
-          {/* Блок для пользователя */}
           <div
             className={`${s.formBox_checkboxBox_user} ${
               isVetRoleSelected ? s.disabledBox : ""
@@ -104,7 +103,7 @@ const L_userRolePage = () => {
           >
             <span>
               <p className={isVetRoleSelected ? s.disabledText : ""}>
-              {texts.userRolePage.helpWithFreeVet}
+                {t("userRolePage.helpWithFreeVet")}
               </p>
               <div className={s.formBox_checkboxBox_pets}>
                 <span>
@@ -116,7 +115,7 @@ const L_userRolePage = () => {
                     disabled={isVetRoleSelected}
                   />{" "}
                   <span className={isVetRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.helpHomelessAnimals}
+                    {t("userRolePage.helpHomelessAnimals")}
                   </span>
                 </span>
                 <span>
@@ -128,14 +127,14 @@ const L_userRolePage = () => {
                     disabled={isVetRoleSelected}
                   />{" "}
                   <span className={isVetRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.helpPets}
+                    {t("userRolePage.helpPets")}
                   </span>
                 </span>
               </div>
             </span>
             <span>
               <p className={isVetRoleSelected ? s.disabledText : ""}>
-              {texts.userRolePage.tellAboutYourself}
+                {t("userRolePage.tellAboutYourself")}
               </p>
               <div className={s.formBox_checkboxBox_pets}>
                 <span>
@@ -147,7 +146,7 @@ const L_userRolePage = () => {
                     disabled={isVetRoleSelected}
                   />{" "}
                   <span className={isVetRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.volunteer}
+                    {t("userRolePage.volunteer")}
                   </span>
                 </span>
                 <span style={{ position: "relative", right: "5px" }}>
@@ -159,7 +158,7 @@ const L_userRolePage = () => {
                     disabled={isVetRoleSelected}
                   />{" "}
                   <span className={isVetRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.shelterWorker}
+                    {t("userRolePage.shelterWorker")}
                   </span>
                 </span>
               </div>
@@ -175,21 +174,28 @@ const L_userRolePage = () => {
                     disabled={isVetRoleSelected}
                   />{" "}
                   <span className={isVetRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.havePet}
+                    {t("userRolePage.havePet")}
                   </span>
                 </span>
               </div>
-              <span className={isVetRoleSelected ? s.disabledText : ""} style={{position: 'absolute', bottom: '-1px', right: '-1px'}}><CustomStickTitle backgroundColor={'white'} text={texts.userRolePage.userStick}/></span>
+              <span
+                className={isVetRoleSelected ? s.disabledText : ""}
+                style={{ position: "absolute", bottom: "-1px", right: "-1px" }}
+              >
+                <CustomStickTitle
+                  backgroundColor={"white"}
+                  text={t("userRolePage.userStick")}
+                />
+              </span>
             </span>
           </div>
 
           <div className={s.lineBox}>
             <div className={s.line}></div>
-            <p>{texts.userRolePage.or}</p>
+            <p>{t("userRolePage.or")}</p>
             <div className={s.line}></div>
           </div>
 
-          {/* Блок для специалиста */}
           <div
             className={`${s.formBox_checkboxBox_specialist} ${
               isUserRoleSelected ? s.disabledBox : ""
@@ -197,7 +203,7 @@ const L_userRolePage = () => {
           >
             <span>
               <p className={isUserRoleSelected ? s.disabledText : ""}>
-              {texts.userRolePage.wantToJoin}
+                {t("userRolePage.wantToJoin")}
               </p>
               <div className={s.formBox_checkboxBox_pets}>
                 <span>
@@ -209,7 +215,7 @@ const L_userRolePage = () => {
                     disabled={isUserRoleSelected}
                   />{" "}
                   <span className={isUserRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.vetDoctor}
+                    {t("userRolePage.vetDoctor")}
                   </span>
                 </span>
               </div>
@@ -225,7 +231,7 @@ const L_userRolePage = () => {
                     disabled={isUserRoleSelected}
                   />{" "}
                   <span className={isUserRoleSelected ? s.disabledText : ""}>
-                  {texts.userRolePage.cynologist}
+                    {t("userRolePage.cynologist")}
                   </span>
                 </span>
               </div>
@@ -240,20 +246,28 @@ const L_userRolePage = () => {
                   disabled={isUserRoleSelected}
                 />{" "}
                 <span className={isUserRoleSelected ? s.disabledText : ""}>
-                {texts.userRolePage.zooPsychologist}
+                  {t("userRolePage.zooPsychologist")}
                 </span>
               </span>
-              <span className={isUserRoleSelected ? s.disabledText : ""} style={{position: 'absolute', bottom: '-1px', right: '-1px'}}><CustomStickTitle text={texts.userRolePage.vetStick} backgroundColor={'white'} /></span>
+              <span
+                className={isUserRoleSelected ? s.disabledText : ""}
+                style={{ position: "absolute", bottom: "-1px", right: "-1px" }}
+              >
+                <CustomStickTitle
+                  text={t("userRolePage.vetStick")}
+                  backgroundColor={"white"}
+                />
+              </span>
             </div>
           </div>
         </div>
         <div className={s.buttonBox}>
           <CustomButton
             onClick={handleSubmit}
-            text={texts.userRolePage.saveBtn}
+            text={t("userRolePage.saveBtn")}
             padding="16px 78px"
-            link={roleBasedLink} // Используем динамическую ссылку
-            disabled={!isAnyRoleSelected}  
+            link={roleBasedLink}
+            disabled={!isAnyRoleSelected}
           />
         </div>
       </form>

@@ -1,20 +1,20 @@
 import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Импортируем useNavigate
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import s from "./q_sendQuestionPage.module.css";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import LineHeader from "../../../components/lineHeader/LineHeader";
 import close from "../../../assets/close.svg";
 import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
-import texts from "../../../utils/ru_text"; // Импортируйте текстовый файл
 import { addQuestion } from "../../../utils/api.js";
 
 const Q_sendQuestionPage = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const { petArt, petWeight, petGender, isHomeless, files } =
-    location.state || {};
+  const { petArt, petWeight, petGender, isHomeless, files } = location.state || {};
 
   const {
     register,
@@ -55,20 +55,13 @@ const Q_sendQuestionPage = () => {
   return (
     <div className={s.q_sendQuestionPage}>
       <div className={s.q_sendQuestionPage_header}>
-        <FormHeader
-          path="/main"
-          fontSize={36}
-          titleKey={texts.questionPage.title}
-        />
+        <FormHeader path="/main" fontSize={36} titleKey={t("questionPage.title")} />
         <Link to={"/main"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-main)"} right={"var(--color-main)"} />
-      <p className={s.q_sendQuestionPage_file_p}>
-        {texts.sendQuestionPage.addedMedia}
-      </p>{" "}
-      {/* Текст добавленных медиа */}
+      <p className={s.q_sendQuestionPage_file_p}>{t("sendQuestionPage.addedMedia")}</p>
       <div className={s.q_sendQuestionPage_fileBox}>
         {files && files.length > 0 ? (
           <div className={s.filesContainer}>
@@ -79,55 +72,49 @@ const Q_sendQuestionPage = () => {
                 ) : file.type.startsWith("video") ? (
                   <video controls src={file.data} />
                 ) : (
-                  <p>Неподдерживаемый формат файла</p>
+                  <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
                 )}
               </div>
             ))}
           </div>
         ) : (
-          <p>{texts.sendQuestionPage.noPhotos}</p>
+          <p>{t("sendQuestionPage.noPhotos")}</p>
         )}
       </div>
       <div className={s.q_sendQuestionPage_description}>
         <p>
-          {texts.sendQuestionPage.petArt}: {petArt}
-        </p>{" "}
-        {/* Вид животного */}
+          {t("sendQuestionPage.petArt")}: {petArt}
+        </p>
         <p>
-          {texts.sendQuestionPage.petWeight}: {petWeight}
-        </p>{" "}
-        {/* Вес животного */}
+          {t("sendQuestionPage.petWeight")}: {petWeight}
+        </p>
         <p>
-          {texts.sendQuestionPage.petGender}: {petGender}
-        </p>{" "}
-        {/* Пол животного */}
+          {t("sendQuestionPage.petGender")}: {petGender}
+        </p>
         <p style={{ display: "none" }}>
-          {texts.sendQuestionPage.homeless} {isHomeless ? "Да" : "Нет"}{" "}
-          {/* Безопасность животного */}
+          {t("sendQuestionPage.homeless")} {isHomeless ? t("yes") : t("no")}
         </p>
       </div>
-      <p className={s.q_sendQuestionPage_p}>Напишите Ваш вопрос</p>
+      <p className={s.q_sendQuestionPage_p}>{t("sendQuestionPage.writeQuestion")}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CustomTextarea
           {...register("question", {
-            required: texts.sendQuestionPage.requiredField,
+            required: t("sendQuestionPage.requiredField"),
           })}
           rows={8}
           cols={50}
-          placeholder={texts.sendQuestionPage.questionPlaceholder} // Текстовое поле
+          placeholder={t("sendQuestionPage.questionPlaceholder")}
           style={{
             borderColor: "var(--color-input-bg-grey)",
             backgroundColor: "var(--color-text-white)",
             height: "310px",
           }}
         />
-        {errors.question && (
-          <p className={s.errorText}>{errors.question.message}</p>
-        )}
+        {errors.question && <p className={s.errorText}>{errors.question.message}</p>}
 
         <div className={s.btnBox}>
           <CustomButtonSubmit
-            text={texts.sendQuestionPage.submitButton} // Текст кнопки
+            text={t("sendQuestionPage.submitButton")}
             padding={"16px 99.5px"}
             disabled={!isValid}
           />

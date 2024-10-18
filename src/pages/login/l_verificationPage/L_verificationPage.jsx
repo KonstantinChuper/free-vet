@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import s from "./l_verificationPage.module.css";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import useVerificationCode from "../../../customHooks/useVerificationCode";
 import CodeInputBox from "../../../components/codeInputBox/CodeInputBox";
-import texts from '../../../utils/ru_text';  // Импорт текстов
 
 const L_verificationPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const {
     control,
@@ -32,9 +33,10 @@ const L_verificationPage = () => {
 
   return (
     <div className={s.l_verificationPage}>
-      <FormHeader path="/register" titleKey={texts.verificationPage.header}/>
-      <p className={s.enterCode}
-        dangerouslySetInnerHTML={{ __html: texts.verificationPage.enterCode }} 
+      <FormHeader path="/register" titleKey={t("verificationPage.header")} />
+      <p
+        className={s.enterCode}
+        dangerouslySetInnerHTML={{ __html: t("verificationPage.enterCode") }}
       />
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <CodeInputBox
@@ -50,7 +52,7 @@ const L_verificationPage = () => {
           seconds={seconds}
         />
         <button className={s.button} type="submit" disabled={!isFormValid}>
-          {texts.verificationPage.confirm}
+          {t("verificationPage.confirm")}
         </button>
       </form>
     </div>

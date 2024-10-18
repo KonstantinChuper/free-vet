@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import s from "./q_choiceAnimalPage.module.css";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import LineHeader from "../../../components/lineHeader/LineHeader";
@@ -7,51 +8,46 @@ import close from "../../../assets/close.svg";
 import QuestionPetList from "../../../components/questionPetList/QuestionPetList";
 import CustomButton from "../../../components/customButton/CustomButton";
 import plus from "../../../assets/plus.svg";
-import texts from "../../../utils/ru_text"; // Импортируем файл с текстами
 
 const Q_choiceAnimalPage = () => {
-  const [selectedAnimalType, setSelectedAnimalType] = useState(null); // состояние для хранения типа животного
-  const [isNewAnimalSelected, setIsNewAnimalSelected] = useState(false); // состояние для животных без вет. книжки
-  const [resetSelection, setResetSelection] = useState(false); // состояние для сброса выбранного животного с книжкой
-  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const [selectedAnimalType, setSelectedAnimalType] = useState(null);
+  const [isNewAnimalSelected, setIsNewAnimalSelected] = useState(false);
+  const [resetSelection, setResetSelection] = useState(false);
 
-  // Функция для выбора изображения животного
   const handleSelectImage = (type) => {
-    setIsNewAnimalSelected(false); // сбрасываем выбор нового животного при выборе животного с цифровой книжкой
-    setSelectedAnimalType(type); // обновляем состояние выбранного животного
-    setResetSelection(false); // сбрасываем состояние сброса
+    setIsNewAnimalSelected(false);
+    setSelectedAnimalType(type);
+    setResetSelection(false);
   };
 
-  // Функция для выбора нового животного
   const handleNewAnimalClick = () => {
-    setSelectedAnimalType(null); // сбрасываем выбор животного с книжкой
-    setIsNewAnimalSelected(!isNewAnimalSelected); // переключаем выбор нового животного
-    setResetSelection(true); // активируем сброс выбора животного с книжкой
+    setSelectedAnimalType(null);
+    setIsNewAnimalSelected(!isNewAnimalSelected);
+    setResetSelection(true);
   };
 
-  // Определяем ссылку для перехода на основе выбранного типа животного
   const animalBasedLink =
     selectedAnimalType === "digital"
-      ? "/link-to-digital" // если выбрано животное с цифровой книжкой
+      ? "/link-to-digital"
       : isNewAnimalSelected
-      ? "/main/question/description-animal" // если выбрано животное без книжки
-      : "#"; // если ничего не выбрано
+      ? "/main/question/description-animal"
+      : "#";
 
   return (
     <div className={s.q_choiceAnimalPage}>
       <div className={s.q_choiceAnimalPage_header}>
-        <FormHeader path="/main" fontSize={36} titleKey={texts.questionPage.title} />
+        <FormHeader path="/main" fontSize={36} titleKey={t("questionPage.title")} />
         <Link to={"/main"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-line)"} />
-      <h5 dangerouslySetInnerHTML={{ __html: texts.questionPage.animalSelection }} />{" "}
-      {/* Используем текст из файла */}
+      <h5 dangerouslySetInnerHTML={{ __html: t("questionPage.animalSelection") }} />
       <QuestionPetList
         categories={[
           {
-            title: texts.userPage.myAnimalsTitle,
+            title: t("userPage.myAnimalsTitle"),
             images: [
               { src: "https://placehold.co/400", type: "digital" },
               { src: "https://placehold.co/400", type: "digital" },
@@ -60,7 +56,7 @@ const Q_choiceAnimalPage = () => {
             svgcolor: "green",
           },
           {
-            title: texts.userPage.strayAnimalsTitle,
+            title: t("userPage.strayAnimalsTitle"),
             images: [
               { src: "https://placehold.co/400", type: "non-digital" },
               { src: "https://placehold.co/400", type: "non-digital" },
@@ -73,8 +69,7 @@ const Q_choiceAnimalPage = () => {
         resetSelection={resetSelection}
       />
       <div className={s.q_choiceAnimalPage_newAnimal_box}>
-        <h5 dangerouslySetInnerHTML={{ __html: texts.questionPage.newAnimal }} />{" "}
-        {/* Используем текст из файла */}
+        <h5 dangerouslySetInnerHTML={{ __html: t("questionPage.newAnimal") }} />
         <div className={s.q_choiceAnimalPage_newAnimal_boxBtnTitle}>
           <div
             className={s.q_choiceAnimalPage_newAnimal_btnPlus}
@@ -83,14 +78,14 @@ const Q_choiceAnimalPage = () => {
             <img src={plus} alt="plus" />
             <div className={`${s.circle} ${isNewAnimalSelected ? s.selected : ""}`} />
           </div>
-          <h5>{texts.questionPage.addAnimal}</h5>
+          <h5>{t("questionPage.addAnimal")}</h5>
         </div>
       </div>
       <CustomButton
-        text={texts.questionPage.continueButton} // Используем текст из файла
+        text={t("questionPage.continueButton")}
         padding={"16px 120.5px"}
-        link={animalBasedLink} // Передаем динамическую ссылку
-        disabled={!selectedAnimalType && !isNewAnimalSelected} // кнопка активна только при выборе животного
+        link={animalBasedLink}
+        disabled={!selectedAnimalType && !isNewAnimalSelected}
       />
     </div>
   );

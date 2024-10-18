@@ -4,9 +4,10 @@ import LineHeader from "../../../components/lineHeader/LineHeader";
 import useVerificationCode from "../../../customHooks/useVerificationCode";
 import CodeInputBox from "../../../components/codeInputBox/CodeInputBox";
 import CustomButton from "../../../components/customButton/CustomButton";
-import texts from '../../../utils/ru_text';  // Импорт текстов
+import { useTranslation } from "react-i18next";
 
 const L_vetCodePage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const {
     control,
@@ -33,13 +34,12 @@ const L_vetCodePage = () => {
 
   return (
     <div className={s.l_verificationPage}>
-      <h2>{texts.vetCodePage.header}</h2>
+      <h2>{t("vetCodePage.header")}</h2>
       <LineHeader showMiddleLine={false} right={"var(--color-main)"} />
-      <h5
-        dangerouslySetInnerHTML={{__html:texts.vetCodePage.notAuthorized}}
-      />
-      <p className={s.l_verificationCode}
-        dangerouslySetInnerHTML={{__html:texts.vetCodePage.enterCode}}
+      <h5 dangerouslySetInnerHTML={{ __html: t("vetCodePage.notAuthorized") }} />
+      <p
+        className={s.l_verificationCode}
+        dangerouslySetInnerHTML={{ __html: t("vetCodePage.enterCode") }}
       />
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <CodeInputBox
@@ -57,13 +57,17 @@ const L_vetCodePage = () => {
         <div className={s.buttonLine}>
           <CustomButton
             link="/main"
-            customStyle={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+            customStyle={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
             padding={"16px 54px"}
-            text={texts.vetCodePage.cancel}
+            text={t("vetCodePage.cancel")}
             disabled={isFormValid}
           />
           <button className={s.button} type="submit" disabled={!isFormValid}>
-            {texts.vetCodePage.submit}
+            {t("vetCodePage.submit")}
           </button>
         </div>
       </form>

@@ -29,7 +29,7 @@ const Q_choiceAnimalPage = () => {
 
   const animalBasedLink =
     selectedAnimalType === "digital"
-      ? "/link-to-digital"
+      ? "/main/question/description-animal/send"
       : isNewAnimalSelected
       ? "/main/question/description-animal"
       : "#";

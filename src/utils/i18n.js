@@ -8,6 +8,8 @@ import me from "../locales/me.json";
 import ba from "../locales/ba.json";
 import sr from "../locales/sr.json";
 
+const savedLanguage = localStorage.getItem("selectedLanguage");
+
 i18n.use(initReactI18next).init({
   resources: {
     en: {
@@ -32,7 +34,7 @@ i18n.use(initReactI18next).init({
       translation: sr,
     },
   },
-  lng: "en", // язык по умолчанию
+  lng: savedLanguage,
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./languageSwitcher.module.css";
 import flagEN from "../../assets/flags/en.svg";
@@ -27,6 +27,17 @@ const LanguageSwitcher = () => {
     languages.find((lang) => lang.code === i18n.language) || languages[0]
   );
 
+  useEffect(() => {
+    const savedLanguageCode = localStorage.getItem("selectedLanguage");
+    if (savedLanguageCode && savedLanguageCode !== i18n.language) {
+      const savedLanguage = languages.find((lang) => lang.code === savedLanguageCode);
+      if (savedLanguage) {
+        setSelectedLanguage(savedLanguage);
+        i18n.changeLanguage(savedLanguageCode);
+      }
+    }
+  }, [i18n]);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -34,6 +45,7 @@ const LanguageSwitcher = () => {
   const changeLanguage = (language) => {
     setSelectedLanguage(language);
     i18n.changeLanguage(language.code);
+    localStorage.setItem("selectedLanguage", language.code);
     setIsOpen(false);
   };
 

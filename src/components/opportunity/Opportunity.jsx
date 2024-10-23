@@ -18,57 +18,47 @@ const Opportunity = () => {
       <div className={s.featureCards}>
         <div className={s.cat}>
           <Link to="/main/question/choice">
-            <img
-              src={OppAdd}
-              alt={t("opportunity.catImageAlt")}
-              className={s.cardImage}
-            />
+            <div className={s.heroImageBox}>
+              <img src={OppAdd} alt={t("opportunity.catImageAlt")} className={s.cardImage} />
+            </div>
             <h4>{t("opportunity.askQuestion")}</h4>
           </Link>
         </div>
-        <div className={s.card}>
-          <img
-            src={OppNavKl}
-            alt={t("opportunity.clinicImageAlt")}
-            className={s.cardImage}
-          />
-          <h3>{t("opportunity.clinicNavigator")}</h3>
-          <p>{t("opportunity.inDevelopment")}</p>
-        </div>
-        <div className={s.card}>
-          <img
-            src={OppNavApt}
-            alt={t("opportunity.pharmacyImageAlt")}
-            className={s.cardImage}
-          />
-          <h3>{t("opportunity.pharmacyNavigator")}</h3>
-          <p>{t("opportunity.inDevelopment")}</p>
+        <div className={s.rightCatBox}>
+          <div className={s.card}>
+            <img src={OppNavKl} alt={t("opportunity.clinicImageAlt")} className={s.cardImage} />
+            <h3 className={s.titleWithStatus}>
+              {t("opportunity.clinicNavigator")}
+              <span className={s.status}>{t("opportunity.inDevelopment")}</span>
+            </h3>
+          </div>
+          <div className={s.card}>
+            <img src={OppNavApt} alt={t("opportunity.pharmacyImageAlt")} className={s.cardImage} />
+            <h3 className={s.titleWithStatus}>
+              {t("opportunity.pharmacyNavigator")}
+              <span className={s.status}>{t("opportunity.inDevelopment")}</span>
+            </h3>
+          </div>
         </div>
       </div>
       <div className={s.boxcard}>
+        <Link to="/vetbook" className={s.link}>
+          <img src={OppVetBook} alt={t("opportunity.dogImageAlt")} className={s.cardImage} />
+          <h3>{t("opportunity.veterinaryBooks")}</h3>
+        </Link>
         <div className={s.toocard}>
-          <Link to="/vetbook">
-            <img
-              src={OppVetBook}
-              alt={t("opportunity.dogImageAlt")}
-              className={s.cardImage}
-            />
-            <h3>{t("opportunity.veterinaryBooks")}</h3>
-          </Link>
-        </div>
-        <div className={s.toocard}>
-          <img
-            src={Online}
-            alt={t("opportunity.onlineCatImageAlt")}
-            className={s.cardImage}
-          />
-          <h3>{t("opportunity.onlineReception")}</h3>
-          <p>{t("opportunity.inDevelopment")}</p>
+          <img src={Online} alt={t("opportunity.onlineCatImageAlt")} className={s.cardImage} />
+          <h3 className={s.titleWithStatus}>
+            {t("opportunity.onlineReception")}
+            <span className={s.status}>{t("opportunity.inDevelopment")}</span>
+          </h3>
         </div>
         <div className={s.toocard}>
           <img src={More} alt={t("opportunity.moreImageAlt")} className={s.cardImage} />
-          <h3>{t("opportunity.more")}</h3>
-          <p>{t("opportunity.inDevelopment")}</p>
+          <h3 className={s.titleWithStatus}>
+            {t("opportunity.more")}
+            <span className={s.status}>{t("opportunity.inDevelopment")}</span>
+          </h3>
         </div>
       </div>
     </section>

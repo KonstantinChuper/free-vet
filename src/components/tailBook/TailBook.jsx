@@ -7,9 +7,7 @@ import logo from "../../assets/tailIcons/logo.svg";
 const TailBook = () => {
   return (
     <div className={s.tailBook}>
-      <div className={s.logoContainer}>
         <img src={logo} alt="Logo" className={s.logo} />
-      </div>
       <div className={s.socialIcons}>
         <a href="https://tailbook.me/" target="_blank" rel="noopener noreferrer">
           <img src={sendIcon} alt="Share" />

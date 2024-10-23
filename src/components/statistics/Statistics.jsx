@@ -11,11 +11,11 @@ const Statistics = () => {
       <div className={s.stats}>
         <div className={s.statItem}>
           <span>203</span>
-          <p>{t("statistics.helpedAnimals")}</p>
+          <p className={s.statNarrowText}>{t("statistics.helpedAnimals")}</p>
         </div>
         <div className={s.statItem}>
           <span>75</span>
-          <p>{t("statistics.helpedThisMonth")}</p>
+          <p className={s.statNarrowText}>{t("statistics.helpedThisMonth")}</p>
         </div>
         <div className={s.statItem}>
           <span>550</span>

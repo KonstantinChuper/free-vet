@@ -8,9 +8,7 @@ const container = document.getElementById('root');
 const root = createRoot(container); // Создаем корневой элемент
 
 root.render(
-  <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>
 );

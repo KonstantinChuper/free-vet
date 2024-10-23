@@ -4,16 +4,17 @@ import Opportunity from "../../components/opportunity/Opportunity.jsx";
 import Statistics from "../../components/statistics/Statistics.jsx";
 import TailBook from "../../components/tailBook/TailBook.jsx";
 import Footer from "../../components/footer/Footer.jsx";
+import Container from "../../components/container/Container.jsx";
 
 const MainPage = () => {
   return (
-    <div className={s.mainPage}>
+    <Container>
       <MainHeader />
       <Opportunity />
       <Statistics />
       <TailBook />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

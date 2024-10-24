@@ -19,6 +19,7 @@ import Q_confirmationPage from './pages/addQuestion/q_confirmationPage/Q_confirm
 import P_userPage from "./pages/profile/p_userPage/P_userPage";
 import Loader from "./components/loader/Loader"; 
 import L_phoneLoginPage from './pages/login/l_phoneLoginPage/L_phoneLoginPage';
+import DonatePage from './pages/donatePage/DonatePage';
 
 
 function App() {
@@ -59,6 +60,8 @@ function App() {
         <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} /> 
+        <Route path="/donate" element={<DonatePage />} />
+
       </Routes>
     </div>
   );

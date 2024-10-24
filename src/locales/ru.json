@@ -323,5 +323,23 @@
     "allVetBooks": "все",
     "myAnimalsTitle": "Мои животные",
     "strayAnimalsTitle": "Бездомные животные"
+  },
+    "DonatePage": {
+    "title": "Поддержать сервис",
+    "financialSupportTitle": "Финансовая поддержка",
+    "oneTimeSupportTitle": "Единовременная поддержка",
+    "amountPlaceholder": "Сумма доната (евро)",
+    "amountHelpText": "Вы можете указать любую комфортную для Вас сумму",
+    "payButton": "Оплатить",
+    "otherSupportOptionsTitle": "Другие варианты поддержки",
+    "moreSupportInfo": "Больше вариантов поддержки вы можете найти на сайте сообщества TailBook",
+    "learnMoreButton": "Ознакомиться",
+    "supportAnytimeText": "Вы в любое время можете поддержать FreeVet в этом разделе",
+    "joinProjectTitle": "Присоединиться к проекту",
+    "joinProjectDescription": "Если Вы готовы помочь волонтером и хотите присоединиться к нашим специалистам: ветеринарам, биологам, зоозащитникам – напишите нам или заполните форму со страницы сервиса.",
+    "fillFormButton": "Заполнить форму",
+    "contactUsButton": "Написать нам",
+    "applyButton": "Подать заявку",
+    "footerThankYou": "Спасибо за Вашу поддержку!"
   }
 }

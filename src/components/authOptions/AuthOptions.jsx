@@ -48,11 +48,11 @@ const AuthOptions = () => {
           <img src={phone} alt="Phone Login" className={s.icon} />
         </button>
 
-        <a href={`${API_BASE_URL}/users/login/facebook`}>
+        <a href={`${API_BASE_URL}/api/users/login/facebook`}>
           <img src={facebook} alt="Facebook Login" className={s.icon} />
         </a>
 
-        <a href={`${API_BASE_URL}/users/login/google`}>
+        <a href={`${API_BASE_URL}/api/users/login/google`}>
           <img src={google} alt="Google Login" className={s.icon} />
         </a>
 
@@ -73,11 +73,11 @@ const AuthOptions = () => {
           <img src={phone} alt="Phone Login" className={s.icon} />
         </Link>
 
-        <a href={`${API_BASE_URL}/users/login/facebook`}>
+        <a href={`${API_BASE_URL}/api/users/login/facebook`}>
           <img src={facebook} alt="Facebook Login" className={s.icon} />
         </a>
 
-        <a href={`${API_BASE_URL}/users/login/google`}>
+        <a href={`${API_BASE_URL}/api/users/login/google`}>
           <img src={google} alt="Google Login" className={s.icon} />
         </a>
 

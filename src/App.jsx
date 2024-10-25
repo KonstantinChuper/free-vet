@@ -55,6 +55,7 @@ function App() {
           <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
           <Route path="/vetbook" element={<VetBookPage />} />
           <Route path="/profile" element={<P_userPage />} />
+          <Route path="/donate" element={<DonatePage />} />
         </Routes>
       </Router>
     </div>

@@ -9,6 +9,7 @@ import FileUploader from "../../../components/fileUploader/FileUploader";
 import CustomButton from "../../../components/customButton/CustomButton";
 import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 
 const L_createVetBookPage = () => {
   const { t } = useTranslation();
@@ -143,8 +144,14 @@ const L_createVetBookPage = () => {
             text={t("l_createVetBookPage.noCreateBtn")}
             disabled={isCancelButtonDisabled}
           />
-          <CustomButton
+          {/* <CustomButton
             type="submit"
+            customStyle={{ whiteSpace: "nowrap" }}
+            padding={"16px 34px"}
+            text={t("l_createVetBookPage.createBtn")}
+            disabled={isCreateButtonDisabled}
+          /> */}
+          <CustomButtonSubmit
             customStyle={{ whiteSpace: "nowrap" }}
             padding={"16px 34px"}
             text={t("l_createVetBookPage.createBtn")}

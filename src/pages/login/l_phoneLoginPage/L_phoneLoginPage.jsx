@@ -73,7 +73,6 @@ const L_phoneLoginPage = () => {
         </p>
         <ErrorMessage message={errorMessage} />
       </div>
-
       <CustomButtonSubmit
         type="submit"
         text={t("registrationPage.submitButton")}

@@ -21,7 +21,7 @@ const apiClientMultipart = axios.create({
 // 1. users/login/google/ - регистрация и вход google
 export const loginUserGoogle = async (data) => {
   try {
-    const response = await apiClientJson.post("api/users/login/google/", data);
+    const response = await apiClientJson.post("/api/users/login/google/", data);
     return response.data;
   } catch (error) {
     console.error("Ошибка входа:", error);
@@ -32,7 +32,7 @@ export const loginUserGoogle = async (data) => {
 // 2. users/login/facebook/ - регистрация и вход facebook
 export const loginUserFacebook = async (data) => {
   try {
-    const response = await apiClientJson.post("api/users/login/facebook/", data);
+    const response = await apiClientJson.post("/api/users/login/facebook/", data);
     return response.data;
   } catch (error) {
     console.error("Ошибка входа:", error);
@@ -43,7 +43,7 @@ export const loginUserFacebook = async (data) => {
 // 3. users/register/ - регистрация по телефону
 export const createUser = async (data) => {
   try {
-    const response = await apiClientMultipart.post("api/users/register/", data);
+    const response = await apiClientMultipart.post("/api/users/register/", data);
     return response.data;
   } catch (error) {
     console.error("Ошибка создания юзера:", error);
@@ -54,7 +54,7 @@ export const createUser = async (data) => {
 // 4. users/login/ - вход по телефону
 export const loginUserPhone = async (data) => {
   try {
-    const response = await apiClientJson.post("api/users/login/", data);
+    const response = await apiClientJson.post("/api/users/login/", data);
     return response.data;
   } catch (error) {
     console.error("Ошибка входа:", error);
@@ -65,7 +65,7 @@ export const loginUserPhone = async (data) => {
 // 5. users/verify/ - верификация по смс
 export const verifyUserSMS = async (data) => {
   try {
-    const response = await apiClientJson.post("api/users/verify/ ", data);
+    const response = await apiClientJson.post("/api/users/verify/ ", data);
     return response.data;
   } catch (error) {
     console.error("Ошибка верификации:", error);
@@ -76,7 +76,7 @@ export const verifyUserSMS = async (data) => {
 // 6. questions/add/ - отправка вопроса
 export const addQuestion = async (data) => {
   try {
-    const response = await apiClientMultipart.post("api/questions/add/", data);
+    const response = await apiClientMultipart.post("/api/questions/add/", data);
     return response.data;
   } catch (error) {
     console.error("Ошибка отправки вопроса:", error);

@@ -19,7 +19,7 @@ const useVerificationCode = (initialSeconds = 90) => {
 
   const fetchVerificationCode = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/users/verify/`);
+      const response = await axios.get(`${API_BASE_URL}/api/users/verify/`);
       setVerificationCode(response.data.code);
     } catch (error) {
       console.error("Error fetching verification code:", error);

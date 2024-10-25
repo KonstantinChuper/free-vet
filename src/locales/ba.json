@@ -327,5 +327,23 @@
     "allVetBooks": "sve",
     "myAnimalsTitle": "Moje životinje",
     "strayAnimalsTitle": "Beskućne životinje"
+  },
+    "DonatePage": {
+    "title": "Podržite uslugu",
+    "financialSupportTitle": "Finansijska podrška",
+    "oneTimeSupportTitle": "Jednokratna podrška",
+    "amountPlaceholder": "Iznos donacije (eura)",
+    "amountHelpText": "Možete navesti bilo koji iznos koji vam odgovara",
+    "payButton": "Plati",
+    "otherSupportOptionsTitle": "Druge opcije podrške",
+    "moreSupportInfo": "Više opcija podrške možete pronaći na web stranici zajednice TailBook",
+    "learnMoreButton": "Saznaj više",
+    "supportAnytimeText": "Možete podržati FreeVet u bilo kojem trenutku u ovom odjeljku",
+    "joinProjectTitle": "Pridružite se projektu",
+    "joinProjectDescription": "Ako ste spremni pomoći kao volonter i želite se pridružiti našim stručnjacima: veterinarima, biologima, zaštitarima životinja – pišite nam ili popunite obrazac na stranici servisa.",
+    "fillFormButton": "Popunite obrazac",
+    "contactUsButton": "Kontaktirajte nas",
+    "applyButton": "Prijavite se",
+    "footerThankYou": "Hvala vam na vašoj podršci!"
   }
 }

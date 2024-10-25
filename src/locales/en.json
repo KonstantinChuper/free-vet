@@ -328,5 +328,23 @@
     "allVetBooks": "all",
     "myAnimalsTitle": "My animals",
     "strayAnimalsTitle": "Stray animals"
+  },
+    "DonatePage": {
+    "title": "Support the Service",
+    "financialSupportTitle": "Financial Support",
+    "oneTimeSupportTitle": "One-Time Support",
+    "amountPlaceholder": "Donation Amount (euros)",
+    "amountHelpText": "You can specify any amount that is comfortable for you",
+    "payButton": "Pay",
+    "otherSupportOptionsTitle": "Other Support Options",
+    "moreSupportInfo": "You can find more support options on the TailBook community website",
+    "learnMoreButton": "Learn More",
+    "supportAnytimeText": "You can support FreeVet at any time in this section",
+    "joinProjectTitle": "Join the Project",
+    "joinProjectDescription": "If you are ready to help as a volunteer and want to join our specialists: veterinarians, biologists, animal protectors – write to us or fill out the form on the service page.",
+    "fillFormButton": "Fill Out the Form",
+    "contactUsButton": "Contact Us",
+    "applyButton": "Apply",
+    "footerThankYou": "Thank you for your support!"
   }
 }

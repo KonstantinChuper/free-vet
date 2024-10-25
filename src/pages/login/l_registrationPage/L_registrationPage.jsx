@@ -1,16 +1,18 @@
 import s from "./l_registrationPage.module.css";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import CustomInput from "../../../components/customInput/CustomInput";
-import CustomButton from "../../../components/customButton/CustomButton";
 import FileUploader from "../../../components/fileUploader/FileUploader";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { useTranslation } from "react-i18next";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
+import { createUser } from "../../../utils/api";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 
 const L_registrationPage = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -30,15 +32,13 @@ const L_registrationPage = () => {
         formData.append("image", image);
       }
 
-      await axios.post("/", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await createUser(formData);
+      console.log("Ответ от API:", response);
 
       reset();
       setImage(null);
     } catch (error) {
+      setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
     }
   };
@@ -47,12 +47,8 @@ const L_registrationPage = () => {
     <form className={s.l_registrationPage} onSubmit={handleSubmit(onSubmit)}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <FormHeader path="/" titleKey={t("registrationPage.header")} />
-
         <FileUploader maxFiles={1} boxSize={72} borderRadius={15} />
-        <p style={{ marginTop: "8px", textAlign: "center" }}>
-          {t("registrationPage.addPhoto")}
-        </p>
-
+        <p style={{ marginTop: "8px", textAlign: "center" }}>{t("registrationPage.addPhoto")}</p>
         <label style={{ alignSelf: "start" }}>
           {t("registrationPage.nameLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
@@ -65,7 +61,6 @@ const L_registrationPage = () => {
           width={335}
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
-
         <label style={{ alignSelf: "start" }}>
           {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
@@ -81,12 +76,18 @@ const L_registrationPage = () => {
           width={335}
         />
         {errors.phone && <p style={{ color: "red" }}>{errors.phone.message}</p>}
+        <ErrorMessage message={errorMessage} />
       </div>
 
       <div className={s.btnPrivacy_box}>
-        <CustomButton
+        {/* <CustomButton
           link="/verification"
           type="submit"
+          text={t("registrationPage.submitButton")}
+          padding="16px 78px"
+          disabled={!isValid}
+        /> */}
+        <CustomButtonSubmit
           text={t("registrationPage.submitButton")}
           padding="16px 78px"
           disabled={!isValid}

@@ -65,6 +65,10 @@
   "customStickTitle": {
     "userText": "Utilisateur"
   },
+  "errorMessages": {
+    "fetchError": "Erreur de chargement des données depuis le serveur",
+    "formSendError": "Erreur lors de l'envoi du formulaire. Veuillez réessayer."
+  },
   "fileUploader": {
     "uploadLimitError": "Vous pouvez télécharger jusqu'à {{maxFiles}} fichiers.",
     "unsupportedFileType": "Le fichier {{fileName}} a un type non pris en charge."
@@ -323,5 +327,23 @@
     "allVetBooks": "tous",
     "myAnimalsTitle": "Mes animaux",
     "strayAnimalsTitle": "Animaux errants"
+  },
+    "DonatePage": {
+    "title": "Soutenir le service",
+    "financialSupportTitle": "Soutien financier",
+    "oneTimeSupportTitle": "Soutien ponctuel",
+    "amountPlaceholder": "Montant du don (euros)",
+    "amountHelpText": "Vous pouvez indiquer le montant qui vous convient",
+    "payButton": "Payer",
+    "otherSupportOptionsTitle": "Autres options de soutien",
+    "moreSupportInfo": "Vous pouvez trouver d'autres options de soutien sur le site de la communauté TailBook",
+    "learnMoreButton": "En savoir plus",
+    "supportAnytimeText": "Vous pouvez soutenir FreeVet à tout moment dans cette section",
+    "joinProjectTitle": "Rejoignez le projet",
+    "joinProjectDescription": "Si vous êtes prêt à aider en tant que bénévole et souhaitez rejoindre nos spécialistes : vétérinaires, biologistes, protecteurs des animaux – écrivez-nous ou remplissez le formulaire sur la page du service.",
+    "fillFormButton": "Remplir le formulaire",
+    "contactUsButton": "Nous contacter",
+    "applyButton": "Postuler",
+    "footerThankYou": "Merci pour votre soutien !"
   }
 }

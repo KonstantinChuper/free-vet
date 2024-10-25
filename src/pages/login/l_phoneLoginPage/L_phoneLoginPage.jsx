@@ -6,10 +6,13 @@ import CustomInput from "../../../components/customInput/CustomInput";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { loginUserPhone } from "../../../utils/api.js";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit.jsx";
+import { useState } from "react";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge.jsx";
 
 const L_phoneLoginPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -37,6 +40,7 @@ const L_phoneLoginPage = () => {
       }
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);
+      setErrorMessage(t("errorMessages.formSendError"));
     }
   };
 
@@ -67,8 +71,8 @@ const L_phoneLoginPage = () => {
         <p className={s.l_phoneLoginPage_accessRestoration}>
           {t("phoneLoginPage.accessRestoration")}
         </p>
+        <ErrorMessage message={errorMessage} />
       </div>
-
       <CustomButtonSubmit
         type="submit"
         text={t("registrationPage.submitButton")}

@@ -14,12 +14,12 @@
   line-height: 0.6;
 }
 .l_verificationCode {
-    color: var(--color-main);
-    font-weight: bold;
-    text-align: center;
-    padding-top: 24px;
-    margin-bottom: 11px;
-    line-height: 0.6;
+  color: var(--color-main);
+  font-weight: bold;
+  text-align: center;
+  padding-top: 24px;
+  margin-bottom: 11px;
+  line-height: 0.6;
 }
 .form {
   display: flex;
@@ -29,9 +29,10 @@
   flex: 1;
 }
 .buttonLine {
-    display: flex;
-    gap: 8px;
-    margin: 67px 0;
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 67px;
 }
 .button {
   padding: 16px 54px;

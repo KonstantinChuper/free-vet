@@ -69,6 +69,10 @@
     "uploadLimitError": "Možete prenijeti do {{maxFiles}} datoteka.",
     "unsupportedFileType": "Datoteka {{fileName}} ima nepodržan tip."
   },
+  "errorMessages": {
+    "fetchError": "Грешка при вчитување на податоците од серверот",
+    "formSendError": "Грешка при испраќање на формата. Ве молиме обидете се повторно."
+  },
   "footer": {
     "main": "Početna",
     "profile": "Profil",
@@ -323,5 +327,23 @@
     "allVetBooks": "sve",
     "myAnimalsTitle": "Moje životinje",
     "strayAnimalsTitle": "Beskućne životinje"
+  },
+    "DonatePage": {
+    "title": "Podržite servis",
+    "financialSupportTitle": "Finansijska podrška",
+    "oneTimeSupportTitle": "Jednokratna podrška",
+    "amountPlaceholder": "Iznos donacije (eura)",
+    "amountHelpText": "Možete unijeti bilo koji iznos koji vam odgovara",
+    "payButton": "Plati",
+    "otherSupportOptionsTitle": "Drugi načini podrške",
+    "moreSupportInfo": "Više načina podrške možete pronaći na sajtu zajednice TailBook",
+    "learnMoreButton": "Saznajte više",
+    "supportAnytimeText": "U svakom trenutku možete podržati FreeVet na ovoj stranici",
+    "joinProjectTitle": "Pridružite se projektu",
+    "joinProjectDescription": "Ako ste spremni da pomognete kao volonter i želite da se pridružite našim stručnjacima: veterinarima, biologima, zaštitarima životinja – pišite nam ili popunite formular sa stranice servisa.",
+    "fillFormButton": "Popunite formular",
+    "contactUsButton": "Pišite nam",
+    "applyButton": "Prijavite se",
+    "footerThankYou": "Hvala vam na podršci!"
   }
 }

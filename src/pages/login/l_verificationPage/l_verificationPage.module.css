@@ -28,7 +28,8 @@
   border: none;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   color: white;
-  margin: 67px 0;
+  margin-top: 20px;
+  margin-bottom: 67px;
 }
 .button:disabled {
   cursor: default;

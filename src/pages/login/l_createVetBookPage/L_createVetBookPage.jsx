@@ -8,6 +8,8 @@ import CustomInput from "../../../components/customInput/CustomInput";
 import FileUploader from "../../../components/fileUploader/FileUploader";
 import CustomButton from "../../../components/customButton/CustomButton";
 import { useTranslation } from "react-i18next";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 
 const L_createVetBookPage = () => {
   const { t } = useTranslation();
@@ -21,6 +23,7 @@ const L_createVetBookPage = () => {
   });
 
   const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onUpload = (files) => {
     setUploadedFiles(files);
@@ -44,6 +47,7 @@ const L_createVetBookPage = () => {
       setUploadedFiles([]);
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);
+      setErrorMessage(t("errorMessages.formSendError"));
     }
   };
 
@@ -53,7 +57,7 @@ const L_createVetBookPage = () => {
   return (
     <div className={s.l_createVetBookPage}>
       <div className={s.formHeader}>
-        <h2>{t("l_createVetBookPage.header")}</h2> {/* Заголовок */}
+        <h2>{t("l_createVetBookPage.header")}</h2>
         <Link to="/main" className={s.formHeader_closeBtn}>
           <img src={close} alt="arrow to left side" />
         </Link>
@@ -140,8 +144,14 @@ const L_createVetBookPage = () => {
             text={t("l_createVetBookPage.noCreateBtn")}
             disabled={isCancelButtonDisabled}
           />
-          <CustomButton
+          {/* <CustomButton
             type="submit"
+            customStyle={{ whiteSpace: "nowrap" }}
+            padding={"16px 34px"}
+            text={t("l_createVetBookPage.createBtn")}
+            disabled={isCreateButtonDisabled}
+          /> */}
+          <CustomButtonSubmit
             customStyle={{ whiteSpace: "nowrap" }}
             padding={"16px 34px"}
             text={t("l_createVetBookPage.createBtn")}
@@ -149,6 +159,7 @@ const L_createVetBookPage = () => {
           />
         </div>
       </form>
+      <ErrorMessage message={errorMessage} />
     </div>
   );
 };

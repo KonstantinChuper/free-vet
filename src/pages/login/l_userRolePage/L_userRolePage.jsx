@@ -8,6 +8,7 @@ import CustomStickTitle from "../../../components/customStickTitle/CustomStickTi
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 
 const L_userRolePage = () => {
   const { t } = useTranslation();
@@ -259,11 +260,17 @@ const L_userRolePage = () => {
           <ErrorMessage message={errorMessage} />
         </div>
         <div className={s.buttonBox}>
-          <CustomButton
+          {/* <CustomButton
             onClick={handleSubmit}
             text={t("userRolePage.saveBtn")}
             padding="16px 78px"
             link={roleBasedLink}
+            disabled={!isAnyRoleSelected}
+          /> */}
+          <CustomButtonSubmit
+            onClick={handleSubmit}
+            text={t("userRolePage.saveBtn")}
+            padding="16px 78px"
             disabled={!isAnyRoleSelected}
           />
         </div>

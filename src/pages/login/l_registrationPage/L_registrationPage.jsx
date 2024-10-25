@@ -1,13 +1,13 @@
 import s from "./l_registrationPage.module.css";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import CustomInput from "../../../components/customInput/CustomInput";
-import CustomButton from "../../../components/customButton/CustomButton";
 import FileUploader from "../../../components/fileUploader/FileUploader";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
+import { createUser } from "../../../utils/api";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 
 const L_registrationPage = () => {
   const { t } = useTranslation();
@@ -32,11 +32,8 @@ const L_registrationPage = () => {
         formData.append("image", image);
       }
 
-      await axios.post(`${API_BASE_URL}/users/register/`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await createUser(formData);
+      console.log("Ответ от API:", response);
 
       reset();
       setImage(null);
@@ -83,9 +80,14 @@ const L_registrationPage = () => {
       </div>
 
       <div className={s.btnPrivacy_box}>
-        <CustomButton
+        {/* <CustomButton
           link="/verification"
           type="submit"
+          text={t("registrationPage.submitButton")}
+          padding="16px 78px"
+          disabled={!isValid}
+        /> */}
+        <CustomButtonSubmit
           text={t("registrationPage.submitButton")}
           padding="16px 78px"
           disabled={!isValid}

@@ -65,6 +65,10 @@
   "customStickTitle": {
     "userText": "Utilisateur"
   },
+  "errorMessages": {
+    "fetchError": "Erreur de chargement des données depuis le serveur",
+    "formSendError": "Erreur lors de l'envoi du formulaire. Veuillez réessayer."
+  },
   "fileUploader": {
     "uploadLimitError": "Vous pouvez télécharger jusqu'à {{maxFiles}} fichiers.",
     "unsupportedFileType": "Le fichier {{fileName}} a un type non pris en charge."

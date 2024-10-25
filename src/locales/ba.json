@@ -65,6 +65,10 @@
   "customStickTitle": {
     "userText": "Korisnik"
   },
+  "errorMessages": {
+    "fetchError": "Greška pri učitavanju podataka sa servera",
+    "formSendError": "Greška pri slanju obrasca. Molimo pokušajte ponovo."
+  },
   "fileUploader": {
     "uploadLimitError": "Možete prenijeti do {{maxFiles}} datoteka.",
     "unsupportedFileType": "Datoteka {{fileName}} ima nepodržan tip."

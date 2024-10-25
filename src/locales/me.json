@@ -69,6 +69,10 @@
     "uploadLimitError": "Možete prenijeti do {{maxFiles}} datoteka.",
     "unsupportedFileType": "Datoteka {{fileName}} ima nepodržan tip."
   },
+  "errorMessages": {
+    "fetchError": "Грешка при вчитување на податоците од серверот",
+    "formSendError": "Грешка при испраќање на формата. Ве молиме обидете се повторно."
+  },
   "footer": {
     "main": "Početna",
     "profile": "Profil",

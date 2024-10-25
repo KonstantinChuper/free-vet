@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import API_BASE_URL from "../utils/api.js";
 import axios from "axios";
-
-//TODO заменить на реальный API, поменять "123456" на verificationCode
 
 const useVerificationCode = (initialSeconds = 90) => {
   const { handleSubmit, control, setValue, watch, reset } = useForm();
@@ -20,7 +19,7 @@ const useVerificationCode = (initialSeconds = 90) => {
 
   const fetchVerificationCode = async () => {
     try {
-      const response = await axios.get("/api/verification-code"); // Заменить на реальный API
+      const response = await axios.get(`${API_BASE_URL}/users/verify/`);
       setVerificationCode(response.data.code);
     } catch (error) {
       console.error("Error fetching verification code:", error);
@@ -85,7 +84,7 @@ const useVerificationCode = (initialSeconds = 90) => {
 
   const validateCode = (code) => {
     // поменять "123456" на verificationCode
-    if (code !== "123456") {
+    if (code !== verificationCode) {
       setCodeError(true);
       setErrorVisible(true);
       if (errorTimer) {

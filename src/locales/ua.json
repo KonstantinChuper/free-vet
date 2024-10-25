@@ -65,6 +65,10 @@
   "customStickTitle": {
     "userText": "Користувач"
   },
+  "errorMessages": {
+    "fetchError": "Помилка завантаження даних з сервера",
+    "formSendError": "Помилка при відправці форми. Будь ласка, спробуйте ще раз."
+  },
   "fileUploader": {
     "uploadLimitError": "Ви можете завантажити до {{maxFiles}} файлів.",
     "unsupportedFileType": "Файл {{fileName}} має непідтримуваний тип."

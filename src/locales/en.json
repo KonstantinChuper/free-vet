@@ -65,6 +65,10 @@
   "customStickTitle": {
     "userText": "User"
   },
+  "errorMessages": {
+    "fetchError": "Error loading data from the server",
+    "formSendError": "Error submitting the form. Please try again."
+  },
   "fileUploader": {
     "uploadLimitError": "You can upload up to {{maxFiles}} files.",
     "unsupportedFileType": "File {{fileName}} has an unsupported type."

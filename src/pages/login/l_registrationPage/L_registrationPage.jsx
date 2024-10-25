@@ -7,10 +7,12 @@ import CustomButton from "../../../components/customButton/CustomButton";
 import FileUploader from "../../../components/fileUploader/FileUploader";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { useTranslation } from "react-i18next";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 
 const L_registrationPage = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const {
     register,
@@ -30,7 +32,7 @@ const L_registrationPage = () => {
         formData.append("image", image);
       }
 
-      await axios.post("/", formData, {
+      await axios.post(`${API_BASE_URL}/users/register/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -39,6 +41,7 @@ const L_registrationPage = () => {
       reset();
       setImage(null);
     } catch (error) {
+      setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
     }
   };
@@ -47,12 +50,8 @@ const L_registrationPage = () => {
     <form className={s.l_registrationPage} onSubmit={handleSubmit(onSubmit)}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <FormHeader path="/" titleKey={t("registrationPage.header")} />
-
         <FileUploader maxFiles={1} boxSize={72} borderRadius={15} />
-        <p style={{ marginTop: "8px", textAlign: "center" }}>
-          {t("registrationPage.addPhoto")}
-        </p>
-
+        <p style={{ marginTop: "8px", textAlign: "center" }}>{t("registrationPage.addPhoto")}</p>
         <label style={{ alignSelf: "start" }}>
           {t("registrationPage.nameLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
@@ -65,7 +64,6 @@ const L_registrationPage = () => {
           width={335}
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
-
         <label style={{ alignSelf: "start" }}>
           {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
@@ -81,6 +79,7 @@ const L_registrationPage = () => {
           width={335}
         />
         {errors.phone && <p style={{ color: "red" }}>{errors.phone.message}</p>}
+        <ErrorMessage message={errorMessage} />
       </div>
 
       <div className={s.btnPrivacy_box}>

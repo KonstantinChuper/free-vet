@@ -7,9 +7,12 @@ import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
 import CustomStickTitle from "../../../components/customStickTitle/CustomStickTitle";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { useTranslation } from "react-i18next";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 
 const L_userRolePage = () => {
   const { t } = useTranslation();
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [userRoles, setUserRoles] = useState({
     homelessAnimals: false,
@@ -83,6 +86,7 @@ const L_userRolePage = () => {
       });
       reset();
     } catch (error) {
+      setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
     }
   };
@@ -97,9 +101,7 @@ const L_userRolePage = () => {
           <h5 className={s.formBox_header}>{t("userRolePage.role")}</h5>
 
           <div
-            className={`${s.formBox_checkboxBox_user} ${
-              isVetRoleSelected ? s.disabledBox : ""
-            }`}
+            className={`${s.formBox_checkboxBox_user} ${isVetRoleSelected ? s.disabledBox : ""}`}
           >
             <span>
               <p className={isVetRoleSelected ? s.disabledText : ""}>
@@ -182,10 +184,7 @@ const L_userRolePage = () => {
                 className={isVetRoleSelected ? s.disabledText : ""}
                 style={{ position: "absolute", bottom: "-1px", right: "-1px" }}
               >
-                <CustomStickTitle
-                  backgroundColor={"white"}
-                  text={t("userRolePage.userStick")}
-                />
+                <CustomStickTitle backgroundColor={"white"} text={t("userRolePage.userStick")} />
               </span>
             </span>
           </div>
@@ -253,13 +252,11 @@ const L_userRolePage = () => {
                 className={isUserRoleSelected ? s.disabledText : ""}
                 style={{ position: "absolute", bottom: "-1px", right: "-1px" }}
               >
-                <CustomStickTitle
-                  text={t("userRolePage.vetStick")}
-                  backgroundColor={"white"}
-                />
+                <CustomStickTitle text={t("userRolePage.vetStick")} backgroundColor={"white"} />
               </span>
             </div>
           </div>
+          <ErrorMessage message={errorMessage} />
         </div>
         <div className={s.buttonBox}>
           <CustomButton

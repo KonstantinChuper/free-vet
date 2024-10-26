@@ -185,7 +185,8 @@
     "homeless": "L'animal est sans abri : ",
     "questionPlaceholder": "Entrez votre question",
     "submitButton": "Soumettre la question",
-    "requiredField": "Champ requis"
+    "requiredField": "Champ requis",
+    "writeQuestion": "Veuillez écrire votre question"
   },
   "mainHeader": {
     "title": "Bienvenue chez FreeVet",

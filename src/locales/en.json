@@ -186,7 +186,8 @@
     "homeless": "Animal is homeless: ",
     "questionPlaceholder": "Enter your question",
     "submitButton": "Submit question",
-    "requiredField": "Field is required"
+    "requiredField": "Field is required",
+    "writeQuestion": "Write your question"
   },
   "mainHeader": {
     "title": "Welcome to FreeVet",

@@ -185,7 +185,8 @@
     "homeless": "Životinja je beskućna: ",
     "questionPlaceholder": "Unesite vaše pitanje",
     "submitButton": "Pošalji pitanje",
-    "requiredField": "Polje je obavezno"
+    "requiredField": "Polje je obavezno",
+    "writeQuestion": "Napišite pitanje"
   },
   "mainHeader": {
     "title": "Dobrodošli u FreeVet",

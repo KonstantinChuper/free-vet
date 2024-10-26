@@ -185,7 +185,8 @@
     "homeless": "Тварина безпритульна: ",
     "questionPlaceholder": "Введіть ваше питання",
     "submitButton": "Надіслати питання",
-    "requiredField": "Поле обов'язкове"
+    "requiredField": "Поле обов'язкове",
+    "writeQuestion": "Напишіть Ваше питання"
   },
   "mainHeader": {
     "title": "Ласкаво просимо до FreeVet",

@@ -51,7 +51,6 @@
     right: 4px;
 }
 
-
 .green {
     fill: var(--color-main);
 }
@@ -72,6 +71,7 @@
     height: 97px; 
     border-radius: var(--border-radius-small);
     object-fit: cover;
+    cursor: pointer;
 }
 
 .imageContainer {

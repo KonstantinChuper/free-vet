@@ -29,7 +29,7 @@
 
   --box-shadow: 0 2px 7px 2px #00000040;
 
-  --container-width: 100%;
+  --container-width: 375px;
   --container-padding-x: 15px;
 
   --transition-duration: all 0.2s;
@@ -52,7 +52,6 @@ body,
 html {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 14px;
-  /*0,7778 rem*/
   font-weight: 300;
   line-height: 1.1;
   color: var(--color-dark);
@@ -109,20 +108,12 @@ a {
   cursor: pointer;
 }
 
-/* Normalise -------------------------------------------------- */
-/**
-  Нормализация блочной модели
- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/**
-    Убираем внутренние отступы слева тегам списков,
-    у которых есть атрибут class
-   */
 :where(ul, ol):where([class]) {
   padding-left: 0;
 }

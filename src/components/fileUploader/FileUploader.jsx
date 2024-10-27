@@ -78,7 +78,7 @@ const FileUploader = ({
             )}
             <button className={s.removeButton} onClick={() => removeFile(index)}>
               <img
-                style={{ width: "5px", height: "5px", alignSelf: "center" }}
+                style={{ width: "10px", height: "10px", alignSelf: "center" }}
                 src={close}
                 alt="close"
               />

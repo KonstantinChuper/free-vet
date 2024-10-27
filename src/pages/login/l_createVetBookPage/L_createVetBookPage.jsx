@@ -130,6 +130,10 @@ const L_createVetBookPage = () => {
         />
         {errors.petGender && <p style={{ color: "red" }}>{errors.petGender.message}</p>}
 
+        <div className={s.errorBox}>
+          <ErrorMessage message={errorMessage} />
+        </div>
+
         <p
           className={s.vetBook_description}
           dangerouslySetInnerHTML={{
@@ -152,14 +156,13 @@ const L_createVetBookPage = () => {
             disabled={isCreateButtonDisabled}
           /> */}
           <CustomButtonSubmit
-            customStyle={{ whiteSpace: "nowrap" }}
+            customStyle={{ whiteSpace: "nowrap", width: "165px" }}
             padding={"16px 34px"}
             text={t("l_createVetBookPage.createBtn")}
             disabled={isCreateButtonDisabled}
           />
         </div>
       </form>
-      <ErrorMessage message={errorMessage} />
     </div>
   );
 };

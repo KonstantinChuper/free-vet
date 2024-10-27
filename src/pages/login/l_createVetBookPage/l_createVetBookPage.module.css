@@ -57,7 +57,19 @@ margin: 8px 0;
   font-style: italic;
 }
 
+.l_createVetBookPage form {
+  padding-bottom: 34px;
+}
+
 .btnBox {
   display: flex;
+  justify-content: center;
   gap: 8px;
+}
+
+.errorBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 15px;
 }

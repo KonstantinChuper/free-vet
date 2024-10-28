@@ -16,34 +16,50 @@ const FileUploader = ({
 
   useEffect(() => {
     if (typeof onUpload === "function") {
-      onUpload(files);
-    } else {
-      console.error("onUpload is not a function");
+      const fileData = files.map(({ file, url }) => ({
+        file,
+        url,
+        type: file.type,
+        name: file.name,
+      }));
+      onUpload(fileData);
     }
   }, [files, onUpload]);
 
+
   const handleFileUpload = (event) => {
+    if (!event.target.files) {
+      console.error("No files selected");
+      return;
+    }
     const selectedFiles = Array.from(event.target.files);
     if (files.length + selectedFiles.length > maxFiles) {
       alert(t("fileUploader.uploadLimitError", { maxFiles }));
       return;
     }
 
-    const validFiles = selectedFiles.filter((file) => {
-      if (file.type.startsWith("image/") || file.type.startsWith("video/")) {
-        return true;
-      }
-      alert(t("fileUploader.unsupportedFileType", { fileName: file.name }));
-      return false;
-    });
+    const validFiles = selectedFiles
+      .filter((file) => {
+        if (file.type.startsWith("image/") || file.type.startsWith("video/")) {
+          return true;
+        }
+        alert(t("fileUploader.unsupportedFileType", { fileName: file.name }));
+        return false;
+      })
+      .map((file) => ({
+        file,
+        url: URL.createObjectURL(file),
+      }));
 
     setFiles([...files, ...validFiles]);
   };
 
+
   const removeFile = (index) => {
-    URL.revokeObjectURL(URL.createObjectURL(files[index]));
+    URL.revokeObjectURL(files[index].url);
     setFiles(files.filter((_, i) => i !== index));
   };
+
 
   const handleBoxClick = () => {
     if (fileInputRef.current) {
@@ -54,15 +70,15 @@ const FileUploader = ({
   return (
     <div className={s.uploaderContainer}>
       <div className={s.previewContainer}>
-        {files.map((file, index) => (
+        {files.map((fileObj, index) => (
           <div
             key={index}
             className={s.previewBox}
             style={{ width: boxSize, height: boxSize, borderRadius: borderRadius }}
           >
-            {file.type.startsWith("image/") ? (
+            {fileObj.file.type.startsWith("image/") ? (
               <img
-                src={URL.createObjectURL(file)}
+                src={fileObj.url}
                 alt={`preview-${index}`}
                 className={s.previewImage}
                 style={{ width: boxSize, height: boxSize, borderRadius: borderRadius }}
@@ -73,7 +89,7 @@ const FileUploader = ({
                 className={s.previewImage}
                 style={{ width: boxSize, height: boxSize, borderRadius: borderRadius }}
               >
-                <source src={URL.createObjectURL(file)} />
+                <source src={fileObj.url} />
               </video>
             )}
             <button className={s.removeButton} onClick={() => removeFile(index)}>
@@ -110,15 +126,13 @@ const FileUploader = ({
           </div>
         )}
 
-        {Array.from({ length: Math.max(0, maxFiles - files.length - 1) }).map(
-          (_, idx) => (
-            <div
-              key={idx}
-              className={s.emptyBox}
-              style={{ width: boxSize, height: boxSize, borderRadius: borderRadius }}
-            ></div>
-          )
-        )}
+        {Array.from({ length: Math.max(0, maxFiles - files.length - 1) }).map((_, idx) => (
+          <div
+            key={idx}
+            className={s.emptyBox}
+            style={{ width: boxSize, height: boxSize, borderRadius: borderRadius }}
+          ></div>
+        ))}
       </div>
     </div>
   );

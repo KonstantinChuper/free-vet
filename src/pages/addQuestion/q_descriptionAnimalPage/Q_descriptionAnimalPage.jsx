@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FormHeader from "../../../components/formHeader/FormHeader";
@@ -26,13 +26,25 @@ const Q_descriptionAnimalPage = () => {
     mode: "onChange",
   });
 
-  const onUpload = (uploadedFiles) => {
-    const fileData = uploadedFiles.map((file) => ({
-      data: URL.createObjectURL(file),
-      type: file.type,
-    }));
-    setFiles(fileData);
-  };
+  const onUpload = useCallback(
+    (uploadedFiles) => {
+      const newFiles = uploadedFiles.filter((file) => !files.some((f) => f.name === file.name));
+      if (newFiles.length > 0) {
+        setFiles((prevFiles) => [...prevFiles, ...newFiles]);
+      }
+    },
+    [files]
+  );
+
+  useEffect(() => {
+    return () => {
+      files.forEach((file) => {
+        if (file.url) {
+          URL.revokeObjectURL(file.url);
+        }
+      });
+    };
+  }, []);
 
   const onSubmit = (data) => {
     const formData = {
@@ -70,9 +82,7 @@ const Q_descriptionAnimalPage = () => {
         <FileUploader maxFiles={3} boxSize={104} borderRadius={20} onUpload={onUpload} />
         <label style={{ alignSelf: "start" }}>
           {t("descriptionAnimalPage.petArt")}{" "}
-          <span style={{ color: "#2A9D8F" }}>
-            {t("descriptionAnimalPage.requiredSymbol")}
-          </span>
+          <span style={{ color: "#2A9D8F" }}>{t("descriptionAnimalPage.requiredSymbol")}</span>
         </label>
         <CustomInput
           {...register("petArt", {
@@ -83,16 +93,13 @@ const Q_descriptionAnimalPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder={t("descriptionAnimalPage.petArtPlaceholder")}
           borderColor="var(--color-main)"
           width={328}
         />
         {errors.petArt && <p style={{ color: "red" }}>{errors.petArt.message}</p>}
         <label style={{ alignSelf: "start" }}>
           {t("descriptionAnimalPage.petWeight")}{" "}
-          <span style={{ color: "#2A9D8F" }}>
-            {t("descriptionAnimalPage.requiredSymbol")}
-          </span>
+          <span style={{ color: "#2A9D8F" }}>{t("descriptionAnimalPage.requiredSymbol")}</span>
         </label>
         <CustomInput
           {...register("petWeight", {
@@ -103,16 +110,13 @@ const Q_descriptionAnimalPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder={t("descriptionAnimalPage.petWeightPlaceholder")}
           borderColor="var(--color-main)"
           width={153}
         />
         {errors.petWeight && <p style={{ color: "red" }}>{errors.petWeight.message}</p>}
         <label style={{ alignSelf: "start" }}>
           {t("descriptionAnimalPage.petGender")}{" "}
-          <span style={{ color: "#2A9D8F" }}>
-            {t("descriptionAnimalPage.requiredSymbol")}
-          </span>
+          <span style={{ color: "#2A9D8F" }}>{t("descriptionAnimalPage.requiredSymbol")}</span>
         </label>
         <CustomInput
           {...register("petGender", {
@@ -123,7 +127,6 @@ const Q_descriptionAnimalPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder={t("descriptionAnimalPage.petGenderPlaceholder")}
           borderColor="var(--color-main)"
           width={153}
         />

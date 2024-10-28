@@ -19,26 +19,26 @@ const apiClientMultipart = axios.create({
 });
 
 // 1. users/login/google/ - регистрация и вход google
-export const loginUserGoogle = async (data) => {
-  try {
-    const response = await apiClientJson.post("/api/users/login/google/", data);
-    return response.data;
-  } catch (error) {
-    console.error("Ошибка входа:", error);
-    throw error;
-  }
-};
+// export const loginUserGoogle = async (data) => {
+//   try {
+//     const response = await apiClientJson.post("/api/users/login/google/", data);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Ошибка входа:", error);
+//     throw error;
+//   }
+// };
 
 // 2. users/login/facebook/ - регистрация и вход facebook
-export const loginUserFacebook = async (data) => {
-  try {
-    const response = await apiClientJson.post("/api/users/login/facebook/", data);
-    return response.data;
-  } catch (error) {
-    console.error("Ошибка входа:", error);
-    throw error;
-  }
-};
+// export const loginUserFacebook = async (data) => {
+//   try {
+//     const response = await apiClientJson.post("/api/users/login/facebook/", data);
+//     return response.data;
+//   } catch (error) {
+//     console.error("Ошибка входа:", error);
+//     throw error;
+//   }
+// };
 
 // 3. users/register/ - регистрация по телефону
 export const createUser = async (data) => {

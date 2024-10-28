@@ -1,5 +1,5 @@
 import s from "./authOptions.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import phone from "../../assets/loginIcons/phone.svg";
 import facebook from "../../assets/loginIcons/facebook.svg";
@@ -7,30 +7,23 @@ import google from "../../assets/loginIcons/google.svg";
 import apple from "../../assets/loginIcons/apple.svg";
 import { useTranslation } from "react-i18next";
 import API_BASE_URL from "../../utils/api.js";
-// import { loginUserGoogle, loginUserFacebook } from "../../utils/api.js";
 
 const AuthOptions = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+   useEffect(() => {
+     const params = new URLSearchParams(window.location.search);
+     const userId = params.get("user_id");
 
-  // const handleGoogleLogin = async () => {
-  //   try {
-  //     const response = await loginUserGoogle();
-  //     console.log("Google API response:", response);
-  //   } catch (error) {
-  //     console.error("Ошибка при входе через Google:", error);
-  //   }
-  // };
+     console.log("Current URL:", window.location.href);
+     console.log("User ID from params:", userId);
 
-  // const handleFacebookLogin = async () => {
-  //   try {
-  //     const response = await loginUserFacebook();
-  //     console.log("Facebook API response:", response);
-  //   } catch (error) {
-  //     console.error("Ошибка при входе через Facebook:", error);
-  //   }
-  // };
+     if (userId) {
+       localStorage.setItem("userId", userId);
+       console.log("UserID saved to localStorage:", userId);
+     }
+   }, []);
 
   const handleAppleLogin = () => {
     alert("Apple login не реализован");

@@ -12,7 +12,7 @@ const L_authorizationPage = () => {
   return (
     <div className={s.l_authorizationPage}>
       <div className={s.header}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="logo" />
         <LanguageSwitcher />
       </div>
       <div className={s.banner}>

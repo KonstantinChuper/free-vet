@@ -51,18 +51,18 @@ const CustomInput = forwardRef((props, ref) => {
   );
 });
 
-CustomInput.propTypes = {
-  backgroundColor: PropTypes.string,
-  border: PropTypes.string,
-  borderColor: PropTypes.string,
-  borderRadius: PropTypes.string,
-  padding: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  margin: PropTypes.string,
-  errorMessage: PropTypes.string, // Добавлено для кастомного сообщения об ошибке
-  showError: PropTypes.bool, // Для отображения ошибки
-};
+// CustomInput.propTypes = {
+//   backgroundColor: PropTypes.string,
+//   border: PropTypes.string,
+//   borderColor: PropTypes.string,
+//   borderRadius: PropTypes.string,
+//   padding: PropTypes.string,
+//   placeholder: PropTypes.string.isRequired,
+//   color: PropTypes.string,
+//   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+//   margin: PropTypes.string,
+//   errorMessage: PropTypes.string, // Добавлено для кастомного сообщения об ошибке
+//   showError: PropTypes.bool, // Для отображения ошибки
+// };
 
 export default CustomInput;

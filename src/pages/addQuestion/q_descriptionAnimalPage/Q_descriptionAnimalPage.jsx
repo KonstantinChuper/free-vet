@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FormHeader from "../../../components/formHeader/FormHeader";
@@ -10,12 +10,16 @@ import CustomInput from "../../../components/customInput/CustomInput";
 import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
 import close from "../../../assets/close.svg";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import { addQuestion } from "../../../utils/api";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 
 const Q_descriptionAnimalPage = () => {
   const { t } = useTranslation();
   const [files, setFiles] = useState([]);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const userId = localStorage.getItem("userId");
 
   const {
     register,
@@ -46,16 +50,24 @@ const Q_descriptionAnimalPage = () => {
     };
   }, []);
 
-  const onSubmit = (data) => {
-    const formData = {
+  const onSubmit = async (data) => {
+    try {
+      const formData = {
+      userId,
       petArt: data.petArt,
       petWeight: data.petWeight,
       petGender: data.petGender,
       isHomeless: isCheckboxChecked,
       files: files,
     };
-
+    await addQuestion(formData);
     navigate("/main/question/description-animal/send", { state: formData });
+    } catch (error) {
+      setErrorMessage(t("errorMessages.formSendError"));
+      console.error("Ошибка при отправке формы:", error);
+    }
+    
+    
   };
 
   const handleHomelessChange = (e) => {
@@ -140,6 +152,9 @@ const Q_descriptionAnimalPage = () => {
           />{" "}
           <span>{t("descriptionAnimalPage.homelessCheckbox")}</span>
         </span>
+        <div className={s.errorBox}>
+          <ErrorMessage message={errorMessage} />
+        </div>
         <div className={s.btnBox}>
           <CustomButtonSubmit
             text={t("descriptionAnimalPage.continueButton")}

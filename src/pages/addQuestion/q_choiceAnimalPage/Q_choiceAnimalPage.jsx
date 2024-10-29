@@ -52,6 +52,7 @@ const Q_choiceAnimalPage = () => {
               { src: "https://placehold.co/400", type: "digital" },
               { src: "https://placehold.co/400", type: "digital" },
               { src: "https://placehold.co/400", type: "digital" },
+              { src: "https://placehold.co/400", type: "digital" },
             ],
             svgcolor: "green",
           },
@@ -71,10 +72,7 @@ const Q_choiceAnimalPage = () => {
       <div className={s.q_choiceAnimalPage_newAnimal_box}>
         <h5 dangerouslySetInnerHTML={{ __html: t("questionPage.newAnimal") }} />
         <div className={s.q_choiceAnimalPage_newAnimal_boxBtnTitle}>
-          <div
-            className={s.q_choiceAnimalPage_newAnimal_btnPlus}
-            onClick={handleNewAnimalClick}
-          >
+          <div className={s.q_choiceAnimalPage_newAnimal_btnPlus} onClick={handleNewAnimalClick}>
             <img src={plus} alt="plus" />
             <div className={`${s.circle} ${isNewAnimalSelected ? s.selected : ""}`} />
           </div>

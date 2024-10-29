@@ -55,8 +55,8 @@ const Q_sendQuestionPage = () => {
   return (
     <div className={s.q_sendQuestionPage}>
       <div className={s.q_sendQuestionPage_header}>
-        <FormHeader path="/main" fontSize={36} titleKey={t("questionPage.title")} />
-        <Link to={"/main"}>
+        <FormHeader path="/main/question/choice" fontSize={36} titleKey={t("questionPage.title")} />
+        <Link to={"/main/question/choice"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>

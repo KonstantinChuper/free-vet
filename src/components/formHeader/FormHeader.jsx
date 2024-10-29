@@ -12,9 +12,7 @@ const FormHeader = ({ path, titleKey, headerPadding = "0", fontSize }) => {
       <Link to={path} className={s.formHeader_leftArrowBtn}>
         <img src={leftArrow} alt={t("formHeader.backButtonAlt")} />
       </Link>
-      <h2 style={{ padding: headerPadding, fontSize: fontSize || "22px" }}>
-        {t(titleKey)}
-      </h2>
+      <h2 style={{ padding: headerPadding, fontSize: fontSize || "22px" }}>{t(titleKey)}</h2>
     </div>
   );
 };

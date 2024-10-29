@@ -53,21 +53,19 @@ const Q_descriptionAnimalPage = () => {
   const onSubmit = async (data) => {
     try {
       const formData = {
-      userId,
-      petArt: data.petArt,
-      petWeight: data.petWeight,
-      petGender: data.petGender,
-      isHomeless: isCheckboxChecked,
-      files: files,
-    };
-    await addQuestion(formData);
-    navigate("/main/question/description-animal/send", { state: formData });
+        userId,
+        petArt: data.petArt,
+        petWeight: data.petWeight,
+        petGender: data.petGender,
+        isHomeless: isCheckboxChecked,
+        files: files,
+      };
+      await addQuestion(formData);
+      navigate("/main/question/description-animal/send", { state: formData });
     } catch (error) {
       setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
     }
-    
-    
   };
 
   const handleHomelessChange = (e) => {
@@ -83,7 +81,7 @@ const Q_descriptionAnimalPage = () => {
   return (
     <div className={s.q_descriptionAnimalPage}>
       <div className={s.q_descriptionAnimalPage_header}>
-        <FormHeader path="/main" fontSize={36} titleKey={t("questionPage.title")} />
+        <FormHeader path="/main/question/choice" fontSize={36} titleKey={t("questionPage.title")} />
         <Link to={"/main"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>

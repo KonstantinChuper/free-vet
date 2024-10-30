@@ -50,16 +50,17 @@ const Q_descriptionAnimalPage = () => {
     };
   }, []);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     try {
-      const formData = {
-        userId,
-        petArt: data.petArt,
-        petWeight: data.petWeight,
-        petGender: data.petGender,
-        isHomeless: isCheckboxChecked,
-        files: files,
-      };
+      const formData = new FormData();
+      formData.append("userId", userId);
+      formData.append("petArt", data.petArt);
+      formData.append("petWeight", data.petWeight);
+      formData.append("petGender", data.petGender);
+      formData.append("isHomeless", isCheckboxChecked);
+      files.forEach((file, index) => {
+        formData.append(`files[${index}]`, file);
+      });
       await addQuestion(formData);
       navigate("/main/question/description-animal/send", { state: formData });
     } catch (error) {

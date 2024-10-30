@@ -8,13 +8,16 @@ import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 import { updateUserRole } from "../../../utils/api";
+import { useNavigate } from "react-router-dom";
 
 const L_userRolePage = () => {
   const { t } = useTranslation();
 
   const [errorMessage, setErrorMessage] = useState("");
+  const userId = localStorage.getItem("userId");
 
   const [userRoles, setUserRoles] = useState({
+    userId,
     homelessAnimals: false,
     pets: false,
     volunteer: false,
@@ -23,6 +26,7 @@ const L_userRolePage = () => {
   });
 
   const [vetRoles, setVetRoles] = useState({
+    userId,
     vetDoctor: false,
     cynologist: false,
     zooPsychologist: false,
@@ -47,6 +51,7 @@ const L_userRolePage = () => {
     }));
     if (checked) {
       setVetRoles({
+        userId,
         vetDoctor: false,
         cynologist: false,
         zooPsychologist: false,
@@ -62,6 +67,7 @@ const L_userRolePage = () => {
     }));
     if (checked) {
       setUserRoles({
+        userId,
         homelessAnimals: false,
         pets: false,
         volunteer: false,
@@ -73,14 +79,15 @@ const L_userRolePage = () => {
 
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     try {
-      const formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("phone", data.phone);
-
-      await updateUserRole(formData);
+      if (isUserRoleSelected) {
+        await updateUserRole(userRoles);
+      } else if (isVetRoleSelected) {
+        await updateUserRole(vetRoles);
+      }
       reset();
+      useNavigate(roleBasedLink);
     } catch (error) {
       setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
@@ -255,13 +262,6 @@ const L_userRolePage = () => {
           <ErrorMessage message={errorMessage} />
         </div>
         <div className={s.buttonBox}>
-          {/* <CustomButton
-            onClick={handleSubmit}
-            text={t("userRolePage.saveBtn")}
-            padding="16px 78px"
-            link={roleBasedLink}
-            disabled={!isAnyRoleSelected}
-          /> */}
           <CustomButtonSubmit
             onClick={handleSubmit}
             text={t("userRolePage.saveBtn")}

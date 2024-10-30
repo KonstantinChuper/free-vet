@@ -3,40 +3,25 @@ import { useForm } from "react-hook-form";
 import API_BASE_URL from "../utils/api.js";
 import axios from "axios";
 
-const useVerificationCode = (initialSeconds = 90) => {
+const useVerificationCode = (pnone_number, initialSeconds = 90) => {
   const { handleSubmit, control, setValue, watch, reset } = useForm();
-  const inputRefs = Array(6)
-    .fill(null)
-    .map(() => useRef(null));
+  const inputRefs = Array(6).fill(null).map(() => useRef(null));
   const [isFormValid, setIsFormValid] = useState(false);
   const [seconds, setSeconds] = useState(initialSeconds);
   const [resendAvailable, setResendAvailable] = useState(false);
   const [codeError, setCodeError] = useState(false);
   const [errorVisible, setErrorVisible] = useState(false);
   const [errorTimer, setErrorTimer] = useState(null);
-  const [verificationCode, setVerificationCode] = useState(null);
   const watchAllFields = watch();
 
-  const fetchVerificationCode = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/api/users/verify/`);
-      setVerificationCode(response.data.code);
-    } catch (error) {
-      console.error("Error fetching verification code:", error);
-    }
-  };
-
   useEffect(() => {
-    fetchVerificationCode();
     if (inputRefs[0] && inputRefs[0].current) {
       inputRefs[0].current.focus();
     }
   }, []);
 
   useEffect(() => {
-    const allFieldsFilled = Object.values(watchAllFields).every(
-      (val) => val && val.length === 1
-    );
+    const allFieldsFilled = Object.values(watchAllFields).every((val) => val && val.length === 1);
     setIsFormValid(allFieldsFilled);
   }, [watchAllFields]);
 
@@ -48,6 +33,19 @@ const useVerificationCode = (initialSeconds = 90) => {
       setResendAvailable(true);
     }
   }, [seconds]);
+
+   const submitVerificationCode = async (code) => {
+     try {
+       const response = await axios.post(`${API_BASE_URL}/api/users/verify/`, {
+         pnone_number,
+         code,
+       });
+       return response.data;
+     } catch (error) {
+       console.error("Error verifying code:", error);
+       throw error;
+     }
+   };
 
   const handleInputChange = (e, index) => {
     const value = e.target.value.replace(/\D/g, "");
@@ -76,31 +74,46 @@ const useVerificationCode = (initialSeconds = 90) => {
     }
   };
 
-  const handleResendCode = async () => {
-    setSeconds(initialSeconds);
-    setResendAvailable(false);
-    await fetchVerificationCode();
-  };
+ const handleResendCode = async () => {
+  //  try {
+  //    await axios.post(`${API_BASE_URL}/api/users/resend-code/`, {
+  //      pnone_number,
+  //    });
+     setSeconds(initialSeconds);
+     setResendAvailable(false);
+     setCodeError(false);
+     setErrorVisible(false);
+     reset();
+  //  } catch (error) {
+  //    console.error("Error resending code:", error);
+  //  }
+ };
 
-  const validateCode = (code) => {
-    // поменять "123456" на verificationCode
-    if (code !== verificationCode) {
+  const validateCode = (expectedCode, inputCode) => {
+    const isValid = expectedCode === inputCode;
+
+    if (!isValid) {
       setCodeError(true);
       setErrorVisible(true);
+
       if (errorTimer) {
         clearTimeout(errorTimer);
       }
+
       const newTimer = setTimeout(() => setErrorVisible(false), 5000);
       setErrorTimer(newTimer);
+
       reset();
       setIsFormValid(false);
       inputRefs[0].current.focus();
-      return false;
     } else {
       setCodeError(false);
-      return true;
+      setErrorVisible(false);
     }
+
+    return isValid;
   };
+
 
   return {
     control,
@@ -116,6 +129,7 @@ const useVerificationCode = (initialSeconds = 90) => {
     handleKeyDown,
     handleResendCode,
     validateCode,
+    submitVerificationCode,
   };
 };
 

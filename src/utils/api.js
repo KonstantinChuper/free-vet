@@ -84,4 +84,15 @@ export const addQuestion = async (data) => {
   }
 };
 
+// 6. /api/users/update/ - роль юзера
+export const updateUserRole = async (data) => {
+  try {
+    const response = await apiClientJson.post("/api/users/update/", data);
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка обновления роли:", error);
+    throw error;
+  }
+};
+
 export default API_BASE_URL;

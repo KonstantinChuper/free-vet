@@ -24,17 +24,14 @@ const L_phoneLoginPage = () => {
   });
 
   const onSubmit = async (data) => {
-    console.log("Отправка формы:", data);
     try {
-      const formData = new FormData();
-      formData.append("phone", data.phone);
-
-      const response = await loginUserPhone(formData);
+      console.log(data);
+      const response = await loginUserPhone(data);
       console.log("Ответ от API:", response);
 
       if (response.success) {
         reset();
-        navigate("/verification");
+        navigate("/verification", { state: { phone_number: data.phone_number } });
       } else {
         console.error("Ошибка логина, неверные данные.");
       }
@@ -56,7 +53,7 @@ const L_phoneLoginPage = () => {
           {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
-          {...register("phone", {
+          {...register("phone_number", {
             required: t("registrationPage.phoneErrorRequired"),
             pattern: {
               value: /^\+?[0-9]{10,}$/,

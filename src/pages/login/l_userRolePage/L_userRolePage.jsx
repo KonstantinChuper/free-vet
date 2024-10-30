@@ -1,14 +1,13 @@
 import s from "./l_userRolePage.module.css";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import CustomButton from "../../../components/customButton/CustomButton";
 import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
 import CustomStickTitle from "../../../components/customStickTitle/CustomStickTitle";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import { updateUserRole } from "../../../utils/api";
 
 const L_userRolePage = () => {
   const { t } = useTranslation();
@@ -80,11 +79,7 @@ const L_userRolePage = () => {
       formData.append("name", data.name);
       formData.append("phone", data.phone);
 
-      await axios.post("/", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await updateUserRole(formData);
       reset();
     } catch (error) {
       setErrorMessage(t("errorMessages.formSendError"));

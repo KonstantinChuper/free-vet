@@ -25,14 +25,14 @@ const L_registrationPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("phone", data.phone);
-      if (image) {
-        formData.append("image", image);
-      }
-
-      const response = await createUser(formData);
+      // const formData = new FormData();
+      // formData.append("name", data.name);
+      // formData.append("phone_number", data.phone);
+      // if (image) {
+      //   formData.append("image", image);
+      // }
+      console.log(data);
+      const response = await createUser(data);
       console.log("Ответ от API:", response);
 
       reset();
@@ -65,7 +65,7 @@ const L_registrationPage = () => {
           {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
-          {...register("phone", {
+          {...register("phone_number", {
             required: t("registrationPage.phoneErrorRequired"),
             pattern: {
               value: /^\+?[0-9]{10,}$/,

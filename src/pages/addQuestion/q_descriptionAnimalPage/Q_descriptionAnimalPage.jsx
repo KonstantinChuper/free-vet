@@ -50,7 +50,7 @@ const Q_descriptionAnimalPage = () => {
     };
   }, []);
 
-  const onSubmit = async () => {
+  const onSubmit = async (data) => {
     try {
       const formData = new FormData();
       formData.append("userId", userId);

@@ -25,12 +25,12 @@ const L_registrationPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      // const formData = new FormData();
-      // formData.append("name", data.name);
-      // formData.append("phone_number", data.phone);
-      // if (image) {
-      //   formData.append("image", image);
-      // }
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("phone_number", data.phone);
+      if (image) {
+        formData.append("image", image);
+      }
       console.log(data);
       const response = await createUser(data);
       console.log("Ответ от API:", response);

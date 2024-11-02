@@ -14,7 +14,8 @@ const Q_sendQuestionPage = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const { petArt, petWeight, petGender, isHomeless, files } = location.state || {};
+  const { petArt, petWeight, petGender, isHomeless, files, userId } =
+    location.state || {};
 
   const {
     register,
@@ -34,11 +35,12 @@ const Q_sendQuestionPage = () => {
       formData.append("petWeight", petWeight);
       formData.append("petGender", petGender);
       formData.append("isHomeless", isHomeless);
+      formData.append("userId", userId);
 
       // Добавляем файлы в formData
       if (files && files.length > 0) {
         files.forEach((file, index) => {
-          formData.append(`file_${index}`, file.data);
+          formData.append(`file_${index}`, file);
         });
       }
 
@@ -55,13 +57,19 @@ const Q_sendQuestionPage = () => {
   return (
     <div className={s.q_sendQuestionPage}>
       <div className={s.q_sendQuestionPage_header}>
-        <FormHeader path="/main/question/choice" fontSize={36} titleKey={t("questionPage.title")} />
+        <FormHeader
+          path="/main/question/choice"
+          fontSize={36}
+          titleKey={t("questionPage.title")}
+        />
         <Link to={"/main/question/choice"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-main)"} right={"var(--color-main)"} />
-      <p className={s.q_sendQuestionPage_file_p}>{t("sendQuestionPage.addedMedia")}</p>
+      <p className={s.q_sendQuestionPage_file_p}>
+        {t("sendQuestionPage.addedMedia")}
+      </p>
       <div className={s.q_sendQuestionPage_fileBox}>
         {files && files.length > 0 ? (
           <div className={s.filesContainer}>
@@ -95,7 +103,9 @@ const Q_sendQuestionPage = () => {
           {t("sendQuestionPage.homeless")} {isHomeless ? t("yes") : t("no")}
         </p>
       </div>
-      <p className={s.q_sendQuestionPage_p}>{t("sendQuestionPage.writeQuestion")}</p>
+      <p className={s.q_sendQuestionPage_p}>
+        {t("sendQuestionPage.writeQuestion")}
+      </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CustomTextarea
           {...register("question", {
@@ -110,7 +120,9 @@ const Q_sendQuestionPage = () => {
             height: "310px",
           }}
         />
-        {errors.question && <p className={s.errorText}>{errors.question.message}</p>}
+        {errors.question && (
+          <p className={s.errorText}>{errors.question.message}</p>
+        )}
 
         <div className={s.btnBox}>
           <CustomButtonSubmit

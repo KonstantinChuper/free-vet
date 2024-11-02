@@ -52,17 +52,41 @@ const Q_descriptionAnimalPage = () => {
 
   const onSubmit = async (data) => {
     try {
+      console.log(
+        "Файлы перед отправкой:",
+        files.map((file) => ({
+          имя: file.name,
+          тип: file.type,
+          размер: file.size,
+          lastModified: file.lastModified,
+        }))
+      );
       const formData = new FormData();
       formData.append("userId", userId);
       formData.append("petArt", data.petArt);
       formData.append("petWeight", data.petWeight);
       formData.append("petGender", data.petGender);
       formData.append("isHomeless", isCheckboxChecked);
-      files.forEach((file, index) => {
+      files.forEach((fileObj, index) => {
+        const { file } = fileObj;
+        console.log("Проверка файла перед добавлением в FormData:", {
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          lastModified: file.lastModified,
+        });
         formData.append(`files[${index}]`, file);
       });
-      await addQuestion(formData);
-      navigate("/main/question/description-animal/send", { state: formData });
+
+      // Проверяем что попало в FormData
+      for (let pair of formData.entries()) {
+        console.log("FormData содержит:", pair[0], "=", pair[1]);
+      }
+
+      const response = await addQuestion(formData);
+      console.log("Ответ сервера:", response);
+      
+      navigate("/main/question/description-animal/send");
     } catch (error) {
       setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);

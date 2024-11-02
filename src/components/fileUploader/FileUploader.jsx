@@ -27,32 +27,47 @@ const FileUploader = ({
   }, [files, onUpload]);
 
 
-  const handleFileUpload = (event) => {
-    if (!event.target.files) {
-      console.error("No files selected");
-      return;
-    }
-    const selectedFiles = Array.from(event.target.files);
-    if (files.length + selectedFiles.length > maxFiles) {
-      alert(t("fileUploader.uploadLimitError", { maxFiles }));
-      return;
-    }
+const handleFileUpload = (event) => {
+  if (!event.target.files) {
+    console.error("No files selected");
+    return;
+  }
 
-    const validFiles = selectedFiles
-      .filter((file) => {
-        if (file.type.startsWith("image/") || file.type.startsWith("video/")) {
-          return true;
-        }
-        alert(t("fileUploader.unsupportedFileType", { fileName: file.name }));
-        return false;
-      })
-      .map((file) => ({
-        file,
-        url: URL.createObjectURL(file),
-      }));
+  const selectedFiles = Array.from(event.target.files);
 
-    setFiles([...files, ...validFiles]);
-  };
+  if (files.length + selectedFiles.length > maxFiles) {
+    alert(t("fileUploader.uploadLimitError", { maxFiles }));
+    return;
+  }
+
+  const validFiles = selectedFiles
+    .filter((file) => {
+      if (file.type.startsWith("image/") || file.type.startsWith("video/")) {
+        return true;
+      }
+      alert(t("fileUploader.unsupportedFileType", { fileName: file.name }));
+      return false;
+    })
+    .map((file) => {
+      const newFile = new File([file], file.name, {
+        type: file.type,
+        lastModified: file.lastModified || Date.now(),
+      });
+
+      return {
+        file: newFile,
+        url: URL.createObjectURL(newFile),
+        name: newFile.name,
+        type: newFile.type,
+        lastModified: newFile.lastModified,
+        size: newFile.size,
+      };
+    });
+
+  setFiles([...files, ...validFiles]);
+};
+
+
 
 
   const removeFile = (index) => {

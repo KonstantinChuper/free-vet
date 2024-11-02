@@ -63,7 +63,7 @@ const L_phoneLoginPage = () => {
           placeholder="+"
           width={335}
         />
-        {errors.phone && <p style={{ color: "red" }}>{errors.phone.message}</p>}
+        {errors.phone_number && <p style={{ color: "red" }}>{errors.phone_number.message}</p>}
         <p className={s.l_phoneLoginPage_lostAccess}>{t("phoneLoginPage.lostAccess")}</p>
         <p className={s.l_phoneLoginPage_accessRestoration}>
           {t("phoneLoginPage.accessRestoration")}

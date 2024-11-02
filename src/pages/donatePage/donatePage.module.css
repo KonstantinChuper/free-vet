@@ -16,6 +16,7 @@
 .logo {
   width: 120px;
   height: auto;
+  margin-bottom: 17px;
 }
 
 .mainTitle {
@@ -41,6 +42,15 @@
 margin-top: 5px;
 }
 
+.learnMoreButton, .payButton {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.learnMoreButton:hover  {
+  transform: translateY(-5px); 
+}
+.payButton:hover {
+  transform: translateY(-5px); 
+}
 
 .supportAnytimeText {
   color: var(--color-main);

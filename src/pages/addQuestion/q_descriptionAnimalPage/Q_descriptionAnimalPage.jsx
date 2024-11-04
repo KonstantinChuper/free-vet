@@ -68,7 +68,7 @@ const Q_descriptionAnimalPage = () => {
       formData.append("petArt", data.petArt);
       formData.append("petWeight", data.petWeight);
       formData.append("petGender", data.petGender);
-      formData.append("isHomeless", isCheckboxChecked);
+      /*formData.append("isHomeless", isCheckboxChecked);*/
       files.forEach((fileObj, index) => {
         const { file } = fileObj;
         console.log("Проверка файла перед добавлением в FormData:", {
@@ -85,7 +85,7 @@ const Q_descriptionAnimalPage = () => {
         console.log("FormData содержит:", pair[0], "=", pair[1]);
       }
 
-      const response = await addQuestion(formData);
+      const response = await addQuestion(formData, isCheckboxChecked);
       console.log("Ответ сервера:", response);
 
       navigate("/main/question/description-animal/send", {
@@ -127,7 +127,9 @@ const Q_descriptionAnimalPage = () => {
         </Link>
       </div>
       <LineHeader middle={"var(--color-main)"} />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit((data) => onSubmit(data, isCheckboxChecked))}
+      >
         <p>{t("descriptionAnimalPage.addMedia")}</p>
         <FileUploader
           maxFiles={3}

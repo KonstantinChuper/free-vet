@@ -48,7 +48,18 @@ const Q_sendQuestionPage = () => {
       await addQuestion(formData);
 
       // После успешной отправки формы перенаправляем пользователя
-      navigate("/main/question/confirm");
+      navigate("/main/question/confirm"),
+        {
+          state: {
+            question: data.question,
+            petArt: data.petArt,
+            petWeight: data.petWeight,
+            petGender: data.petGender,
+            isHomeless: isHomeless,
+            files: files,
+            userId: userId,
+          },
+        };
     } catch (error) {
       console.error("Ошибка при отправке вопроса", error);
     }

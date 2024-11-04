@@ -32,7 +32,9 @@ const Q_descriptionAnimalPage = () => {
 
   const onUpload = useCallback(
     (uploadedFiles) => {
-      const newFiles = uploadedFiles.filter((file) => !files.some((f) => f.name === file.name));
+      const newFiles = uploadedFiles.filter(
+        (file) => !files.some((f) => f.name === file.name)
+      );
       if (newFiles.length > 0) {
         setFiles((prevFiles) => [...prevFiles, ...newFiles]);
       }
@@ -66,7 +68,7 @@ const Q_descriptionAnimalPage = () => {
       formData.append("petArt", data.petArt);
       formData.append("petWeight", data.petWeight);
       formData.append("petGender", data.petGender);
-      formData.append("isHomeless", isCheckboxChecked);
+      /*formData.append("isHomeless", isCheckboxChecked);*/
       files.forEach((fileObj, index) => {
         const { file } = fileObj;
         console.log("Проверка файла перед добавлением в FormData:", {
@@ -83,10 +85,19 @@ const Q_descriptionAnimalPage = () => {
         console.log("FormData содержит:", pair[0], "=", pair[1]);
       }
 
-      const response = await addQuestion(formData);
+      const response = await addQuestion(formData, isCheckboxChecked);
       console.log("Ответ сервера:", response);
-      
-      navigate("/main/question/description-animal/send");
+
+      navigate("/main/question/description-animal/send", {
+        state: {
+          userId: userId,
+          petArt: data.petArt,
+          petWeight: data.petWeight,
+          petGender: data.petGender,
+          isHomeless: isCheckboxChecked,
+          files: files,
+        },
+      });
     } catch (error) {
       setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
@@ -106,66 +117,101 @@ const Q_descriptionAnimalPage = () => {
   return (
     <div className={s.q_descriptionAnimalPage}>
       <div className={s.q_descriptionAnimalPage_header}>
-        <FormHeader path="/main/question/choice" fontSize={36} titleKey={t("questionPage.title")} />
+        <FormHeader
+          path="/main/question/choice"
+          fontSize={36}
+          titleKey={t("questionPage.title")}
+        />
         <Link to={"/main"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-main)"} />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit((data) => onSubmit(data, isCheckboxChecked))}
+      >
         <p>{t("descriptionAnimalPage.addMedia")}</p>
-        <FileUploader maxFiles={3} boxSize={104} borderRadius={20} onUpload={onUpload} />
+        <FileUploader
+          maxFiles={3}
+          boxSize={104}
+          borderRadius={20}
+          onUpload={onUpload}
+        />
         <label style={{ alignSelf: "start" }}>
           {t("descriptionAnimalPage.petArt")}{" "}
-          <span style={{ color: "#2A9D8F" }}>{t("descriptionAnimalPage.requiredSymbol")}</span>
+          <span style={{ color: "#2A9D8F" }}>
+            {t("descriptionAnimalPage.requiredSymbol")}
+          </span>
         </label>
         <CustomInput
           {...register("petArt", {
-            required: t("descriptionAnimalPage.validationMessages.petArt.required"),
+            required: t(
+              "descriptionAnimalPage.validationMessages.petArt.required"
+            ),
             minLength: {
               value: 2,
-              message: t("descriptionAnimalPage.validationMessages.petArt.minLength"),
+              message: t(
+                "descriptionAnimalPage.validationMessages.petArt.minLength"
+              ),
             },
           })}
           color={"var(--color-text-dark)"}
           borderColor="var(--color-main)"
           width={328}
         />
-        {errors.petArt && <p style={{ color: "red" }}>{errors.petArt.message}</p>}
+        {errors.petArt && (
+          <p style={{ color: "red" }}>{errors.petArt.message}</p>
+        )}
         <label style={{ alignSelf: "start" }}>
           {t("descriptionAnimalPage.petWeight")}{" "}
-          <span style={{ color: "#2A9D8F" }}>{t("descriptionAnimalPage.requiredSymbol")}</span>
+          <span style={{ color: "#2A9D8F" }}>
+            {t("descriptionAnimalPage.requiredSymbol")}
+          </span>
         </label>
         <CustomInput
           {...register("petWeight", {
-            required: t("descriptionAnimalPage.validationMessages.petWeight.required"),
+            required: t(
+              "descriptionAnimalPage.validationMessages.petWeight.required"
+            ),
             minLength: {
               value: 2,
-              message: t("descriptionAnimalPage.validationMessages.petWeight.minLength"),
+              message: t(
+                "descriptionAnimalPage.validationMessages.petWeight.minLength"
+              ),
             },
           })}
           color={"var(--color-text-dark)"}
           borderColor="var(--color-main)"
           width={153}
         />
-        {errors.petWeight && <p style={{ color: "red" }}>{errors.petWeight.message}</p>}
+        {errors.petWeight && (
+          <p style={{ color: "red" }}>{errors.petWeight.message}</p>
+        )}
         <label style={{ alignSelf: "start" }}>
           {t("descriptionAnimalPage.petGender")}{" "}
-          <span style={{ color: "#2A9D8F" }}>{t("descriptionAnimalPage.requiredSymbol")}</span>
+          <span style={{ color: "#2A9D8F" }}>
+            {t("descriptionAnimalPage.requiredSymbol")}
+          </span>
         </label>
         <CustomInput
           {...register("petGender", {
-            required: t("descriptionAnimalPage.validationMessages.petGender.required"),
+            required: t(
+              "descriptionAnimalPage.validationMessages.petGender.required"
+            ),
             minLength: {
               value: 2,
-              message: t("descriptionAnimalPage.validationMessages.petGender.minLength"),
+              message: t(
+                "descriptionAnimalPage.validationMessages.petGender.minLength"
+              ),
             },
           })}
           color={"var(--color-text-dark)"}
           borderColor="var(--color-main)"
           width={153}
         />
-        {errors.petGender && <p style={{ color: "red" }}>{errors.petGender.message}</p>}
+        {errors.petGender && (
+          <p style={{ color: "red" }}>{errors.petGender.message}</p>
+        )}
         <span className={s.checkboxBox}>
           <CustomCheckbox
             {...register("confirmation")}

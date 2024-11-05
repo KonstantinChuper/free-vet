@@ -1,0 +1,17 @@
+.conteater_settings {
+  margin: 0 auto;
+  max-width: 375px;
+  border: 2px solid blue;
+}
+
+.settings_header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 20px 34px 20px;
+}
+.settings_header > h1 {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 110%;
+  color: 242424;
+}

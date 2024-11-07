@@ -1,42 +1,42 @@
-import React from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
-import s from './q_sendQuestionPage.module.css'
-import FormHeader from '../../../components/formHeader/FormHeader'
-import LineHeader from '../../../components/lineHeader/LineHeader'
-import close from '../../../assets/close.svg'
-import CustomTextarea from '../../../components/customTextarea/CustomTextarea'
-import CustomButtonSubmit from '../../../components/customButtonSubmit/CustomButtonSubmit'
-import { updateQuestion } from '../../../utils/api.js'
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import s from "./q_sendQuestionPage.module.css";
+import FormHeader from "../../../components/formHeader/FormHeader";
+import LineHeader from "../../../components/lineHeader/LineHeader";
+import close from "../../../assets/close.svg";
+import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import { updateQuestion } from "../../../utils/api.js";
 
 const Q_sendQuestionPage = () => {
-    const { t } = useTranslation()
-    const location = useLocation()
-    const navigate = useNavigate()
+    const { t } = useTranslation();
+    const location = useLocation();
+    const navigate = useNavigate();
     const { petArt, petWeight, petGender, isHomeless, files, userId } =
-        location.state || {}
+        location.state || {};
 
     const {
         register,
         handleSubmit,
         formState: { errors, isValid },
     } = useForm({
-        mode: 'onChange',
-    })
+        mode: "onChange",
+    });
 
     const onSubmit = async (data) => {
         try {
             const dataToSend = {
                 user_id: userId,
                 questions: data.question,
-            }
+            };
 
             // Отправляем запрос через updateQuestion
-            await updateQuestion(JSON.stringify(dataToSend))
+            await updateQuestion(JSON.stringify(dataToSend));
 
             // После успешной отправки формы перенаправляем пользователя
-            navigate('/main/question/confirm'),
+            navigate("/main/question/confirm"),
                 {
                     state: {
                         question: data.question,
@@ -47,11 +47,11 @@ const Q_sendQuestionPage = () => {
                         files: files,
                         userId: userId,
                     },
-                }
+                };
         } catch (error) {
-            console.error('Ошибка при отправке вопроса', error)
+            console.error("Ошибка при отправке вопроса", error);
         }
-    }
+    };
 
     return (
         <div className={s.q_sendQuestionPage}>
@@ -59,24 +59,24 @@ const Q_sendQuestionPage = () => {
                 <FormHeader
                     path="/main/question/choice"
                     fontSize={36}
-                    titleKey={t('questionPage.title')}
+                    titleKey={t("questionPage.title")}
                 />
-                <Link to={'/main/question/choice'}>
+                <Link to={"/main/question/choice"}>
                     <img className={s.closeBtn} src={close} alt="close" />
                 </Link>
             </div>
             <LineHeader
-                middle={'var(--color-main)'}
-                right={'var(--color-main)'}
+                middle={"var(--color-main)"}
+                right={"var(--color-main)"}
             />
             <p className={s.q_sendQuestionPage_file_p}>
-                {t('sendQuestionPage.addedMedia')}
+                {t("sendQuestionPage.addedMedia")}
             </p>
             <div className={s.q_sendQuestionPage_fileBox}>
                 {files && files.length > 0 ? (
                     <div className={s.filesContainer}>
                         {files.map((file, index) => {
-                            const fileUrl = URL.createObjectURL(file.file)
+                            const fileUrl = URL.createObjectURL(file.file);
                             return (
                                 <div key={index} className={s.fileBox}>
                                     {/* {file.type.startsWith('image') ? (
@@ -96,46 +96,46 @@ const Q_sendQuestionPage = () => {
                                     <img
                                         src={fileUrl}
                                         alt="Uploaded"
-                                        style={{ maxWidth: '100%' }}
+                                        style={{ maxWidth: "100%" }}
                                     />
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 ) : (
-                    <p>{t('sendQuestionPage.noPhotos')}</p>
+                    <p>{t("sendQuestionPage.noPhotos")}</p>
                 )}
             </div>
             <div className={s.q_sendQuestionPage_description}>
                 <p>
-                    {t('sendQuestionPage.petArt')}: {petArt}
+                    {t("sendQuestionPage.petArt")}: {petArt}
                 </p>
                 <p>
-                    {t('sendQuestionPage.petWeight')}: {petWeight}
+                    {t("sendQuestionPage.petWeight")}: {petWeight}
                 </p>
                 <p>
-                    {t('sendQuestionPage.petGender')}: {petGender}
+                    {t("sendQuestionPage.petGender")}: {petGender}
                 </p>
-                <p style={{ display: 'none' }}>
-                    {t('sendQuestionPage.homeless')}{' '}
-                    {isHomeless ? t('yes') : t('no')}
+                <p style={{ display: "none" }}>
+                    {t("sendQuestionPage.homeless")}{" "}
+                    {isHomeless ? t("yes") : t("no")}
                 </p>
             </div>
             <p className={s.q_sendQuestionPage_p}>
-                {t('sendQuestionPage.writeQuestion')}
+                {t("sendQuestionPage.writeQuestion")}
             </p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <CustomTextarea
-                    {...register('question', {
-                        required: t('sendQuestionPage.requiredField'),
+                    {...register("question", {
+                        required: t("sendQuestionPage.requiredField"),
                     })}
                     rows={8}
                     cols={50}
-                    placeholder={t('sendQuestionPage.questionPlaceholder')}
+                    placeholder={t("sendQuestionPage.questionPlaceholder")}
                     style={{
-                        borderColor: 'var(--color-input-bg-grey)',
-                        backgroundColor: 'var(--color-text-white)',
-                        height: '310px',
+                        borderColor: "var(--color-input-bg-grey)",
+                        backgroundColor: "var(--color-text-white)",
+                        height: "310px",
                     }}
                 />
                 {errors.question && (
@@ -144,14 +144,14 @@ const Q_sendQuestionPage = () => {
 
                 <div className={s.btnBox}>
                     <CustomButtonSubmit
-                        text={t('sendQuestionPage.submitButton')}
-                        padding={'16px 99.5px'}
+                        text={t("sendQuestionPage.submitButton")}
+                        padding={"16px 99.5px"}
                         disabled={!isValid}
                     />
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default Q_sendQuestionPage
+export default Q_sendQuestionPage;

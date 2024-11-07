@@ -15,6 +15,7 @@ export const Question = ({
     is_homeless = true,
     isAwaited = false,
     question = 'Уличный кот, за которым я присматриваю, начал кашлять несколько раз в день в последние три недели. Кашель сухой, без выделений. Он активный, аппетит нормальный, но меня беспокоит частота кашля. Корм не меняли. Также прикладываю видео, где видно и слышно, как кот кашляет.',
+    openModal,
 }) => {
     const { t } = useTranslation()
 
@@ -32,7 +33,10 @@ export const Question = ({
                 ) : (
                     <button className={`${s.btn} `}>Response sent</button>
                 )}
-                <button className={`${s.btn} ${s.actions_btn}`}>
+                <button
+                    className={`${s.btn} ${s.actions_btn}`}
+                    onClick={openModal}
+                >
                     <span>Actions</span>
                     <Icon />
                 </button>

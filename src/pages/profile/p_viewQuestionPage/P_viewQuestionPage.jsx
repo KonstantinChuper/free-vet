@@ -11,12 +11,17 @@ import { Question } from '../../../components/shared/question/Question.jsx'
 const P_viewQuestionPage = () => {
     const { t } = useTranslation()
 
-    const [isModalVisible, setIsModalVisible] = useState(true)
+    const [isModalVisible, setIsModalVisible] = useState(false)
 
     const testLinks = [
         { link: '/profile', text: 'Add message' }, // добавить в переводы
         { link: '/main', text: 'End session' }, // добавить в переводы
     ]
+
+    // чтобы открыть модальное окно
+    const openModal = () => {
+        setIsModalVisible(true)
+    }
 
     const closeModal = () => {
         setIsModalVisible(false)
@@ -24,12 +29,11 @@ const P_viewQuestionPage = () => {
 
     return (
         <div className={s.p_viewQuestionPage}>
-            {/* <h6 className={s.page_heading}>{t("userPage.viewQuestion")}</h6> */}
             <ViewPageHeader
                 fontSize={36}
                 titleKey={t('userPage.viewQuestion')}
             />
-            <Question />
+            <Question openModal={openModal} />
             <VetAnswer />
             <div>
                 {isModalVisible && (

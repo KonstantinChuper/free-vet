@@ -16,6 +16,7 @@ import Q_descriptionAnimalPage from "./pages/addQuestion/q_descriptionAnimalPage
 import Q_sendQuestionPage from "./pages/addQuestion/q_sendQuestionPage/Q_sendQuestionPage";
 import Q_confirmationPage from "./pages/addQuestion/q_confirmationPage/Q_confirmationPage";
 import P_userPage from "./pages/profile/p_userPage/P_userPage";
+import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestionPage";
 import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
@@ -70,6 +71,7 @@ function App() {
         <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} />
+        <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
       </Routes>

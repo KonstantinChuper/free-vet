@@ -39,13 +39,16 @@ const P_userPage = () => {
       <div className={s.name_Container}>
         <div className={s.avatarContainer}>
           <img
-            src={files.length > 0 ? URL.createObjectURL(files[0]) : userInfo.photo}
+            src={
+              files.length > 0 ? URL.createObjectURL(files[0]) : userInfo.photo
+            }
             alt="Avatar"
             className={s.avatar}
           />
         </div>
         <div className={s.userInfo}>
-          <div className={s.userName}>{userInfo.name}</div> {/* Имя пользователя */}
+          <div className={s.userName}>{userInfo.name}</div>{" "}
+          {/* Имя пользователя */}
           <div className={s.userRole}>
             {userInfo.role === "volunteer"
               ? t("userPage.userRoleVolunteer")

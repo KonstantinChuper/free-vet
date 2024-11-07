@@ -56,6 +56,7 @@
   "customMessage": {
     "questionTitle": "Question No.",
     "awaitingResponse": "Awaiting response",
+    "responseSent": "Response sent",
     "homelessAnimal": "Homeless animal"
   },
   "customPetCard": {
@@ -111,7 +112,6 @@
     "noCreateBtn": "Do not create",
     "createBtn": "Create"
   },
-
   "form": {
     "createAccount": "Create an account",
     "name": "Name",
@@ -330,7 +330,8 @@
     "vetBooks": "Veterinary books",
     "allVetBooks": "all",
     "myAnimalsTitle": "My animals",
-    "strayAnimalsTitle": "Stray animals"
+    "strayAnimalsTitle": "Stray animals",
+    "actionsButton": "Actions"
   },
   "DonatePage": {
     "title": "Support the Service",

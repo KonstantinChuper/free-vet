@@ -25,19 +25,20 @@
   font-size: 16px;
 }
 
-
 .q_sendQuestionPage_fileBox .fileBox {
   display: flex;
   gap: 10px;
   width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.q_sendQuestionPage_fileBox img, 
+.q_sendQuestionPage_fileBox img,
 .q_sendQuestionPage_fileBox video {
-width: 105px;
-height: 105px;
-object-fit: cover;
-border-radius: var(--border-radius-small);
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: var(--border-radius-small);
 }
 
 .q_sendQuestionPage_description {
@@ -64,4 +65,9 @@ border-radius: var(--border-radius-small);
 .q_sendQuestionPage button {
   white-space: nowrap;
   margin-top: 81px;
+}
+
+.filesContainer {
+  display: flex;
+  gap: 9px;
 }

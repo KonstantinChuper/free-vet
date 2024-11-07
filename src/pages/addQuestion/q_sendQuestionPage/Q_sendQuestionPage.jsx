@@ -8,7 +8,7 @@ import LineHeader from "../../../components/lineHeader/LineHeader";
 import close from "../../../assets/close.svg";
 import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
-import { addQuestion } from "../../../utils/api.js";
+import { updateQuestion } from "../../../utils/api.js";
 
 const Q_sendQuestionPage = () => {
   const { t } = useTranslation();
@@ -27,25 +27,13 @@ const Q_sendQuestionPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const formData = new FormData();
+      const dataToSend = {
+        user_id: userId,
+        questions: data.question,
+      };
 
-      // Добавляем текстовые поля формы в formData
-      formData.append("question", data.question);
-      formData.append("petArt", petArt);
-      formData.append("petWeight", petWeight);
-      formData.append("petGender", petGender);
-      formData.append("isHomeless", isHomeless);
-      formData.append("userId", userId);
-
-      // Добавляем файлы в formData
-      if (files && files.length > 0) {
-        files.forEach((file, index) => {
-          formData.append(`file_${index}`, file);
-        });
-      }
-
-      // Отправляем запрос через addQuestion
-      await addQuestion(formData);
+      // Отправляем запрос через updateQuestion
+      await updateQuestion(JSON.stringify(dataToSend));
 
       // После успешной отправки формы перенаправляем пользователя
       navigate("/main/question/confirm"),
@@ -84,17 +72,32 @@ const Q_sendQuestionPage = () => {
       <div className={s.q_sendQuestionPage_fileBox}>
         {files && files.length > 0 ? (
           <div className={s.filesContainer}>
-            {files.map((file, index) => (
-              <div key={index} className={s.fileBox}>
-                {file.type.startsWith("image") ? (
-                  <img src={file.data} alt={`uploaded-file-${index}`} />
-                ) : file.type.startsWith("video") ? (
-                  <video controls src={file.data} />
-                ) : (
-                  <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
-                )}
-              </div>
-            ))}
+            {files.map((file, index) => {
+              const fileUrl = URL.createObjectURL(file.file);
+              return (
+                <div key={index} className={s.fileBox}>
+                  {/* {file.type.startsWith('image') ? (
+                                    <img
+                                        src={file.data}
+                                        alt={`uploaded-file-${index}`}
+                                    />
+                                ) : file.type.startsWith('video') ? (
+                                    <video controls src={file.data} />
+                                ) : (
+                                    <p>
+                                        {t(
+                                            'sendQuestionPage.unsupportedFileFormat'
+                                        )}
+                                    </p>
+                                )} TODO: findout data structure from backend*/}
+                  <img
+                    src={fileUrl}
+                    alt="Uploaded"
+                    style={{ maxWidth: "100%" }}
+                  />
+                </div>
+              );
+            })}
           </div>
         ) : (
           <p>{t("sendQuestionPage.noPhotos")}</p>

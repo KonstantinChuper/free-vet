@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import L_authorizationPage from "./pages/login/l_authorizationPage/L_authorizationPage";
@@ -43,14 +43,29 @@ function App() {
         <Route path="/register" element={<L_registrationPage />} />
         <Route path="/verification" element={<L_verificationPage />} />
         <Route path="/verification/role" element={<L_userRolePage />} />
-        <Route path="/verification/role/user/create-vetbook" element={<L_createVetBookPage />} />
-        <Route path="/verification/role/vet/vet-verification" element={<L_vetVerificationPage />} />
-        <Route path="/verification/role/vet/vet-verification/code" element={<L_vetCodePage />} />
+        <Route
+          path="/verification/role/user/create-vetbook"
+          element={<L_createVetBookPage />}
+        />
+        <Route
+          path="/verification/role/vet/vet-verification"
+          element={<L_vetVerificationPage />}
+        />
+        <Route
+          path="/verification/role/vet/vet-verification/code"
+          element={<L_vetCodePage />}
+        />
         <Route path="/login" element={<L_phoneLoginPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/main/question/choice" element={<Q_choiceAnimalPage />} />
-        <Route path="/main/question/description-animal" element={<Q_descriptionAnimalPage />} />
-        <Route path="/main/question/description-animal/send" element={<Q_sendQuestionPage />} />
+        <Route
+          path="/main/question/description-animal"
+          element={<Q_descriptionAnimalPage />}
+        />
+        <Route
+          path="/main/question/description-animal/send"
+          element={<Q_sendQuestionPage />}
+        />
         <Route path="/main/question/confirm" element={<Q_confirmationPage />} />
         <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
         <Route path="/vetbook" element={<VetBookPage />} />

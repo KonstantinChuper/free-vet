@@ -322,6 +322,8 @@
     "userRoleVolunteer": "Ja sam volonter",
     "userRolePetOwner": "Imam kućnog ljubimca",
     "myQuestions": "Moja pitanja",
+    "viewQuestion": "Pogledaj pitanje",
+    "vetAnswer": "Odgovor veterinarskog lekara",
     "allQuestions": "sva",
     "animalInfo": "Ulična mačka itd...",
     "vetBooks": "Veterinarske knjige",
@@ -381,5 +383,5 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
-}
+  }
 }

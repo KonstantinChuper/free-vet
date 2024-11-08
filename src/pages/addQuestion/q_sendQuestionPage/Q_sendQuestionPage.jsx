@@ -117,7 +117,7 @@ const Q_sendQuestionPage = () => {
         <div className={s.btnBox}>
           <CustomButtonSubmit
             text={t("sendQuestionPage.submitButton")}
-            padding={"16px 99.5px"}
+            padding={"16px 89.171px"}
             disabled={!isValid}
           />
         </div>

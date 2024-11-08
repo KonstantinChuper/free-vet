@@ -15,8 +15,8 @@ export const Icon = () => {
                 x2="29"
                 y2="9"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
             />
             <line
                 x1="8.18555"
@@ -24,8 +24,8 @@ export const Icon = () => {
                 x2="23.8152"
                 y2="15"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
             />
             <line
                 x1="12.8516"
@@ -33,8 +33,8 @@ export const Icon = () => {
                 x2="19.1479"
                 y2="21"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
             />
         </svg>
     )

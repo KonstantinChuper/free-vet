@@ -1,0 +1,95 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--color-text-dark); /* Используем переменную */
+  }
+  
+  .e_settingsNotificationProfilePage {
+    max-width: 375px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-text-white); /* Используем переменную */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .headerNotifications {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 20px;
+    position: relative;
+    width: 100%;
+    margin: 24px 0;
+  }
+  
+  .leftArrow {
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+  }
+  
+  .h3Notifications {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--color-text-dark); /* Используем переменную */
+  }
+  
+  .bodyNotifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 375px;
+  }
+  
+  .swichNotifications {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+  
+  .h5Notifications {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--color-text-dark); /* Используем переменную */
+  }
+  
+  .checkboxNotifications {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 51px;
+    height: 31px;
+    background-color: var(--color-line); /* Используем переменную */
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.1s;
+  }
+  
+  .checkboxNotifications:checked {
+    background-color: var(--color-main); /* Используем переменную */
+  }
+  
+  .checkboxNotifications::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 27px;
+    height: 27px;
+    background-color: var(--color-text-white); /* Используем переменную */
+    border-radius: 50%;
+    transition: transform 0.1s;
+  }
+  
+  .checkboxNotifications:checked::before {
+    transform: translateX(20px);
+  }

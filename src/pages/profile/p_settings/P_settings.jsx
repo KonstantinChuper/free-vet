@@ -101,10 +101,13 @@ function P_settings() {
         <p>{t("settings.notifications")}</p>
         <img src={arrowRight} alt="arrow right" />
       </div>
-      <hr />
-      <div className={s.language}>
-        <p>{t("settings.language")}</p>
 
+      <div className={s.language}>
+        {/* Новый контейнер для параграфа */}
+        <div className={s.languageLabel}>
+          <p>{t("settings.language")}</p>
+        </div>
+        {/* Контейнер для флагов */}
         <div className={s.flagContainer}>
           {!isOpen ? (
             <div className={s.selectedFlag} onClick={() => setIsOpen(!isOpen)}>

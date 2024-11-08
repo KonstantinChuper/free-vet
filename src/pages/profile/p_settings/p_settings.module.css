@@ -1,7 +1,6 @@
 .conteater_settings {
   margin: 0 auto;
   max-width: 375px;
-  border: 2px solid blue;
 }
 
 .settings_header {
@@ -20,22 +19,16 @@
 .notification {
   display: flex;
   justify-content: space-between;
-  margin: 0 20px 29px 20px;
+  margin: 0 20px 0px 20px;
+  border-bottom: 1px solid rgb(225, 223, 223);
+  padding-bottom: 18px;
 }
-
+/* Контейнер для всего, что связано с выбором языка */
 .language {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 13px 20px 29px 20px;
-}
-.flagContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  width: 50px;
 }
 .notification > p,
 .language > p {
@@ -44,8 +37,28 @@
   line-height: 110%;
   margin: 0;
 }
+/* Контейнер для текста "Язык" */
+.languageLabel {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 110%;
+  margin: 0;
+}
+/* Контейнер для флагов */
+.flagContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 50px;
+}
+
 /* Скрытый контейнер для выбранного флага */
 .selectedFlag {
+  position: absolute;
+  top: -10px;
+  left: 15px;
   background-color: #2a9d8f;
   border-radius: 50%;
   width: 38px;
@@ -54,6 +67,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .option {
   background-color: #2a9d8f;
@@ -72,10 +87,6 @@
 .option:first-child {
   margin-top: 8px;
 }
-.selectedFlag {
-  cursor: pointer; /* Указатель при наведении */
-  margin-top: 8px;
-}
 
 .flagImage,
 .selectedFlagImage {
@@ -86,7 +97,7 @@
 /* Стили для выпадающего меню */
 .dropdownMenu {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 0;
   background-color: #ececec;
   border-radius: 15px;
@@ -98,4 +109,5 @@
   z-index: 10;
   border: 1px solid rgba(42, 157, 143, 0.36);
   width: 100%;
+  transition: all 0.1s ease;
 }

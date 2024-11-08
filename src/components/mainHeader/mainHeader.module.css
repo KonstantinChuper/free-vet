@@ -11,7 +11,7 @@
   max-width: 375px;
   width: 100%;
   text-align: center;
-  padding-top: 68px;
+  padding-top: 24px;
   padding-inline: var(--container-padding-x);
   border-bottom-left-radius: var(--border-radius-small);
   border-bottom-right-radius: var(--border-radius-small);
@@ -42,8 +42,8 @@
 
 .leftPaw {
   position: absolute;
-  left: -13px;
-  top: 18%;
+  left: -25px;
+  top: 25%;
   transform: translateY(-50%);
   max-width: 118px;
   animation: slow-blink 3s infinite;
@@ -51,7 +51,7 @@
 
 .mainImage {
   max-width: 100%;
-  width: 263px;
+  width: 265px;
   height: auto;
   max-height: 350px;
   object-fit: contain;
@@ -59,8 +59,8 @@
 
 .rightPaw {
   position: absolute;
-  right: -13px;
-  top: 78%;
+  right: -16px;
+  top: 82%;
   transform: translateY(-50%);
   max-width: 105px;
   animation: slow-blink 3s infinite;
@@ -80,7 +80,7 @@
   }
 }
 
-@keyframes slow-blink {
+/* @keyframes slow-blink {
   0% {
     opacity: 1;
   }
@@ -90,4 +90,4 @@
   100% {
     opacity: 1;
   }
-}
+} */

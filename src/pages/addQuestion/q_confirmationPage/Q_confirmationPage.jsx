@@ -26,8 +26,9 @@ const Q_confirmationPage = () => {
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
+
+      {/* Displaying the Question Details */}
       <QuestionDetails
-        files={files}
         petArt={petArt}
         petWeight={petWeight}
         petGender={petGender}
@@ -35,6 +36,25 @@ const Q_confirmationPage = () => {
         question={question}
         userId={userId}
       />
+
+      {/* Displaying Files (Images or Videos) */}
+      <div className={s.q_confirmationPage_fileBox}>
+        {files && files.length > 0 ? (
+          files.map((file, index) => (
+            <div key={index} className={s.fileBox}>
+              {file.type.startsWith("image") ? (
+                <img src={file.url} alt={`uploaded-file-${index}`} className={s.uploadedImage} />
+              ) : file.type.startsWith("video") ? (
+                <video controls src={file.url} />
+              ) : (
+                <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
+              )}
+            </div>
+          ))
+        ) : (
+          <p>{t("sendQuestionPage.noPhotos")}</p>
+        )}
+      </div>
     </div>
   );
 };

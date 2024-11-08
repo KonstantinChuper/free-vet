@@ -329,6 +329,7 @@ const text_en = {
     userRoleVolunteer: "I am a volunteer",
     userRolePetOwner: "I have a pet",
     myQuestions: "My questions",
+    myQuestions_subtitle: "Questions you have asked",
     viewQuestion: "View Question",
     allQuestions: "all",
     animalInfo: "Street cat etc...",

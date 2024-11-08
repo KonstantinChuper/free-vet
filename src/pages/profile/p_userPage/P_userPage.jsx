@@ -73,7 +73,7 @@ const P_userPage = () => {
       </div>
       <div className={s.question_box_header}>
         <h6>{t("userPage.myQuestions")}</h6>
-        <Link to="/main/question/choice">
+        <Link to="/profile/questions">
           <p>{t("userPage.allQuestions")}</p>
         </Link>
       </div>

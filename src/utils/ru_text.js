@@ -331,6 +331,7 @@ const texts = {
     userRoleVolunteer: "Я - волонтер",
     userRolePetOwner: "У меня есть домашнее животное",
     myQuestions: "Мои вопросы",
+    myQuestions_subtitle: "Вопросы, которые Вы задавали",
     viewQuestion: "Просмотр вопроса",
     allQuestions: "все",
     animalInfo: "Уличный кот итд...",

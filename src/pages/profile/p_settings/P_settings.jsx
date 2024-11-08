@@ -30,9 +30,9 @@ function P_settings() {
   ];
 
   // Фильтрация флагов, чтобы исключить текущий выбранный флаг
-  const filteredLanguages = languages.filter(
-    (lang) => lang.flag !== selectedFlag
-  );
+  // const filteredLanguages = languages.filter(
+  //   (lang) => lang.flag !== selectedFlag
+  // );
 
   // функция для выбора флага
   const handleSelect = (flag, code) => {
@@ -106,16 +106,17 @@ function P_settings() {
         <p>{t("settings.language")}</p>
 
         <div className={s.flagContainer}>
-          <div className={s.selectedFlag} onClick={() => setIsOpen(!isOpen)}>
-            <img
-              src={selectedFlag}
-              alt="Selected language"
-              className={s.selectedFlagImage} // Добавьте класс для стилизации выбранного флага
-            />
-          </div>
-          {isOpen && (
+          {!isOpen ? (
+            <div className={s.selectedFlag} onClick={() => setIsOpen(!isOpen)}>
+              <img
+                src={selectedFlag}
+                alt="Selected language"
+                className={s.selectedFlagImage} // стилизации выбранного флага
+              />
+            </div>
+          ) : (
             <div className={s.dropdownMenu}>
-              {filteredLanguages.map((lang) => (
+              {languages.map((lang) => (
                 <div
                   key={lang.code}
                   className={s.option}

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import LineHeader from "../../../components/lineHeader/LineHeader";
 import CustomInput from "../../../components/customInput/CustomInput";
 import s from "./l_vetVerificationPage.module.css";
-import FileUploader from "../../../components/fileUploader/FileUploader";
+import FileUploader from "../../../components/fileUploader/FileUploader"; // Импорт FileUploader. Пропсы передаются в компонент для обработки загрузки файлов + стили.
 import CustomButton from "../../../components/customButton/CustomButton";
 import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
 import { useForm } from "react-hook-form";
@@ -79,11 +79,17 @@ const L_vetVerificationPage = () => {
       <h2>{t("vetVerificationPage.header")}</h2>
       <LineHeader showMiddleLine={false} />
 
-      <h5 dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.notAuthorized") }} />
+      <h5
+        dangerouslySetInnerHTML={{
+          __html: t("vetVerificationPage.notAuthorized"),
+        }}
+      />
 
       <p
         className={s.l_vetVerificationPage_pGreen}
-        dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.additionalData") }}
+        dangerouslySetInnerHTML={{
+          __html: t("vetVerificationPage.additionalData"),
+        }}
       />
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -95,7 +101,10 @@ const L_vetVerificationPage = () => {
         <CustomInput
           {...register("name", {
             required: t("vetVerificationPage.nameRequired"),
-            minLength: { value: 2, message: t("vetVerificationPage.nameMinLength") },
+            minLength: {
+              value: 2,
+              message: t("vetVerificationPage.nameMinLength"),
+            },
           })}
           color={"var(--color-text-dark)"}
           placeholder={t("vetVerificationPage.namePlaceholder")}
@@ -107,12 +116,21 @@ const L_vetVerificationPage = () => {
         {/* Документы */}
         <div style={{ display: "flex" }}>
           <label
-            style={{ alignSelf: "start", lineHeight: 0.6 }}
-            dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.documentsLabel") }}
+            style={{ alignSelf: "start", lineHeight: 0.7 }}
+            dangerouslySetInnerHTML={{
+              __html: t("vetVerificationPage.documentsLabel"),
+            }}
           />
-          <span style={{ color: "#2A9D8F", position: "relative", top: "25px" }}>*</span>
+          <span style={{ color: "#2A9D8F", position: "relative", top: "25px" }}>
+            *
+          </span>
         </div>
-        <FileUploader maxFiles={6} boxSize={50} borderRadius={5} onUpload={onUpload} />
+        <FileUploader
+          maxFiles={6}
+          boxSize={50} /* пропсы с import FileUploader jsx  */
+          borderRadius={5}
+          onUpload={onUpload}
+        />
 
         {/* Дополнительная информация */}
         <label style={{ alignSelf: "start" }}>
@@ -158,14 +176,19 @@ const L_vetVerificationPage = () => {
         <CustomInput
           {...register("telegram", {
             required: t("vetVerificationPage.telegramRequired"),
-            minLength: { value: 2, message: t("vetVerificationPage.telegramMinLength") },
+            minLength: {
+              value: 2,
+              message: t("vetVerificationPage.telegramMinLength"),
+            },
           })}
           color={"var(--color-text-dark)"}
           placeholder="@"
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
-        {errors.telegram && <p style={{ color: "red" }}>{errors.telegram.message}</p>}
+        {errors.telegram && (
+          <p style={{ color: "red" }}>{errors.telegram.message}</p>
+        )}
 
         {/* Специализация */}
         <label style={{ alignSelf: "start" }}>
@@ -193,21 +216,30 @@ const L_vetVerificationPage = () => {
         <div style={{ display: "flex" }}>
           <label
             style={{ alignSelf: "start", lineHeight: 0.6 }}
-            dangerouslySetInnerHTML={{ __html: t("vetVerificationPage.petArtLabel") }}
+            dangerouslySetInnerHTML={{
+              __html: t("vetVerificationPage.petArtLabel"),
+            }}
           />
-          <span style={{ color: "#2A9D8F", position: "relative", top: "25px" }}>*</span>
+          <span style={{ color: "#2A9D8F", position: "relative", top: "25px" }}>
+            *
+          </span>
         </div>
         <CustomInput
           {...register("petArt", {
             required: t("vetVerificationPage.petArtRequired"),
-            minLength: { value: 2, message: t("vetVerificationPage.petArtMinLength") },
+            minLength: {
+              value: 2,
+              message: t("vetVerificationPage.petArtMinLength"),
+            },
           })}
           color={"var(--color-text-dark)"}
           placeholder={t("vetVerificationPage.petArtPlaceholder")}
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
-        {errors.petArt && <p style={{ color: "red" }}>{errors.petArt.message}</p>}
+        {errors.petArt && (
+          <p style={{ color: "red" }}>{errors.petArt.message}</p>
+        )}
 
         {/* Чекбокс */}
         <span className={s.checkboxBox}>

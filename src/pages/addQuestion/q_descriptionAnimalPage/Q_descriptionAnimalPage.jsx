@@ -69,15 +69,8 @@ const Q_descriptionAnimalPage = () => {
       formData.append("petWeight", data.petWeight);
       formData.append("petGender", data.petGender);
       /*formData.append("isHomeless", isCheckboxChecked);*/
-      files.forEach((fileObj, index) => {
-        const { file } = fileObj;
-        console.log("Проверка файла перед добавлением в FormData:", {
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          lastModified: file.lastModified,
-        });
-        formData.append(`files[${index}]`, file);
+      files.forEach((fileObj) => {
+        formData.append(`files`, fileObj.file);
       });
 
       // Проверяем что попало в FormData

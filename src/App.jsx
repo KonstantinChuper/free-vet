@@ -24,8 +24,9 @@ import DonatePage from "./pages/donatePage/DonatePage";
 import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
+
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); // TODO: replace to true in production
 
   useEffect(() => {
     const timer = setTimeout(() => {

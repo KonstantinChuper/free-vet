@@ -1,5 +1,5 @@
-import styles from "./styles.module.css";
-import arrow_icon from "../../assets/icons/arrow_icon.svg";
+import styles from "./ModalWindow.module.css";
+import modal_right_arrow_icon from "../../assets/modal_right_arrow_icon.svg";
 import { Link } from "react-router-dom";
 
 function ModalWindow() {
@@ -7,11 +7,11 @@ function ModalWindow() {
     <div className={styles.modal_container}>
       <Link to="#" className={styles.modal_content}>
         <button className={styles.modal_button}>Ответить</button>
-        <img src={arrow_icon} alt="Arrow_Icon" />
+        <img src={modal_right_arrow_icon} alt="Arrow_Icon" />
       </Link>
       <Link to="#" className={styles.modal_content}>
         <button className={styles.modal_button}>Завершить вопрос</button>
-        <img src={arrow_icon} alt="Arrow_Icon" />
+        <img src={modal_right_arrow_icon} alt="Arrow_Icon" />
       </Link>
 
       <Link to="#" className={styles.modal_bttn}>

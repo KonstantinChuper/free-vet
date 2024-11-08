@@ -21,7 +21,8 @@ import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
 import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
-
+import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
+import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -74,6 +75,8 @@ function App() {
         <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
+        <Route path="/profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
+        <Route path="/profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
       </Routes>
     </Router>
   );

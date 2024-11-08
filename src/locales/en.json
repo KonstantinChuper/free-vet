@@ -56,6 +56,7 @@
   "customMessage": {
     "questionTitle": "Question No.",
     "awaitingResponse": "Awaiting response",
+    "responseSent": "Response sent",
     "homelessAnimal": "Homeless animal"
   },
   "customPetCard": {
@@ -111,7 +112,6 @@
     "noCreateBtn": "Do not create",
     "createBtn": "Create"
   },
-
   "form": {
     "createAccount": "Create an account",
     "name": "Name",
@@ -323,14 +323,18 @@
     "userRoleVolunteer": "I am a volunteer",
     "userRolePetOwner": "I have a pet",
     "myQuestions": "My questions",
+    "myQuestions_subtitle": "Questions you have asked",
+    "viewQuestion": "View Question",
+    "vetAnswer": "Veterinarian answers",
     "allQuestions": "all",
     "animalInfo": "Street cat etc...",
     "vetBooks": "Veterinary books",
     "allVetBooks": "all",
     "myAnimalsTitle": "My animals",
-    "strayAnimalsTitle": "Stray animals"
+    "strayAnimalsTitle": "Stray animals",
+    "actionsButton": "Actions"
   },
-    "DonatePage": {
+  "DonatePage": {
     "title": "Support the Service",
     "financialSupportTitle": "Financial Support",
     "oneTimeSupportTitle": "One-Time Support",
@@ -382,5 +386,5 @@
     "learnMoreButton": "Learn More",
     "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
     "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
-}
+  }
 }

@@ -9,7 +9,7 @@ const Loader = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveCircle((prevIndex) => (prevIndex + 1) % totalCircles);
-    }, 200); // Меняем активный круг каждые 200 миллисекунд
+    }, 200);
     return () => clearInterval(interval);
   }, [totalCircles]);
 

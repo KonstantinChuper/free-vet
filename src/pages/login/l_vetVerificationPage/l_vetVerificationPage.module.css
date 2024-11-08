@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0;
+  padding: 40px 0 30px; /* Добавлен отступ сверху, чтобы предотвратить перекрытие header */
   height: 100%;
   max-width: 375px;
   margin: 0 auto;
@@ -11,11 +11,13 @@
 .l_vetVerificationPage h2 {
   font-weight: 300;
   font-size: 36px;
+  color: #242424; /* цвет заголовка */
 }
 
 .l_vetVerificationPage h5 {
   text-align: center;
   line-height: 0.6;
+  color: #242424;
 }
 
 .l_vetVerificationPage_pGreen {
@@ -42,9 +44,9 @@
 }
 
 .l_vetVerificationPage textarea {
-outline-color: var(--color-main);
-font-style: italic;
-} 
+  outline-color: var(--color-main);
+  font-style: italic;
+}
 
 .checkboxBox {
   display: flex;
@@ -56,4 +58,5 @@ font-style: italic;
 .buttonGroup {
   display: flex;
   gap: 8px;
+  margin-left: -11px; /* Отрицательный отступ используется для горизонтального выравнивания кнопок в соответствии с дизайном. */
 }

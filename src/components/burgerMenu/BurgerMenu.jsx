@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import s from './burgerMenu.module.css';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import s from "./burgerMenu.module.css";
 
 const BurgerMenu = () => {
   const { t } = useTranslation();
@@ -20,10 +20,12 @@ const BurgerMenu = () => {
       {isOpen && (
         <div className={s.modal}>
           <div className={s.modalContent}>
-            <span className={s.close} onClick={toggleMenu}>&times;</span>
+            <span className={s.close} onClick={toggleMenu}>
+              &times;
+            </span>
             <ul>
-              <li>{t('burgerMenu.editProfile')}</li>
-              <li>{t('burgerMenu.settings')}</li>
+              <li>{t("burgerMenu.editProfile")}</li>
+              <li>{t("burgerMenu.settings")}</li>
             </ul>
           </div>
         </div>

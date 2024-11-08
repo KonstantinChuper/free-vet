@@ -75,8 +75,14 @@ function App() {
         <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
-        <Route path="/profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
-        <Route path="/profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
+        <Route
+          path="/profile/settings/doctor/notification"
+          element={<E_settingsNotificationProfilePage />}
+        />
+        <Route
+          path="/profile/settings/user/notification"
+          element={<E_settingsNotificationProfileUserPage />}
+        />
       </Routes>
     </Router>
   );

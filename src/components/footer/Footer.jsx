@@ -6,6 +6,7 @@ import PlusWhite from "../../assets/PlusWhite.png";
 import Profile from "../../assets/Profile.png";
 import Vectore from "../../assets/Vector.png";
 import Paw from "../../assets/paw.png";
+import Container from "../container/Container";
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -25,19 +26,19 @@ const Footer = () => {
   };
 
   return (
-    <div className={s.footer}>
-      {links.map((link, index) => (
-        <Link
-          key={index}
-          to={link.path}
-          className={s.footerItem}
-          onClick={() => handleLinkClick(link.path)}
-        >
-          <img src={link.icon} alt={link.label} className={s.footerIcon} />
-          <span className={s.footer_links}>{link.label}</span>
-        </Link>
-      ))}
-    </div>
+      <div className={s.footer}>
+        {links.map((link, index) => (
+          <Link
+            key={index}
+            to={link.path}
+            className={s.footerItem}
+            onClick={() => handleLinkClick(link.path)}
+          >
+            <img src={link.icon} alt={link.label} className={s.footerIcon} />
+            <span className={s.footer_links}>{link.label}</span>
+          </Link>
+        ))}
+      </div>
   );
 };
 

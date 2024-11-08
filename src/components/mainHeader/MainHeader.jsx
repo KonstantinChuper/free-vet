@@ -11,12 +11,14 @@ const MainHeader = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{t("mainHeader.title")}</h1>
-      <p className={styles.description}>{t("mainHeader.description")}</p>
-      <div className={styles.imagesContainer}>
-        <img src={leftPaw} alt="Left Paw" className={styles.leftPaw} />
-        <img src={catAndDog} alt="Cat and Dog" className={styles.mainImage} />
-        <img src={rightPaw} alt="Right Paw" className={styles.rightPaw} />
+      <div className={styles.innerContainer}>
+        <h1 className={styles.title}>{t("mainHeader.title")}</h1>
+        <p className={styles.description}>{t("mainHeader.description")}</p>
+        <div className={styles.imagesContainer}>
+          <img src={leftPaw} alt="Left Paw" className={styles.leftPaw} />
+          <img src={catAndDog} alt="Cat and Dog" className={styles.mainImage} />
+          <img src={rightPaw} alt="Right Paw" className={styles.rightPaw} />
+        </div>
       </div>
     </div>
   );

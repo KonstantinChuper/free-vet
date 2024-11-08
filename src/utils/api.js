@@ -84,6 +84,19 @@ export const addQuestion = async (data) => {
   }
 };
 
+export const updateQuestion = async (data) => {
+    try {
+        const response = await apiClientJson.post(
+            '/api/questions/update/',
+            data
+        )
+        return response.data
+    } catch (error) {
+        console.error('Ошибка отправки вопроса:', error)
+        throw error
+    }
+}
+
 // 6. /api/users/update/ - роль юзера
 export const updateUserRole = async (data) => {
   try {
@@ -95,4 +108,7 @@ export const updateUserRole = async (data) => {
   }
 };
 
+
+
 export default API_BASE_URL;
+

@@ -31,6 +31,11 @@
     "editProfile": "Uredi profil",
     "settings": "Podešavanja"
   },
+  "settings": {
+    "settings": "Postavke",
+    "notifications": "Obavještenja",
+    "language": "Jezik"
+  },
   "codeInputBox": {
     "codeLabel": "Kod",
     "requiredError": "Unijeli ste pogrešan kod! Pokušajte ponovo",
@@ -329,7 +334,7 @@
     "myAnimalsTitle": "Moje životinje",
     "strayAnimalsTitle": "Beskućne životinje"
   },
-    "DonatePage": {
+  "DonatePage": {
     "title": "Podržite servis",
     "financialSupportTitle": "Finansijska podrška",
     "oneTimeSupportTitle": "Jednokratna podrška",
@@ -381,5 +386,5 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - servis ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
-}
+  }
 }

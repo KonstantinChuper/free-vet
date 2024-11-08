@@ -31,6 +31,12 @@
     "editProfile": "Uredi profil",
     "settings": "Postavke"
   },
+  "settings": {
+    "settings": "Postavke",
+    "notifications": "Obavijesti",
+    "language": "Jezik"
+  },
+
   "codeInputBox": {
     "codeLabel": "Kod",
     "requiredError": "Unijeli ste pogrešan kod! Pokušajte ponovo",
@@ -381,5 +387,5 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
-}
+  }
 }

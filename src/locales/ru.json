@@ -31,6 +31,12 @@
     "editProfile": "Редактировать профиль",
     "settings": "Настройки"
   },
+  "settings": {
+    "settings": "Настройки",
+    "notifications": "Уведомления",
+    "language": "Язык"
+  },
+
   "codeInputBox": {
     "codeLabel": "Код",
     "requiredError": "Вы ввели неправильный код! Попробуйте еще раз",
@@ -329,7 +335,7 @@
     "myAnimalsTitle": "Мои животные",
     "strayAnimalsTitle": "Бездомные животные"
   },
-    "DonatePage": {
+  "DonatePage": {
     "title": "Поддержать сервис",
     "financialSupportTitle": "Финансовая поддержка",
     "oneTimeSupportTitle": "Единовременная поддержка",
@@ -347,7 +353,7 @@
     "applyButton": "Подать заявку",
     "footerThankYou": "Спасибо за Вашу поддержку!"
   },
-"aboutServicePage": {
+  "aboutServicePage": {
     "serviceTitle": "О сервисе",
     "serviceDescription": "FreeVet - это сервис TailBook Ecosystem, основная возможность которого задавать вопросы о здоровье животных лучшим ветеринарам. Современный, простой и удобный способ поддерживать здоровье и благополучие как бездомных, так и домашних животных.",
     "benefitsTitle": "Преимущества для",

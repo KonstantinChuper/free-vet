@@ -31,6 +31,11 @@
     "editProfile": "Edit profile",
     "settings": "Settings"
   },
+  "settings": {
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "language": "Language"
+  },
   "codeInputBox": {
     "codeLabel": "Code",
     "requiredError": "You entered an incorrect code! Please try again",
@@ -330,7 +335,7 @@
     "myAnimalsTitle": "My animals",
     "strayAnimalsTitle": "Stray animals"
   },
-    "DonatePage": {
+  "DonatePage": {
     "title": "Support the Service",
     "financialSupportTitle": "Financial Support",
     "oneTimeSupportTitle": "One-Time Support",
@@ -382,5 +387,5 @@
     "learnMoreButton": "Learn More",
     "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
     "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
-}
+  }
 }

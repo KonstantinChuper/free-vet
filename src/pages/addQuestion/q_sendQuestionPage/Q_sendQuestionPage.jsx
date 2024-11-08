@@ -76,20 +76,6 @@ const Q_sendQuestionPage = () => {
               const fileUrl = URL.createObjectURL(file.file);
               return (
                 <div key={index} className={s.fileBox}>
-                  {/* {file.type.startsWith('image') ? (
-                                    <img
-                                        src={file.data}
-                                        alt={`uploaded-file-${index}`}
-                                    />
-                                ) : file.type.startsWith('video') ? (
-                                    <video controls src={file.data} />
-                                ) : (
-                                    <p>
-                                        {t(
-                                            'sendQuestionPage.unsupportedFileFormat'
-                                        )}
-                                    </p>
-                                )} TODO: findout data structure from backend*/}
                   <img
                     src={fileUrl}
                     alt="Uploaded"

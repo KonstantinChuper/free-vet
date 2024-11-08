@@ -29,11 +29,6 @@ function P_settings() {
     { code: "fr", flag: fr, alt: "French" },
   ];
 
-  // Фильтрация флагов, чтобы исключить текущий выбранный флаг
-  // const filteredLanguages = languages.filter(
-  //   (lang) => lang.flag !== selectedFlag
-  // );
-
   // функция для выбора флага
   const handleSelect = (flag, code) => {
     setSelectedFlag(flag); // обновляем состояние с новым флагом
@@ -44,51 +39,7 @@ function P_settings() {
       localStorage.setItem("selectedLanguage", code); // Сохраняем выбранный язык в localStorage
     });
   };
-  // return (
-  //   <div className={s.conteater_settings}>
-  //     <div className={s.settings_header}>
-  //       <img src={back} alt="back" />
-  //       <h1>{t("settings.settings")}</h1>
-  //       <img src={close} alt="close" />
-  //     </div>
 
-  //     <div className={s.notification}>
-  //       <p>{t("settings.notifications")}</p>
-  //       <img src={arrowRight} alt="arrow right" />
-  //     </div>
-  //     <hr />
-  //     <div className={s.language}>
-  //       <p>{t("settings.language")}</p>
-  //       <div className={s.selectedFlag} onClick={() => setIsOpen(!isOpen)}>
-  //         {!isOpen && (
-  //           <img
-  //             src={selectedFlag}
-  //             alt="Selected language"
-  //             className={s.selectedFlagImage}
-  //           />
-  //         )}
-  //       </div>
-  //       {isOpen && (
-  //         <div className={s.dropdownMenu}>
-  //           <img
-  //             src={selectedFlag}
-  //             alt="Selected language"
-  //             className={s.flagImage}
-  //           />
-  //           {filteredLanguages.map((lang) => (
-  //             <div
-  //               key={lang.code}
-  //               className={s.option}
-  //               onClick={() => handleSelect(lang.flag, lang.code)}
-  //             >
-  //               <img src={lang.flag} alt={lang.alt} className={s.flagImage} />
-  //             </div>
-  //           ))}
-  //         </div>
-  //       )}
-  //     </div>
-  //   </div>
-  // );
   return (
     <div className={s.conteater_settings}>
       <div className={s.settings_header}>
@@ -103,19 +54,13 @@ function P_settings() {
       </div>
 
       <div className={s.language}>
-        {/* Новый контейнер для параграфа */}
-        <div className={s.languageLabel}>
-          <p>{t("settings.language")}</p>
-        </div>
+        <p>{t("settings.language")}</p>
+
         {/* Контейнер для флагов */}
         <div className={s.flagContainer}>
           {!isOpen ? (
             <div className={s.selectedFlag} onClick={() => setIsOpen(!isOpen)}>
-              <img
-                src={selectedFlag}
-                alt="Selected language"
-                className={s.selectedFlagImage} // стилизации выбранного флага
-              />
+              <img src={selectedFlag} alt="Selected language" />
             </div>
           ) : (
             <div className={s.dropdownMenu}>
@@ -125,7 +70,7 @@ function P_settings() {
                   className={s.option}
                   onClick={() => handleSelect(lang.flag, lang.code)}
                 >
-                  <img src={lang.flag} alt={lang.alt} className={s.flagImage} />
+                  <img src={lang.flag} alt={lang.alt} />
                 </div>
               ))}
             </div>

@@ -22,6 +22,8 @@ import DonatePage from "./pages/donatePage/DonatePage";
 import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
+import P_addMessagePage from "./pages/profile/p_addMessagePage/P_addMessagePage";
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -58,8 +60,9 @@ function App() {
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
-        <Route path="/profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
-        <Route path="/profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
+        <Route path="/e_profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
+        <Route path="/e_profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
+      <Route path="/profile/message/add" element={<P_addMessagePage/>}/>
       </Routes>
     </Router>
   );

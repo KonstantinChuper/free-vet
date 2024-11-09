@@ -119,7 +119,7 @@ const Q_confirmationPage = () => {
         ) : (
           <p>{t("sendQuestionPage.noPhotos")}</p>
         )}
-      </div> */}
+      </div> 
     </div>
   );
 };

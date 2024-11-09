@@ -8,8 +8,7 @@ import LineHeader from "../../../components/lineHeader/LineHeader";
 import close from "../../../assets/close.svg";
 import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
-import { addQuestion, updateQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
-
+import { updateQuestion } from "../../../utils/api";
 
 const Q_sendQuestionPage = () => {
   const { t } = useTranslation();
@@ -17,15 +16,7 @@ const Q_sendQuestionPage = () => {
   const navigate = useNavigate();
   const { petArt, petWeight, petGender, isHomeless, files, userId } =
     location.state || {};
-  const {
-    petArt,
-    petWeight,
-    petGender,
-    isHomeless,
-    files = [],
-    userId,
-    questionId,
-  } = location.state;
+
   const {
     register,
     handleSubmit,
@@ -40,22 +31,6 @@ const Q_sendQuestionPage = () => {
         user_id: userId,
         questions: data.question,
       };
-
-      // Добавляем текстовые поля в formData
-      // formData.append("question", data.question);
-      // formData.append("petArt", petArt);
-      // formData.append("petWeight", petWeight);
-      // formData.append("petGender", petGender);
-      // formData.append("isHomeless", isHomeless);
-      // formData.append("userId", userId);
-      // formData.append("questionId", questionId);
-
-      // Добавляем файлы в formData
-      // if (files.length > 0) {
-      //   files.forEach((file, index) => {
-      //     formData.append(`file_${index}`, file);
-      //   });
-      // }
 
       // Отправляем запрос
       const response = await updateQuestion(dataToSend);

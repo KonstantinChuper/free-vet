@@ -239,19 +239,20 @@
 // export default Q_descriptionAnimalPage;
 
 import axios from "axios";
-import axios from "axios";
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useForm } from "react-hook-form";
-import { useNavigate, Link } from "react-router-dom";
 import FormHeader from "../../../components/formHeader/FormHeader";
-import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import LineHeader from "../../../components/lineHeader/LineHeader";
+import s from "./q_descriptionAnimalPage.module.css";
+import FileUploader from "../../../components/fileUploader/FileUploader";
+import { useForm } from "react-hook-form";
 import CustomInput from "../../../components/customInput/CustomInput";
 import CustomCheckbox from "../../../components/customCheckbox/CustomCheckbox";
-import ErrorMessage from "../../../components/errorMessage/ErrorMessage";
 import close from "../../../assets/close.svg";
-import FileUploader from "../../../components/fileUploader/FileUploader";
-import s from "./q_descriptionAnimalPage.module.css";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import { addQuestion } from "../../../utils/api";
+import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 
 const Q_descriptionAnimalPage = () => {
   const { t } = useTranslation();
@@ -295,11 +296,13 @@ const onSubmit = async (data) => {
       petWeight: data.petWeight,
       petGender: data.petGender,
       isHomeless: isCheckboxChecked,
-      files: files.map((file, index) => ({ name: file.name, url: file.url, type: file.type })),
+      files: files.map((file) => ({ name: file.name, url: file.url, type: file.type })),
     };
 
+    console.log("Отправляемые данные:", formData);
+
     // Отправка данных на сервер
-    const response = await axios.post("http://localhost:5000/descriptions", formData, {
+    const response = await axios.post("http://localhost:5000/questions", formData, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -310,11 +313,21 @@ const onSubmit = async (data) => {
     // Переход на следующую страницу после успешной отправки
     navigate("/main/question/description-animal/send");
   } catch (error) {
-    setErrorMessage(t("errorMessages.formSendError"));
-    console.error("Ошибка при отправке формы:", error);
-  }
-};
+    // Логирование ошибки для диагностики
+    if (error.response) {
+      console.error("Ошибка ответа сервера:", error.response.data);
+      console.error("Код ошибки:", error.response.status);
+    } else if (error.request) {
+      console.error("Сервер не ответил на запрос:", error.request);
+    } else {
+      console.error("Ошибка при настройке запроса:", error.message);
+    }
 
+    // Установка сообщения об ошибке
+    setErrorMessage(t("errorMessages.formSendError"));
+  }
+  };
+  
   const handleHomelessChange = (e) => {
     setIsCheckboxChecked(e.target.checked);
   };

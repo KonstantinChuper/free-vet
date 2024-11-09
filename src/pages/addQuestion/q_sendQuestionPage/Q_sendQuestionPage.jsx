@@ -128,17 +128,17 @@
 
 // export default Q_sendQuestionPage;
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
-import CustomTextarea from './CustomTextarea'; 
-import CustomButtonSubmit from './CustomButtonSubmit'; 
-import FormHeader from './FormHeader';
-import LineHeader from './LineHeader'; 
-import close from './close.svg'; 
-import s from './Q_sendQuestionPage.module.css';  
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import s from "./q_sendQuestionPage.module.css";
+import FormHeader from "../../../components/formHeader/FormHeader";
+import LineHeader from "../../../components/lineHeader/LineHeader";
+import close from "../../../assets/close.svg";
+import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
+import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import { addQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
 
 const Q_sendQuestionPage = ({ petData }) => {
   const { t } = useTranslation();

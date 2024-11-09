@@ -59,14 +59,14 @@
 //   );
 // };
 
-// export default Q_confirmationPage;
+import axios from "axios";
+import s from "./q_confirmationPage.module.css";
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import close from "../../../assets/close.svg";
 import QuestionDetails from "../../../components/questionDetails/QuestionDetails";
-import s from "./q_confirmationPage.module.css";
 
 const Q_confirmationPage = () => {
   const { t } = useTranslation();
@@ -124,3 +124,4 @@ const Q_confirmationPage = () => {
 };
 
 export default Q_confirmationPage;
+

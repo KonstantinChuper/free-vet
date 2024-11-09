@@ -18,29 +18,27 @@ const QuestionDetails = ({
         <span className={s.question_number}>
           {t("customMessage.questionTitle")}
         </span>
-        <span className={s.status}>{petArt}</span>
+        <span className={s.status}> {petArt}</span>
       </div>
       <div className={s.animal_photos}>
         {files && files.length > 0 ? (
-          <div className={s.filesContainer}>
-            {files.map((file, index) => (
-              <div key={index} className={s.file_box}>
-                {file.type &&
-                (file.type.startsWith("image") ||
-                  file.type.startsWith("video")) ? (
-                  file.type.startsWith("image") ? (
-                    <img src={file.data} alt={`uploaded-file-${index}`} />
-                  ) : (
-                    <video controls src={file.data} />
-                  )
-                ) : (
-                  <p>Unsupported File Format</p>
-                )}
-              </div>
-            ))}
-          </div>
+          files.map((file, index) => (
+            <div key={index} className={s.fileBox}>
+              {file.type.startsWith("image") ? (
+                <img
+                  src={file.url}
+                  alt={`uploaded-file-${index}`}
+                  className={s.uploadedImage}
+                />
+              ) : file.type.startsWith("video") ? (
+                <video controls src={file.url} />
+              ) : (
+                <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
+              )}
+            </div>
+          ))
         ) : (
-          <p>No Photos</p>
+          <p>{t("sendQuestionPage.noPhotos")}</p>
         )}
       </div>
       <div className={s.animal_data}>

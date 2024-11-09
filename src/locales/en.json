@@ -31,6 +31,11 @@
     "editProfile": "Edit profile",
     "settings": "Settings"
   },
+  "settings": {
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "language": "Language"
+  },
   "codeInputBox": {
     "codeLabel": "Code",
     "requiredError": "You entered an incorrect code! Please try again",
@@ -189,6 +194,10 @@
     "requiredField": "Field is required",
     "writeQuestion": "Write your question"
   },
+  "respondQuestionPage": {
+    "header": "Respond",
+    "subtitle": "The question has been moved to selected questions (Profile)"
+  },
   "mainHeader": {
     "title": "Welcome to FreeVet",
     "description": "A service of the TailBook ecosystem that allows you to ask qualified and experienced veterinarians questions for free and receive answers."
@@ -323,6 +332,7 @@
     "userRoleVolunteer": "I am a volunteer",
     "userRolePetOwner": "I have a pet",
     "myQuestions": "My questions",
+    "myQuestions_subtitle": "Questions you have asked",
     "viewQuestion": "View Question",
     "vetAnswer": "Veterinarian answers",
     "allQuestions": "all",
@@ -385,5 +395,17 @@
     "learnMoreButton": "Learn More",
     "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
     "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Notifications",
+    "userQuestions": "User Questions",
+    "additionalUserQuestions": "Additional Questions \n users",
+    "serviceNews": "Service News"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Notifications",
+    "vetAnswers": "Veterinary Answers",
+    "serviceNews": "Service News"
+
   }
 }

@@ -10,12 +10,13 @@ import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 import { addQuestion, updateQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
 
+
 const Q_sendQuestionPage = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-
-  // Данные, переданные с предыдущей страницы
+  const { petArt, petWeight, petGender, isHomeless, files, userId } =
+    location.state || {};
   const {
     petArt,
     petWeight,
@@ -25,7 +26,6 @@ const Q_sendQuestionPage = () => {
     userId,
     questionId,
   } = location.state;
-
   const {
     register,
     handleSubmit,
@@ -74,8 +74,7 @@ const Q_sendQuestionPage = () => {
         },
       });
     } catch (error) {
-      console.error("Ошибка при отправке вопроса:", error);
-      alert("Произошла ошибка при отправке вопроса.");
+      console.error("Ошибка при отправке вопроса", error);
     }
   };
 
@@ -116,9 +115,15 @@ const Q_sendQuestionPage = () => {
         )}
       </div>
       <div className={s.q_sendQuestionPage_description}>
-        <p>{petArt}</p>
-        <p>{petWeight}</p>
-        <p>{petGender}</p>
+        <p>
+          {t("sendQuestionPage.petArt")}: {petArt}
+        </p>
+        <p>
+          {t("sendQuestionPage.petWeight")}: {petWeight}
+        </p>
+        <p>
+          {t("sendQuestionPage.petGender")}: {petGender}
+        </p>
         <p style={{ display: "none" }}>
           {t("sendQuestionPage.homeless")} {isHomeless ? t("yes") : t("no")}
         </p>
@@ -147,7 +152,7 @@ const Q_sendQuestionPage = () => {
         <div className={s.btnBox}>
           <CustomButtonSubmit
             text={t("sendQuestionPage.submitButton")}
-            padding={"16px 89.171px"}
+            padding={"16px 99.5px"}
             disabled={!isValid}
           />
         </div>

@@ -1,3 +1,4 @@
+import axios from "axios";
 import s from "./q_confirmationPage.module.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -15,6 +16,7 @@ const Q_confirmationPage = () => {
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchQuestions = async () => {
       const response = await getUserQuestions(userId);
@@ -29,13 +31,13 @@ const Q_confirmationPage = () => {
   }
   return (
     <div className={s.q_confirmationPage}>
-      <div className={s.q_sendQuestionPage_header}>
+      <div className={s.q_confirmationPage_header}>
         <FormHeader
           path="/main/question/choice"
           fontSize={36}
           titleKey={t("questionPage.title")}
         />
-        <Link to={"/main/question/choice"}>
+        <Link to="/main/question/choice">
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>

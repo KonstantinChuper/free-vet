@@ -189,6 +189,10 @@ const texts = {
     submitButton: "Отправить вопрос",
     requiredField: "Поле обязательно для заполнения",
   },
+  respondQuestionPage: {
+    header: "Откликнуться",
+    subtitle: "Вопрос перемещен в выбранные вопросы (Профиль)",
+  },
   mainHeader: {
     title: "Welcome to FreeVet",
     description:

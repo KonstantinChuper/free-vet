@@ -193,6 +193,10 @@
     "requiredField": "Champ requis",
     "writeQuestion": "Veuillez écrire votre question"
   },
+  "respondQuestionPage": {
+    "header": "Répondre",
+    "subtitle": "La question a été déplacée vers les questions sélectionnées (Profil)"
+  },
   "mainHeader": {
     "title": "Bienvenue chez FreeVet",
     "description": "Un service de l'écosystème TailBook qui vous permet de poser des questions à des vétérinaires qualifiés et expérimentés gratuitement et de recevoir des réponses."

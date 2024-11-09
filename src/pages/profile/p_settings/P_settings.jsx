@@ -1,10 +1,11 @@
 import s from "./p_settings.module.css";
-import { useTransition, useState } from "react";
+import { useTransition, useState, useEffect } from "react";
 import i18n from "../../../utils/i18n";
 import back from "../../../assets/back.svg";
 import close from "../../../assets/close.svg";
 import arrowRight from "../../../assets/arrowRight.svg";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import ba from "../../../assets/flags/ba.svg";
 import en from "../../../assets/flags/en.svg";
 import fr from "../../../assets/flags/fr.svg";
@@ -17,7 +18,7 @@ function P_settings() {
   const { t } = useTranslation();
   const [isPending, startTransition] = useTransition(); // useTransition для асинхронного перехода
   const [isOpen, setIsOpen] = useState(false); // отслеживаем состояние открытия и закрытия выподающего меню
-  const [selectedFlag, setSelectedFlag] = useState(en); // Флаг по умолчанию
+
   // массив данных о языке
   const languages = [
     { code: "en", flag: en, alt: "English" },
@@ -28,6 +29,15 @@ function P_settings() {
     { code: "ua", flag: ua, alt: "Ukrainian" },
     { code: "fr", flag: fr, alt: "French" },
   ];
+
+  // Устанавливаем начальный флаг на основе сохраненного языка
+  const [selectedFlag, setSelectedFlag] = useState(() => {
+    const sevedLanguageCode = localStorage.getItem("selectedLanguage");
+    const savedLanguage = languages.find(
+      (lang) => lang.code === sevedLanguageCode
+    );
+    return savedLanguage ? savedLanguage.flag : en; // Если языка нет, ставим английский по умолчанию
+  });
 
   // функция для выбора флага
   const handleSelect = (flag, code) => {
@@ -40,12 +50,23 @@ function P_settings() {
     });
   };
 
+  useEffect(() => {
+    const savedLanguageCode = localStorage.getItem("selectedLanguage");
+    if (savedLanguageCode && savedLanguageCode !== i18n.language) {
+      i18n.changeLanguage(savedLanguageCode);
+    }
+  }, []);
   return (
     <div className={s.conteater_settings}>
       <div className={s.settings_header}>
-        <img src={back} alt="back" />
+        <Link to="/profile">
+          <img src={back} alt="back" />
+        </Link>
+
         <h1>{t("settings.settings")}</h1>
-        <img src={close} alt="close" />
+        <Link to="/profile">
+          <img src={close} alt="close" />
+        </Link>
       </div>
 
       <div className={s.notification}>

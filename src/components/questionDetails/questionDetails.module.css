@@ -1,0 +1,57 @@
+.question_container {
+  border: 1px solid #f28a2e;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.question_number,
+.status {
+  color: #2a9d8f;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 17.6px;
+}
+
+.animal_photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  column-gap: 10px;
+  margin: 10px 0px;
+}
+
+.uploadedImage,
+.fileBox {
+  border-radius: 10px;
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+}
+
+.animal_data {
+  display: flex;
+  gap: 7px;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18.2px;
+  align-items: center;
+}
+
+.is_homeless {
+  border: 1.5px solid #f28a2e;
+  border-radius: 11px;
+  padding: 3px 10px;
+}
+
+.question_text,
+.question_text > p {
+  width: 100%;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20.8px;
+}

@@ -99,6 +99,7 @@ const Q_confirmationPage = () => {
         isHomeless={isHomeless}
         question={question}
         userId={userId}
+        files={files}
       />
 
       {/* Отображение файлов (изображений и видео) */}
@@ -118,7 +119,7 @@ const Q_confirmationPage = () => {
         ) : (
           <p>{t("sendQuestionPage.noPhotos")}</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

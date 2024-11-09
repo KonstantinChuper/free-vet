@@ -393,6 +393,8 @@
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Сповіщення",
     "userQuestions": "Питання користувачів",
+    "allUserQuestions": "Усі питання",
+    "allUserQuestionsSubheading": "Ознайомтесь з питаннями та відгукніться на будь-яке з них",
     "additionalUserQuestions": "Додаткові питання \n користувачів",
     "serviceNews": "Новини сервісу"
   },
@@ -400,5 +402,10 @@
     "notificationsTitle": "Сповіщення",
     "vetAnswers": "Відповіді ветеринарів",
     "serviceNews": "Новини сервісу"
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Відгукнутись",
+    "endQuestion": "Завершити питання",
+    "addMessage": "Додати повідомлення"
   }
 }

@@ -395,6 +395,8 @@
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Notifications",
     "userQuestions": "User Questions",
+    "allUserQuestions": "All Questions",
+    "allUserQuestionsSubheading": "Explore the questions and respond to any of them",
     "additionalUserQuestions": "Additional Questions \n users",
     "serviceNews": "Service News"
   },
@@ -402,6 +404,10 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
-
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Respond",
+    "endQuestion": "End session",
+    "addMessage": "Add message"
   }
 }

@@ -393,6 +393,8 @@
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Notifications",
     "userQuestions": "Questions des utilisateurs",
+    "allUserQuestions": "Toutes les questions",
+    "allUserQuestionsSubheading": "Consultez les questions et répondez à l'une d'elles",
     "additionalUserQuestions": "Questions supplémentaires \n des utilisateurs",
     "serviceNews": "Actualités du service"
   },
@@ -400,6 +402,10 @@
     "notificationsTitle": "Obavještenja",
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
-
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Répondre",
+    "endQuestion": "Terminer la question",
+    "addMessage": "Ajouter un message"
   }
 }

@@ -25,6 +25,7 @@ import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
 import P_settings from "./pages/profile/p_settings/P_settings";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
+import P_specialistAllQuestionsPage from "./pages/profile/p_specialistAllQuetionsPage/P_specialistAllQuestionsPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false); // TODO: replace to true in production
@@ -98,6 +99,10 @@ function App() {
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
         <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
+        <Route
+          path="/profile/specialist-all-questions"
+          element={<P_specialistAllQuestionsPage />}
+        />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
         <Route path="/settings" element={<P_settings />} />

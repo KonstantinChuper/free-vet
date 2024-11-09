@@ -396,12 +396,21 @@
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Уведомления",
     "userQuestions": "Вопросы пользователей ",
+    "allUserQuestions": "Все вопросы",
+    "allUserQuestionsSubheading": "Ознакомьтесь с вопросами и откликнитесь на любой из них",
+
     "additionalUserQuestions": "Дополнительные вопросы \n пользователей",
     "serviceNews": "Новости сервиса"
   },
-  "E_settingsNotificationProfileUserPage":{
-   "notificationsTitle":"Уведомления",
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Уведомления",
     "vetAnswers": "Ответы ветеринаров",
     "serviceNews": "Новости сервиса"
+  },
+
+  "Modal_locales": {
+    "allUserQuestionsModal": "Откликнуться",
+    "endQuestion": "Завершить вопрос",
+    "addMessage": "Добавить сообщение"
   }
 }

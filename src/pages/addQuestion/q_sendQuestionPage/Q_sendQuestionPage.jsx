@@ -8,8 +8,7 @@ import LineHeader from "../../../components/lineHeader/LineHeader";
 import close from "../../../assets/close.svg";
 import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
-import { addQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
-
+import { addQuestion, updateQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
 
 const Q_sendQuestionPage = () => {
   const { t } = useTranslation();
@@ -17,9 +16,21 @@ const Q_sendQuestionPage = () => {
   const navigate = useNavigate();
 
   // Данные, переданные с предыдущей страницы
-  const { petArt, petWeight, petGender, isHomeless, files = [], userId, questionId } = location.state;
+  const {
+    petArt,
+    petWeight,
+    petGender,
+    isHomeless,
+    files = [],
+    userId,
+    questionId,
+  } = location.state;
 
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({
     mode: "onChange",
   });
 
@@ -30,37 +41,36 @@ const Q_sendQuestionPage = () => {
         questions: data.question,
       };
 
-
       // Добавляем текстовые поля в formData
-      formData.append("question", data.question);
-      formData.append("petArt", petArt);
-      formData.append("petWeight", petWeight);
-      formData.append("petGender", petGender);
-      formData.append("isHomeless", isHomeless);
-      formData.append("userId", userId);
-      formData.append("questionId", questionId);
+      // formData.append("question", data.question);
+      // formData.append("petArt", petArt);
+      // formData.append("petWeight", petWeight);
+      // formData.append("petGender", petGender);
+      // formData.append("isHomeless", isHomeless);
+      // formData.append("userId", userId);
+      // formData.append("questionId", questionId);
 
       // Добавляем файлы в formData
-      if (files.length > 0) {
-        files.forEach((file, index) => {
-          formData.append(`file_${index}`, file);
-        });
-      }
+      // if (files.length > 0) {
+      //   files.forEach((file, index) => {
+      //     formData.append(`file_${index}`, file);
+      //   });
+      // }
 
       // Отправляем запрос
-      const response = await addQuestion(formData);
+      const response = await updateQuestion(dataToSend);
       console.log("Ответ от сервера:", response);
 
       // Переход на страницу подтверждения с передачей данных через state
       navigate("/main/question/confirm", {
-        state: { 
-          question: data.question, 
-          petArt, 
-          petWeight, 
-          petGender, 
-          isHomeless, 
-          files, 
-          userId 
+        state: {
+          question: data.question,
+          petArt,
+          petWeight,
+          petGender,
+          isHomeless,
+          files,
+          userId,
         },
       });
     } catch (error) {
@@ -72,20 +82,28 @@ const Q_sendQuestionPage = () => {
   return (
     <div className={s.q_sendQuestionPage}>
       <div className={s.q_sendQuestionPage_header}>
-        <FormHeader path="/main/question/choice" fontSize={36} titleKey={t("questionPage.title")} />
+        <FormHeader
+          path="/main/question/choice"
+          fontSize={36}
+          titleKey={t("questionPage.title")}
+        />
         <Link to={"/main/question/choice"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-main)"} right={"var(--color-main)"} />
-      <p className={s.q_sendQuestionPage_file_p}>{t("sendQuestionPage.addedMedia")}</p>
+      <p className={s.q_sendQuestionPage_file_p}>
+        {t("sendQuestionPage.addedMedia")}
+      </p>
       <div className={s.q_sendQuestionPage_fileBox}>
-
         {files.length > 0 ? (
           files.map((file, index) => (
             <div key={index} className={s.fileBox}>
               {file.type.startsWith("image") ? (
-                <img src={file.url || URL.createObjectURL(file)} alt={`uploaded-file-${index}`} />
+                <img
+                  src={file.url || URL.createObjectURL(file)}
+                  alt={`uploaded-file-${index}`}
+                />
               ) : file.type.startsWith("video") ? (
                 <video controls src={file.data || URL.createObjectURL(file)} />
               ) : (
@@ -105,10 +123,14 @@ const Q_sendQuestionPage = () => {
           {t("sendQuestionPage.homeless")} {isHomeless ? t("yes") : t("no")}
         </p>
       </div>
-      <p className={s.q_sendQuestionPage_p}>{t("sendQuestionPage.writeQuestion")}</p>
-<form onSubmit={handleSubmit(onSubmit)}>
+      <p className={s.q_sendQuestionPage_p}>
+        {t("sendQuestionPage.writeQuestion")}
+      </p>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <CustomTextarea
-          {...register("question", { required: t("sendQuestionPage.requiredField") })}
+          {...register("question", {
+            required: t("sendQuestionPage.requiredField"),
+          })}
           rows={8}
           cols={50}
           placeholder={t("sendQuestionPage.questionPlaceholder")}
@@ -118,7 +140,9 @@ const Q_sendQuestionPage = () => {
             height: "310px",
           }}
         />
-        {errors.question && <p className={s.errorText}>{errors.question.message}</p>}
+        {errors.question && (
+          <p className={s.errorText}>{errors.question.message}</p>
+        )}
 
         <div className={s.btnBox}>
           <CustomButtonSubmit

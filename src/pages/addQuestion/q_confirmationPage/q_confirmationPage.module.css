@@ -19,3 +19,8 @@
   right: 0;
   top: 21px;
 }
+.question_box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

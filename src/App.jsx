@@ -28,7 +28,7 @@ import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNot
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false); // TODO: replace to true in production
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {

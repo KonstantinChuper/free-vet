@@ -4,10 +4,19 @@ import { useTranslation } from "react-i18next";
 
 export const Question = ({
   id = 55,
-  images = [
-    "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800",
+  files = [
+    {
+      file_url:
+        "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+    {
+      file_url:
+        "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
+    {
+      file_url:
+        "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800",
+    },
   ],
   pet_art = "Кошка",
   pet_weight = "1 кг 200 г",
@@ -15,7 +24,7 @@ export const Question = ({
   is_homeless = true,
   is_awaited = false,
   question = "Уличный кот, за которым я присматриваю, начал кашлять несколько раз в день в последние три недели. Кашель сухой, без выделений. Он активный, аппетит нормальный, но меня беспокоит частота кашля. Корм не меняли. Также прикладываю видео, где видно и слышно, как кот кашляет.",
-  openModal,
+  openModal = () => {},
 }) => {
   const { t } = useTranslation();
 
@@ -31,7 +40,7 @@ export const Question = ({
             {t("customMessage.awaitingResponse")}
           </button>
         ) : (
-          <button className={`${s.btn} `}>
+          <button className={`${s.btn} ${s.sentBtn}`}>
             {t("customMessage.responseSent")}
           </button>
         )}
@@ -41,14 +50,17 @@ export const Question = ({
             <Icon />
           </button>
         )}
-        {/* TODO: add translations to btn texts */}
       </div>
       <div className={s.question_images}>
-        {images.map((i, idx) => (
-          <div key={idx} className={s.question_imgBox}>
-            <img src={i} alt={`Image ${i}`} />
-          </div>
-        ))}
+        {files.length ? (
+          files.map(({ file_url }, idx) => (
+            <div key={idx} className={s.question_imgBox}>
+              <img src={file_url} alt={`Image ${file_url}`} />
+            </div>
+          ))
+        ) : (
+          <p>{t("sendQuestionPage.noPhotos")}</p>
+        )}
       </div>
       <div className={s.question_details}>
         <p>{pet_art}</p>

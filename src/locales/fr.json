@@ -389,5 +389,17 @@
     "learnMoreButton": "En savoir plus",
     "tailbookTitle": "FreeVet - un service de l'écosystème TailBook",
     "tailbookDescription": "TailBook - un écosystème qui facilite l’aide aux animaux errants et propose des services utiles pour les animaux de compagnie"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Notifications",
+    "userQuestions": "Questions des utilisateurs",
+    "additionalUserQuestions": "Questions supplémentaires \n des utilisateurs",
+    "serviceNews": "Actualités du service"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obavještenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+
   }
 }

@@ -389,5 +389,16 @@
     "learnMoreButton": "Ознайомитись",
     "tailbookTitle": "FreeVet - сервіс екосистеми TailBook",
     "tailbookDescription": "TailBook - екосистема, що спрощує допомогу безпритульним тваринам і надає корисні сервіси для домашніх улюбленців"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Сповіщення",
+    "userQuestions": "Питання користувачів",
+    "additionalUserQuestions": "Додаткові питання \n користувачів",
+    "serviceNews": "Новини сервісу"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Сповіщення",
+    "vetAnswers": "Відповіді ветеринарів",
+    "serviceNews": "Новини сервісу"
   }
 }

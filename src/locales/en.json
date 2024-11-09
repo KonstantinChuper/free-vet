@@ -391,5 +391,17 @@
     "learnMoreButton": "Learn More",
     "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
     "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Notifications",
+    "userQuestions": "User Questions",
+    "additionalUserQuestions": "Additional Questions \n users",
+    "serviceNews": "Service News"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Notifications",
+    "vetAnswers": "Veterinary Answers",
+    "serviceNews": "Service News"
+
   }
 }

@@ -382,7 +382,6 @@
     "stat3span": "120",
     "stat4": "евро пожертвовано на разивтие проекта",
     "stat4span": "550",
-
     "infoTitle": "Информация",
     "info1": "Руководствопользователя(специалист)",
     "info2": "Пользовательскоесоглашение(специалист)",
@@ -393,5 +392,16 @@
     "learnMoreButton": "Ознакомиться",
     "tailbookTitle": "FreeVet - сервис экосистемы TailBook",
     "tailbookDescription": "TailBook -  экосистема, упрощающая помощьбездомным животным и предоставляющая полезные сервисы для домашних любимцев"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Уведомления",
+    "userQuestions": "Вопросы пользователей ",
+    "additionalUserQuestions": "Дополнительные вопросы \n пользователей",
+    "serviceNews": "Новости сервиса"
+  },
+  "E_settingsNotificationProfileUserPage":{
+   "notificationsTitle":"Уведомления",
+    "vetAnswers": "Ответы ветеринаров",
+    "serviceNews": "Новости сервиса"
   }
 }

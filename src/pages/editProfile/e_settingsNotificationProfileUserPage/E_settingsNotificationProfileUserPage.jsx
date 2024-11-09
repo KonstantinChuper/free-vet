@@ -2,9 +2,9 @@ import s from './E_settingsNotificationProfileUserPage.module.css'
 import React, { useState } from 'react';
 import leftArrow from "../../../assets/left-arrow.svg";
 import { useNavigate } from 'react-router-dom'; 
-import { useTransition } from "react-i18next";
+import { useTranslation } from "react-i18next";
 const E_settingsNotificationProfileUserPage = () => {
-  const { t } = useTransition();
+  const { t } = useTranslation();
   const [vetAnswers, setVetAnswers] = useState(false);
   const [serviceNews, setServiceNews] = useState(false);
   const navigate = useNavigate();  // инициализация useNavigate

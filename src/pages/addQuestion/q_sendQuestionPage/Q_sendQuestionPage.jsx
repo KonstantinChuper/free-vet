@@ -140,12 +140,8 @@ import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 import { addQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
 
-<<<<<<< HEAD
-const Q_sendQuestionPage = ({ petData }) => {
-=======
 
-const Q_sendQuestionPage = () => {
->>>>>>> 16e5236e7670fc0f7ee80d68fb4a05b26dd5e36b
+const Q_sendQuestionPage = ({ petData }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -242,7 +238,6 @@ const Q_sendQuestionPage = () => {
       <LineHeader middle="var(--color-main)" right="var(--color-main)" />
       <p className={s.q_sendQuestionPage_file_p}>{t('sendQuestionPage.addedMedia')}</p>
       <div className={s.q_sendQuestionPage_fileBox}>
-<<<<<<< HEAD
         {files.length > 0 ? (
           files.map((file, index) => (
             <div key={index} className={s.fileBox}>
@@ -254,7 +249,6 @@ const Q_sendQuestionPage = () => {
               )}
             </div>
           ))
-=======
         {files && files.length > 0 ? (
           <div className={s.filesContainer}>
             {files.map((file, index) => {
@@ -270,7 +264,6 @@ const Q_sendQuestionPage = () => {
               );
             })}
           </div>
->>>>>>> 16e5236e7670fc0f7ee80d68fb4a05b26dd5e36b
         ) : (
           <p>{t('sendQuestionPage.noPhotos')}</p>
         )}

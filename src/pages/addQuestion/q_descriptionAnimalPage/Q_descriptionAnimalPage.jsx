@@ -288,7 +288,6 @@ const Q_descriptionAnimalPage = () => {
     };
   }, [files]);
 
-<<<<<<< HEAD
 const onSubmit = async (data) => {
   try {
     const formData = {
@@ -299,28 +298,6 @@ const onSubmit = async (data) => {
       isHomeless: isCheckboxChecked,
       files: files.map((file) => ({ name: file.name, url: file.url, type: file.type })),
     };
-=======
-  const onSubmit = async (data) => {
-    try {
-      console.log(
-        "Файлы перед отправкой:",
-        files.map((file) => ({
-          имя: file.name,
-          тип: file.type,
-          размер: file.size,
-          lastModified: file.lastModified,
-        }))
-      );
-      const formData = new FormData();
-      formData.append("userId", userId);
-      formData.append("petArt", data.petArt);
-      formData.append("petWeight", data.petWeight);
-      formData.append("petGender", data.petGender);
-      /*formData.append("isHomeless", isCheckboxChecked);*/
-      files.forEach((fileObj) => {
-        formData.append(`files`, fileObj.file);
-      });
->>>>>>> 16e5236e7670fc0f7ee80d68fb4a05b26dd5e36b
 
     console.log("Отправляемые данные:", formData);
 

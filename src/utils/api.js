@@ -43,7 +43,10 @@ const apiClientMultipart = axios.create({
 // 3. users/register/ - регистрация по телефону
 export const createUser = async (data) => {
   try {
-    const response = await apiClientMultipart.post("/api/users/register/", data);
+    const response = await apiClientMultipart.post(
+      "/api/users/register/",
+      data
+    );
     return response.data;
   } catch (error) {
     console.error("Ошибка создания юзера:", error);
@@ -84,6 +87,16 @@ export const addQuestion = async (data) => {
   }
 };
 
+export const updateQuestion = async (data) => {
+  try {
+    const response = await apiClientJson.post("/api/questions/update/", data);
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка отправки вопроса:", error);
+    throw error;
+  }
+};
+
 // 6. /api/users/update/ - роль юзера
 export const updateUserRole = async (data) => {
   try {
@@ -95,4 +108,7 @@ export const updateUserRole = async (data) => {
   }
 };
 
+
+
 export default API_BASE_URL;
+

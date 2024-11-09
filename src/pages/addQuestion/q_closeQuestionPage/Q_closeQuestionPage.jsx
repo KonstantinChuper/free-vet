@@ -52,13 +52,12 @@ const Q_closeQuestionPage = () => {
 
   return (
     <div className={s.closeQuestionPage}>
-      <h2>{t("closeQuestionPage.header")}</h2> {/* Заголовок страницы */}
-      <h5>{t("closeQuestionPage.confirmation")}</h5> {/* Текст подтверждения */}
+      <h2>{t("closeQuestionPage.header")}</h2>
+      <h5>{t("closeQuestionPage.confirmation")}</h5>
       <p
         className={s.closeQuestionText}
         dangerouslySetInnerHTML={{ __html: t("closeQuestionPage.ratingPrompt") }}
       />{" "}
-      {/* Описание рейтинга */}
       <form className={s.form} onSubmit={handleSubmit}>
         <div className={s.checkboxContainer}>
           {Array.from({ length: 10 }, (_, index) => (
@@ -73,7 +72,7 @@ const Q_closeQuestionPage = () => {
           ))}
         </div>
         <div className={s.areaContainer}>
-          <p>{t("closeQuestionPage.feedbackPrompt")}</p> {/* Текст для отзыва */}
+          <p>{t("closeQuestionPage.feedbackPrompt")}</p>
           <CustomTextarea
             backgroundColor="#2A9D8F16"
             value={textareaValue}
@@ -81,7 +80,7 @@ const Q_closeQuestionPage = () => {
           />
         </div>
         <CustomButton
-          text={t("closeQuestionPage.submitButton")} // Текст кнопки
+          text={t("closeQuestionPage.submitButton")}
           type="submit"
           disabled={!selectedRating || isSubmitting}
           customStyle={{ marginTop: "80px" }}

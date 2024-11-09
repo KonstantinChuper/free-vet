@@ -1,12 +1,20 @@
 .container {
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 68px;
-  padding-inline: var(--container-padding-x);
+  width: 100%;
   background-color: var(--color-main);
+  display: flex;
+  justify-content: center;
   border-bottom-left-radius: var(--border-radius-small);
-  border-bottom-right-radius: var(--border-radius-small)
+    border-bottom-right-radius: var(--border-radius-small);
+}
+
+.innerContainer {
+  max-width: 375px;
+  width: 100%;
+  text-align: center;
+  padding-top: 24px;
+  padding-inline: var(--container-padding-x);
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
 }
 
 .title {
@@ -15,7 +23,6 @@
   margin-bottom: 11px;
   line-height: 0.9;
   color: var(--color-text-white);
-  
 }
 
 .description {
@@ -35,17 +42,16 @@
 
 .leftPaw {
   position: absolute;
-  left: -13px;
-  top: 18%;
+  left: -25px;
+  top: 25%;
   transform: translateY(-50%);
   max-width: 118px;
   animation: slow-blink 3s infinite;
-  
 }
 
 .mainImage {
   max-width: 100%;
-  width: 263px;
+  width: 265px;
   height: auto;
   max-height: 350px;
   object-fit: contain;
@@ -53,17 +59,28 @@
 
 .rightPaw {
   position: absolute;
-  right: -13px;
-  top: 78%;
+  right: -16px;
+  top: 82%;
   transform: translateY(-50%);
   max-width: 105px;
   animation: slow-blink 3s infinite;
   animation-delay: 1.5s;
 }
 
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .innerContainer {
+    max-width: 375px;
+    width: 100%;
+    padding-inline: 20px;
+  }
+}
 
-
-@keyframes slow-blink {
+/* @keyframes slow-blink {
   0% {
     opacity: 1;
   }
@@ -73,4 +90,4 @@
   100% {
     opacity: 1;
   }
-}
+} */

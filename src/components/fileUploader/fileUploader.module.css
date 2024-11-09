@@ -60,6 +60,7 @@
 }
 
 .emptyBox {
-  border: 1px dashed var(--color-line);
-  border-radius: 20px;
+  border: 2px dashed var(--color-line); /* Пунктирная рамка  более подходящая с макета  */
+  border-radius: 20px; /* Закругление углов  */
+  background-color: #f9f9f9; /* Светлый фон для пустых квадратов */
 }

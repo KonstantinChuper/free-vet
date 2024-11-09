@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import API_BASE_URL from "../utils/api.js";
 import axios from "axios";
 
-const useVerificationCode = (pnone_number, initialSeconds = 90) => {
+const useVerificationCode = (pnone, initialSeconds = 90) => {
   const { handleSubmit, control, setValue, watch, reset } = useForm();
   const inputRefs = Array(6).fill(null).map(() => useRef(null));
   const [isFormValid, setIsFormValid] = useState(false);
@@ -37,7 +37,7 @@ const useVerificationCode = (pnone_number, initialSeconds = 90) => {
    const submitVerificationCode = async (code) => {
      try {
        const response = await axios.post(`${API_BASE_URL}/api/users/verify/`, {
-         pnone_number,
+         pnone,
          code,
        });
        return response.data;
@@ -74,19 +74,20 @@ const useVerificationCode = (pnone_number, initialSeconds = 90) => {
     }
   };
 
- const handleResendCode = async () => {
-  //  try {
-  //    await axios.post(`${API_BASE_URL}/api/users/resend-code/`, {
-  //      pnone_number,
-  //    });
+ const handleResendCode = async (code) => {
+   try {
+     await axios.post(`${API_BASE_URL}/api/users/verify/`, {
+       pnone,
+       code,
+     });
      setSeconds(initialSeconds);
      setResendAvailable(false);
      setCodeError(false);
      setErrorVisible(false);
      reset();
-  //  } catch (error) {
-  //    console.error("Error resending code:", error);
-  //  }
+   } catch (error) {
+     console.error("Error resending code:", error);
+   }
  };
 
   const validateCode = (expectedCode, inputCode) => {

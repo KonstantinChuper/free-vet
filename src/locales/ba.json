@@ -31,6 +31,12 @@
     "editProfile": "Uredi profil",
     "settings": "Postavke"
   },
+  "settings": {
+    "settings": "Postavke",
+    "notifications": "Obavijesti",
+    "language": "Jezik"
+  },
+
   "codeInputBox": {
     "codeLabel": "Kod",
     "requiredError": "Unijeli ste pogrešan kod! Pokušajte ponovo",
@@ -322,6 +328,9 @@
     "userRoleVolunteer": "Ja sam volonter",
     "userRolePetOwner": "Imam kućnog ljubimca",
     "myQuestions": "Moja pitanja",
+    "myQuestions_subtitle": "Pitanja koja ste postavljali",
+    "viewQuestion": "Pogledaj pitanje",
+    "vetAnswer": "Odgovor veterinarskog lekara",
     "allQuestions": "sva",
     "animalInfo": "Ulična mačka itd...",
     "vetBooks": "Veterinarske knjige",
@@ -381,5 +390,17 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
-}
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Obavještenja",
+    "userQuestions": "Pitanja korisnika",
+    "additionalUserQuestions": "Dodatna pitanja \n korisnika",
+    "serviceNews": "Novosti o usluzi"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obavještenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+  }
+
 }

@@ -10,6 +10,7 @@ import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 import { addQuestion } from "../../../utils/api"; // Убедитесь, что этот API импортируется правильно
 
+
 const Q_sendQuestionPage = () => {
   const { t } = useTranslation();
   const location = useLocation();
@@ -24,7 +25,11 @@ const Q_sendQuestionPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const formData = new FormData();
+      const dataToSend = {
+        user_id: userId,
+        questions: data.question,
+      };
+
 
       // Добавляем текстовые поля в formData
       formData.append("question", data.question);
@@ -75,18 +80,21 @@ const Q_sendQuestionPage = () => {
       <LineHeader middle={"var(--color-main)"} right={"var(--color-main)"} />
       <p className={s.q_sendQuestionPage_file_p}>{t("sendQuestionPage.addedMedia")}</p>
       <div className={s.q_sendQuestionPage_fileBox}>
-        {files.length > 0 ? (
-          files.map((file, index) => (
-            <div key={index} className={s.fileBox}>
-              {file.type.startsWith("image") ? (
-                <img src={file.url || URL.createObjectURL(file)} alt={`uploaded-file-${index}`} />
-              ) : file.type.startsWith("video") ? (
-                <video controls src={file.data || URL.createObjectURL(file)} />
-              ) : (
-                <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
-              )}
-            </div>
-          ))
+        {files && files.length > 0 ? (
+          <div className={s.filesContainer}>
+            {files.map((file, index) => {
+              const fileUrl = URL.createObjectURL(file.file);
+              return (
+                <div key={index} className={s.fileBox}>
+                  <img
+                    src={fileUrl}
+                    alt="Uploaded"
+                    style={{ maxWidth: "100%" }}
+                  />
+                </div>
+              );
+            })}
+          </div>
         ) : (
           <p>{t("sendQuestionPage.noPhotos")}</p>
         )}
@@ -117,7 +125,7 @@ const Q_sendQuestionPage = () => {
         <div className={s.btnBox}>
           <CustomButtonSubmit
             text={t("sendQuestionPage.submitButton")}
-            padding={"16px 99.5px"}
+            padding={"16px 89.171px"}
             disabled={!isValid}
           />
         </div>

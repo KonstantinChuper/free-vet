@@ -1,5 +1,18 @@
-.container {
+.outerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.innerContainer {
   width: 375px;
   margin: 0 auto;
   height: 100%;
+}
+
+@media (max-width: 480px) {
+  .innerContainer {
+    width: 100%;
+    margin: 0;
+  }
 }

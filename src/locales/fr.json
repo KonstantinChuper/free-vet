@@ -31,6 +31,11 @@
     "editProfile": "Modifier le profil",
     "settings": "Paramètres"
   },
+  "settings": {
+    "settings": "Paramètres",
+    "notifications": "Notifications",
+    "language": "Langue"
+  },
   "codeInputBox": {
     "codeLabel": "Code",
     "requiredError": "Vous avez entré un code incorrect ! Veuillez réessayer",
@@ -322,6 +327,9 @@
     "userRoleVolunteer": "Je suis bénévole",
     "userRolePetOwner": "J'ai un animal de compagnie",
     "myQuestions": "Mes questions",
+    "myQuestions_subtitle": "Les questions que vous avez posées",
+    "viewQuestion": "Voir la question",
+    "vetAnswer": "Réponse du vétérinaire",
     "allQuestions": "toutes",
     "animalInfo": "Chat de rue etc...",
     "vetBooks": "Carnets vétérinaires",
@@ -329,7 +337,7 @@
     "myAnimalsTitle": "Mes animaux",
     "strayAnimalsTitle": "Animaux errants"
   },
-    "DonatePage": {
+  "DonatePage": {
     "title": "Soutenir le service",
     "financialSupportTitle": "Soutien financier",
     "oneTimeSupportTitle": "Soutien ponctuel",
@@ -381,5 +389,5 @@
     "learnMoreButton": "En savoir plus",
     "tailbookTitle": "FreeVet - un service de l'écosystème TailBook",
     "tailbookDescription": "TailBook - un écosystème qui facilite l’aide aux animaux errants et propose des services utiles pour les animaux de compagnie"
-}
+  }
 }

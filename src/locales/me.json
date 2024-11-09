@@ -31,6 +31,11 @@
     "editProfile": "Uredi profil",
     "settings": "Podešavanja"
   },
+  "settings": {
+    "settings": "Postavke",
+    "notifications": "Obavještenja",
+    "language": "Jezik"
+  },
   "codeInputBox": {
     "codeLabel": "Kod",
     "requiredError": "Unijeli ste pogrešan kod! Pokušajte ponovo",
@@ -322,6 +327,9 @@
     "userRoleVolunteer": "Ja sam volonter",
     "userRolePetOwner": "Imam kućnog ljubimca",
     "myQuestions": "Moja pitanja",
+    "myQuestions_subtitle": "Pitanja koja ste postavljali",
+    "viewQuestion": "Pogledaj pitanje",
+    "vetAnswer": "Odgovor veterinarskog lekara",
     "allQuestions": "sva",
     "animalInfo": "Ulična mačka itd...",
     "vetBooks": "Veterinarske knjige",
@@ -329,7 +337,7 @@
     "myAnimalsTitle": "Moje životinje",
     "strayAnimalsTitle": "Beskućne životinje"
   },
-    "DonatePage": {
+  "DonatePage": {
     "title": "Podržite servis",
     "financialSupportTitle": "Finansijska podrška",
     "oneTimeSupportTitle": "Jednokratna podrška",
@@ -381,5 +389,5 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - servis ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
-}
+  }
 }

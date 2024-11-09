@@ -12,7 +12,6 @@ const Q_confirmationPage = () => {
   const { petArt, petWeight, petGender, isHomeless, files, userId, question } =
     location.state || {};
   console.log("Data received in Q_confirmationPage:", location.state);
-  const [hasVetbook, setHasVetbook] = useState(false);
 
   return (
     <div className={s.q_confirmationPage}>
@@ -35,15 +34,21 @@ const Q_confirmationPage = () => {
         isHomeless={isHomeless}
         question={question}
         userId={userId}
+        files={files}
       />
 
       {/* Displaying Files (Images or Videos) */}
-      <div className={s.q_confirmationPage_fileBox}>
+      {/* Moved the logic into QuestionDetails.jsx component */}
+      {/* <div className={s.q_confirmationPage_fileBox}>
         {files && files.length > 0 ? (
           files.map((file, index) => (
             <div key={index} className={s.fileBox}>
               {file.type.startsWith("image") ? (
-                <img src={file.url} alt={`uploaded-file-${index}`} className={s.uploadedImage} />
+                <img
+                  src={file.url}
+                  alt={`uploaded-file-${index}`}
+                  className={s.uploadedImage}
+                />
               ) : file.type.startsWith("video") ? (
                 <video controls src={file.url} />
               ) : (
@@ -54,7 +59,7 @@ const Q_confirmationPage = () => {
         ) : (
           <p>{t("sendQuestionPage.noPhotos")}</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

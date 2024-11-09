@@ -250,6 +250,23 @@ const Q_sendQuestionPage = () => {
               )}
             </div>
           ))
+=======
+        {files && files.length > 0 ? (
+          <div className={s.filesContainer}>
+            {files.map((file, index) => {
+              const fileUrl = URL.createObjectURL(file.file);
+              return (
+                <div key={index} className={s.fileBox}>
+                  <img
+                    src={fileUrl}
+                    alt="Uploaded"
+                    style={{ maxWidth: "100%" }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+>>>>>>> 16e5236e7670fc0f7ee80d68fb4a05b26dd5e36b
         ) : (
           <p>{t('sendQuestionPage.noPhotos')}</p>
         )}

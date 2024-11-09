@@ -194,6 +194,10 @@
     "requiredField": "Field is required",
     "writeQuestion": "Write your question"
   },
+  "respondQuestionPage": {
+    "header": "Respond",
+    "subtitle": "The question has been moved to selected questions (Profile)"
+  },
   "mainHeader": {
     "title": "Welcome to FreeVet",
     "description": "A service of the TailBook ecosystem that allows you to ask qualified and experienced veterinarians questions for free and receive answers."

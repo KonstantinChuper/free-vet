@@ -18,6 +18,7 @@ import Q_confirmationPage from "./pages/addQuestion/q_confirmationPage/Q_confirm
 import P_userPage from "./pages/profile/p_userPage/P_userPage";
 import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage";
 import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestionPage";
+import P_respondQuestionPage from "./pages/profile/p_respondQuestionPage/P_respondQuestionPage";
 import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
@@ -98,6 +99,10 @@ function App() {
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
         <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
+        <Route
+          path="/profile/respond-question"
+          element={<P_respondQuestionPage />}
+        />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
         <Route path="/settings" element={<P_settings />} />

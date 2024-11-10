@@ -9,25 +9,28 @@ import { Link } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import catTest from "../../../assets/kitty-cat.png";
+import Loader from "../../../components/loader/Loader.jsx";
+import { getUserQuestions } from "../../../utils/api.js";
+import { UnderConstructionIcon } from "../../../components/shared/underConstruction/UnderConstruction.jsx";
 
 //TODO: replace mock data with userFetch
 
 const P_userPage = () => {
   const { t } = useTranslation();
   const [files, setFiles] = useState([]);
-  const [questions, setQuestions] = useState([
-    {
-      id: 50,
-      images: [catTest, catTest, catTest],
-      is_homeless: true,
-      is_awaited: true,
-    },
-    {
-      id: 53,
-      is_homeless: false,
-      is_awaited: false,
-    },
-  ]);
+  const [questions, setQuestions] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestions(response);
+      setIsLoading(false);
+    };
+    fetchQuestions();
+  });
+
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: "",
@@ -48,6 +51,9 @@ const P_userPage = () => {
     fetchUserData();
   }, [t]);
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className={s.p_userPage}>
       <BurgerMenu />
@@ -82,23 +88,15 @@ const P_userPage = () => {
           <Question key={idx} {...q} />
         ))}
       </div>
-      {/* <CustomMessage
-        questionNumber={55}
-        images={[
-          'https://placehold.co/400',
-          'https://placehold.co/400',
-          'https://placehold.co/400',
-          'https://placehold.co/400',
-        ]}
-        animalInfo={t('userPage.animalInfo')}
-        message={t('userPage.message')}
-      /> */}
       <div className={s.question_box2}>
         <h6>{t("userPage.vetBooks")}</h6>
         <p>{t("userPage.allVetBooks")}</p>
       </div>
       {/** TODO: section in progress remove mock after complete vet book */}
-      <div>under construction...</div>
+      <div style={{ marginInline: "auto" }}>
+        <p>Under construction...</p>
+        <UnderConstructionIcon />
+      </div>
       {/* <QuestionPetList
         categories={[
           {

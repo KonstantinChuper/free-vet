@@ -194,6 +194,10 @@
     "requiredField": "Поле обов'язкове",
     "writeQuestion": "Напишіть Ваше питання"
   },
+  "respondQuestionPage": {
+    "header": "Відгукнутися",
+    "subtitle": "Питання переміщено до вибраних питань (Профіль)"
+  },
   "mainHeader": {
     "title": "Ласкаво просимо до FreeVet",
     "description": "Сервіс екосистеми TailBook, який дозволяє безкоштовно задавати питання кваліфікованим та досвідченим ветеринарам та отримувати відповіді."
@@ -389,5 +393,16 @@
     "learnMoreButton": "Ознайомитись",
     "tailbookTitle": "FreeVet - сервіс екосистеми TailBook",
     "tailbookDescription": "TailBook - екосистема, що спрощує допомогу безпритульним тваринам і надає корисні сервіси для домашніх улюбленців"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Сповіщення",
+    "userQuestions": "Питання користувачів",
+    "additionalUserQuestions": "Додаткові питання \n користувачів",
+    "serviceNews": "Новини сервісу"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Сповіщення",
+    "vetAnswers": "Відповіді ветеринарів",
+    "serviceNews": "Новини сервісу"
   }
 }

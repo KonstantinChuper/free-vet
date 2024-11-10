@@ -193,6 +193,10 @@
     "requiredField": "Polje je obavezno",
     "writeQuestion": "Napišite pitanje"
   },
+  "respondQuestionPage": {
+    "header": "Odgovoriti",
+    "subtitle": "Pitanje je premješteno u odabrana pitanja (Profil)"
+  },
   "mainHeader": {
     "title": "Dobrodošli u FreeVet",
     "description": "Usluga ekosistema TailBook koja vam omogućava da besplatno postavljate pitanja kvalifikovanim i iskusnim veterinarima i dobijate odgovore."
@@ -389,5 +393,16 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - servis TailBook ekosistema",
     "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Obaveštenja",
+    "userQuestions": "Pitanja korisnika",
+    "additionalUserQuestions": "Dodatna pitanja \n korisnika",
+    "serviceNews": "Novosti o usluzi"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obaveštenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
   }
 }

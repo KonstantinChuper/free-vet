@@ -193,6 +193,10 @@
     "requiredField": "Champ requis",
     "writeQuestion": "Veuillez écrire votre question"
   },
+  "respondQuestionPage": {
+    "header": "Répondre",
+    "subtitle": "La question a été déplacée vers les questions sélectionnées (Profil)"
+  },
   "mainHeader": {
     "title": "Bienvenue chez FreeVet",
     "description": "Un service de l'écosystème TailBook qui vous permet de poser des questions à des vétérinaires qualifiés et expérimentés gratuitement et de recevoir des réponses."
@@ -389,5 +393,17 @@
     "learnMoreButton": "En savoir plus",
     "tailbookTitle": "FreeVet - un service de l'écosystème TailBook",
     "tailbookDescription": "TailBook - un écosystème qui facilite l’aide aux animaux errants et propose des services utiles pour les animaux de compagnie"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Notifications",
+    "userQuestions": "Questions des utilisateurs",
+    "additionalUserQuestions": "Questions supplémentaires \n des utilisateurs",
+    "serviceNews": "Actualités du service"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obavještenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+
   }
 }

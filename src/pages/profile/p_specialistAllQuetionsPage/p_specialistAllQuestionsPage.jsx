@@ -2,7 +2,7 @@ import { useState } from "react";
 import s from "./p_specialistAllQuestionsPage.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ViewPageHeader from "../../../components/viewPageHeader/ViewPageHeader";
+import ViewPageHeader from "../../../components/viewPageHeader/ViewPageHeader.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import catTest from "../../../assets/kitty-cat.png";
 import Modal from "../../../components/shared/modal/Modal.jsx";
@@ -57,7 +57,7 @@ const P_specialistAllQuestionsPage = () => {
           <Question key={idx} {...q} openModal={onOpen} />
         ))}
       </div>
-      <div>{isOpen && <Modal linksArr={testLinks} closeModal={onClose} />}</div>
+      <div>{isOpen && <Modal linksArr={testLinks} onClose={onClose} />}</div>
     </div>
   );
 };

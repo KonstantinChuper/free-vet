@@ -407,6 +407,10 @@
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
   },
+  "notFound": {
+    "heading": "It looks like the page you requested is not found 😬",
+    "btnText": "Return to Home"
+  },
   "modal_options": {
     "sendMessage": "Send message",
     "endSession": "End session"

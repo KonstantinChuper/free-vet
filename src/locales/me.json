@@ -405,6 +405,10 @@
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
   },
+  "notFound": {
+    "heading": "Izgleda da tražena stranica nije pronađena 😬",
+    "btnText": "Vrati se na početnu stranicu"
+  },
   "modal_options": {
     "sendMessage": "Poslati poruku",
     "endSession": "Završiti pitanje"

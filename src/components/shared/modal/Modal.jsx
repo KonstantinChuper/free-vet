@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./modalProfile.module.css";
+import styles from "./Modal.module.css";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 

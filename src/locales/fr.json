@@ -408,5 +408,8 @@
   "notFound": {
     "heading": "Il semble que la page demandée est introuvable 😬",
     "btnText": "Retourner à la page d'accueil"
+  "modal_options": {
+    "sendMessage": "Envoyer un message",
+    "endSession": "Terminer la question"
   }
 }

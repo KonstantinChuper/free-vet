@@ -5,7 +5,7 @@ import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 import close from "../../../assets/close.svg";
 import FileUploader from "../../../components/fileUploader/FileUploader";
- import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 
 

@@ -408,5 +408,13 @@
   "modal_options": {
     "sendMessage": "Poslati poruku",
     "endSession": "Završiti pitanje"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Odgovor",
+    "ansver": "Molimo Vas, napišite Vaš odgovor",
+    "chat": "Napišite poruku*",
+    "notification": "Zdravo! \n Potrebno je da nastavite sa praćenjem mačke i, ako je potrebno, pošaljete ponovni zahtjev",
+    "addFoto": "Dodajte fotografije i/ili video snimke ako je potrebno",
+    "sendAnswer": "Pošaljite odgovor"
   }
 }

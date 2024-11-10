@@ -410,5 +410,13 @@
   "modal_options": {
     "sendMessage": "Send message",
     "endSession": "End session"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Answer",
+    "ansver": "Please write your answer",
+    "chat": "Write a message*",
+    "notification": "Hello! \n Please continue monitoring the cat and submit a follow-up request if necessary",
+    "addFoto": "Add photo(s) and/or video(s) if necessary",
+    "sendAnswer": "Send answer"
   }
 }

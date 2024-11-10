@@ -18,6 +18,7 @@ import Q_confirmationPage from "./pages/addQuestion/q_confirmationPage/Q_confirm
 import P_userPage from "./pages/profile/p_userPage/P_userPage";
 import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage";
 import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestionPage";
+import P_respondQuestionPage from "./pages/profile/p_respondQuestionPage/P_respondQuestionPage";
 import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
@@ -27,8 +28,9 @@ import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNot
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
 import P_specialistAllQuestionsPage from "./pages/profile/p_specialistAllQuetionsPage/P_specialistAllQuestionsPage";
 
+
 function App() {
-  const [isLoading, setIsLoading] = useState(false); // TODO: replace to true in production
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -102,6 +104,7 @@ function App() {
         <Route
           path="/profile/specialist-all-questions"
           element={<P_specialistAllQuestionsPage />}
+
         />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/service" element={<AboutServicePage />} />
@@ -113,6 +116,10 @@ function App() {
         <Route
           path="/profile/settings/user/notification"
           element={<E_settingsNotificationProfileUserPage />}
+        />
+        <Route
+          path="/profile/selected-questions/action/answer"
+          element={<AnswerExpertToQuestion />}
         />
       </Routes>
     </Router>

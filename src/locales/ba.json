@@ -194,6 +194,10 @@
     "requiredField": "Polje je obavezno",
     "writeQuestion": "Napišite pitanje"
   },
+  "respondQuestionPage": {
+    "header": "Odgovoriti",
+    "subtitle": "Pitanje je premješteno u odabrana pitanja (Profil)"
+  },
   "mainHeader": {
     "title": "Dobrodošli u FreeVet",
     "description": "Usluga ekosistema TailBook koja vam omogućava da besplatno postavljate pitanja kvalifikovanim i iskusnim veterinarima i dobijate odgovore."

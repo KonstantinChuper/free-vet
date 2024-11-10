@@ -1,83 +1,34 @@
-// import s from "./q_confirmationPage.module.css";
-// import React, { useState } from "react";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { useTranslation } from "react-i18next";
-// import FormHeader from "../../../components/formHeader/FormHeader";
-// import close from "../../../assets/close.svg";
-// import QuestionDetails from "../../../components/questionDetails/QuestionDetails";
-
-// const Q_confirmationPage = () => {
-//   const { t } = useTranslation();
-//   const location = useLocation();
-//   const { petArt, petWeight, petGender, isHomeless, files, userId, question } =
-//     location.state || {};
-//   console.log("Data received in Q_confirmationPage:", location.state);
-//   const [hasVetbook, setHasVetbook] = useState(false);
-
-//   return (
-//     <div className={s.q_confirmationPage}>
-//       <div className={s.q_sendQuestionPage_header}>
-//         <FormHeader
-//           path="/main/question/choice"
-//           fontSize={36}
-//           titleKey={t("questionPage.title")}
-//         />
-//         <Link to={"/main/question/choice"}>
-//           <img className={s.closeBtn} src={close} alt="close" />
-//         </Link>
-//       </div>
-
-//       {/* Displaying the Question Details */}
-//       <QuestionDetails
-//         petArt={petArt}
-//         petWeight={petWeight}
-//         petGender={petGender}
-//         isHomeless={isHomeless}
-//         question={question}
-//         userId={userId}
-//       />
-
-//       {/* Displaying Files (Images or Videos) */}
-//       <div className={s.q_confirmationPage_fileBox}>
-//         {files && files.length > 0 ? (
-//           files.map((file, index) => (
-//             <div key={index} className={s.fileBox}>
-//               {file.type.startsWith("image") ? (
-//                 <img src={file.url} alt={`uploaded-file-${index}`} className={s.uploadedImage} />
-//               ) : file.type.startsWith("video") ? (
-//                 <video controls src={file.url} />
-//               ) : (
-//                 <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
-//               )}
-//             </div>
-//           ))
-//         ) : (
-//           <p>{t("sendQuestionPage.noPhotos")}</p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
 import axios from "axios";
 import s from "./q_confirmationPage.module.css";
-import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import close from "../../../assets/close.svg";
-import QuestionDetails from "../../../components/questionDetails/QuestionDetails";
+import { getUserQuestions } from "../../../utils/api";
+import { Question } from "../../../components/shared/question/Question";
+import Loader from "../../../components/loader/Loader";
 
 const Q_confirmationPage = () => {
   const { t } = useTranslation();
-  const location = useLocation();
-  const { petArt, petWeight, petGender, isHomeless, files = [], userId, question } = location.state || {};
+  const [hasVetbook, setHasVetbook] = useState(false);
+  const userId = localStorage.getItem("userId");
+  const [questions, setQuestions] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Логирование полученных данных для отладки
-  console.log("Data received in Q_confirmationPage:", location.state);
 
-  const [hasVetbook, setHasVetbook] = useState(false); // Для дополнительной логики (если нужно)
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestions(response);
+      setIsLoading(false);
+    };
+    fetchQuestions();
+  });
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className={s.q_confirmationPage}>
       <div className={s.q_confirmationPage_header}>
@@ -90,39 +41,20 @@ const Q_confirmationPage = () => {
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
-
-      {/* Отображение деталей вопроса */}
-      <QuestionDetails
-        petArt={petArt}
-        petWeight={petWeight}
-        petGender={petGender}
-        isHomeless={isHomeless}
-        question={question}
-        userId={userId}
-        files={files}
-      />
-
-      {/* Отображение файлов (изображений и видео) */}
-      <div className={s.q_confirmationPage_fileBox}>
-        {files && files.length > 0 ? (
-          files.map((file, index) => (
-            <div key={index} className={s.fileBox}>
-              {file.type.startsWith("image") ? (
-                <img src={URL.createObjectURL(file)} alt={`uploaded-file-${index}`} className={s.uploadedImage} />
-              ) : file.type.startsWith("video") ? (
-                <video controls src={URL.createObjectURL(file)} />
-              ) : (
-                <p>{t("sendQuestionPage.unsupportedFileFormat")}</p>
-              )}
-            </div>
-          ))
-        ) : (
-          <p>{t("sendQuestionPage.noPhotos")}</p>
-        )}
-      </div> 
+      <div className={s.question_box}>
+        {questions?.map((q) => (
+          <Question
+            id={q.id}
+            files={q.files}
+            pet_art={q.pet_art}
+            pet_gender={q.pet_gender}
+            pet_weight={q.pet_weight}
+            question={q.question}
+          />
+        ))}
+      </div>
     </div>
   );
 };
 
 export default Q_confirmationPage;
-

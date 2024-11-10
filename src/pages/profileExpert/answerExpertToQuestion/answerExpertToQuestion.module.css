@@ -1,0 +1,55 @@
+.mainContainer {
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: -20px;
+}
+
+.arrowButton {
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid #242424;
+  border-bottom: 2px solid #242424;
+  transform: rotate(45deg);
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.title {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 120;
+  font-size: 40px;
+  color: #242424;
+  width: 103px;
+  height: 40px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 40px;
+}
+
+.textPromt {
+  margin: 16px 0;
+}
+
+.promptText {
+  font-size: 14px;
+  color: #2a9d8f;
+  text-align: center;
+  font-weight: 500;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid var(--color-main);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+}

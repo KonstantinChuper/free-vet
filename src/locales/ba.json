@@ -405,5 +405,9 @@
     "notificationsTitle": "Obavještenja",
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
+  },
+  "modal_options": {
+    "sendMessage": "Poslati poruku",
+    "endSession": "Završiti pitanje"
   }
 }

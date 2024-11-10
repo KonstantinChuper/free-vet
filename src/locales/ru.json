@@ -403,9 +403,14 @@
     "additionalUserQuestions": "Дополнительные вопросы \n пользователей",
     "serviceNews": "Новости сервиса"
   },
-  "E_settingsNotificationProfileUserPage":{
-   "notificationsTitle":"Уведомления",
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Уведомления",
     "vetAnswers": "Ответы ветеринаров",
     "serviceNews": "Новости сервиса"
+  },
+
+  "modal_options": {
+    "sendMessage": "Отправить сообщение",
+    "endSession": "Завершить вопрос"
   }
 }

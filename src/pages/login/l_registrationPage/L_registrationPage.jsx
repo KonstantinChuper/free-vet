@@ -8,11 +8,13 @@ import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 import { createUser } from "../../../utils/api";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
+import { useNavigate } from "react-router-dom";
 
 const L_registrationPage = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -27,16 +29,14 @@ const L_registrationPage = () => {
     try {
       const formData = new FormData();
       formData.append("name", data.name);
-      formData.append("phone_number", data.phone);
+      formData.append("phone_number", data.phone_number);
       if (image) {
         formData.append("image", image);
       }
-      console.log(data);
-      const response = await createUser(data);
-      console.log("Ответ от API:", response);
-
+      await createUser(data);
       reset();
       setImage(null);
+      navigate("/verification", { state: { phone: data.phone_number } });
     } catch (error) {
       setErrorMessage(t("errorMessages.formSendError"));
       console.error("Ошибка при отправке формы:", error);
@@ -45,24 +45,37 @@ const L_registrationPage = () => {
 
   return (
     <form className={s.l_registrationPage} onSubmit={handleSubmit(onSubmit)}>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <FormHeader path="/" titleKey={t("registrationPage.header")} />
         <FileUploader maxFiles={1} boxSize={72} borderRadius={15} />
-        <p style={{ marginTop: "8px", textAlign: "center" }}>{t("registrationPage.addPhoto")}</p>
+        <p style={{ marginTop: "8px", textAlign: "center" }}>
+          {t("registrationPage.addPhoto")}
+        </p>
         <label style={{ alignSelf: "start" }}>
-          {t("registrationPage.nameLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
+          {t("registrationPage.nameLabel")}{" "}
+          <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("name", {
             required: t("registrationPage.nameErrorRequired"),
-            minLength: { value: 2, message: t("registrationPage.nameErrorMinLength") },
+            minLength: {
+              value: 2,
+              message: t("registrationPage.nameErrorMinLength"),
+            },
           })}
           placeholder={t("registrationPage.placeholderName")}
           width={335}
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
         <label style={{ alignSelf: "start" }}>
-          {t("registrationPage.phoneLabel")} <span style={{ color: "#2A9D8F" }}>*</span>
+          {t("registrationPage.phoneLabel")}{" "}
+          <span style={{ color: "#2A9D8F" }}>*</span>
         </label>
         <CustomInput
           {...register("phone_number", {
@@ -80,13 +93,6 @@ const L_registrationPage = () => {
       </div>
 
       <div className={s.btnPrivacy_box}>
-        {/* <CustomButton
-          link="/verification"
-          type="submit"
-          text={t("registrationPage.submitButton")}
-          padding="16px 78px"
-          disabled={!isValid}
-        /> */}
         <CustomButtonSubmit
           text={t("registrationPage.submitButton")}
           padding="16px 78px"
@@ -94,7 +100,9 @@ const L_registrationPage = () => {
         />
         <p
           className={s.privacyPolicy}
-          dangerouslySetInnerHTML={{ __html: t("registrationPage.privacyPolicyText") }}
+          dangerouslySetInnerHTML={{
+            __html: t("registrationPage.privacyPolicyText"),
+          }}
         />
       </div>
     </form>

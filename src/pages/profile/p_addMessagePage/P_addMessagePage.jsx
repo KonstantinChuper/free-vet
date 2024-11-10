@@ -7,6 +7,8 @@ import close from "../../../assets/close.svg";
 import FileUploader from "../../../components/fileUploader/FileUploader";
  import { useTranslation } from "react-i18next";
 
+
+
 const P_addMessagePage = () => {
   const {t}=useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -35,22 +37,19 @@ const P_addMessagePage = () => {
 
   return (
     <div className={s.p_addMessagePage}>
-
       <div className={s.p_addMessagePage_head}>
        
-        <h2 className={s.p_addMessagePage_h2}>{t("P_addMessagePage.header")}</h2>
+         <h2 className={s.p_addMessagePage_h2}>{t("P_addMessagePage.header")}</h2> 
          <button
          onClick={closeModal} 
          className={s.button_close}
          >
           <img src={close} alt="close" className={s.p_addMessagePage_img} />
         </button>
-        </div>
-     <p className={s.p_addMessagePage_p}>{t("P_addMessagePage.addPhoto")}</p>
+      </div>
+      <p className={s.p_addMessagePage_p}>{t("P_addMessagePage.addPhoto")}</p>
       <FileUploader/>
 
-
-      {/* Замените `t("sendQuestionPage.writeQuestion")` на текст временно */}
       <p className={s.p_addMessagePage_p}>{t("P_addMessagePage.additionalMessage")}</p> 
       <form onSubmit={handleSubmit(onSubmit)}>
         <CustomTextarea
@@ -62,6 +61,7 @@ const P_addMessagePage = () => {
             borderColor: "var(--color-input-bg-grey)",
             backgroundColor: "rgba(42, 157, 143, 0.09)",
             height: "310px",
+            marginBottom: "50px"
           }}
         />
         {errors.question && <p className={s.errorText}>{errors.question.message}</p>}
@@ -69,7 +69,8 @@ const P_addMessagePage = () => {
         <div className={s.btnBox}>
           <CustomButtonSubmit
             text= {t("P_addMessagePage.sendMessage")}
-            padding="16px 84px"
+            padding="16px 118px"
+          
             disabled={!isValid}
           />
         </div>

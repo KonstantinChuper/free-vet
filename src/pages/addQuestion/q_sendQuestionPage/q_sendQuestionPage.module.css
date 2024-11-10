@@ -25,20 +25,23 @@
   font-size: 16px;
 }
 
-
-.q_sendQuestionPage_fileBox .fileBox {
+/* .q_sendQuestionPage_fileBox .fileBox {
   display: flex;
   gap: 10px;
   width: 100%;
-}
+  justify-content: start;
+} */
 
-.q_sendQuestionPage_fileBox img, 
+
+/* .q_sendQuestionPage_fileBox img, 
 .q_sendQuestionPage_fileBox video {
+
 width: 105px;
 height: 105px;
 object-fit: cover;
 border-radius: var(--border-radius-small);
-}
+} */
+
 
 .q_sendQuestionPage_description {
   display: flex;
@@ -65,3 +68,31 @@ border-radius: var(--border-radius-small);
   white-space: nowrap;
   margin-top: 81px;
 }
+.q_sendQuestionPage_fileBox {
+  display: flex;
+ 
+  gap: 9px;
+ 
+  flex-wrap: wrap;
+ 
+  justify-content: start;
+
+}
+.q_sendQuestionPage_fileBox .fileBox {
+  display: flex;
+ 
+  align-items: center;
+
+}
+.q_sendQuestionPage_fileBox img,
+.q_sendQuestionPage_fileBox video {
+  width: 105px;
+  
+  height: 105px;
+
+  object-fit: cover;
+ 
+  border-radius: var(--border-radius-small);
+ 
+}
+

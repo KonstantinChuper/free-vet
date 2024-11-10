@@ -322,6 +322,9 @@
     "userRoleVolunteer": "Ja sam volonter",
     "userRolePetOwner": "Imam kućnog ljubimca",
     "myQuestions": "Moja pitanja",
+    "myQuestions_subtitle": "Pitanja koja ste postavljali",
+    "viewQuestion": "Pogledaj pitanje",
+    "vetAnswer": "Odgovor veterinarskog lekara",
     "allQuestions": "sva",
     "animalInfo": "Ulična mačka itd...",
     "vetBooks": "Veterinarske knjige",
@@ -381,5 +384,13 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
-}
+  },
+
+    "P_addMessagePage": {
+      "header": "Хәбәр өҫтәргә",
+      "addPhoto": "Фото һәм (йәки) видео өҫтәгеҙ",
+      "additionalMessage": "Өҫтәмә хәбәр яҙырға*",
+      "requiredField": "Мотлаҡ ҡыр",
+      "sendMessage": "Хәбәр ебәрергә"
+    }
 }

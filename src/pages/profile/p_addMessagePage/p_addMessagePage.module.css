@@ -1,3 +1,5 @@
+
+
 .p_addMessagePage {
   display: flex;
   flex-direction: column;
@@ -7,43 +9,43 @@
   max-width: 335px;
   padding: 30px 0;
   height: 100vh;
-  border: 1px solid red;
 }
 .p_addMessagePage_head {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
     width: 100%;
-    height: 40px;
-       margin-bottom: 39px;
-border: 1px solid rgb(17, 0, 255);
+    margin-bottom: 39px;
+    position: relative;
+    justify-content: center;
   }
 
   .p_addMessagePage_head h2 {
     font-size: 36px;
     font-weight: 400;
     color: var(--color-text-dark);
-
-   margin: 0 !important;
+    justify-content: center;
+    margin: 0 !important;
   }
   
   .p_addMessagePage_head button {
+    position: absolute;
     background: none;
     border: none;
     cursor: pointer;
+    right: 0;
   }
   .button_close {
     margin: 0 !important;
+    padding-right: 2px;
   }
   .p_addMessagePage_img {
-    min-width: 24px;
-    min-height: 24px;
+    min-width: 16px;
+    min-height: 16px;
     color: #242424;
   }
 .p_addMessagePage_p {
     font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .p_addMessagePage textarea {
@@ -59,6 +61,8 @@ border: 1px solid rgb(17, 0, 255);
   }
 
   .btnBox {
-    margin-bottom: 32px;
+    margin-bottom: 29px;
+    display: flex; 
+    justify-content: center;
   }
 

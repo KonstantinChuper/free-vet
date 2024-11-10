@@ -413,5 +413,13 @@
   "modal_options": {
     "sendMessage": "Poslati poruku",
     "endSession": "Završiti pitanje"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Яуап биреү",
+    "ansver": "Зинһар, яуапты яҙып ебәрегеҙ",
+    "chat": "Хәбәрҙе яҙып ебәрегеҙ*",
+    "notification": "Һаумыһығыҙ! \n Һеҙгә бесәйҙе күҙәтеүҙе дауам итергә һәм кәрәк булһа ҡабаттан мөрәжәғәт итергә кәрәк",
+    "addFoto": "Ҡатнаш фото һәм (йәки) видео өҫтәгеҙ кәрәк булһа",
+    "sendAnswer": "Яуапты ебәреү"
   }
 }

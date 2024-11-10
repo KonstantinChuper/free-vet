@@ -17,7 +17,9 @@ const AnswerExpertToQuestion = () => {
         <Link to="/profile">
           <div className={s.arrowButton}></div>
         </Link>
-        <h1 className={s.title}>{t("Ответить")}</h1>
+        <h1 className={s.title}>
+          {t("AnswerExpertToQuestion.title")}
+        </h1>
 
         <img
           src={close}
@@ -57,7 +59,7 @@ const AnswerExpertToQuestion = () => {
             cursor: "pointer",
           }}
         >
-          {t("Ожидает ответа")}
+          {t("AnswerExpertToQuestion.ansver Ожидает ответа")}
         </span>
       </div>
 
@@ -71,7 +73,7 @@ const AnswerExpertToQuestion = () => {
             whiteSpace: "nowrap",
           }}
         >
-          {t("Пожалуйста, напишите Ваш ответ")}
+          {t("AnswerExpertToQuestion.ansver")}
         </p>
         <p
           style={{
@@ -83,13 +85,13 @@ const AnswerExpertToQuestion = () => {
             marginBottom: "-10px",
           }}
         >
-          {t("Напишите сообщение*")}
+          {t("AnswerExpertToQuestion.chat")}
         </p>
       </div>
 
       <CustomTextarea
         placeholder={t(
-          "Здравствуйте!\nВам необходимо продолжить наблюдение за котом и при необходимости направить повторный запрос"
+          "AnswerExpertToQuestion.notification"
         )}
         style={{
           width: "351px",
@@ -122,7 +124,9 @@ const AnswerExpertToQuestion = () => {
             marginBottom: "-5px",
           }}
         >
-          {t("Добавьте фото и (или) видео при необходимости")}
+          {t(
+            "AnswerExpertToQuestion.addFoto"
+          )}
         </p>
       </div>
 
@@ -132,7 +136,10 @@ const AnswerExpertToQuestion = () => {
         }}
       >
         <FileUploader />
-        <CustomButton text={t("Отправить ответ")} link="/profile" />
+        <CustomButton
+          text={t("AnswerExpertToQuestion.sendAnswer")}
+          link="/profile"
+        />
       </div>
     </div>
   );

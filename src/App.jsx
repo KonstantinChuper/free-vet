@@ -26,7 +26,7 @@ import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
 import P_settings from "./pages/profile/p_settings/P_settings";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
-import P_specialistAllQuestionsPage from "./pages/profile/p_specialistAllQuetionsPage/P_specialistAllQuestionsPage";
+import P_specialistAllQuestionsPage from "./pages/profile/p_specialistAllQuetionsPage/p_specialistAllQuestionsPage";
 
 
 function App() {

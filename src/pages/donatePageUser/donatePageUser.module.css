@@ -10,34 +10,54 @@
 }
 
 .logoContainer {
-  margin-bottom: 8px;
+margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logoContainer:hover {
+  transform: translateY(-5px);
+}
+
+.DonateButton {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--color-main);
+  margin-top: -8px;
+
 }
 
 .logo {
-  width: 120px;
+  width: 63px;
   height: auto;
-  margin-bottom: 17px;
 }
 
 .mainTitle {
-  font-weight: bold;
-  color: var(--color-main);
-  margin-bottom: 20px;
-      font-size: 36px;
+  font-weight: light;
+  color: var(--color-text-dark);
+  font-size: 36px;
+  font-weight: 100;
 }
 .supportTitle {
-     color: var(--color-main);
+     color: var(--color-text-dark);
      margin-bottom: 17px;
+     text-align: center;
+     padding: 0 43px;
+     font-size: 16px;
 }
 
 .donateSection, .otherSupportSection, .joinSection {
   width: 100%;
   border-radius: 8px;
-  padding: 10px 8px 12px;
+  padding: 10px 11px 12px;
   margin-bottom: 8px;
   border: 1px solid var(--color-main);
   display: flex;
   flex-direction: column;
+}
+.otherSupportSection {
+  font-size: 16px;
 }
 .donateInput {
 margin-top: 5px;
@@ -71,8 +91,7 @@ margin-top: 5px;
 
 
 .joinSection p {
-  font-size: 14px;
-  margin-bottom:20px;
+  font-size: 16px;
 }
 
 .buttonGroup {

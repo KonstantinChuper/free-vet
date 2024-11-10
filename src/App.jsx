@@ -21,7 +21,10 @@ import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestio
 import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
+import DonatePageUser from "./pages/donatePageUser/DonatePageUser";
+import DonatePageVet from "./pages/donatePageVet/DonatePageVet";
 import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
+import AboutServicePageVet from "./pages/aboutServicePageVet/AboutServicePageVet";
 import P_settings from "./pages/profile/p_settings/P_settings";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
@@ -99,7 +102,10 @@ function App() {
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
         <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
         <Route path="/donate" element={<DonatePage />} />
+        <Route path="/donate-user" element={<DonatePageUser />} />
+        <Route path="/donate-vet" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
+        <Route path="/service-vet" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route
           path="/profile/settings/doctor/notification"

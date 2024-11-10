@@ -5,7 +5,7 @@ import CustomButtonSubmit from '../../components/customButtonSubmit/CustomButton
 import CustomStickTitle from '../../components/customStickTitle/CustomStickTitle';
 import Footer from '../../components/footer/Footer';
 import { useTranslation } from 'react-i18next';
-import styles from './donatePage.module.css';
+import styles from './donatePageVet.module.css';
 import logo from '../../assets/VectorLogo.png';
 
 const DonatePage = () => {
@@ -102,9 +102,9 @@ const DonatePage = () => {
 
       {/* Текст о поддержке FreeVet в любое время */}
       <p className={styles.supportAnytimeText}>{t('DonatePage.supportAnytimeText')}</p>
-      <h3 className={styles.joinTitle}>{t('DonatePage.joinProjectTitle')}</h3>
+      {/* <h3 className={styles.joinTitle}>{t('DonatePage.joinProjectTitle')}</h3> */}
 
-      <div className={styles.joinSection}>
+      {/* <div className={styles.joinSection}>
         <CustomStickTitle
           text={t('DonatePage.applyButton')}
           style={{
@@ -117,7 +117,7 @@ const DonatePage = () => {
         <p style={{ width: '75%' }}>{t('DonatePage.joinProjectDescription')}</p>
 
         <div className={styles.buttonGroup}>
-          {/* Кнопка "Заполнить форму" */}
+
           <CustomButton
             text={t('DonatePage.fillFormButton')}
             onClick={() => console.log('Заполнить форму')}
@@ -129,7 +129,6 @@ const DonatePage = () => {
             }}
           />
           
-          {/* Кнопка "Написать нам" */}
           <CustomButton
             text={t('DonatePage.contactUsButton')}
             onClick={() => console.log('Написать нам')}
@@ -141,7 +140,7 @@ const DonatePage = () => {
             }}
           />
         </div>
-      </div>
+      </div> */}
       <h4 className={styles.joinTitle}>{t('DonatePage.footerThankYou')}</h4>
 
       <Footer />

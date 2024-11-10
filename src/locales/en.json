@@ -406,6 +406,9 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
-
+  },
+  "modal_options": {
+    "sendMessage": "Send message",
+    "endSession": "End session"
   }
 }

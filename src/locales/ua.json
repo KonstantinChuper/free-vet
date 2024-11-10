@@ -404,5 +404,9 @@
     "notificationsTitle": "Сповіщення",
     "vetAnswers": "Відповіді ветеринарів",
     "serviceNews": "Новини сервісу"
+  },
+  "modal_options": {
+    "sendMessage": "Відправити повідомлення",
+    "endSession": "Завершити питання"
   }
 }

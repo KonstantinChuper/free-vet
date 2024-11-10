@@ -27,7 +27,8 @@ import P_settings from "./pages/profile/p_settings/P_settings";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
 import P_specialistAllQuestionsPage from "./pages/profile/p_specialistAllQuetionsPage/p_specialistAllQuestionsPage";
-
+import AnswerExpertToQuestion from "./pages/profileExpert/answerExpertToQuestion/AnswerExpertToQuestion";
+import { NotFoundPage } from "./pages/404/NotFoundPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -100,7 +101,10 @@ function App() {
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
-        <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
+        <Route
+          path="/profile/questions/view-question"
+          element={<P_viewQuestionPage />}
+        />
         <Route
           path="/profile/specialist-all-questions"
           element={<P_specialistAllQuestionsPage />}
@@ -121,6 +125,7 @@ function App() {
           path="/profile/selected-questions/action/answer"
           element={<AnswerExpertToQuestion />}
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

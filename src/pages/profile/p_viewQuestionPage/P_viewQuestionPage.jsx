@@ -14,8 +14,8 @@ const P_viewQuestionPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const testLinks = [
-    { link: "/profile", text: "Add message" },
-    { link: "/main", text: "End session" },
+    { link: "/profile/respond-question", text: t("modal_options.sendMessage") },
+    { link: "/profile/questions", text: t("modal_options.endSession") },
   ];
 
   // чтобы открыть модальное окно
@@ -29,8 +29,12 @@ const P_viewQuestionPage = () => {
 
   return (
     <div className={s.p_viewQuestionPage}>
-      <ViewPageHeader fontSize={36} titleKey={t("userPage.viewQuestion")} />
-      <Question openModal={openModal} />
+      <ViewPageHeader
+        path={"/profile/questions"}
+        fontSize={36}
+        titleKey={t("userPage.viewQuestion")}
+      />
+      <Question is_awaited={true} openModal={openModal} />
       <VetAnswer />
       <div>
         {isModalVisible && <Modal linksArr={testLinks} onClose={closeModal} />}

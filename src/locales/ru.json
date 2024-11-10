@@ -382,5 +382,12 @@
     "learnMoreButton": "Ознакомиться",
     "tailbookTitle": "FreeVet - сервис экосистемы TailBook",
     "tailbookDescription": "TailBook -  экосистема, упрощающая помощь бездомным животным и предоставляющая полезные сервисы для домашних любимцев"
+  },
+  "P_addMessagePage": {
+    "header":"Добавить сообщение",
+    "addPhoto": "Добавьте фото и (или) видео",
+    "additionalMessage": "Напишите дополнительное сообщение*",
+    "requiredField": "Обязательное поле",
+     "sendMessage": "Отправить сообщение"
   }
 }

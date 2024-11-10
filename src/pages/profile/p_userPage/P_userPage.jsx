@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./p_userPage.module.css";
 import avatarPlaceholder from "../../../assets/avatarPlaceholder.svg";
-import QuestionPetList from "../../../components/questionPetList/QuestionPetList";
-import CustomMessage from "../../../components/customMessage/CustomMessage";
 import BurgerMenu from "../../../components/burgerMenu/BurgerMenu";
 import { Link } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
-import catTest from "../../../assets/kitty-cat.png";
 import Loader from "../../../components/loader/Loader.jsx";
 import { getUserQuestions } from "../../../utils/api.js";
 import { UnderConstructionIcon } from "../../../components/shared/underConstruction/UnderConstruction.jsx";
@@ -21,12 +18,16 @@ const P_userPage = () => {
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const userId = localStorage.getItem("userId");
-
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: "",
     photo: avatarPlaceholder,
   });
+
+  const handleLogOut = () => {
+    //TODO: handle log out
+    console.log("log out");
+  };
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -83,7 +84,7 @@ const P_userPage = () => {
           <Question key={idx} {...q} />
         ))}
       </div>
-      <div className={s.question_box2}>
+      <div className={s.question_box_header}>
         <h6>{t("userPage.vetBooks")}</h6>
         <p>{t("userPage.allVetBooks")}</p>
       </div>
@@ -92,28 +93,9 @@ const P_userPage = () => {
         <p>Under construction...</p>
         <UnderConstructionIcon />
       </div>
-      {/* <QuestionPetList
-        categories={[
-          {
-            title: t('userPage.myAnimalsTitle'),
-            images: [
-              { src: 'https://placehold.co/400', type: 'digital' },
-              { src: 'https://placehold.co/400', type: 'digital' },
-              { src: 'https://placehold.co/400', type: 'digital' },
-            ],
-            svgcolor: 'green',
-          },
-          {
-            title: t('userPage.strayAnimalsTitle'),
-            images: [
-              { src: 'https://placehold.co/400', type: 'non-digital' },
-              { src: 'https://placehold.co/400', type: 'non-digital' },
-              { src: 'https://placehold.co/400', type: 'non-digital' },
-            ],
-            svgcolor: 'orange',
-          },
-        ]}
-      /> */}
+      <button type="button" className={s.closeBtn} onClick={handleLogOut}>
+        <h5>{t("userPage.logOutButton")}</h5>
+      </button>
       <Footer />
     </div>
   );

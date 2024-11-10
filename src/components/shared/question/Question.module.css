@@ -1,7 +1,7 @@
 .question_section {
   border: 1px solid var(--color-main);
   border-radius: var(--border-radius-middle);
-  padding-inline: 12px;
+  padding-inline: 10px;
   padding-block: 5px;
 }
 .question_header {

@@ -341,7 +341,12 @@
     "allVetBooks": "all",
     "myAnimalsTitle": "My animals",
     "strayAnimalsTitle": "Stray animals",
-    "actionsButton": "Actions"
+    "actionsButton": "Actions",
+    "modalOptions": {
+      "editProfile": "Edit Profile",
+      "preferences": "Preferences"
+    },
+    "logOutButton": "Log Out"
   },
   "DonatePage": {
     "title": "Support the Service",

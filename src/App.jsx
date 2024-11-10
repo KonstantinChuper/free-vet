@@ -99,7 +99,10 @@ function App() {
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
-        <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
+        <Route
+          path="/profile/questions/view-question"
+          element={<P_viewQuestionPage />}
+        />
         <Route
           path="/profile/respond-question"
           element={<P_respondQuestionPage />}

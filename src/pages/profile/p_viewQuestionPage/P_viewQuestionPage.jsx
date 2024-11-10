@@ -14,8 +14,8 @@ const P_viewQuestionPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const testLinks = [
-    { link: "/profile", text: t("modal_options.sendMessage") }, // добавить в переводы
-    { link: "/main", text: t("modal_options.endSession") }, // добавить в переводы
+    { link: "/profile/respond-question", text: t("modal_options.sendMessage") },
+    { link: "/profile/questions", text: t("modal_options.endSession") },
   ];
 
   // чтобы открыть модальное окно

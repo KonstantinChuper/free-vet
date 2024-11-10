@@ -404,6 +404,9 @@
     "notificationsTitle": "Obavještenja",
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
-
+  },
+  "notFound": {
+    "heading": "Il semble que la page demandée est introuvable 😬",
+    "btnText": "Retourner à la page d'accueil"
   }
 }

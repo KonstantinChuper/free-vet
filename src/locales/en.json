@@ -406,6 +406,9 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
-
+  },
+  "notFound": {
+    "heading": "It looks like the page you requested is not found 😬",
+    "btnText": "Return to Home"
   }
 }

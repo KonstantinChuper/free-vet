@@ -403,9 +403,13 @@
     "additionalUserQuestions": "Дополнительные вопросы \n пользователей",
     "serviceNews": "Новости сервиса"
   },
-  "E_settingsNotificationProfileUserPage":{
-   "notificationsTitle":"Уведомления",
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Уведомления",
     "vetAnswers": "Ответы ветеринаров",
     "serviceNews": "Новости сервиса"
+  },
+  "notFound": {
+    "heading": "Похоже, что запрошенная Вами страница не найдена 😬",
+    "btnText": "Вернуться на Главную"
   }
 }

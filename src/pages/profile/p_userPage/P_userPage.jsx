@@ -22,35 +22,30 @@ const P_userPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const userId = localStorage.getItem("userId");
 
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      const response = await getUserQuestions(userId);
-      setQuestions(response);
-      setIsLoading(false);
-    };
-    fetchQuestions();
-  });
-
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: "",
     photo: avatarPlaceholder,
   });
 
-  const fetchUserData = async () => {
-    const userData = {
-      // Используем имя пользователя из i18n
-      name: t("userPage.userName"),
-      role: "volunteer", // Здесь можно установить роль пользователя
-      photo: avatarPlaceholder, // Здесь должно быть изображение пользователя
-    };
-    setUserInfo(userData);
-  };
-
   useEffect(() => {
+    const fetchQuestions = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestions(response);
+      setIsLoading(false);
+    };
+    const fetchUserData = async () => {
+      const userData = {
+        // Используем имя пользователя из i18n
+        name: t("userPage.userName"),
+        role: "volunteer", // Здесь можно установить роль пользователя
+        photo: avatarPlaceholder, // Здесь должно быть изображение пользователя
+      };
+      setUserInfo(userData);
+    };
     fetchUserData();
-  }, [t]);
-
+    fetchQuestions();
+  }, []);
   if (isLoading) {
     return <Loader />;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import styles from './aboutServicePage.module.css';
+import styles from './aboutServicePageVet.module.css';
 import banner from "../../assets/banner.png";
 import Footer from '../../components/footer/Footer';
 import "../../App.css";
@@ -51,22 +51,22 @@ const AboutServicePage = () => {
 
         <div className={styles.benefitsGrid}>
           <div className={styles.headerContainer}><h4>{t("aboutServicePage.benefitsTitle")}</h4>
-          {/* <h5>{t("aboutServicePage.benefitsTitle2")}</h5> */}</div>
+          <h5>{t("aboutServicePage.benefitsTitle2")}</h5></div>
           <div className={`${styles.benefit} ${styles.benefit1}`}>
-            <p className={styles.headerGrid}>{t("aboutServicePage.benefit1")}</p>
-            <p className={styles.parGrid}>{t("aboutServicePage.benefitP1")}</p>
+            <p className={styles.headerGrid}>{t("aboutServicePage.convenience")}</p>
+            <p className={styles.parGrid}>{t("aboutServicePage.modernService")}</p>
           </div>
           <div className={`${styles.benefit} ${styles.benefit2}`}>
-            <p className={styles.headerGrid}>{t("aboutServicePage.benefit2")}</p>
-            <p className={styles.parGrid}>{t("aboutServicePage.benefitP2")}</p>
+            <p className={styles.headerGrid}>{t("aboutServicePage.newClients")}</p>
+            <p className={styles.parGrid}>{t("aboutServicePage.helpAnimal")}</p>
           </div>
           <div className={`${styles.benefit} ${styles.benefit3}`}>
-            <p className={styles.headerGrid}>{t("aboutServicePage.benefit3")}</p>
-            <p className={styles.parGrid}>{t("aboutServicePage.benefitP3")}</p>
+            <p className={styles.headerGrid}>{t("aboutServicePage.processAuto")}</p>
+            <p className={styles.parGrid}>{t("aboutServicePage.taskSystem")}</p>
           </div>
           <div className={`${styles.benefit} ${styles.benefit4}`}>
-            <p className={styles.headerGrid}>{t("aboutServicePage.benefit4")}</p>
-            <p className={styles.parGrid}>{t("aboutServicePage.benefitP4")}</p>
+            <p className={styles.headerGrid}>{t("aboutServicePage.uniqueOpp")}</p>
+            <p className={styles.parGrid}>{t("aboutServicePage.combineProfWithVol")}</p>
           </div>
           <div className={`${styles.benefit} ${styles.benefit5}`}>
             <p className={styles.headerGrid}>{t("aboutServicePage.benefit5")}</p>
@@ -101,7 +101,7 @@ const AboutServicePage = () => {
     rel="noopener noreferrer"
     className={styles.infoGridPar}
   >
-    {t("aboutServicePage.info1")}
+    {t("aboutServicePage.userGuide")}
   </a>
   <a
     href="https://tailbook.me/services/freevet/termsofuse"
@@ -109,7 +109,7 @@ const AboutServicePage = () => {
     rel="noopener noreferrer"
     className={styles.infoGridPar}
   >
-    {t("aboutServicePage.info2")}
+    {t("aboutServicePage.userAgree")}
   </a>
   <a
     href="https://tailbook.me/services/freevet/privacy"
@@ -117,7 +117,7 @@ const AboutServicePage = () => {
     rel="noopener noreferrer"
     className={styles.infoGridPar}
   >
-    {t("aboutServicePage.info3")}
+    {t("aboutServicePage.privacyPolicy")}
   </a>
 </div>
         <div className={styles.info}>

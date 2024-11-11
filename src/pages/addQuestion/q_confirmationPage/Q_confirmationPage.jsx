@@ -13,18 +13,17 @@ const Q_confirmationPage = () => {
   const { t } = useTranslation();
   const [hasVetbook, setHasVetbook] = useState(false);
   const userId = localStorage.getItem("userId");
-  const [questions, setQuestions] = useState(null);
+  const [question, setQuestion] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
 
   useEffect(() => {
     const fetchQuestions = async () => {
       const response = await getUserQuestions(userId);
-      setQuestions(response);
+      setQuestion(response[response.length - 1]);
       setIsLoading(false);
     };
     fetchQuestions();
-  });
+  }, []);
 
   if (isLoading) {
     return <Loader />;
@@ -42,16 +41,7 @@ const Q_confirmationPage = () => {
         </Link>
       </div>
       <div className={s.question_box}>
-        {questions?.map((q) => (
-          <Question
-            id={q.id}
-            files={q.files}
-            pet_art={q.pet_art}
-            pet_gender={q.pet_gender}
-            pet_weight={q.pet_weight}
-            question={q.question}
-          />
-        ))}
+        <Question {...question} />
       </div>
     </div>
   );

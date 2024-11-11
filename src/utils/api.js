@@ -110,13 +110,49 @@ export const updateUserRole = async (data) => {
 
 export const getUserQuestions = async (id) => {
   try {
-    const response = await apiClientJson.post(
-      "/api/questions/get/",
-      JSON.stringify({ id })
+    const response = await axios.get(
+      `${API_BASE_URL}/api/questions/get/?user_id=${id}`
     );
     return response.data;
   } catch (error) {
     console.error("Ошибка получения копросов пользователя:", error);
+    throw error;
+  }
+};
+
+export const getUser = async (id) => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/api/users/profile/${id}/`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка получения копросов пользователя:", error);
+    throw error;
+  }
+};
+
+export const getMessages = async (id) => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/api/questions/${id}/messages/`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка получения копросов пользователя:", error);
+    throw error;
+  }
+};
+
+export const sendMessage = async (id, data) => {
+  try {
+    const response = await apiClientMultipart.post(
+      `/api/questions/${id}/message/`,
+      data
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка отправки вопроса:", error);
     throw error;
   }
 };

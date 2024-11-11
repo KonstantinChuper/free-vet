@@ -95,17 +95,17 @@ function App() {
           path="/main/question/description-animal"
           element={<Q_descriptionAnimalPage />}
         />
-        <Route
+        {/* <Route
           path="/main/question/description-animal/send"
           element={<Q_sendQuestionPage />}
-        />
+        /> */}
         <Route path="/main/question/confirm" element={<Q_confirmationPage />} />
         <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
         <Route
-          path="/profile/questions/view-question"
+          path="/profile/questions/view-question/:questionId"
           element={<P_viewQuestionPage />}
         />
         <Route
@@ -116,9 +116,18 @@ function App() {
         <Route path="/donate-user" element={<DonatePageUser />} />
         <Route path="/donate-vet" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
-        <Route path="/profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
-        <Route path="/profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
-        <Route path="/profile/message/add" element={<P_addMessagePage/>} />
+        <Route
+          path="/profile/settings/doctor/notification"
+          element={<E_settingsNotificationProfilePage />}
+        />
+        <Route
+          path="/profile/settings/user/notification"
+          element={<E_settingsNotificationProfileUserPage />}
+        />
+        <Route
+          path="/profile/message/add/:questionId"
+          element={<P_addMessagePage />}
+        />
         <Route path="/service-vet" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route

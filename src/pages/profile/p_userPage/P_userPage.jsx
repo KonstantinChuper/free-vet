@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import Loader from "../../../components/loader/Loader.jsx";
-import { getUserQuestions } from "../../../utils/api.js";
+import { getUser, getUserQuestions } from "../../../utils/api.js";
 import { UnderConstructionIcon } from "../../../components/shared/underConstruction/UnderConstruction.jsx";
+import Modal from "../../../components/shared/modal/Modal.jsx";
 
 //TODO: replace mock data with userFetch
 
@@ -17,6 +18,7 @@ const P_userPage = () => {
   const [files, setFiles] = useState([]);
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const userId = localStorage.getItem("userId");
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
@@ -36,17 +38,14 @@ const P_userPage = () => {
       setIsLoading(false);
     };
     const fetchUserData = async () => {
-      const userData = {
-        // Используем имя пользователя из i18n
-        name: t("userPage.userName"),
-        role: "volunteer", // Здесь можно установить роль пользователя
-        photo: avatarPlaceholder, // Здесь должно быть изображение пользователя
-      };
+      const userData = await getUser(userId);
+      console.log(userData);
       setUserInfo(userData);
     };
     fetchUserData();
     fetchQuestions();
   }, []);
+
   if (isLoading) {
     return <Loader />;
   }
@@ -56,9 +55,7 @@ const P_userPage = () => {
       <div className={s.name_Container}>
         <div className={s.avatarContainer}>
           <img
-            src={
-              files.length > 0 ? URL.createObjectURL(files[0]) : userInfo.photo
-            }
+            src={userInfo.photo ? userInfo.photo : avatarPlaceholder}
             alt="Avatar"
             className={s.avatar}
           />
@@ -67,7 +64,7 @@ const P_userPage = () => {
           <div className={s.userName}>{userInfo.name}</div>{" "}
           {/* Имя пользователя */}
           <div className={s.userRole}>
-            {userInfo.role === "volunteer"
+            {userInfo.volunteer
               ? t("userPage.userRoleVolunteer")
               : t("userPage.userRolePetOwner")}
           </div>
@@ -81,7 +78,20 @@ const P_userPage = () => {
       </div>
       <div className={s.question_box_content}>
         {questions.map((q, idx) => (
-          <Question key={idx} {...q} />
+          <>
+            <Question key={idx} {...q} openModal={() => setIsOpen(true)} />
+            {isOpen ? (
+              <Modal
+                linksArr={[
+                  {
+                    link: `/profile/message/add/${q.id}`,
+                    text: t("Modal_locales.addMessage"),
+                  },
+                ]}
+                onClose={() => setIsOpen(false)}
+              />
+            ) : null}
+          </>
         ))}
       </div>
       <div className={s.question_box_header}>

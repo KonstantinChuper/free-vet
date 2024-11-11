@@ -410,8 +410,6 @@
     "userGuide": "Guide de l'utilisateur (spécialiste)",
     "userAgree": "Contrat d'utilisateur (spécialiste)",
     "privacyPolicy": "Politique de confidentialité (spécialiste)"
-    "tailbookTitle": "FreeVet - un service de l'écosystème TailBook",
-    "tailbookDescription": "TailBook - un écosystème qui facilite l’aide aux animaux errants et propose des services utiles pour les animaux de compagnie"
   },
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Notifications",

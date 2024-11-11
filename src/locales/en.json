@@ -404,8 +404,6 @@
     "linkServ2": "Send Us a Message",
     "reviewsTitle": "Service Reviews",
     "learnMoreButton": "Learn More",
-    "tailbookTitle": "FreeVet – TailBook Ecosystem Service",
-    "tailbookDescription": "TailBook is an ecosystem that simplifies aid to stray animals and provides useful services for pets",
     "uniqueOpp": "Unique Opportunity",
     "combineProfWithVol": "Effectively combine your profession with volunteer work",
     "convenience": "Convenience",
@@ -416,7 +414,7 @@
     "taskSystem": "Get your personal task management system, stay connected when it's convenient for you, react promptly",
     "userGuide": "User Guide (Specialist)",
     "userAgree": "User Agreement (Specialist)",
-    "privacyPolicy": "Privacy Policy (Specialist)"
+    "privacyPolicy": "Privacy Policy (Specialist)",
     "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
     "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
   },

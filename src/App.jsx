@@ -16,18 +16,25 @@ import Q_descriptionAnimalPage from "./pages/addQuestion/q_descriptionAnimalPage
 import Q_sendQuestionPage from "./pages/addQuestion/q_sendQuestionPage/Q_sendQuestionPage";
 import Q_confirmationPage from "./pages/addQuestion/q_confirmationPage/Q_confirmationPage";
 import P_userPage from "./pages/profile/p_userPage/P_userPage";
-import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage";
+import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage.jsx";
 import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestionPage";
+import P_respondQuestionPage from "./pages/profile/p_respondQuestionPage/P_respondQuestionPage";
 import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
+import DonatePageUser from "./pages/donatePageUser/DonatePageUser";
+import DonatePageVet from "./pages/donatePageVet/DonatePageVet";
 import AboutServicePage from "./pages/aboutServicePage/AboutServicePage";
+import AboutServicePageVet from "./pages/aboutServicePageVet/AboutServicePageVet";
+import P_settings from "./pages/profile/p_settings/P_settings";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
 import P_addMessagePage from "./pages/profile/p_addMessagePage/P_addMessagePage";
+import AnswerExpertToQuestion from "./pages/profileExpert/answerExpertToQuestion/AnswerExpertToQuestion";
+import { NotFoundPage } from "./pages/404/NotFoundPage";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false); // TODO: replace to true in production
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -60,6 +67,7 @@ function App() {
           path="/verification/role/vet/vet-verification/code"
           element={<L_vetCodePage />}
         />
+
         <Route
           path="/verification/role/user/create-vetbook"
           element={<L_createVetBookPage />}
@@ -96,12 +104,36 @@ function App() {
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
-        <Route path="/profile/view-question" element={<P_viewQuestionPage />} />
+        <Route
+          path="/profile/questions/view-question"
+          element={<P_viewQuestionPage />}
+        />
+        <Route
+          path="/profile/respond-question"
+          element={<P_respondQuestionPage />}
+        />
         <Route path="/donate" element={<DonatePage />} />
+        <Route path="/donate-user" element={<DonatePageUser />} />
+        <Route path="/donate-vet" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
         <Route path="/profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
         <Route path="/profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
-      <Route path="/profile/message/add" element={<P_addMessagePage/>} />
+        <Route path="/profile/message/add" element={<P_addMessagePage/>} />
+        <Route path="/service-vet" element={<AboutServicePageVet />} />
+        <Route path="/settings" element={<P_settings />} />
+        <Route
+          path="/profile/settings/doctor/notification"
+          element={<E_settingsNotificationProfilePage />}
+        />
+        <Route
+          path="/profile/settings/user/notification"
+          element={<E_settingsNotificationProfileUserPage />}
+        />
+        <Route
+          path="/profile/selected-questions/action/answer"
+          element={<AnswerExpertToQuestion />}
+        />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

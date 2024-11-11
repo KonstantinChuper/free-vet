@@ -2,52 +2,54 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./p_userPage.module.css";
 import avatarPlaceholder from "../../../assets/avatarPlaceholder.svg";
-import QuestionPetList from "../../../components/questionPetList/QuestionPetList";
-import CustomMessage from "../../../components/customMessage/CustomMessage";
 import BurgerMenu from "../../../components/burgerMenu/BurgerMenu";
 import { Link } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
-import catTest from "../../../assets/kitty-cat.png";
+import Loader from "../../../components/loader/Loader.jsx";
+import { getUserQuestions } from "../../../utils/api.js";
+import { UnderConstructionIcon } from "../../../components/shared/underConstruction/UnderConstruction.jsx";
 
 //TODO: replace mock data with userFetch
 
 const P_userPage = () => {
   const { t } = useTranslation();
   const [files, setFiles] = useState([]);
-  const [questions, setQuestions] = useState([
-    {
-      id: 50,
-      images: [catTest, catTest, catTest],
-      is_homeless: true,
-      is_awaited: true,
-    },
-    {
-      id: 53,
-      is_homeless: false,
-      is_awaited: false,
-    },
-  ]);
+  const [questions, setQuestions] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const userId = localStorage.getItem("userId");
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: "",
     photo: avatarPlaceholder,
   });
 
-  const fetchUserData = async () => {
-    const userData = {
-      // Используем имя пользователя из i18n
-      name: t("userPage.userName"),
-      role: "volunteer", // Здесь можно установить роль пользователя
-      photo: avatarPlaceholder, // Здесь должно быть изображение пользователя
-    };
-    setUserInfo(userData);
+  const handleLogOut = () => {
+    //TODO: handle log out
+    console.log("log out");
   };
 
   useEffect(() => {
+    const fetchQuestions = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestions(response);
+      setIsLoading(false);
+    };
+    const fetchUserData = async () => {
+      const userData = {
+        // Используем имя пользователя из i18n
+        name: t("userPage.userName"),
+        role: "volunteer", // Здесь можно установить роль пользователя
+        photo: avatarPlaceholder, // Здесь должно быть изображение пользователя
+      };
+      setUserInfo(userData);
+    };
     fetchUserData();
-  }, [t]);
-
+    fetchQuestions();
+  }, []);
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className={s.p_userPage}>
       <BurgerMenu />
@@ -82,45 +84,18 @@ const P_userPage = () => {
           <Question key={idx} {...q} />
         ))}
       </div>
-      {/* <CustomMessage
-        questionNumber={55}
-        images={[
-          'https://placehold.co/400',
-          'https://placehold.co/400',
-          'https://placehold.co/400',
-          'https://placehold.co/400',
-        ]}
-        animalInfo={t('userPage.animalInfo')}
-        message={t('userPage.message')}
-      /> */}
-      <div className={s.question_box2}>
+      <div className={s.question_box_header}>
         <h6>{t("userPage.vetBooks")}</h6>
         <p>{t("userPage.allVetBooks")}</p>
       </div>
       {/** TODO: section in progress remove mock after complete vet book */}
-      <div>under construction...</div>
-      {/* <QuestionPetList
-        categories={[
-          {
-            title: t('userPage.myAnimalsTitle'),
-            images: [
-              { src: 'https://placehold.co/400', type: 'digital' },
-              { src: 'https://placehold.co/400', type: 'digital' },
-              { src: 'https://placehold.co/400', type: 'digital' },
-            ],
-            svgcolor: 'green',
-          },
-          {
-            title: t('userPage.strayAnimalsTitle'),
-            images: [
-              { src: 'https://placehold.co/400', type: 'non-digital' },
-              { src: 'https://placehold.co/400', type: 'non-digital' },
-              { src: 'https://placehold.co/400', type: 'non-digital' },
-            ],
-            svgcolor: 'orange',
-          },
-        ]}
-      /> */}
+      <div style={{ marginInline: "auto" }}>
+        <p>Under construction...</p>
+        <UnderConstructionIcon />
+      </div>
+      <button type="button" className={s.closeBtn} onClick={handleLogOut}>
+        <h5>{t("userPage.logOutButton")}</h5>
+      </button>
       <Footer />
     </div>
   );

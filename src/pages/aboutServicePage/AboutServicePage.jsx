@@ -51,7 +51,7 @@ const AboutServicePage = () => {
 
         <div className={styles.benefitsGrid}>
           <div className={styles.headerContainer}><h4>{t("aboutServicePage.benefitsTitle")}</h4>
-          <h5>{t("aboutServicePage.benefitsTitle2")}</h5></div>
+          {/* <h5>{t("aboutServicePage.benefitsTitle2")}</h5> */}</div>
           <div className={`${styles.benefit} ${styles.benefit1}`}>
             <p className={styles.headerGrid}>{t("aboutServicePage.benefit1")}</p>
             <p className={styles.parGrid}>{t("aboutServicePage.benefitP1")}</p>

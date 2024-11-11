@@ -108,7 +108,17 @@ export const updateUserRole = async (data) => {
   }
 };
 
-
+export const getUserQuestions = async (id) => {
+  try {
+    const response = await apiClientJson.post(
+      "/api/questions/get/",
+      JSON.stringify({ id })
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка получения копросов пользователя:", error);
+    throw error;
+  }
+};
 
 export default API_BASE_URL;
-

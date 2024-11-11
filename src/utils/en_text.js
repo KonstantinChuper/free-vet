@@ -187,6 +187,10 @@ const text_en = {
     submitButton: "Submit question",
     requiredField: "Field is required",
   },
+  respondQuestionPage: {
+    header: "Respond",
+    subtitle: "The question has been moved to selected questions (Profile)",
+  },
   mainHeader: {
     title: "Welcome to FreeVet",
     description:

@@ -31,6 +31,11 @@
     "editProfile": "Uredi profil",
     "settings": "Podešavanja"
   },
+  "settings": {
+    "settings": "Podešavanja",
+    "notifications": "Obaveštenja",
+    "language": "Jezik"
+  },
   "codeInputBox": {
     "codeLabel": "Kod",
     "requiredError": "Uneli ste pogrešan kod! Pokušajte ponovo",
@@ -188,6 +193,10 @@
     "requiredField": "Polje je obavezno",
     "writeQuestion": "Napišite pitanje"
   },
+  "respondQuestionPage": {
+    "header": "Odgovoriti",
+    "subtitle": "Pitanje je premješteno u odabrana pitanja (Profil)"
+  },
   "mainHeader": {
     "title": "Dobrodošli u FreeVet",
     "description": "Usluga ekosistema TailBook koja vam omogućava da besplatno postavljate pitanja kvalifikovanim i iskusnim veterinarima i dobijate odgovore."
@@ -333,54 +342,60 @@
     "strayAnimalsTitle": "Beskućne životinje"
   },
   "DonatePage": {
-    "title": "Podrži servis",
+    "title": "Podrška servisu",
+    "titleUser": "Podrška",
     "financialSupportTitle": "Finansijska podrška",
+    "financialSupportTitleP": "Bićemo veoma zahvalni na vašoj podršci! Vaša podrška nam pomaže da razvijamo i unapređujemo FreeVet",
     "oneTimeSupportTitle": "Jednokratna podrška",
     "amountPlaceholder": "Iznos donacije (evra)",
     "amountHelpText": "Možete uneti bilo koji iznos koji vam odgovara",
     "payButton": "Plati",
     "otherSupportOptionsTitle": "Drugi načini podrške",
-    "moreSupportInfo": "Više opcija za podršku možete pronaći na sajtu zajednice TailBook",
-    "learnMoreButton": "Saznaj više",
-    "supportAnytimeText": "Možete podržati FreeVet u bilo kom trenutku na ovoj stranici",
-    "joinProjectTitle": "Pridruži se projektu",
-    "joinProjectDescription": "Ako ste voljni da pomognete kao volonter i želite da se pridružite našim stručnjacima: veterinarima, biologima, zaštitnicima životinja – pišite nam ili popunite formular na stranici servisa.",
-    "fillFormButton": "Popuni formular",
-    "contactUsButton": "Kontaktiraj nas",
-    "applyButton": "Podnesi prijavu",
-    "footerThankYou": "Hvala vam na podršci!"
+    "moreSupportInfo": "Više opcija podrške možete pronaći na sajtu zajednice TailBook",
+    "learnMoreButton": "Saznajte više",
+    "supportAnytimeText": "Bilo kada možete podržati FreeVet u ovom odeljku",
+    "joinProjectTitle": "Pridružite se projektu",
+    "joinProjectDescription": "Ako ste spremni da pomognete kao volonter i želite da se pridružite našim stručnjacima: veterinarima, biologima, zaštitnicima životinja – napišite nam ili popunite obrazac sa stranice servisa",
+    "joinProjectDescriptionUser": "Bilo kada možete podržati FreeVet u posebnom delu menija",
+    "fillFormButton": "Popunite obrazac",
+    "contactUsButton": "Kontaktirajte nas",
+    "applyButton": "Pošaljite prijavu",
+    "DonateButton": "Podržite",
+    "applyButtonUser": "Podržite kasnije",
+    "footerThankYou": "Hvala na vašoj podršci!",
+    "refuseSupport": "Odustani od podrške"
   },
   "aboutServicePage": {
     "serviceTitle": "O servisu",
-    "serviceDescription": "FreeVet je servis TailBook ekosistema, čija je glavna mogućnost postavljanje pitanja o zdravlju životinja najboljim veterinarima. Moderan, jednostavan i praktičan način za podršku zdravlju i dobrobiti kako napuštenih, tako i kućnih ljubimaca.",
-    "benefitsTitle": "Prednosti za",
-    "benefitsTitle2": "stručnjake",
+    "serviceDescription": "FreeVet je servis ekosistema TailBook, čija je glavna funkcija da postavljate pitanja o zdravlju životinja najboljim veterinarima. Savremeni, jednostavan i lak način da podržite zdravlje i dobrobit beskućnih i kućnih ljubimaca.",
+    "benefitsTitle": "Prednosti servisa",
+    "benefitsTitle2": "za stručnjake",
     "benefit1": "24/7",
-    "benefitP1": "Mogućnost dobijanja pomoći tokom vikenda i praznika",
+    "benefitP1": "Mogućnost da dobijete pomoć i tokom vikenda i praznika",
     "benefit2": "Pomoć i podrška",
     "benefitP2": "Vodiči i detaljna uputstva",
     "benefit3": "Iskustvo i stručnost",
-    "benefitP3": "Dobijte odgovore od iskusnih veterinara sa dubokim znanjem i dugogodišnjom praksom",
+    "benefitP3": "Dobijte odgovore od iskusnih veterinara sa ozbiljnim znanjem i višegodišnjim iskustvom",
     "benefit4": "Jedinstvena prilika",
-    "benefitP4": "Mogućnost postavljanja pitanja najboljim veterinarima u praktičnom formatu",
-    "benefit5": "Sve što je potrebno i još više",
-    "benefitP5": "Dinamično razvijajući servis",
-    "statisticsTitle": "FreeVet u brojevima",
-    "stat1": "životinja dobilo pomoć",
+    "benefitP4": "Mogućnost postavljanja pitanja najboljim veterinarima u odgovarajućem formatu",
+    "benefit5": "Sve što vam treba i više",
+    "benefitP5": "Dinamički razvijajući servis",
+    "statisticsTitle": "FreeVet u brojkama",
+    "stat1": "pomognuto životinjama",
     "stat1span": "203",
-    "stat2": "životinja pomognuto ovog meseca",
+    "stat2": "životinjama pomognuto ovog meseca",
     "stat2span": "75",
     "stat3": "evra donirano ovog meseca",
     "stat3span": "120",
     "stat4": "evra donirano za razvoj projekta",
     "stat4span": "550",
     "infoTitle": "Informacije",
-    "info1": "Vodič za korisnike (stručnjaci)",
-    "info2": "Korisnički ugovor (stručnjaci)",
-    "info3": "Politika privatnosti (stručnjaci)",
+    "info1": "Vodič za korisnike",
+    "info2": "Korisnički ugovor",
+    "info3": "Politika privatnosti",
     "linkServ1": "Stranica servisa FreeVet",
-    "linkServ2": "Pošaljite nam poruku",
-    "reviewsTitle": "Recenzije o servisu",
+    "linkServ2": "Napišite nam poruku",
+    "reviewsTitle": "Komentari o servisu",
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - servis TailBook ekosistema",
     "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
@@ -391,5 +406,51 @@
       "additionalMessage": "Напишите додатну поруку*",
       "requiredField": "Обавезно поље",
       "sendMessage": "Пошаљи поруку"
-    }
+    },
+    "tailbookTitle": "FreeVet - servis ekosistema TailBook",
+    "tailbookDescription": "TailBook je ekosistem koji pojednostavljuje pomoć beskućnim životinjama i pruža korisne servise za kućne ljubimce",
+    "uniqueOpp": "Jedinstvena prilika",
+    "combineProfWithVol": "Efikasno spojite profesiju sa volonterskim radom",
+    "convenience": "Udobnost",
+    "modernService": "Savremeni servis sa brojnim mogućnostima širom sveta",
+    "newClients": "Novi klijenti",
+    "helpAnimal": "Pomozite životinji i steknite lojalnog klijenta",
+    "processAuto": "Automatizacija procesa",
+    "taskSystem": "Dobijte svoj lični sistem za upravljanje zadacima, budite u kontaktu kad god vam odgovara, brzo reagujte",
+    "userGuide": "Vodič za korisnike (stručnjak)",
+    "userAgree": "Korisnički ugovor (stručnjak)",
+    "privacyPolicy": "Politika privatnosti (stručnjak)"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Obaveštenja",
+    "userQuestions": "Pitanja korisnika",
+    "additionalUserQuestions": "Dodatna pitanja \n korisnika",
+    "serviceNews": "Novosti o usluzi"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obaveštenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+  },
+  "notFound": {
+    "heading": "Izgleda da tražena stranica nije pronađena 😬",
+    "btnText": "Vrati se na početnu stranicu"
+  },
+  "modal_options": {
+    "sendMessage": "Poslati poruku",
+    "endSession": "Završiti pitanje"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Odgovor",
+    "ansver": "Molimo, napišite Vaš odgovor",
+    "chat": "Napišite poruku*",
+    "notification": "Zdravo! \n Potrebno je da nastavite da pratite mačku i pošaljete ponovni zahtev ako je potrebno",
+    "addFoto": "Dodajte fotografiju i/ili video po potrebi",
+    "sendAnswer": "Pošalji odgovor"
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Odgovoriti",
+    "endQuestion": "Završiti pitanje",
+    "addMessage": "Dodati poruku"
+  }
 }

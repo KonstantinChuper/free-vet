@@ -23,6 +23,7 @@
   font-weight: bold;
   color: var(--color-main);
   margin-bottom: 20px;
+      font-size: 36px;
 }
 .supportTitle {
      color: var(--color-main);

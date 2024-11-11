@@ -6,7 +6,7 @@ import CustomStickTitle from '../../components/customStickTitle/CustomStickTitle
 import Footer from '../../components/footer/Footer';
 import { useTranslation } from 'react-i18next';
 import styles from './donatePage.module.css';
-import logo from '../../assets/Vector.svg';
+import logo from '../../assets/VectorLogo.png';
 
 const DonatePage = () => {
   const { t } = useTranslation();

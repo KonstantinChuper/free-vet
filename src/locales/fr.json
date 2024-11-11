@@ -256,7 +256,9 @@
     "helpedAnimals": "assistance fournie aux animaux",
     "helpedThisMonth": "animaux aidés ce mois-ci",
     "donatedAmount": "euros donnés pour le développement du projet",
-    "thankYou": "Merci pour votre soutien !"
+    "thankYou": "Merci pour votre soutien !",
+    "helpedAnimalsTotal": "animaux ont été aidés par vous",
+    "helpedAnimalsMonth": "animaux que vous avez aidés ce mois-ci"
   },
   "accordion": {
     "title": "Description supplémentaire",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./burgerMenu.module.css";
+import Modal from "../modalProfile/ModalProfile";
 
 const BurgerMenu = () => {
   const { t } = useTranslation();
@@ -10,6 +11,12 @@ const BurgerMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // TODO: mock data replace with global storage or fetch data from back end
+  const linksArr = [
+    { text: t("userPage.modalOptions.editProfile"), link: "" },
+    { text: t("userPage.modalOptions.preferences"), link: "/settings" },
+  ];
+
   return (
     <div className={s.burgerMenu}>
       <div onClick={toggleMenu} className={s.burgerIcon}>
@@ -17,19 +24,7 @@ const BurgerMenu = () => {
         <div className={s.dot}></div>
         <div className={s.dot}></div>
       </div>
-      {isOpen && (
-        <div className={s.modal}>
-          <div className={s.modalContent}>
-            <span className={s.close} onClick={toggleMenu}>
-              &times;
-            </span>
-            <ul>
-              <li>{t("burgerMenu.editProfile")}</li>
-              <li>{t("burgerMenu.settings")}</li>
-            </ul>
-          </div>
-        </div>
-      )}
+      {isOpen && <Modal linksArr={linksArr} onClose={toggleMenu} />}
     </div>
   );
 };

@@ -11,8 +11,8 @@ const Modal = ({ linksArr, onClose }) => {
       <div className={styles.modalContent}>
         <ul>
           {linksArr.map((link) => (
-            <Link key={link.link}>
-              <li>
+            <li key={link.link}>
+              <Link to={link.link} className={styles.linkItem}>
                 <p>{t(link.text)}</p>
                 <svg
                   width="24"
@@ -29,8 +29,8 @@ const Modal = ({ linksArr, onClose }) => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </ul>
         <button type="button" className={styles.close} onClick={onClose}>

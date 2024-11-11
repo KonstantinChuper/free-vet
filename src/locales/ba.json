@@ -194,6 +194,10 @@
     "requiredField": "Polje je obavezno",
     "writeQuestion": "Napišite pitanje"
   },
+  "respondQuestionPage": {
+    "header": "Odgovoriti",
+    "subtitle": "Pitanje je premješteno u odabrana pitanja (Profil)"
+  },
   "mainHeader": {
     "title": "Dobrodošli u FreeVet",
     "description": "Usluga ekosistema TailBook koja vam omogućava da besplatno postavljate pitanja kvalifikovanim i iskusnim veterinarima i dobijate odgovore."
@@ -390,5 +394,32 @@
     "learnMoreButton": "Saznajte više",
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Obavještenja",
+    "userQuestions": "Pitanja korisnika",
+    "additionalUserQuestions": "Dodatna pitanja \n korisnika",
+    "serviceNews": "Novosti o usluzi"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obavještenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+  },
+  "notFound": {
+    "heading": "Izgleda da tražena stranica nije pronađena 😬",
+    "btnText": "Vrati se na početnu stranicu"
+  },
+  "modal_options": {
+    "sendMessage": "Poslati poruku",
+    "endSession": "Završiti pitanje"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Яуап биреү",
+    "ansver": "Зинһар, яуапты яҙып ебәрегеҙ",
+    "chat": "Хәбәрҙе яҙып ебәрегеҙ*",
+    "notification": "Һаумыһығыҙ! \n Һеҙгә бесәйҙе күҙәтеүҙе дауам итергә һәм кәрәк булһа ҡабаттан мөрәжәғәт итергә кәрәк",
+    "addFoto": "Ҡатнаш фото һәм (йәки) видео өҫтәгеҙ кәрәк булһа",
+    "sendAnswer": "Яуапты ебәреү"
   }
 }

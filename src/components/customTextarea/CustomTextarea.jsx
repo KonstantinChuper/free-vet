@@ -28,7 +28,10 @@ const CustomTextarea = forwardRef(
           ref={ref}
           rows={rows}
           cols={cols}
-          placeholder={placeholder || t("customInput.defaultErrorMessage")}
+          placeholder={placeholder ?? ""}
+          // L_vetVerificationPage.jsx
+          // fix: отключён дефолтный плейсхолдер, чтобы избежать лишней подсказки в CustomTextarea
+          // placeholder={placeholder || t("customInput.defaultErrorMessage")}
           style={{
             width: width || "335px",
             backgroundColor: backgroundColor || "white",

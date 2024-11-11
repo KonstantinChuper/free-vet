@@ -194,6 +194,10 @@
     "requiredField": "Field is required",
     "writeQuestion": "Write your question"
   },
+  "respondQuestionPage": {
+    "header": "Respond",
+    "subtitle": "The question has been moved to selected questions (Profile)"
+  },
   "mainHeader": {
     "title": "Welcome to FreeVet",
     "description": "A service of the TailBook ecosystem that allows you to ask qualified and experienced veterinarians questions for free and receive answers."
@@ -337,7 +341,12 @@
     "allVetBooks": "all",
     "myAnimalsTitle": "My animals",
     "strayAnimalsTitle": "Stray animals",
-    "actionsButton": "Actions"
+    "actionsButton": "Actions",
+    "modalOptions": {
+      "editProfile": "Edit Profile",
+      "preferences": "Preferences"
+    },
+    "logOutButton": "Log Out"
   },
   "DonatePage": {
     "title": "Support the Service",
@@ -408,5 +417,34 @@
     "userGuide": "User Guide (Specialist)",
     "userAgree": "User Agreement (Specialist)",
     "privacyPolicy": "Privacy Policy (Specialist)"
+    "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
+    "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Notifications",
+    "userQuestions": "User Questions",
+    "additionalUserQuestions": "Additional Questions \n users",
+    "serviceNews": "Service News"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Notifications",
+    "vetAnswers": "Veterinary Answers",
+    "serviceNews": "Service News"
+  },
+  "notFound": {
+    "heading": "It looks like the page you requested is not found 😬",
+    "btnText": "Return to Home"
+  },
+  "modal_options": {
+    "sendMessage": "Send message",
+    "endSession": "End session"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Answer",
+    "ansver": "Please write your answer",
+    "chat": "Write a message*",
+    "notification": "Hello! \n Please continue monitoring the cat and submit a follow-up request if necessary",
+    "addFoto": "Add photo(s) and/or video(s) if necessary",
+    "sendAnswer": "Send answer"
   }
 }

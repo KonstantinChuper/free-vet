@@ -39,15 +39,17 @@
   color: var(--color-text-dark);
 }
 
-.modalContent li {
+.modalContent li p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.modalContent li .linkItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 12px;
-}
-
-.modalContent li p {
-  font-size: 20px;
-  font-weight: 100;
+  cursor: pointer;
 }

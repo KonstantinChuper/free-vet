@@ -193,6 +193,10 @@
     "requiredField": "Polje je obavezno",
     "writeQuestion": "Napišite pitanje"
   },
+  "respondQuestionPage": {
+    "header": "Odgovoriti",
+    "subtitle": "Pitanje je premješteno u odabrana pitanja (Profil)"
+  },
   "mainHeader": {
     "title": "Dobrodošli u FreeVet",
     "description": "Servis ekosistema TailBook koji vam omogućava da besplatno postavljate pitanja kvalifikovanim i iskusnim veterinarima i dobijate odgovore."
@@ -406,5 +410,33 @@
     "userGuide": "Vodič za korisnike (stručnjak)",
     "userAgree": "Korisnički ugovor (stručnjak)",
     "privacyPolicy": "Politika privatnosti (stručnjak)"
+    "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Obavještenja",
+    "userQuestions": "Pitanja korisnika",
+    "additionalUserQuestions": "Dodatna pitanja \n korisnika",
+    "serviceNews": "Novosti o usluzi"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obavještenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+  },
+  "notFound": {
+    "heading": "Izgleda da tražena stranica nije pronađena 😬",
+    "btnText": "Vrati se na početnu stranicu"
+  },
+  "modal_options": {
+    "sendMessage": "Poslati poruku",
+    "endSession": "Završiti pitanje"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Odgovor",
+    "ansver": "Molimo Vas, napišite Vaš odgovor",
+    "chat": "Napišite poruku*",
+    "notification": "Zdravo! \n Potrebno je da nastavite sa praćenjem mačke i, ako je potrebno, pošaljete ponovni zahtjev",
+    "addFoto": "Dodajte fotografije i/ili video snimke ako je potrebno",
+    "sendAnswer": "Pošaljite odgovor"
   }
 }

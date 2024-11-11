@@ -61,8 +61,8 @@ margin-top: 5px;
    text-align: center;
 }
 .joinTitle {
-     color: var(--color-main);
-     margin-bottom: 21px;
+color: var(--color-main);
+margin-bottom: 21px;
 }
 
 .joinSection {
@@ -80,7 +80,6 @@ margin-top: 5px;
   justify-content: space-between;
   width: 100%;
   gap: 3px;
-  /* height: auto; */
 }
 
 .fillFormButton, .contactUsButton {

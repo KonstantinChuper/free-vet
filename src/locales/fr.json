@@ -397,6 +397,15 @@
     "linkServ2": "Envoyez-nous un message",
     "reviewsTitle": "Avis sur le service",
     "learnMoreButton": "En savoir plus",
+    "tailbookTitle": "FreeVet - un service de l'écosystème TailBook",
+    "tailbookDescription": "TailBook - un écosystème qui facilite l’aide aux animaux errants et propose des services utiles pour les animaux de compagnie"
+  },
+  "P_addMessagePage": {
+      "header": "Ajouter un message",
+      "addPhoto": "Ajoutez une photo et/ou une vidéo",
+      "additionalMessage": "Écrire un message supplémentaire*",
+      "requiredField": "Champ requis",
+      "sendMessage": "Envoyer le message",
     "tailbookTitle": "FreeVet - service de l'écosystème TailBook",
     "tailbookDescription": "TailBook est un écosystème qui facilite l'aide aux animaux errants et fournit des services utiles pour les animaux domestiques",
     "uniqueOpp": "Opportunité unique",

@@ -29,6 +29,7 @@ import AboutServicePageVet from "./pages/aboutServicePageVet/AboutServicePageVet
 import P_settings from "./pages/profile/p_settings/P_settings";
 import E_settingsNotificationProfilePage from "./pages/editProfile/e_settingsNotificationProfilePage/E_settingsNotificationProfileSpecialistPage";
 import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_settingsNotificationProfileUserPage/E_settingsNotificationProfileUserPage";
+import P_addMessagePage from "./pages/profile/p_addMessagePage/P_addMessagePage";
 import AnswerExpertToQuestion from "./pages/profileExpert/answerExpertToQuestion/AnswerExpertToQuestion";
 import { NotFoundPage } from "./pages/404/NotFoundPage";
 
@@ -115,6 +116,9 @@ function App() {
         <Route path="/donate-user" element={<DonatePageUser />} />
         <Route path="/donate-vet" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
+        <Route path="/profile/settings/doctor/notification" element={<E_settingsNotificationProfilePage/>}/>
+        <Route path="/profile/settings/user/notification" element={<E_settingsNotificationProfileUserPage/>}/>
+        <Route path="/profile/message/add" element={<P_addMessagePage/>} />
         <Route path="/service-vet" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route

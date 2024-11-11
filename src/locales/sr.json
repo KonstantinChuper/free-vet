@@ -397,6 +397,15 @@
     "linkServ2": "Napišite nam poruku",
     "reviewsTitle": "Komentari o servisu",
     "learnMoreButton": "Saznajte više",
+    "tailbookTitle": "FreeVet - servis TailBook ekosistema",
+    "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
+  },
+  "P_addMessagePage": {
+      "header": "Додај поруку",
+      "addPhoto": "Додајте фотографију и/или видео",
+      "additionalMessage": "Напишите додатну поруку*",
+      "requiredField": "Обавезно поље",
+      "sendMessage": "Пошаљи поруку",
     "tailbookTitle": "FreeVet - servis ekosistema TailBook",
     "tailbookDescription": "TailBook je ekosistem koji pojednostavljuje pomoć beskućnim životinjama i pruža korisne servise za kućne ljubimce",
     "uniqueOpp": "Jedinstvena prilika",

@@ -395,6 +395,13 @@
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
   },
+    "P_addMessagePage": {
+      "header": "Хәбәр өҫтәргә",
+      "addPhoto": "Фото һәм (йәки) видео өҫтәгеҙ",
+      "additionalMessage": "Өҫтәмә хәбәр яҙырға*",
+      "requiredField": "Мотлаҡ ҡыр",
+      "sendMessage": "Хәбәр ебәрергә"
+    },
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Obavještenja",
     "userQuestions": "Pitanja korisnika",

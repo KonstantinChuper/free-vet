@@ -418,6 +418,13 @@
     "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
     "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
   },
+  "P_addMessagePage": {
+    "header": "Add Message",
+    "addPhoto": "Add photo and/or video",
+    "additionalMessage": "Write an additional message*",
+    "requiredField": "Required field",
+    "sendMessage": "Send Message"
+  },
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Notifications",
     "userQuestions": "User Questions",

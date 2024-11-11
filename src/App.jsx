@@ -16,7 +16,7 @@ import Q_descriptionAnimalPage from "./pages/addQuestion/q_descriptionAnimalPage
 import Q_sendQuestionPage from "./pages/addQuestion/q_sendQuestionPage/Q_sendQuestionPage";
 import Q_confirmationPage from "./pages/addQuestion/q_confirmationPage/Q_confirmationPage";
 import P_userPage from "./pages/profile/p_userPage/P_userPage";
-import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage";
+import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage.jsx";
 import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestionPage";
 import P_respondQuestionPage from "./pages/profile/p_respondQuestionPage/P_respondQuestionPage";
 import Loader from "./components/loader/Loader";

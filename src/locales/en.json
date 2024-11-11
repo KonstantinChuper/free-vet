@@ -427,5 +427,10 @@
     "notification": "Hello! \n Please continue monitoring the cat and submit a follow-up request if necessary",
     "addFoto": "Add photo(s) and/or video(s) if necessary",
     "sendAnswer": "Send answer"
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Respond",
+    "endQuestion": "End session",
+    "addMessage": "Add message"
   }
 }

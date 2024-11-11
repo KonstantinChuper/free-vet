@@ -421,5 +421,10 @@
     "notification": "Һаумыһығыҙ! \n Һеҙгә бесәйҙе күҙәтеүҙе дауам итергә һәм кәрәк булһа ҡабаттан мөрәжәғәт итергә кәрәк",
     "addFoto": "Ҡатнаш фото һәм (йәки) видео өҫтәгеҙ кәрәк булһа",
     "sendAnswer": "Яуапты ебәреү"
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Odgovoriti",
+    "endQuestion": "Završiti pitanje",
+    "addMessage": "Dodati poruku"
   }
 }

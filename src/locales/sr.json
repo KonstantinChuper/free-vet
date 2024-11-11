@@ -420,5 +420,10 @@
     "notification": "Zdravo! \n Potrebno je da nastavite da pratite mačku i pošaljete ponovni zahtev ako je potrebno",
     "addFoto": "Dodajte fotografiju i/ili video po potrebi",
     "sendAnswer": "Pošalji odgovor"
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Odgovoriti",
+    "endQuestion": "Završiti pitanje",
+    "addMessage": "Dodati poruku"
   }
 }

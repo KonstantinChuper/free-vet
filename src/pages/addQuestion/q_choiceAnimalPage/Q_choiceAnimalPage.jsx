@@ -31,20 +31,24 @@ const Q_choiceAnimalPage = () => {
     selectedAnimalType === "digital"
       ? "/main/question/description-animal/send"
       : isNewAnimalSelected
-      ? "/main/question/description-animal"
-      : "#";
+        ? "/main/question/description-animal"
+        : "#";
 
   return (
     <div className={s.q_choiceAnimalPage}>
       <div className={s.q_choiceAnimalPage_header}>
-        <FormHeader path="/main" fontSize={36} titleKey={t("questionPage.title")} />
+        <FormHeader
+          path="/main"
+          fontSize={36}
+          titleKey={t("questionPage.title")}
+        />
         <Link to={"/main"}>
           <img className={s.closeBtn} src={close} alt="close" />
         </Link>
       </div>
       <LineHeader middle={"var(--color-line)"} />
-      <h5 dangerouslySetInnerHTML={{ __html: t("questionPage.animalSelection") }} />
-      <QuestionPetList
+      {/* <h5 dangerouslySetInnerHTML={{ __html: t("questionPage.animalSelection") }} /> */}
+      {/* <QuestionPetList
         categories={[
           {
             title: t("userPage.myAnimalsTitle"),
@@ -68,13 +72,18 @@ const Q_choiceAnimalPage = () => {
         ]}
         onSelectImage={handleSelectImage}
         resetSelection={resetSelection}
-      />
+      /> */}
       <div className={s.q_choiceAnimalPage_newAnimal_box}>
         <h5 dangerouslySetInnerHTML={{ __html: t("questionPage.newAnimal") }} />
         <div className={s.q_choiceAnimalPage_newAnimal_boxBtnTitle}>
-          <div className={s.q_choiceAnimalPage_newAnimal_btnPlus} onClick={handleNewAnimalClick}>
+          <div
+            className={s.q_choiceAnimalPage_newAnimal_btnPlus}
+            onClick={handleNewAnimalClick}
+          >
             <img src={plus} alt="plus" />
-            <div className={`${s.circle} ${isNewAnimalSelected ? s.selected : ""}`} />
+            <div
+              className={`${s.circle} ${isNewAnimalSelected ? s.selected : ""}`}
+            />
           </div>
           <h5>{t("questionPage.addAnimal")}</h5>
         </div>

@@ -188,7 +188,7 @@
     "petArt": "Type of animal",
     "petWeight": "Approximate weight of the animal",
     "petGender": "Gender of the animal",
-    "homeless": "Animal is homeless: ",
+    "homeless": "Animal is homeless",
     "questionPlaceholder": "Enter your question",
     "submitButton": "Submit question",
     "requiredField": "Field is required",

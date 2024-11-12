@@ -22,7 +22,7 @@ export const Question = ({
   pet_weight = "1 кг 200 г",
   pet_gender = "Самец",
   is_homeless = true,
-  is_awaited = false,
+  has_answer = false,
   question = "Уличный кот, за которым я присматриваю, начал кашлять несколько раз в день в последние три недели. Кашель сухой, без выделений. Он активный, аппетит нормальный, но меня беспокоит частота кашля. Корм не меняли. Также прикладываю видео, где видно и слышно, как кот кашляет.",
   openModal = () => {},
 }) => {
@@ -35,7 +35,7 @@ export const Question = ({
           {t("customMessage.questionTitle")}
           {id}
         </p>
-        {is_awaited ? (
+        {!has_answer ? (
           <button className={`${s.btn} ${s.awaiting_btn}`}>
             {t("customMessage.awaitingResponse")}
           </button>
@@ -44,12 +44,12 @@ export const Question = ({
             {t("customMessage.responseSent")}
           </button>
         )}
-        {is_awaited && (
+        {!has_answer ? (
           <button className={`${s.btn} ${s.actions_btn}`} onClick={openModal}>
             <span>{t("userPage.actionsButton")}</span>
             <Icon />
           </button>
-        )}
+        ) : null}
       </div>
       <div className={s.question_images}>
         {files.length ? (

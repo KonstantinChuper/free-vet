@@ -188,7 +188,7 @@
     "petArt": "Vrsta životinje",
     "petWeight": "Približna težina životinje",
     "petGender": "Spol životinje",
-    "homeless": "Životinja je beskućna: ",
+    "homeless": "Životinja je beskućna",
     "questionPlaceholder": "Unesite svoje pitanje",
     "submitButton": "Pošalji pitanje",
     "requiredField": "Polje je obavezno",

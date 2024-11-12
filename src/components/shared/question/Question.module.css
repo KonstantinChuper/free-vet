@@ -3,12 +3,14 @@
   border-radius: var(--border-radius-middle);
   padding-inline: 10px;
   padding-block: 5px;
+  width: 100%;
 }
 .question_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 5px;
+  gap: 5px;
 }
 .question_number {
   color: var(--color-main);
@@ -17,7 +19,7 @@
 }
 
 .btn {
-  padding-inline: 16px;
+  padding-inline: 10px;
   padding-block: 5px;
   border-radius: 10px;
   border: none;

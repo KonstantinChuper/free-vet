@@ -77,8 +77,6 @@ const P_userPage = () => {
         </Link>
       </div>
       <div className={s.question_box_content}>
-        {questions?.map((q, idx) => (
-          <Question key={idx} {...q} />
         {questions.map((q, idx) => (
           <>
             <Question key={idx} {...q} openModal={() => setIsOpen(true)} />

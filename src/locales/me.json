@@ -453,5 +453,15 @@
     "allUserQuestionsModal": "Odgovoriti",
     "endQuestion": "Završiti pitanje",
     "addMessage": "Dodati poruku"
+  },
+  "vetMenu": {
+    "questions": "Pitanja",
+    "fromUsers": "od korisnika",
+    "waitingForAnswer": "Čekaju odgovor",
+    "appointments": "Pregledi",
+    "online": "online",
+    "inDevelopment": "u razvoju",
+    "forSpecialists": "Za specijaliste",
+    "consultations": "Konsultacije"
   }
 }

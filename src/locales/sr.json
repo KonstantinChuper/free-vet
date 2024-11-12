@@ -404,11 +404,11 @@
     "tailbookDescription": "TailBook - ekosistem koji olakšava pomoć napuštenim životinjama i pruža korisne servise za kućne ljubimce"
   },
   "P_addMessagePage": {
-      "header": "Додај поруку",
-      "addPhoto": "Додајте фотографију и/или видео",
-      "additionalMessage": "Напишите додатну поруку*",
-      "requiredField": "Обавезно поље",
-      "sendMessage": "Пошаљи поруку",
+    "header": "Додај поруку",
+    "addPhoto": "Додајте фотографију и/или видео",
+    "additionalMessage": "Напишите додатну поруку*",
+    "requiredField": "Обавезно поље",
+    "sendMessage": "Пошаљи поруку",
     "tailbookTitle": "FreeVet - servis ekosistema TailBook",
     "tailbookDescription": "TailBook je ekosistem koji pojednostavljuje pomoć beskućnim životinjama i pruža korisne servise za kućne ljubimce",
     "uniqueOpp": "Jedinstvena prilika",
@@ -454,5 +454,15 @@
     "allUserQuestionsModal": "Odgovoriti",
     "endQuestion": "Završiti pitanje",
     "addMessage": "Dodati poruku"
+  },
+  "vetMenu": {
+    "questions": "Питања",
+    "fromUsers": "од корисника",
+    "waitingForAnswer": "Чекају одговор",
+    "appointments": "Прегледи",
+    "online": "онлајн",
+    "inDevelopment": "у развоју",
+    "forSpecialists": "За специјалисте",
+    "consultations": "Консултације"
   }
 }

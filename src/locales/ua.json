@@ -59,14 +59,9 @@
     "defaultErrorMessage": "Будь ласка, заповніть це поле"
   },
   "customMessage": {
-<<<<<<< HEAD
-    "questionTitle": "Запитання №",
     "awaitingResponse": "Чекає відповіді",
     "responseSent": "Відповідь отримана",
-=======
     "questionTitle": "Питання №",
-    "awaitingResponse": "Очікування відповіді",
->>>>>>> 6bec45cfbdbb284fb518f86e81dba1d131f98de9
     "homelessAnimal": "Безпритульна тварина",
     "completed": "Завершено"
   },

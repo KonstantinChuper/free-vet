@@ -16,7 +16,21 @@ import Modal from "../../../components/shared/modal/Modal.jsx";
 const P_userPage = () => {
   const { t } = useTranslation();
   const [files, setFiles] = useState([]);
-  const [questions, setQuestions] = useState(null);
+  const [questions, setQuestions] = useState([{
+    "id": 160,
+    "has_answer": false,
+    "files": [
+      {
+        "file_url": "https://freevet.me/media/questions_files/Screenshot_2024-08-27_130831.png"
+      }
+    ],
+    "question": "fghfghf",
+    "pet_art": "cat",
+    "pet_weight": "5.0",
+    "pet_gender": "xcxcxcxc",
+    "is_homeless": false,
+    "created_at": "2024-11-10T14:07:59.628044Z"
+  }]);
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const userId = localStorage.getItem("userId");

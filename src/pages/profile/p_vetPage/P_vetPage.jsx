@@ -1,9 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import s from "./p_userPage.module.css";
-import avatarPlaceholder from "../../../assets/avatarPlaceholder.svg";
+import s from "./p_vetPage.module.css";
+import avatarVetPlaceholder from "../../../assets/avatarVetPlaceholder.svg";
 import BurgerMenu from "../../../components/burgerMenu/BurgerMenu";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import Loader from "../../../components/loader/Loader.jsx";
@@ -11,38 +12,42 @@ import { getUser, getUserQuestions } from "../../../utils/api.js";
 import { UnderConstructionIcon } from "../../../components/shared/underConstruction/UnderConstruction.jsx";
 import Modal from "../../../components/shared/modal/Modal.jsx";
 
-const P_userPage = () => {
+//TODO: replace mock data with userFetch
+
+const P_vetPage = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const [files, setFiles] = useState([]);
   const [questions, setQuestions] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const userId = localStorage.getItem("userId");
-
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
-    role: "",
-    photo: avatarPlaceholder,
+    role: ["Vet", "Cats", "Dogs", "Birds"],
+    photo: avatarVetPlaceholder,
+    email: "test@mail.co",
   });
 
   const handleLogOut = () => {
-    localStorage.removeItem("userId");
-    navigate("/");
+    //TODO: handle log out
+    console.log("log out");
   };
 
   useEffect(() => {
+    const fetchQuestions = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestions(response);
+    };
     const fetchUserData = async () => {
       const userData = await getUser(userId);
       console.log(userData);
       setUserInfo(userData);
-    };
-    const fetchQuestions = async () => {
-      const response = await getUserQuestions(userId);
-      setQuestions(response);
       setIsLoading(false);
     };
-    fetchUserData();
-    fetchQuestions();
+    //TODO: add fetch for vet
+    //fetchUserData();
+    //TODO: add question for vet
+    //fetchQuestions();
   }, []);
 
   if (isLoading) {
@@ -54,31 +59,37 @@ const P_userPage = () => {
       <div className={s.name_Container}>
         <div className={s.avatarContainer}>
           <img
-            src={userInfo.photo ? userInfo.photo : avatarPlaceholder}
+            src={userInfo.photo ? userInfo.photo : avatarVetPlaceholder}
             alt="Avatar"
             className={s.avatar}
           />
         </div>
         <div className={s.userInfo}>
-          <div className={s.userName}>{userInfo.name}</div>{" "}
           {/* Имя пользователя */}
-          <div className={s.userRole}>
-            {userInfo.volunteer
-              ? t("userPage.userRoleVolunteer")
-              : t("userPage.userRolePetOwner")}
+          <div className={s.userName}>{userInfo.name}</div>{" "}
+          <div className={s.vetTags}>
+            {userInfo.role.map((r, idx) => {
+              return <div key={idx} className={s.userRole}>
+                {r}
+              </div>
+            })}
+          </div>
+          <div className={s.vetInfo}>
+            <p>@{userInfo.name}</p>
+            <p>{userInfo.email}</p>
           </div>
         </div>
       </div>
       <div className={s.question_box_header}>
-        <h6>{t("userPage.myQuestions")}</h6>
+        <h6>{t("userPage.selectedQuestions")}</h6>
         <Link to="/profile/questions">
           <p>{t("userPage.allQuestions")}</p>
         </Link>
       </div>
       <div className={s.question_box_content}>
-        {questions?.map((q) => (
-          <Fragment key={q.id}>
-            <Question {...q} openModal={() => setIsOpen(true)} />
+        {questions?.map((q, idx) => (
+          <>
+            <Question key={idx} {...q} openModal={() => setIsOpen(true)} />
             {isOpen ? (
               <Modal
                 linksArr={[
@@ -86,20 +97,15 @@ const P_userPage = () => {
                     link: `/profile/message/add/${q.id}`,
                     text: t("Modal_locales.addMessage"),
                   },
-                  {
-                    link: `/main/question/close?questionId=${q.id}`,
-                    text: t("closeQuestionPage.header"),
-                  },
                 ]}
                 onClose={() => setIsOpen(false)}
               />
             ) : null}
-          </Fragment>
+          </>
         ))}
       </div>
       <div className={s.question_box_header}>
-        <h6>{t("userPage.vetBooks")}</h6>
-        <p>{t("userPage.allVetBooks")}</p>
+        <h6>Section</h6>
       </div>
       {/** TODO: section in progress remove mock after complete vet book */}
       <div style={{ marginInline: "auto" }}>
@@ -110,8 +116,8 @@ const P_userPage = () => {
         <h5>{t("userPage.logOutButton")}</h5>
       </button>
       <Footer />
-    </div>
+    </div >
   );
 };
 
-export default P_userPage;
+export default P_vetPage;

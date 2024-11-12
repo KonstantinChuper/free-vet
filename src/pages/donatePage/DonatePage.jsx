@@ -5,9 +5,11 @@ import Footer from "../../components/footer/Footer";
 import { useTranslation } from "react-i18next";
 import styles from "./donatePage.module.css";
 import logo from "../../assets/VectorLogo.png";
+import { useNavigate } from "react-router-dom";
 
 const DonatePage = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <div className={styles.donateContainer}>
       {/* Логотип */}
@@ -61,10 +63,13 @@ const DonatePage = () => {
 
         <CustomButtonSubmit
           text={t("DonatePage.payButton")}
-          onClick={() =>
-            (window.location.href =
-              "https://www.patreon.com/tailbook/membership?showCustomPledge=true")
-          }
+          onClick={() => {
+            window.open(
+              "https://www.patreon.com/tailbook/membership?showCustomPledge=true",
+              "_blank"
+            );
+            navigate("/profile");
+          }}
           className={styles.payButton}
           customStyle={{
             width: "98%",

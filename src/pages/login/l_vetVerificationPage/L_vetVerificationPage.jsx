@@ -91,7 +91,6 @@ const L_vetVerificationPage = () => {
           __html: t("vetVerificationPage.additionalData"),
         }}
       />
-
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Имя и Фамилия */}
         <label style={{ alignSelf: "start" }}>
@@ -107,7 +106,8 @@ const L_vetVerificationPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder={t("vetVerificationPage.namePlaceholder")}
+          placeholder=""
+          // placeholder={t("etVerificationPage.namePlaceholder")} //
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
@@ -141,7 +141,8 @@ const L_vetVerificationPage = () => {
           onChange={handleChange}
           rows={8}
           cols={50}
-          placeholder={t("vetVerificationPage.additionalInfoPlaceholder")}
+          placeholder=""
+          //placeholder={t("vetVerificationPage.additionalInfoPlaceholder")}//
           style={{
             borderColor: "var(--color-input-bg-grey)",
             backgroundColor: "var(--color-text-white)",
@@ -162,7 +163,7 @@ const L_vetVerificationPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder="Email"
+          placeholder="" //email
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
@@ -182,7 +183,7 @@ const L_vetVerificationPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder="@"
+          placeholder="" // telegram
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
@@ -204,7 +205,8 @@ const L_vetVerificationPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder={t("vetVerificationPage.specializationPlaceholder")}
+          placeholder=""
+          // placeholder={t("vetVerificationPage.specializationPlaceholder")}//
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />
@@ -233,7 +235,8 @@ const L_vetVerificationPage = () => {
             },
           })}
           color={"var(--color-text-dark)"}
-          placeholder={t("vetVerificationPage.petArtPlaceholder")}
+          placeholder=""
+          // placeholder={t("vetVerificationPage.petArtPlaceholder")} //
           borderColor="var(--color-input-bg-grey)"
           width={335}
         />

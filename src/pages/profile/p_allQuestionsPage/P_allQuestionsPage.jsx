@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import s from "./p_allQuestionsPage.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -6,24 +6,31 @@ import close from "../../../assets/close.svg";
 import FormHeader from "../../../components/formHeader/FormHeader";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import catTest from "../../../assets/kitty-cat.png";
+import { getUserQuestions } from "../../../utils/api.js";
+import Loader from "../../../components/loader/Loader.jsx";
 
 const P_allQuestionsPage = () => {
   const { t } = useTranslation();
+  const [questions, setQuestions] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const userId = localStorage.getItem("userId");
 
-  const [questions, setQuestions] = useState([
-    {
-      id: 50,
-      images: [catTest, catTest, catTest],
-      is_homeless: true,
-      is_awaited: true,
-    },
-    {
-      id: 53,
-      is_homeless: false,
-      is_awaited: false,
-    },
-  ]);
-
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        const response = await getUserQuestions(userId);
+        setQuestions(response);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchQuestions();
+  }, []);
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className={s.p_allQuestionsPage}>
       <div className={s.header}>
@@ -38,7 +45,7 @@ const P_allQuestionsPage = () => {
       </div>
       <div className={s.subtitle}>{t("userPage.myQuestions_subtitle")}</div>
       <div className={s.questions_wrapper}>
-        {questions.map((q, idx) => (
+        {questions?.map((q, idx) => (
           <Question key={idx} {...q} />
         ))}
       </div>

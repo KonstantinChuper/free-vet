@@ -25,33 +25,45 @@ const AuthOptions = () => {
      }
    }, []);
 
-  const handleAppleLogin = () => {
-    alert("Apple login не реализован");
-  };
-
-  const handlePhoneLogin = () => {
-    navigate("/register");
-  };
-
   return (
     <div className={s.container}>
       <p className={s.title}>{t("authOptions.register")}</p>
       <div className={s.buttonGroup}>
-        <button onClick={handlePhoneLogin} className={s.button}>
-          <img src={phone} alt="Phone Login" className={s.icon} />
-        </button>
+        <Link
+          to={"/register"}
+          className={s.button}
+          onClick={(e) => e.preventDefault()}
+        >
+          <img
+            src={phone}
+            alt="Phone Login"
+            className={s.icon}
+            style={{ opacity: 0.5 }}
+          />
+        </Link>
 
-        <a href={`${API_BASE_URL}/api/users/login/facebook`}>
-          <img src={facebook} alt="Facebook Login" className={s.icon} />
+        <a
+          href={`${API_BASE_URL}/api/users/login/facebook`}
+          onClick={(e) => e.preventDefault()}
+        >
+          <img
+            src={facebook}
+            alt="Facebook Login"
+            className={s.icon}
+            style={{ opacity: 0.5 }}
+          />
         </a>
 
         <a href={`${API_BASE_URL}/api/users/login/google`}>
           <img src={google} alt="Google Login" className={s.icon} />
         </a>
 
-        <button onClick={handleAppleLogin} className={s.button}>
+        <a
+          href={`${API_BASE_URL}/api/users/login/apple`}
+          onClick={(e) => e.preventDefault()}
+        >
           <img src={apple} alt="Apple Login" className={s.icon} />
-        </button>
+        </a>
       </div>
 
       <div className={s.lineBox}>
@@ -62,21 +74,40 @@ const AuthOptions = () => {
 
       <p className={s.title}>{t("authOptions.login")}</p>
       <div className={s.buttonGroup}>
-        <Link to={"/login"} className={s.button}>
-          <img src={phone} alt="Phone Login" className={s.icon} />
+        <Link
+          to={"/login"}
+          className={s.button}
+          onClick={(e) => e.preventDefault()}
+        >
+          <img
+            src={phone}
+            alt="Phone Login"
+            className={s.icon}
+            style={{ opacity: 0.5 }}
+          />
         </Link>
 
-        <a href={`${API_BASE_URL}/api/users/login/facebook`}>
-          <img src={facebook} alt="Facebook Login" className={s.icon} />
+        <a
+          href={`${API_BASE_URL}/api/users/login/facebook`}
+          onClick={(e) => e.preventDefault()}
+        >
+          <img
+            src={facebook}
+            alt="Facebook Login"
+            className={s.icon}
+            style={{ opacity: 0.5 }}
+          />
         </a>
 
         <a href={`${API_BASE_URL}/api/users/login/google`}>
           <img src={google} alt="Google Login" className={s.icon} />
         </a>
 
-        <button onClick={handleAppleLogin} className={s.button}>
+        <a
+          href={`${API_BASE_URL}/api/users/login/apple`}
+          onClick={(e) => e.preventDefault()}>
           <img src={apple} alt="Apple Login" className={s.icon} />
-        </button>
+        </a>
       </div>
     </div>
   );

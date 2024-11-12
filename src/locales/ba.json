@@ -188,7 +188,7 @@
     "petArt": "Vrsta životinje",
     "petWeight": "Približna težina životinje",
     "petGender": "Spol životinje",
-    "homeless": "Životinja je beskućna: ",
+    "homeless": "Životinja je beskućna",
     "questionPlaceholder": "Unesite svoje pitanje",
     "submitButton": "Pošalji pitanje",
     "requiredField": "Polje je obavezno",
@@ -257,7 +257,10 @@
     "helpedAnimals": "pomoć pružena životinjama",
     "helpedThisMonth": "životinje pomognute ovog mjeseca",
     "donatedAmount": "eura donirano za razvoj projekta",
-    "thankYou": "Hvala vam na podršci!"
+    "thankYou": "Hvala vam na podršci!",
+    "helpedAnimalsTotal": "životinjama ste pomogli ukupno",
+    "helpedAnimalsMonth": "životinjama ste pomogli ovog mjeseca",
+    "serviceStatistics": "Statistika usluga"
   },
   "accordion": {
     "title": "Dodatni opis",
@@ -395,6 +398,13 @@
     "tailbookTitle": "FreeVet - usluga ekosistema TailBook",
     "tailbookDescription": "TailBook - ekosistem koji olakšava podršku napuštenim životinjama i pruža korisne usluge za kućne ljubimce"
   },
+  "P_addMessagePage": {
+    "header": "Хәбәр өҫтәргә",
+    "addPhoto": "Фото һәм (йәки) видео өҫтәгеҙ",
+    "additionalMessage": "Өҫтәмә хәбәр яҙырға*",
+    "requiredField": "Мотлаҡ ҡыр",
+    "sendMessage": "Хәбәр ебәрергә"
+  },
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Obavještenja",
     "userQuestions": "Pitanja korisnika",
@@ -405,5 +415,36 @@
     "notificationsTitle": "Obavještenja",
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
+  },
+  "notFound": {
+    "heading": "Izgleda da tražena stranica nije pronađena 😬",
+    "btnText": "Vrati se na početnu stranicu"
+  },
+  "modal_options": {
+    "sendMessage": "Poslati poruku",
+    "endSession": "Završiti pitanje"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Яуап биреү",
+    "ansver": "Зинһар, яуапты яҙып ебәрегеҙ",
+    "chat": "Хәбәрҙе яҙып ебәрегеҙ*",
+    "notification": "Һаумыһығыҙ! \n Һеҙгә бесәйҙе күҙәтеүҙе дауам итергә һәм кәрәк булһа ҡабаттан мөрәжәғәт итергә кәрәк",
+    "addFoto": "Ҡатнаш фото һәм (йәки) видео өҫтәгеҙ кәрәк булһа",
+    "sendAnswer": "Яуапты ебәреү"
+  },
+  "Modal_locales": {
+    "allUserQuestionsModal": "Odgovoriti",
+    "endQuestion": "Završiti pitanje",
+    "addMessage": "Dodati poruku"
+  },
+  "vetMenu": {
+    "questions": "Питања",
+    "fromUsers": "од корисника",
+    "waitingForAnswer": "Чекају одговор",
+    "appointments": "Прегледи",
+    "online": "онлајн",
+    "inDevelopment": "у развоју",
+    "forSpecialists": "За специјалисте",
+    "consultations": "Консултације"
   }
 }

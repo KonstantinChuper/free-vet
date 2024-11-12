@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import styles from "./modalProfile.module.css";
+import styles from "./Modal.module.css";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 
 const Modal = ({ linksArr, onClose }) => {
   const { t } = useTranslation();
+  console.log(linksArr);
 
   return (
     <div className={styles.modal}>
       <div className={styles.modalContent}>
         <ul>
           {linksArr.map((link) => (
-            <Link key={link.link}>
+            <Link key={link.link} to={link.link}>
               <li>
                 <p>{t(link.text)}</p>
                 <svg

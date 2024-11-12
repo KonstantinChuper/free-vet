@@ -22,7 +22,7 @@ export const Question = ({
   pet_weight = "1 кг 200 г",
   pet_gender = "Самец",
   is_homeless = true,
-  has_answer = false,
+  status = "IN_PROGRESS", //\\ "COMPLETED"
   question = "Уличный кот, за которым я присматриваю, начал кашлять несколько раз в день в последние три недели. Кашель сухой, без выделений. Он активный, аппетит нормальный, но меня беспокоит частота кашля. Корм не меняли. Также прикладываю видео, где видно и слышно, как кот кашляет.",
   openModal = () => {},
 }) => {
@@ -35,16 +35,16 @@ export const Question = ({
           {t("customMessage.questionTitle")}
           {id}
         </p>
-        {!has_answer ? (
+        {status === "IN_PROGRESS" ? (
           <button className={`${s.btn} ${s.awaiting_btn}`}>
             {t("customMessage.awaitingResponse")}
           </button>
         ) : (
           <button className={`${s.btn} ${s.sentBtn}`}>
-            {t("customMessage.responseSent")}
+            {t("customMessage.completed")}
           </button>
         )}
-        {!has_answer ? (
+        {status === "IN_PROGRESS" ? (
           <button className={`${s.btn} ${s.actions_btn}`} onClick={openModal}>
             <span>{t("userPage.actionsButton")}</span>
             <Icon />

@@ -63,7 +63,8 @@
     "questionTitle": "Вопрос №",
     "awaitingResponse": "Ожидает ответа",
     "responseSent": "Ответ получен",
-    "homelessAnimal": "Бездомное животное"
+    "homelessAnimal": "Бездомное животное",
+    "completed": "Завершено"
   },
   "customPetCard": {
     "statusMessage": "Статус:",
@@ -118,6 +119,7 @@
     "noCreateBtn": "Не создавать ",
     "createBtn": "Создать"
   },
+
   "form": {
     "createAccount": "Создать аккаунт",
     "name": "Имя",
@@ -208,6 +210,7 @@
     "enterCode": "Пожалуйста введите полученный Вами<br></br>на указанный телефон код",
     "confirm": "Подтвердить"
   },
+
   "vetVerificationPage": {
     "header": "Верификация",
     "notAuthorized": "Похоже, что у Вы еще не авторизованы<br></br>в сервисе в качестве специалиста :(",
@@ -263,6 +266,7 @@
     "helpedAnimalsMonth": "животным Вы помогли в этом месяце",
     "serviceStatistics": "Статистика услуг"
   },
+
   "accordion": {
     "title": "Дополнительное описание",
     "breedlabel": "Порода",
@@ -345,8 +349,15 @@
     "allVetBooks": "все",
     "myAnimalsTitle": "Мои животные",
     "strayAnimalsTitle": "Бездомные животные",
-    "actionsButton": "Действия"
+    "actionsButton": "Действия",
+    "additionalQuestion": "Дополнительный вопрос",
+    "modalOptions": {
+      "editProfile": "Редактировать Профиль",
+      "preferences": "Предпочтения"
+    },
+    "logOutButton": "Выйти"
   },
+
   "DonatePage": {
     "title": "Поддержать сервис",
     "titleUser": "Поддержать",
@@ -406,6 +417,7 @@
     "tailbookTitle": "FreeVet - сервис экосистемы TailBook",
     "tailbookDescription": "TailBook -  экосистема, упрощающая помощьбездомным животным и предоставляющая полезные сервисы для домашних любимцев"
   },
+
   "P_addMessagePage": {
     "header": "Добавить сообщение",
     "addPhoto": "Добавьте фото и (или) видео",
@@ -413,17 +425,17 @@
     "requiredField": "Обязательное поле",
     "sendMessage": "Отправить сообщение",
     "tailbookDescription": "TailBook -  экосистема, упрощающая помощь бездомным животным и предоставляющая полезные сервисы для домашних любимцев",
-      "uniqueOpp": "Уникальная возможность",
-  "combineProfWithVol": "Эффективно соедините профессию с волонтерской деятельностью",
-  "convenience": "Удобство",
-  "modernService": "Современный сервис со множеством возможностей в любой точке мира",
-  "newClients": "Новые клиенты",
-  "helpAnimal": "Помогите животному и обретите лояльного клиента",
-  "processAuto": "Автоматизация процессов",
-  "taskSystem": "Получите свою личную систему управления задачами, будьте на связи, когда Вам удобно, оперативно реагируйте",
-  "userGuide": "Руководство пользователя (специалист)",
-  "userAgree": "Пользовательское соглашение (специалист)",
-  "privacyPolicy": "Политика конфиденциальности (специалист)"
+    "uniqueOpp": "Уникальная возможность",
+    "combineProfWithVol": "Эффективно соедините профессию с волонтерской деятельностью",
+    "convenience": "Удобство",
+    "modernService": "Современный сервис с множеством возможностей в любой точке мира",
+    "newClients": "Новые клиенты",
+    "helpAnimal": "Помогите животному и обретите лояльного клиента",
+    "processAuto": "Автоматизация процессов",
+    "taskSystem": "Получите свою личную систему управления задачами, будьте на связи, когда Вам удобно, оперативно реагируйте",
+    "userGuide": "Руководство пользователя (специалист)",
+    "userAgree": "Пользовательское соглашение (специалист)",
+    "privacyPolicy": "Политика конфиденциальности (специалист)"
   },
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Уведомления",
@@ -431,9 +443,40 @@
     "additionalUserQuestions": "Дополнительные вопросы \n пользователей",
     "serviceNews": "Новости сервиса"
   },
-  "E_settingsNotificationProfileUserPage":{
-   "notificationsTitle":"Уведомления",
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Уведомления",
     "vetAnswers": "Ответы ветеринаров",
     "serviceNews": "Новости сервиса"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Ответ",
+    "ansver": "Пожалуйста, напишите свой ответ",
+    "chat": "Напишите ваше сообщение*",
+    "notification": "Здравствуйте! \n Вам нужно продолжать наблюдать за кошкой и при необходимости снова обратиться к нам",
+    "addFoto": "Добавьте соответствующее фото и/или видео, если это необходимо",
+    "sendAnswer": "Отправить ответ"
+  },
+  "vetMenu": {
+    "questions": "Вопросы",
+    "fromUsers": "от пользователей",
+    "waitingForAnswer": "Ожидают ответа",
+    "appointments": "Приемы",
+    "online": "онлайн",
+    "inDevelopment": "в разработке",
+    "forSpecialists": "Специалистам",
+    "consultations": "Консультации"
+  },
+  "notFound": {
+    "heading": "Страница не найдена",
+    "btnText": "Вернуться на главную"
+  },
+  "modal_options": {
+    "sendMessage": "Ответить",
+    "endSession": "Закрыть"
+  },
+  "ModalWindow": {
+    "answer": "Ответить",
+    "closeAnswer": "Завершить вопрос",
+    "bac": "Назад"
   }
 }

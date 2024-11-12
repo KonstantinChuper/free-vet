@@ -122,12 +122,10 @@ export const getUserQuestions = async (id) => {
 
 export const getUser = async (id) => {
   try {
-    const response = await axios.get(
-      `${API_BASE_URL}/api/users/profile/${id}/`
-    );
+    const response = await axios.get(`${API_BASE_URL}/api/users/profile/${id}`);
     return response.data;
   } catch (error) {
-    console.error("Ошибка получения копросов пользователя:", error);
+    console.error("Ошибка получения вопросов пользователя:", error);
     throw error;
   }
 };

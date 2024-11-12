@@ -19,7 +19,8 @@ const Q_confirmationPage = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       const response = await getUserQuestions(userId);
-      setQuestion(response[response.length - 1]);
+      const len = response.length - 1;
+      setQuestion(response[len]);
       setIsLoading(false);
     };
     fetchQuestions();

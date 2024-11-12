@@ -35,7 +35,7 @@ export const Question = ({
           {t("customMessage.questionTitle")}
           {id}
         </p>
-        {has_answer ? (
+        {!has_answer ? (
           <button className={`${s.btn} ${s.awaiting_btn}`}>
             {t("customMessage.awaitingResponse")}
           </button>
@@ -44,7 +44,7 @@ export const Question = ({
             {t("customMessage.responseSent")}
           </button>
         )}
-        {has_answer ? (
+        {!has_answer ? (
           <button className={`${s.btn} ${s.actions_btn}`} onClick={openModal}>
             <span>{t("userPage.actionsButton")}</span>
             <Icon />

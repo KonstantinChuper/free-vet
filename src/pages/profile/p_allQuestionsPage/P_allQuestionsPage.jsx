@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import s from "./p_allQuestionsPage.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -8,12 +8,14 @@ import { Question } from "../../../components/shared/question/Question.jsx";
 import catTest from "../../../assets/kitty-cat.png";
 import { getUserQuestions } from "../../../utils/api.js";
 import Loader from "../../../components/loader/Loader.jsx";
+import Modal from "../../../components/shared/modal/Modal.jsx";
 
 const P_allQuestionsPage = () => {
   const { t } = useTranslation();
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const userId = localStorage.getItem("userId");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -45,8 +47,21 @@ const P_allQuestionsPage = () => {
       </div>
       <div className={s.subtitle}>{t("userPage.myQuestions_subtitle")}</div>
       <div className={s.questions_wrapper}>
-        {questions?.map((q, idx) => (
-          <Question key={idx} {...q} />
+        {questions?.map((q) => (
+          <Fragment key={q.id}>
+            <Question {...q} openModal={() => setIsOpen(true)} />
+            {isOpen ? (
+              <Modal
+                linksArr={[
+                  {
+                    link: `/profile/message/add/${q.id}`,
+                    text: t("Modal_locales.addMessage"),
+                  },
+                ]}
+                onClose={() => setIsOpen(false)}
+              />
+            ) : null}
+          </Fragment>
         ))}
       </div>
     </div>

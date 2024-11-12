@@ -120,6 +120,16 @@ export const getUserQuestions = async (id) => {
   }
 };
 
+export const getQuestionById = async (id) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/api/questions/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка получения копросов пользователя:", error);
+    throw error;
+  }
+};
+
 export const getUser = async (id) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/api/users/profile/${id}`);

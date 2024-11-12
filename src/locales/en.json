@@ -62,7 +62,8 @@
     "questionTitle": "Question No.",
     "awaitingResponse": "Awaiting response",
     "responseSent": "Response sent",
-    "homelessAnimal": "Homeless animal"
+    "homelessAnimal": "Homeless animal",
+    "completed": "Completed"
   },
   "customPetCard": {
     "statusMessage": "Status:",

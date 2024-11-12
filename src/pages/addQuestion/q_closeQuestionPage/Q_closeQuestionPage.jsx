@@ -31,7 +31,6 @@ const Q_closeQuestionPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Нужно добавить URL-адрес");
     if (!selectedRating) return;
 
     const formData = new FormData();

@@ -6,21 +6,14 @@ import { useEffect, useState } from "react";
 import ViewPageHeader from "../../../components/viewPageHeader/ViewPageHeader.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import { useParams } from "react-router-dom";
-import {
-  getMessages,
-  getQuestionById,
-  getUserQuestions,
-} from "../../../utils/api.js";
+import { getMessages, getQuestionById } from "../../../utils/api.js";
 import Loader from "../../../components/loader/Loader.jsx";
-
-//в файле использованы тестовые данные, т.к. это необходимо для рендера модалки
 
 const P_viewQuestionPage = () => {
   const { t } = useTranslation();
   const { questionId } = useParams();
   const userId = localStorage.getItem("userId");
   const [isLoading, setIsLoading] = useState(true);
-
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [question, setQuestion] = useState([]);
   const [answers, setAnswers] = useState(null);
@@ -35,7 +28,6 @@ const P_viewQuestionPage = () => {
     },
   ];
 
-  // чтобы открыть модальное окно
   const openModal = () => {
     setIsModalVisible(true);
   };
@@ -49,7 +41,6 @@ const P_viewQuestionPage = () => {
       const response = await getQuestionById(questionId);
       setQuestion(response);
       const messages = await getMessages(questionId);
-      console.log(messages);
       setAnswers(messages);
       setIsLoading(false);
     };
@@ -67,8 +58,8 @@ const P_viewQuestionPage = () => {
         titleKey={t("userPage.viewQuestion")}
       />
       <Question {...question} openModal={openModal} />
-      {answers.map((answer) => (
-        <VetAnswer text={answer.text} isUser={answer.is_user} />
+      {answers.map((answer, i) => (
+        <VetAnswer key={i} text={answer.text} isUser={answer.is_user} />
       ))}
       <div>
         {isModalVisible && <Modal linksArr={linksArr} onClose={closeModal} />}

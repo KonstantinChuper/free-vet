@@ -63,7 +63,8 @@
     "questionTitle": "Вопрос №",
     "awaitingResponse": "Ожидает ответа",
     "responseSent": "Ответ получен",
-    "homelessAnimal": "Бездомное животное"
+    "homelessAnimal": "Бездомное животное",
+    "completed": "Завершено"
   },
   "customPetCard": {
     "statusMessage": "Статус:",

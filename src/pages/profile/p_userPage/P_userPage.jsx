@@ -18,6 +18,7 @@ const P_userPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const userId = localStorage.getItem("userId");
+
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: "",

@@ -346,6 +346,7 @@
     "strayAnimalsTitle": "Stray animals",
     "actionsButton": "Actions",
     "selectedQuestions": "Selected Questions",
+    "additionalQuestion": "Additional question",
     "modalOptions": {
       "editProfile": "Edit Profile",
       "preferences": "Preferences"
@@ -432,6 +433,27 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
-
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Answer",
+    "ansver": "Please write your answer",
+    "chat": "Write your message*",
+    "notification": "Hello! \n You need to continue monitoring the cat and contact us again if necessary",
+    "addFoto": "Add a relevant photo and/or video if needed",
+    "sendAnswer": "Send Answer"
+  },
+  "vetMenu": {
+    "questions": "Questions",
+    "fromUsers": "from users",
+    "waitingForAnswer": "Waiting for answer",
+    "appointments": "Appointments",
+    "online": "online",
+    "inDevelopment": "in development",
+    "forSpecialists": "For specialists",
+    "consultations": "Consultations"
+  },
+  "notFound": {
+    "heading": "The page you are looking for is not found",
+    "btnText": "Return to the main page"
   }
 }

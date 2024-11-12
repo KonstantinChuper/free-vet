@@ -342,7 +342,8 @@
     "vetBooks": "Veterinarske knjižice",
     "allVetBooks": "sve",
     "myAnimalsTitle": "Moje životinje",
-    "strayAnimalsTitle": "Beskućne životinje"
+    "strayAnimalsTitle": "Beskućne životinje",
+    "additionalQuestion": "Додатно питање"
   },
   "DonatePage": {
     "title": "Podrška servisu",

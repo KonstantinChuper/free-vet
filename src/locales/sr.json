@@ -434,6 +434,17 @@
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
   },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Obaveštenja",
+    "userQuestions": "Pitanja korisnika",
+    "additionalUserQuestions": "Dodatna pitanja \n korisnika",
+    "serviceNews": "Novosti o usluzi"
+  },
+  "E_settingsNotificationProfileUserPage": {
+    "notificationsTitle": "Obaveštenja",
+    "vetAnswers": "Odgovori veterinara",
+    "serviceNews": "Novosti usluge"
+  },
   "notFound": {
     "heading": "Izgleda da tražena stranica nije pronađena 😬",
     "btnText": "Vrati se na početnu stranicu"

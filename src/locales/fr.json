@@ -433,36 +433,6 @@
     "notificationsTitle": "Obavještenja",
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
-  },
-  "notFound": {
-    "heading": "Il semble que la page demandée est introuvable 😬",
-    "btnText": "Retourner à la page d'accueil"
-  },
-  "modal_options": {
-    "sendMessage": "Envoyer un message",
-    "endSession": "Terminer la question"
-  },
-  "AnswerExpertToQuestion": {
-    "title": "Répondre",
-    "ansver": "Veuillez écrire votre réponse",
-    "chat": "Écrivez un message*",
-    "notification": "Bonjour! \n Vous devez continuer à surveiller le chat et, si nécessaire, envoyer une nouvelle demande",
-    "addFoto": "Ajoutez des photos et/ou vidéos si nécessaire",
-    "sendAnswer": "Envoyer la réponse"
-  },
-  "Modal_locales": {
-    "allUserQuestionsModal": "Répondre",
-    "endQuestion": "Terminer la question",
-    "addMessage": "Ajouter un message"
-  },
-  "vetMenu": {
-    "questions": "Questions",
-    "fromUsers": "des utilisateurs",
-    "waitingForAnswer": "En attente de réponse",
-    "appointments": "Rendez-vous",
-    "online": "en ligne",
-    "inDevelopment": "en développement",
-    "forSpecialists": "Pour les spécialistes",
-    "consultations": "Consultations"
+
   }
 }

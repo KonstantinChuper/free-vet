@@ -33,7 +33,6 @@ const P_userPage = () => {
     const fetchQuestions = async () => {
       const response = await getUserQuestions(userId);
       setQuestions(response);
-      setIsLoading(false);
     };
     const fetchUserData = async () => {
       const userData = {
@@ -43,6 +42,7 @@ const P_userPage = () => {
         photo: avatarPlaceholder, // Здесь должно быть изображение пользователя
       };
       setUserInfo(userData);
+      setIsLoading(false);
     };
     fetchUserData();
     fetchQuestions();
@@ -80,7 +80,7 @@ const P_userPage = () => {
         </Link>
       </div>
       <div className={s.question_box_content}>
-        {questions.map((q, idx) => (
+        {questions?.map((q, idx) => (
           <Question key={idx} {...q} />
         ))}
       </div>

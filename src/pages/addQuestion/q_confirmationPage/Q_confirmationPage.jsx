@@ -16,7 +16,6 @@ const Q_confirmationPage = () => {
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-
   useEffect(() => {
     const fetchQuestions = async () => {
       const response = await getUserQuestions(userId);
@@ -44,12 +43,13 @@ const Q_confirmationPage = () => {
       <div className={s.question_box}>
         {questions?.map((q) => (
           <Question
-            id={q.id}
-            files={q.files}
-            pet_art={q.pet_art}
-            pet_gender={q.pet_gender}
-            pet_weight={q.pet_weight}
-            question={q.question}
+            {...q}
+            // id={q.id}
+            // files={q.files}
+            // pet_art={q.pet_art}
+            // pet_gender={q.pet_gender}
+            // pet_weight={q.pet_weight}
+            // question={q.question}
           />
         ))}
       </div>

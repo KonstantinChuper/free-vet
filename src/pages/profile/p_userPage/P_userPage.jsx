@@ -18,6 +18,7 @@ const P_userPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const userId = localStorage.getItem("userId");
+
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: "",
@@ -84,6 +85,10 @@ const P_userPage = () => {
                   {
                     link: `/profile/message/add/${q.id}`,
                     text: t("Modal_locales.addMessage"),
+                  },
+                  {
+                    link: `/main/question/close?questionId=${q.id}`,
+                    text: t("closeQuestionPage.header"),
                   },
                 ]}
                 onClose={() => setIsOpen(false)}

@@ -129,6 +129,15 @@ export const getQuestionById = async (id) => {
     throw error;
   }
 };
+export const getAllQuestions = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/api/questions/get/`);
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка получения копросов пользователя:", error);
+    throw error;
+  }
+};
 
 export const getUser = async (id) => {
   try {
@@ -156,6 +165,18 @@ export const sendMessage = async (id, data) => {
   try {
     const response = await apiClientMultipart.post(
       `/api/questions/${id}/message/`,
+      data
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Ошибка отправки вопроса:", error);
+    throw error;
+  }
+};
+export const closeMessage = async (id, data) => {
+  try {
+    const response = await apiClientMultipart.post(
+      `/api/questions/${id}/complete/`,
       data
     );
     return response.data;

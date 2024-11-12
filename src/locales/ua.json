@@ -62,7 +62,8 @@
   "customMessage": {
     "questionTitle": "Питання №",
     "awaitingResponse": "Очікування відповіді",
-    "homelessAnimal": "Безпритульна тварина"
+    "homelessAnimal": "Безпритульна тварина",
+    "completed": "Завершено"
   },
   "customPetCard": {
     "statusMessage": "Статус:",

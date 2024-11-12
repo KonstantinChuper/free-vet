@@ -8,13 +8,14 @@ import close from "../../../assets/close.svg";
 import { getUserQuestions } from "../../../utils/api";
 import { Question } from "../../../components/shared/question/Question";
 import Loader from "../../../components/loader/Loader";
+import Modal from "../../../components/shared/modal/Modal";
 
 const Q_confirmationPage = () => {
   const { t } = useTranslation();
-  const [hasVetbook, setHasVetbook] = useState(false);
   const userId = localStorage.getItem("userId");
   const [question, setQuestion] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -42,17 +43,22 @@ const Q_confirmationPage = () => {
         </Link>
       </div>
       <div className={s.question_box}>
-        {questions?.map((q) => (
-          <Question
-            {...q}
-            // id={q.id}
-            // files={q.files}
-            // pet_art={q.pet_art}
-            // pet_gender={q.pet_gender}
-            // pet_weight={q.pet_weight}
-            // question={q.question}
+        <Question {...question} openModal={() => setIsOpen(true)} />
+        {isOpen ? (
+          <Modal
+            linksArr={[
+              {
+                link: `/profile/message/add/${question.id}`,
+                text: t("Modal_locales.addMessage"),
+              },
+              {
+                link: `/main/question/close?questionId=${question.id}`,
+                text: t("closeQuestionPage.header"),
+              },
+            ]}
+            onClose={() => setIsOpen(false)}
           />
-        ))}
+        ) : null}
       </div>
     </div>
   );

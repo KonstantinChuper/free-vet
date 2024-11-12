@@ -1,26 +1,24 @@
 import { Fragment, useEffect, useState } from "react";
-import s from "./p_allQuestionsPage.module.css";
+import s from "./v_allQuestionsPage.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import close from "../../../assets/close.svg";
-import FormHeader from "../../../components/formHeader/FormHeader";
+import FormHeader from "../../../components/formHeader/FormHeader.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
-import catTest from "../../../assets/kitty-cat.png";
-import { getUserQuestions } from "../../../utils/api.js";
+import { getAllQuestions } from "../../../utils/api.js";
 import Loader from "../../../components/loader/Loader.jsx";
 import Modal from "../../../components/shared/modal/Modal.jsx";
 
-const P_allQuestionsPage = () => {
+const V_allQuestionsPage = () => {
   const { t } = useTranslation();
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const userId = localStorage.getItem("userId");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await getUserQuestions(userId);
+        const response = await getAllQuestions();
         setQuestions(response);
       } catch (error) {
         console.log(error);
@@ -57,10 +55,6 @@ const P_allQuestionsPage = () => {
                     link: `/profile/message/add/${q.id}`,
                     text: t("Modal_locales.addMessage"),
                   },
-                  {
-                    link: `/main/question/close?questionId=${q.id}`,
-                    text: t("closeQuestionPage.header"),
-                  },
                 ]}
                 onClose={() => setIsOpen(false)}
               />
@@ -72,4 +66,4 @@ const P_allQuestionsPage = () => {
   );
 };
 
-export default P_allQuestionsPage;
+export default V_allQuestionsPage;

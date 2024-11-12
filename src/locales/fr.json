@@ -61,7 +61,8 @@
   "customMessage": {
     "questionTitle": "Question No.",
     "awaitingResponse": "En attente de réponse",
-    "homelessAnimal": "Animal sans abri"
+    "homelessAnimal": "Animal sans abri",
+    "completed": "Terminé"
   },
   "customPetCard": {
     "statusMessage": "Status:",

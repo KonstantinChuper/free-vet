@@ -62,7 +62,8 @@
   "customMessage": {
     "questionTitle": "Pitanje br.",
     "awaitingResponse": "Čeka se odgovor",
-    "homelessAnimal": "Beskućna životinja"
+    "homelessAnimal": "Beskućna životinja",
+    "completed": "Završeno"
   },
   "customPetCard": {
     "statusMessage": "Status:",

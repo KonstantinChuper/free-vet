@@ -85,6 +85,10 @@ const P_userPage = () => {
                     link: `/profile/message/add/${q.id}`,
                     text: t("Modal_locales.addMessage"),
                   },
+                  {
+                    link: `/main/question/close?questionId=${q.id}`,
+                    text: t("closeQuestionPage.header"),
+                  },
                 ]}
                 onClose={() => setIsOpen(false)}
               />

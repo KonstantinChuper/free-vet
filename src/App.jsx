@@ -31,6 +31,7 @@ import E_settingsNotificationProfileUserPage from "./pages/editProfile/e_setting
 import P_addMessagePage from "./pages/profile/p_addMessagePage/P_addMessagePage";
 import AnswerExpertToQuestion from "./pages/profileExpert/answerExpertToQuestion/AnswerExpertToQuestion";
 import { NotFoundPage } from "./pages/404/NotFoundPage";
+import V_allQuestionsPage from "./pages/vet/v_allQuestions/V_allQuestionsPage.jsx";
 
 function App() {
   return (
@@ -126,6 +127,7 @@ function App() {
         <Route path="/vet/service" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route path="/vet/main" element={<MainVetPage />} />
+        <Route path="/vet/questions" element={<V_allQuestionsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

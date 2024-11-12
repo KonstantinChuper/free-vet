@@ -24,9 +24,15 @@ const P_viewQuestionPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [question, setQuestion] = useState([]);
   const [answers, setAnswers] = useState(null);
-  const testLinks = [
-    { link: "/profile/respond-question", text: t("modal_options.sendMessage") },
-    { link: "/profile/questions", text: t("modal_options.endSession") },
+  const linksArr = [
+    {
+      link: `/profile/message/add/${question.id}`,
+      text: t("Modal_locales.addMessage"),
+    },
+    {
+      link: `/main/question/close?questionId=${question.id}`,
+      text: t("closeQuestionPage.header"),
+    },
   ];
 
   // чтобы открыть модальное окно
@@ -65,7 +71,7 @@ const P_viewQuestionPage = () => {
         <VetAnswer text={answer.text} isUser={answer.is_user} />
       ))}
       <div>
-        {isModalVisible && <Modal linksArr={testLinks} onClose={closeModal} />}
+        {isModalVisible && <Modal linksArr={linksArr} onClose={closeModal} />}
       </div>
     </div>
   );

@@ -8,13 +8,14 @@ import { useTranslation } from "react-i18next";
 import ErrorMessage from "../../../components/errorMessage/ErrorMessasge";
 import CustomButtonSubmit from "../../../components/customButtonSubmit/CustomButtonSubmit";
 import { updateUserRole } from "../../../utils/api";
-import { useParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 const L_userRolePage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { userId } = useParams();
   const [errorMessage, setErrorMessage] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const userId = searchParams.get("user_id");
 
   useEffect(() => {
     if (userId) {

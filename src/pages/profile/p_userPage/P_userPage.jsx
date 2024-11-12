@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./p_userPage.module.css";
 import avatarPlaceholder from "../../../assets/avatarPlaceholder.svg";
 import BurgerMenu from "../../../components/burgerMenu/BurgerMenu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
 import { Question } from "../../../components/shared/question/Question.jsx";
 import Loader from "../../../components/loader/Loader.jsx";
@@ -11,11 +11,9 @@ import { getUser, getUserQuestions } from "../../../utils/api.js";
 import { UnderConstructionIcon } from "../../../components/shared/underConstruction/UnderConstruction.jsx";
 import Modal from "../../../components/shared/modal/Modal.jsx";
 
-//TODO: replace mock data with userFetch
-
 const P_userPage = () => {
   const { t } = useTranslation();
-  const [files, setFiles] = useState([]);
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
@@ -27,19 +25,19 @@ const P_userPage = () => {
   });
 
   const handleLogOut = () => {
-    //TODO: handle log out
-    console.log("log out");
+    localStorage.removeItem("userId");
+    navigate("/");
   };
 
   useEffect(() => {
-    const fetchQuestions = async () => {
-      const response = await getUserQuestions(userId);
-      setQuestions(response);
-    };
     const fetchUserData = async () => {
       const userData = await getUser(userId);
       console.log(userData);
       setUserInfo(userData);
+    };
+    const fetchQuestions = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestions(response);
       setIsLoading(false);
     };
     fetchUserData();
@@ -77,9 +75,9 @@ const P_userPage = () => {
         </Link>
       </div>
       <div className={s.question_box_content}>
-        {questions.map((q, idx) => (
-          <>
-            <Question key={idx} {...q} openModal={() => setIsOpen(true)} />
+        {questions?.map((q) => (
+          <Fragment key={q.id}>
+            <Question {...q} openModal={() => setIsOpen(true)} />
             {isOpen ? (
               <Modal
                 linksArr={[
@@ -91,7 +89,7 @@ const P_userPage = () => {
                 onClose={() => setIsOpen(false)}
               />
             ) : null}
-          </>
+          </Fragment>
         ))}
       </div>
       <div className={s.question_box_header}>

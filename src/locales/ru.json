@@ -445,5 +445,9 @@
     "inDevelopment": "в разработке",
     "forSpecialists": "Специалистам",
     "consultations": "Консультации"
+  },
+  "notFound": {
+    "heading": "Страница не найдена",
+    "btnText": "Вернуться на главную"
   }
 }

@@ -441,5 +441,9 @@
     "inDevelopment": "in development",
     "forSpecialists": "For specialists",
     "consultations": "Consultations"
+  },
+  "notFound": {
+    "heading": "The page you are looking for is not found",
+    "btnText": "Return to the main page"
   }
 }

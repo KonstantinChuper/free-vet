@@ -345,6 +345,7 @@
     "myAnimalsTitle": "My animals",
     "strayAnimalsTitle": "Stray animals",
     "actionsButton": "Actions",
+    "selectedQuestions": "Selected Questions",
     "modalOptions": {
       "editProfile": "Edit Profile",
       "preferences": "Preferences"

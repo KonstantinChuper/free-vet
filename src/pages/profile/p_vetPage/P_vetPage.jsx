@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import s from "./p_vetPage.module.css";
-import avatarPlaceholder from "../../../assets/avatarPlaceholder.svg";
+import avatarVetPlaceholder from "../../../assets/avatarVetPlaceholder.svg";
 import BurgerMenu from "../../../components/burgerMenu/BurgerMenu";
 import { Link } from "react-router-dom";
 import Footer from "../../../components/footer/Footer.jsx";
@@ -24,7 +24,7 @@ const P_vetPage = () => {
   const [userInfo, setUserInfo] = useState({
     name: t("userPage.userName"),
     role: ["Vet", "Cats", "Dogs", "Birds"],
-    photo: avatarPlaceholder,
+    photo: avatarVetPlaceholder,
     email: "test@mail.co",
   });
 
@@ -59,7 +59,7 @@ const P_vetPage = () => {
       <div className={s.name_Container}>
         <div className={s.avatarContainer}>
           <img
-            src={userInfo.photo ? userInfo.photo : avatarPlaceholder}
+            src={userInfo.photo ? userInfo.photo : avatarVetPlaceholder}
             alt="Avatar"
             className={s.avatar}
           />

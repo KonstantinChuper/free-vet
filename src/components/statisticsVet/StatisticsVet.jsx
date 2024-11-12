@@ -24,19 +24,20 @@ const Statistics = () => {
       </div>
       <div className={s.statsOrange}>
         <div className={s.statItemOrange}>
-          <span>15</span>
+          <span>0</span>
           <p className={s.statNarrowText}>
             {t("statistics.helpedAnimalsTotal")}
           </p>
         </div>
         <div className={s.statItemOrange}>
-          <span>5</span>
+          <span>0</span>
           <p className={s.statNarrowText}>
             {t("statistics.helpedAnimalsMonth")}
           </p>
         </div>
       </div>
-      <h3>{t("statistics.thankYou")}</h3>
+      <h2 className={s.serviceStatistics}>{t("statistics.serviceStatistics")}</h2>
+      <p className={s.inDevelopment}>{t("opportunity.inDevelopment")}</p>
     </section>
   );
 };

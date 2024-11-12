@@ -258,7 +258,8 @@
     "donatedAmount": "euros donnés pour le développement du projet",
     "thankYou": "Merci pour votre soutien !",
     "helpedAnimalsTotal": "animaux ont été aidés par vous",
-    "helpedAnimalsMonth": "animaux que vous avez aidés ce mois-ci"
+    "helpedAnimalsMonth": "animaux que vous avez aidés ce mois-ci",
+    "serviceStatistics": "Statistiques du service"
   },
   "accordion": {
     "title": "Description supplémentaire",
@@ -453,5 +454,15 @@
     "allUserQuestionsModal": "Répondre",
     "endQuestion": "Terminer la question",
     "addMessage": "Ajouter un message"
+  },
+  "vetMenu": {
+    "questions": "Questions",
+    "fromUsers": "des utilisateurs",
+    "waitingForAnswer": "En attente de réponse",
+    "appointments": "Rendez-vous",
+    "online": "en ligne",
+    "inDevelopment": "en développement",
+    "forSpecialists": "Pour les spécialistes",
+    "consultations": "Consultations"
   }
 }

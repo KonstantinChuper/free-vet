@@ -1,0 +1,72 @@
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  width: 375px;
+  gap: 8px;
+  color: var(--color-main);
+}
+.menuLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.menuRight {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+.titleMain {
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 50px;
+  color: var(--color-main);
+}
+.title {
+  color: var(--color-main);
+  font-size: 32px;
+}
+.titleQuestions {
+  color: var(--color-main);
+  font-size: 48px;
+  margin-top: -10px;
+}
+.titleQuestionsText {
+  font-size: 16px;
+  color: var(--color-main);
+  padding-top: 10px;
+}
+.titleQuestionsTextMain {
+  font-size: 16px;
+  color: var(--color-main);
+}
+.link {
+  padding-top: 21px;
+}
+.container h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 30px;
+}
+.inDev {
+  color: #ffd146;
+  font-size: 16px;
+}
+.button {
+  padding: 5px;
+  width: 112px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-orange);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: 17px;
+  border: none;
+  align-self: end;
+}

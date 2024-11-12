@@ -6,21 +6,31 @@ import PlusWhite from "../../assets/PlusWhite.png";
 import Profile from "../../assets/Profile.png";
 import Vectore from "../../assets/Vector.png";
 import Paw from "../../assets/paw.png";
-import Container from "../container/Container";
 
 const Footer = () => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
+  const isVetPath = pathname.startsWith("/vet");
 
-  const links = [
-    { icon: PlusWhite, label: t("footer.main"), path: "/main" },
-    { icon: Profile, label: t("footer.profile"), path: "/profile" },
-    { icon: Vectore, label: t("footer.donate"), path: "/donate" },
-    { icon: Paw, label: t("footer.service"), path: "/service" },
-  ];
+  const links = isVetPath
+    ? [
+        { icon: PlusWhite, label: t("footer.main"), path: "/vet/main" },
+        { icon: Profile, label: t("footer.profile"), path: "/vet/profile" },
+        { icon: Vectore, label: t("footer.donate"), path: "/vet/donate" },
+        { icon: Paw, label: t("footer.service"), path: "/vet/service" },
+      ]
+    : [
+        { icon: PlusWhite, label: t("footer.main"), path: "/main" },
+        { icon: Profile, label: t("footer.profile"), path: "/profile" },
+        { icon: Vectore, label: t("footer.donate"), path: "/donate" },
+        { icon: Paw, label: t("footer.service"), path: "/service" },
+      ];
 
   const handleLinkClick = (path) => {
-    if (pathname === "/main" && path === "/main") {
+    if (
+      (pathname === "/main" && path === "/main") ||
+      (pathname === "/vet/main" && path === "/vet/main")
+    ) {
       window.location.reload();
     }
   };

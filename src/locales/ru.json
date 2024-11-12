@@ -195,6 +195,10 @@
     "requiredField": "Поле обязательно для заполнения",
     "writeQuestion": "Напишите Ваш вопрос"
   },
+  "respondQuestionPage": {
+    "header": "Откликнуться",
+    "subtitle": "Вопрос перемещен в выбранные вопросы (Профиль)"
+  },
   "mainHeader": {
     "title": "Welcome to FreeVet",
     "description": "Сервис экосистемы TailBook, предоставляющий возможность бесплатно задавать вопросы квалифицированным опытным ветеринарным врачам и получать ответы на них."
@@ -388,7 +392,6 @@
     "stat3span": "120",
     "stat4": "евро пожертвовано на разивтие проекта",
     "stat4span": "550",
-
     "infoTitle": "Информация",
     "info1": "Руководство пользователя",
     "info2": "Пользовательское соглашение",
@@ -410,5 +413,16 @@
   "userGuide": "Руководство пользователя (специалист)",
   "userAgree": "Пользовательское соглашение (специалист)",
   "privacyPolicy": "Политика конфиденциальности (специалист)"
+  },
+  "E_settingsNotificationProfileSpecialistPage": {
+    "notificationsTitle": "Уведомления",
+    "userQuestions": "Вопросы пользователей ",
+    "additionalUserQuestions": "Дополнительные вопросы \n пользователей",
+    "serviceNews": "Новости сервиса"
+  },
+  "E_settingsNotificationProfileUserPage":{
+   "notificationsTitle":"Уведомления",
+    "vetAnswers": "Ответы ветеринаров",
+    "serviceNews": "Новости сервиса"
   }
 }

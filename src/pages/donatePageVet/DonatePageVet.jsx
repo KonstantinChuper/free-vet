@@ -1,6 +1,5 @@
 import React from 'react';
 import CustomInput from '../../components/customInput/CustomInput';
-import CustomButton from '../../components/customButton/CustomButton';
 import CustomButtonSubmit from '../../components/customButtonSubmit/CustomButtonSubmit';
 import CustomStickTitle from '../../components/customStickTitle/CustomStickTitle';
 import Footer from '../../components/footer/Footer';
@@ -57,14 +56,19 @@ const DonatePage = () => {
         </p>
 
         {/* Кнопка оплаты */}
-        <CustomButtonSubmit
-          text={t('DonatePage.payButton')}
-          onClick={() => console.log('Оплатить')}
+        <a 
+          href="https://www.patreon.com/tailbook/membership?showCustomPledge=true" 
+          target="_blank" 
+          rel="noopener noreferrer"
           className={styles.payButton}
-          customStyle={{
-            width: '98%',
-          }}
-        />
+        >
+          <CustomButtonSubmit
+            text={t('DonatePage.payButton')}
+            customStyle={{
+              width: '98%',
+            }}
+          />
+        </a>
       </div>
 
       <div className={styles.otherSupportSection}>
@@ -83,64 +87,24 @@ const DonatePage = () => {
           {t('DonatePage.moreSupportInfo')}
         </p>
 
-{/* Кнопка "Ознакомиться" */}
-<a 
-  href="https://tailbook.me/supporttheproject" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className={styles.learnMoreButton}
->
-  <CustomButtonSubmit
-    text={t('DonatePage.learnMoreButton')}
-    onClick={() => console.log('Ознакомиться')}
-    customStyle={{
-      width: '98%',
-    }}
-  />
-</a>
+        {/* Кнопка "Ознакомиться" */}
+        <a 
+          href="https://tailbook.me/supporttheproject" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.learnMoreButton}
+        >
+          <CustomButtonSubmit
+            text={t('DonatePage.learnMoreButton')}
+            customStyle={{
+              width: '98%',
+            }}
+          />
+        </a>
       </div>
 
       {/* Текст о поддержке FreeVet в любое время */}
       <p className={styles.supportAnytimeText}>{t('DonatePage.supportAnytimeText')}</p>
-      {/* <h3 className={styles.joinTitle}>{t('DonatePage.joinProjectTitle')}</h3> */}
-
-      {/* <div className={styles.joinSection}>
-        <CustomStickTitle
-          text={t('DonatePage.applyButton')}
-          style={{
-            backgroundColor: 'var(--color-main)',
-            color: 'white',
-            marginLeft: 'auto',
-          }}
-          className={styles.donateStickTitle}
-        />
-        <p style={{ width: '75%' }}>{t('DonatePage.joinProjectDescription')}</p>
-
-        <div className={styles.buttonGroup}>
-
-          <CustomButton
-            text={t('DonatePage.fillFormButton')}
-            onClick={() => console.log('Заполнить форму')}
-            className={styles.fillFormButton}
-            customStyle={{
-              padding: '15px 12px',
-              fontSize: '14px',
-              width: '50%',
-            }}
-          />
-          
-          <CustomButton
-            text={t('DonatePage.contactUsButton')}
-            onClick={() => console.log('Написать нам')}
-            className={styles.contactUsButton}
-            customStyle={{
-              padding: '15px 12px',
-              fontSize: '14px',
-              width: '50%',
-            }}
-          />
-        </div>
-      </div> */}
       <h4 className={styles.joinTitle}>{t('DonatePage.footerThankYou')}</h4>
 
       <Footer />

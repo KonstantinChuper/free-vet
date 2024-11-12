@@ -5,6 +5,7 @@ import CustomButtonSubmit from '../../components/customButtonSubmit/CustomButton
 import CustomStickTitle from '../../components/customStickTitle/CustomStickTitle';
 import Footer from '../../components/footer/Footer';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';  // Импортируем Link
 import styles from './donatePage.module.css';
 import logo from '../../assets/VectorLogo.png';
 
@@ -59,7 +60,10 @@ const DonatePage = () => {
         {/* Кнопка оплаты */}
         <CustomButtonSubmit
           text={t('DonatePage.payButton')}
-          onClick={() => console.log('Оплатить')}
+          onClick={() =>
+            (window.location.href =
+              'https://www.patreon.com/tailbook/membership?showCustomPledge=true')
+          }
           className={styles.payButton}
           customStyle={{
             width: '98%',
@@ -83,21 +87,16 @@ const DonatePage = () => {
           {t('DonatePage.moreSupportInfo')}
         </p>
 
-{/* Кнопка "Ознакомиться" */}
-<a 
-  href="https://tailbook.me/supporttheproject" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className={styles.learnMoreButton}
->
-  <CustomButtonSubmit
-    text={t('DonatePage.learnMoreButton')}
-    onClick={() => console.log('Ознакомиться')}
-    customStyle={{
-      width: '98%',
-    }}
-  />
-</a>
+        {/* Кнопка "Ознакомиться" */}
+        <CustomButtonSubmit
+          text={t('DonatePage.learnMoreButton')}
+          onClick={() =>
+            window.open('https://tailbook.me/supporttheproject', '_blank')
+          }
+          customStyle={{
+            width: '98%',
+          }}
+        />
       </div>
 
       {/* Текст о поддержке FreeVet в любое время */}
@@ -116,32 +115,37 @@ const DonatePage = () => {
         />
         <p style={{ width: '75%' }}>{t('DonatePage.joinProjectDescription')}</p>
 
-        <div className={styles.buttonGroup}>
-          {/* Кнопка "Заполнить форму" */}
-          <CustomButton
-            text={t('DonatePage.fillFormButton')}
-            onClick={() => console.log('Заполнить форму')}
-            className={styles.fillFormButton}
-            customStyle={{
-              padding: '15px 12px',
-              fontSize: '14px',
-              width: '50%',
-            }}
-          />
-          
-          {/* Кнопка "Написать нам" */}
-          <CustomButton
-            text={t('DonatePage.contactUsButton')}
-            onClick={() => console.log('Написать нам')}
-            className={styles.contactUsButton}
-            customStyle={{
-              padding: '15px 12px',
-              fontSize: '14px',
-              width: '50%',
-            }}
-          />
-        </div>
+<div className={styles.buttonGroup}>
+  {/* Кнопка "Заполнить форму" */}
+  <CustomButtonSubmit
+    text={t('DonatePage.fillFormButton')}
+    onClick={() =>
+      window.open('https://tailbook.me/services/freevet', '_blank')
+    }
+    className={styles.fillFormButton}
+    customStyle={{
+      padding: '15px 12px',
+      fontSize: '14px',
+      width: '50%',
+    }}
+  />
+
+  {/* Кнопка "Написать нам" */}
+  <CustomButtonSubmit
+    text={t('DonatePage.contactUsButton')}
+    onClick={() =>
+      window.open('mailto:tailbookme@gmail.com')
+    }
+    className={styles.contactUsButton}
+    customStyle={{
+      padding: '15px 12px',
+      fontSize: '14px',
+      width: '50%',
+    }}
+  />
+</div>
       </div>
+
       <h4 className={styles.joinTitle}>{t('DonatePage.footerThankYou')}</h4>
 
       <Footer />

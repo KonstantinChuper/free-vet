@@ -188,7 +188,7 @@
     "petArt": "Тип тварини",
     "petWeight": "Приблизна вага тварини",
     "petGender": "Стать тварини",
-    "homeless": "Тварина безпритульна: ",
+    "homeless": "Тварина безпритульна",
     "questionPlaceholder": "Введіть ваше питання",
     "submitButton": "Надіслати питання",
     "requiredField": "Поле обов'язкове",
@@ -259,7 +259,8 @@
     "donatedAmount": "євро пожертвувано на розвиток проекту",
     "thankYou": "Дякуємо за вашу підтримку!",
     "helpedAnimalsTotal": "тваринам допомогу надано Вами",
-    "helpedAnimalsMonth": "тваринам Ви допомогли в цьому місяці"
+    "helpedAnimalsMonth": "тваринам Ви допомогли в цьому місяці",
+    "serviceStatistics": "Статистика сервісу"
   },
   "accordion": {
     "title": "Додатковий опис",
@@ -452,6 +453,15 @@
     "allUserQuestionsModal": "Відгукнутись",
     "endQuestion": "Завершити питання",
     "addMessage": "Додати повідомлення"
+  },
+  "vetMenu": {
+    "questions": "Питання",
+    "fromUsers": "від користувачів",
+    "waitingForAnswer": "Очікують відповіді",
+    "appointments": "Прийоми",
+    "online": "онлайн",
+    "inDevelopment": "в розробці",
+    "forSpecialists": "Спеціалістам",
+    "consultations": "Консультації"
   }
 }
-

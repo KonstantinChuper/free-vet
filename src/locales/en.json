@@ -188,7 +188,7 @@
     "petArt": "Type of animal",
     "petWeight": "Approximate weight of the animal",
     "petGender": "Gender of the animal",
-    "homeless": "Animal is homeless: ",
+    "homeless": "Animal is homeless",
     "questionPlaceholder": "Enter your question",
     "submitButton": "Submit question",
     "requiredField": "Field is required",
@@ -259,7 +259,8 @@
     "donatedAmount": "euros donated for project development",
     "thankYou": "Thank you for your support!",
     "helpedAnimalsTotal": "animals have been helped by you",
-    "helpedAnimalsMonth": "animals you helped this month"
+    "helpedAnimalsMonth": "animals you helped this month",
+    "serviceStatistics": "Service Statistics"
   },
   "accordion": {
     "title": "Additional Description",
@@ -458,5 +459,15 @@
     "allUserQuestionsModal": "Respond",
     "endQuestion": "End session",
     "addMessage": "Add message"
+  },
+  "vetMenu": {
+    "questions": "Questions",
+    "fromUsers": "from users",
+    "waitingForAnswer": "Waiting for answer",
+    "appointments": "Appointments",
+    "online": "online",
+    "inDevelopment": "in development",
+    "forSpecialists": "For specialists",
+    "consultations": "Consultations"
   }
 }

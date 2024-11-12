@@ -35,19 +35,10 @@ const Q_sendQuestionPage = () => {
       // Отправляем запрос
       const response = await updateQuestion(dataToSend);
       console.log("Ответ от сервера:", response);
+      //TODO: response must include question Id
 
       // Переход на страницу подтверждения с передачей данных через state
-      navigate("/main/question/confirm", {
-        state: {
-          question: data.question,
-          petArt,
-          petWeight,
-          petGender,
-          isHomeless,
-          files,
-          userId,
-        },
-      });
+      navigate("/main/question/confirm");
     } catch (error) {
       console.error("Ошибка при отправке вопроса", error);
     }
@@ -91,17 +82,18 @@ const Q_sendQuestionPage = () => {
       </div>
       <div className={s.q_sendQuestionPage_description}>
         <p>
-          {t("sendQuestionPage.petArt")}: {petArt}
+          {/* {t("sendQuestionPage.petArt")}:  */}
+          {petArt}
         </p>
         <p>
-          {t("sendQuestionPage.petWeight")}: {petWeight}
+          {/* {t("sendQuestionPage.petWeight")}: */}
+          {petWeight}
         </p>
         <p>
-          {t("sendQuestionPage.petGender")}: {petGender}
+          {/* {t("sendQuestionPage.petGender")}: */}
+          {petGender}
         </p>
-        <p style={{ display: "none" }}>
-          {t("sendQuestionPage.homeless")} {isHomeless ? t("yes") : t("no")}
-        </p>
+        <p>{isHomeless ? t("sendQuestionPage.homeless") : null}</p>
       </div>
       <p className={s.q_sendQuestionPage_p}>
         {t("sendQuestionPage.writeQuestion")}

@@ -187,7 +187,7 @@
     "petArt": "Vrsta životinje",
     "petWeight": "Približna težina životinje",
     "petGender": "Pol životinje",
-    "homeless": "Životinja je beskućna: ",
+    "homeless": "Životinja je beskućna",
     "questionPlaceholder": "Unesite vaše pitanje",
     "submitButton": "Pošalji pitanje",
     "requiredField": "Polje je obavezno",
@@ -258,7 +258,8 @@
     "donatedAmount": "evra donirano za razvoj projekta",
     "thankYou": "Hvala vam na podršci!",
     "helpedAnimalsTotal": "životinjama ste pomogli ukupno",
-    "helpedAnimalsMonth": "životinjama ste pomogli ovog meseca"
+    "helpedAnimalsMonth": "životinjama ste pomogli ovog meseca",
+    "serviceStatistics": "Statistika usluga"
   },
   "accordion": {
     "title": "Dodatni opis",

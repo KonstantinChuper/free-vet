@@ -35,19 +35,19 @@ import AnswerExpertToQuestion from "./pages/profileExpert/answerExpertToQuestion
 import { NotFoundPage } from "./pages/404/NotFoundPage";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 3000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <Router>
@@ -96,17 +96,17 @@ function App() {
           path="/main/question/description-animal"
           element={<Q_descriptionAnimalPage />}
         />
-        <Route
+        {/* <Route
           path="/main/question/description-animal/send"
           element={<Q_sendQuestionPage />}
-        />
+        /> */}
         <Route path="/main/question/confirm" element={<Q_confirmationPage />} />
         <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
         <Route path="/vetbook" element={<VetBookPage />} />
         <Route path="/profile" element={<P_userPage />} />
         <Route path="/profile/questions" element={<P_allQuestionsPage />} />
         <Route
-          path="/profile/questions/view-question"
+          path="/profile/questions/view-question/:questionId"
           element={<P_viewQuestionPage />}
         />
         <Route
@@ -118,6 +118,16 @@ function App() {
         <Route path="/vet/donate" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
         <Route path="/profile/message/add" element={<P_addMessagePage />} />
+        <Route
+          path="/profile/settings/doctor/notification"
+          element={<E_settingsNotificationProfilePage />}
+        />
+        <Route
+          path="/profile/settings/user/notification"
+          element={<E_settingsNotificationProfileUserPage />}
+        />
+        <Route path="/vet/service" element={<AboutServicePageVet />} />
+        <Route path="/settings" element={<P_settings />} />
         <Route
           path="/profile/settings/doctor/notification"
           element={<E_settingsNotificationProfilePage />}

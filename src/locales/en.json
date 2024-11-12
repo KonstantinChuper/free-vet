@@ -407,6 +407,8 @@
     "linkServ2": "Send Us a Message",
     "reviewsTitle": "Service Reviews",
     "learnMoreButton": "Learn More",
+    "tailbookTitle": "FreeVet – TailBook Ecosystem Service",
+    "tailbookDescription": "TailBook is an ecosystem that simplifies aid to stray animals and provides useful services for pets",
     "uniqueOpp": "Unique Opportunity",
     "combineProfWithVol": "Effectively combine your profession with volunteer work",
     "convenience": "Convenience",
@@ -417,16 +419,7 @@
     "taskSystem": "Get your personal task management system, stay connected when it's convenient for you, react promptly",
     "userGuide": "User Guide (Specialist)",
     "userAgree": "User Agreement (Specialist)",
-    "privacyPolicy": "Privacy Policy (Specialist)",
-    "tailbookTitle": "FreeVet - a TailBook Ecosystem Service",
-    "tailbookDescription": "TailBook - an ecosystem simplifying support for stray animals and providing helpful services for pets"
-  },
-  "P_addMessagePage": {
-    "header": "Add Message",
-    "addPhoto": "Add photo and/or video",
-    "additionalMessage": "Write an additional message*",
-    "requiredField": "Required field",
-    "sendMessage": "Send Message"
+    "privacyPolicy": "Privacy Policy (Specialist)"
   },
   "E_settingsNotificationProfileSpecialistPage": {
     "notificationsTitle": "Notifications",
@@ -438,36 +431,6 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
-  },
-  "notFound": {
-    "heading": "It looks like the page you requested is not found 😬",
-    "btnText": "Return to Home"
-  },
-  "modal_options": {
-    "sendMessage": "Send message",
-    "endSession": "End session"
-  },
-  "AnswerExpertToQuestion": {
-    "title": "Answer",
-    "ansver": "Please write your answer",
-    "chat": "Write a message*",
-    "notification": "Hello! \n Please continue monitoring the cat and submit a follow-up request if necessary",
-    "addFoto": "Add photo(s) and/or video(s) if necessary",
-    "sendAnswer": "Send answer"
-  },
-  "Modal_locales": {
-    "allUserQuestionsModal": "Respond",
-    "endQuestion": "End session",
-    "addMessage": "Add message"
-  },
-  "vetMenu": {
-    "questions": "Questions",
-    "fromUsers": "from users",
-    "waitingForAnswer": "Waiting for answer",
-    "appointments": "Appointments",
-    "online": "online",
-    "inDevelopment": "in development",
-    "forSpecialists": "For specialists",
-    "consultations": "Consultations"
+
   }
 }

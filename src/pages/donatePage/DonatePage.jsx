@@ -1,17 +1,13 @@
-import React from 'react';
-import CustomInput from '../../components/customInput/CustomInput';
-import CustomButton from '../../components/customButton/CustomButton';
-import CustomButtonSubmit from '../../components/customButtonSubmit/CustomButtonSubmit';
-import CustomStickTitle from '../../components/customStickTitle/CustomStickTitle';
-import Footer from '../../components/footer/Footer';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';  // Импортируем Link
-import styles from './donatePage.module.css';
-import logo from '../../assets/VectorLogo.png';
+import React from "react";
+import CustomButtonSubmit from "../../components/customButtonSubmit/CustomButtonSubmit";
+import CustomStickTitle from "../../components/customStickTitle/CustomStickTitle";
+import Footer from "../../components/footer/Footer";
+import { useTranslation } from "react-i18next";
+import styles from "./donatePage.module.css";
+import logo from "../../assets/VectorLogo.png";
 
 const DonatePage = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   return (
     <div className={styles.donateContainer}>
       {/* Логотип */}
@@ -64,10 +60,10 @@ const DonatePage = () => {
         {/* Кнопка оплаты */}
 
         <CustomButtonSubmit
-          text={t('DonatePage.payButton')}
+          text={t("DonatePage.payButton")}
           onClick={() =>
             (window.location.href =
-              'https://www.patreon.com/tailbook/membership?showCustomPledge=true')
+              "https://www.patreon.com/tailbook/membership?showCustomPledge=true")
           }
           className={styles.payButton}
           customStyle={{
@@ -94,12 +90,12 @@ const DonatePage = () => {
 
         {/* Кнопка "Ознакомиться" */}
         <CustomButtonSubmit
-          text={t('DonatePage.learnMoreButton')}
+          text={t("DonatePage.learnMoreButton")}
           onClick={() =>
-            window.open('https://tailbook.me/supporttheproject', '_blank')
+            window.open("https://tailbook.me/supporttheproject", "_blank")
           }
           customStyle={{
-            width: '98%',
+            width: "98%",
           }}
         />
       </div>
@@ -122,38 +118,36 @@ const DonatePage = () => {
         />
         <p style={{ width: "75%" }}>{t("DonatePage.joinProjectDescription")}</p>
 
-<div className={styles.buttonGroup}>
-  {/* Кнопка "Заполнить форму" */}
-  <CustomButtonSubmit
-    text={t('DonatePage.fillFormButton')}
-    onClick={() =>
-      window.open('https://tailbook.me/services/freevet', '_blank')
-    }
-    className={styles.fillFormButton}
-    customStyle={{
-      padding: '15px 12px',
-      fontSize: '14px',
-      width: '50%',
-    }}
-  />
+        <div className={styles.buttonGroup}>
+          {/* Кнопка "Заполнить форму" */}
+          <CustomButtonSubmit
+            text={t("DonatePage.fillFormButton")}
+            onClick={() =>
+              window.open("https://tailbook.me/services/freevet", "_blank")
+            }
+            className={styles.fillFormButton}
+            customStyle={{
+              padding: "15px 12px",
+              fontSize: "14px",
+              width: "50%",
+            }}
+          />
 
-  {/* Кнопка "Написать нам" */}
-  <CustomButtonSubmit
-    text={t('DonatePage.contactUsButton')}
-    onClick={() =>
-      window.open('mailto:tailbookme@gmail.com')
-    }
-    className={styles.contactUsButton}
-    customStyle={{
-      padding: '15px 12px',
-      fontSize: '14px',
-      width: '50%',
-    }}
-  />
-</div>
+          {/* Кнопка "Написать нам" */}
+          <CustomButtonSubmit
+            text={t("DonatePage.contactUsButton")}
+            onClick={() => window.open("mailto:tailbookme@gmail.com")}
+            className={styles.contactUsButton}
+            customStyle={{
+              padding: "15px 12px",
+              fontSize: "14px",
+              width: "50%",
+            }}
+          />
+        </div>
       </div>
 
-      <h4 className={styles.joinTitle}>{t('DonatePage.footerThankYou')}</h4>
+      <h4 className={styles.joinTitle}>{t("DonatePage.footerThankYou")}</h4>
 
       <Footer />
     </div>

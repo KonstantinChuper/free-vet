@@ -19,7 +19,6 @@ import P_userPage from "./pages/profile/p_userPage/P_userPage";
 import P_allQuestionsPage from "./pages/profile/p_allQuestionsPage/P_allQuestionsPage.jsx";
 import P_viewQuestionPage from "./pages/profile/p_viewQuestionPage/P_viewQuestionPage";
 import P_respondQuestionPage from "./pages/profile/p_respondQuestionPage/P_respondQuestionPage";
-import Loader from "./components/loader/Loader";
 import L_phoneLoginPage from "./pages/login/l_phoneLoginPage/L_phoneLoginPage";
 import DonatePage from "./pages/donatePage/DonatePage";
 import DonatePageUser from "./pages/donatePageUser/DonatePageUser";
@@ -81,10 +80,6 @@ function App() {
           path="/main/question/description-animal"
           element={<Q_descriptionAnimalPage />}
         />
-        {/* <Route
-          path="/main/question/description-animal/send"
-          element={<Q_sendQuestionPage />}
-        /> */}
         <Route path="/main/question/confirm" element={<Q_confirmationPage />} />
         <Route path="/main/question/close" element={<Q_closeQuestionPage />} />
         <Route path="/vetbook" element={<VetBookPage />} />
@@ -102,7 +97,10 @@ function App() {
         <Route path="/donate-user" element={<DonatePageUser />} />
         <Route path="/vet/donate" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
-        <Route path="/profile/message/add" element={<P_addMessagePage />} />
+        <Route
+          path="/profile/message/add/:questionId"
+          element={<P_addMessagePage />}
+        />
         <Route
           path="/profile/settings/doctor/notification"
           element={<E_settingsNotificationProfilePage />}
@@ -121,14 +119,6 @@ function App() {
           path="/profile/settings/user/notification"
           element={<E_settingsNotificationProfileUserPage />}
         />
-        {/* <Route
-          path="/profile/settings/doctor/notification"
-          element={<E_settingsNotificationProfilePage />}
-        />
-        <Route
-          path="/profile/settings/user/notification"
-          element={<E_settingsNotificationProfileUserPage />}
-        /> */}
         <Route
           path="/profile/selected-questions/action/answer/:questionId"
           element={<AnswerExpertToQuestion />}

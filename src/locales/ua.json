@@ -342,7 +342,8 @@
     "vetBooks": "Ветеринарні книги",
     "allVetBooks": "всі",
     "myAnimalsTitle": "Мої тварини",
-    "strayAnimalsTitle": "Безпритульні тварини"
+    "strayAnimalsTitle": "Безпритульні тварини",
+    "additionalQuestion": "Додаткове питання"
   },
   "DonatePage": {
     "title": "Підтримати сервіс",

@@ -345,6 +345,8 @@
     "myAnimalsTitle": "My animals",
     "strayAnimalsTitle": "Stray animals",
     "actionsButton": "Actions",
+    "additionalQuestion": "Additional question",
+
     "modalOptions": {
       "editProfile": "Edit Profile",
       "preferences": "Preferences"
@@ -431,6 +433,14 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
+  },
+  "AnswerExpertToQuestion": {
+    "title": "Answer",
+    "ansver": "Please write your answer",
+    "chat": "Write your message*",
+    "notification": "Hello! \n You need to continue monitoring the cat and contact us again if necessary",
+    "addFoto": "Add a relevant photo and/or video if needed",
+    "sendAnswer": "Send Answer"
   },
   "vetMenu": {
     "questions": "Questions",

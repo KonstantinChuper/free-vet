@@ -433,6 +433,15 @@
     "notificationsTitle": "Obavještenja",
     "vetAnswers": "Odgovori veterinara",
     "serviceNews": "Novosti usluge"
-
+  },
+  "vetMenu": {
+    "questions": "Questions",
+    "fromUsers": "des utilisateurs",
+    "waitingForAnswer": "En attente de réponse",
+    "appointments": "Rendez-vous",
+    "online": "en ligne",
+    "inDevelopment": "en développement",
+    "forSpecialists": "Pour les spécialistes",
+    "consultations": "Consultations"
   }
 }

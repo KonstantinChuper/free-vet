@@ -431,6 +431,15 @@
     "notificationsTitle": "Notifications",
     "vetAnswers": "Veterinary Answers",
     "serviceNews": "Service News"
-
+  },
+  "vetMenu": {
+    "questions": "Questions",
+    "fromUsers": "from users",
+    "waitingForAnswer": "Waiting for answer",
+    "appointments": "Appointments",
+    "online": "online",
+    "inDevelopment": "in development",
+    "forSpecialists": "For specialists",
+    "consultations": "Consultations"
   }
 }

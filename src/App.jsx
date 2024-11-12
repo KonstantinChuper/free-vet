@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import L_authorizationPage from "./pages/login/l_authorizationPage/L_authorizationPage";
@@ -35,20 +34,6 @@ import AnswerExpertToQuestion from "./pages/profileExpert/answerExpertToQuestion
 import { NotFoundPage } from "./pages/404/NotFoundPage";
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 3000);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
-
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
-
   return (
     <Router>
       <Routes>
@@ -148,7 +133,6 @@ function App() {
           path="/profile/selected-questions/action/answer/:questionId"
           element={<AnswerExpertToQuestion />}
         />
-
         <Route path="/vet/service" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route path="/vet/main" element={<MainVetPage />} />

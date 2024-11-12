@@ -12,11 +12,6 @@ const DonatePage = () => {
 
   return (
     <div className={styles.donateContainer}>
-      {/* Логотип */}
-      {/* <div className={styles.logoContainer}>
-        <img src={logo} alt="Logo" className={styles.logo} />
-      </div> */}
-
       {/* Поддержать сервис */}
       <h2 className={styles.mainTitle}>{t('DonatePage.titleUser')}</h2>
 
@@ -56,14 +51,20 @@ const DonatePage = () => {
         </p>
 
         {/* Кнопка оплаты */}
-        <CustomButtonSubmit
-          text={t('DonatePage.payButton')}
-          onClick={() => console.log('Оплатить')}
-          className={styles.payButton}
-          customStyle={{
-            width: '98%',
-          }}
-        />
+        <a 
+          href="https://www.patreon.com/tailbook/membership?showCustomPledge=true" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <CustomButtonSubmit
+            text={t('DonatePage.payButton')}
+            onClick={() => console.log('Оплатить')}
+            className={styles.payButton}
+            customStyle={{
+              width: '98%',
+            }}
+          />
+        </a>
       </div>
 
       <div className={styles.otherSupportSection}>
@@ -82,26 +83,22 @@ const DonatePage = () => {
           {t('DonatePage.moreSupportInfo')}
         </p>
 
-{/* Кнопка "Ознакомиться" */}
-<a 
-  href="https://tailbook.me/supporttheproject" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className={styles.learnMoreButton}
->
-  <CustomButtonSubmit
-    text={t('DonatePage.learnMoreButton')}
-    onClick={() => console.log('Ознакомиться')}
-    customStyle={{
-      width: '98%',
-    }}
-  />
-</a>
+        {/* Кнопка "Ознакомиться" */}
+        <a 
+          href="https://tailbook.me/supporttheproject" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.learnMoreButton}
+        >
+          <CustomButtonSubmit
+            text={t('DonatePage.learnMoreButton')}
+            onClick={() => console.log('Ознакомиться')}
+            customStyle={{
+              width: '98%',
+            }}
+          />
+        </a>
       </div>
-
-      {/* Текст о поддержке FreeVet в любое время */}
-      {/* <p className={styles.supportAnytimeText}>{t('DonatePage.supportAnytimeText')}</p>
-      <h3 className={styles.joinTitle}>{t('DonatePage.joinProjectTitle')}</h3> */}
 
       <div className={styles.joinSection}>
         <CustomStickTitle
@@ -116,54 +113,31 @@ const DonatePage = () => {
         />
         <p style={{ width: '75%' }}>{t('DonatePage.joinProjectDescriptionUser')}</p>
 
-        {/* Поддержать" */}
+        {/* Поддержать */}
         <a href="">
           <div className={styles.logoContainer}>
             <img src={logo} alt="Logo" className={styles.logo} />
             <p className={styles.DonateButton}>{t('DonatePage.DonateButton')}</p>
-      </div>
+          </div>
         </a>
-
-        {/* <div className={styles.buttonGroup}>
-          <CustomButton
-            text={t('DonatePage.fillFormButton')}
-            onClick={() => console.log('Заполнить форму')}
-            className={styles.fillFormButton}
-            customStyle={{
-              padding: '15px 12px',
-              fontSize: '14px',
-              width: '50%',
-            }}
-          />
-          <CustomButton
-            text={t('DonatePage.contactUsButton')}
-            onClick={() => console.log('Написать нам')}
-            className={styles.contactUsButton}
-            customStyle={{
-              padding: '15px 12px',
-              fontSize: '14px',
-              width: '50%',
-            }}
-          />
-        </div> */}
       </div>
       <h4 className={styles.joinTitle}>{t('DonatePage.footerThankYou')}</h4>
-      {/* Кнопка "Ознакомиться" */}
-<a 
-  href="" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className={styles.learnMoreButton}
->
-  <CustomButtonSubmit
-    text={t('DonatePage.refuseSupport')}
-    onClick={() => console.log('Ознакомиться')}
-    customStyle={{
-      // width: '98%',
-      padding: '18px 72px'
-    }}
-  />
-</a>
+      
+      {/* Кнопка "Отказаться от поддержки" */}
+      <a 
+        href="/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={styles.learnMoreButton}
+      >
+        <CustomButtonSubmit
+          text={t('DonatePage.refuseSupport')}
+          onClick={() => console.log('Отказаться')}
+          customStyle={{
+            padding: '18px 72px'
+          }}
+        />
+      </a>
     </div>
   );
 };

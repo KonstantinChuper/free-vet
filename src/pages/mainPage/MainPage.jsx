@@ -12,12 +12,8 @@ const MainPage = () => {
     const params = new URLSearchParams(window.location.search);
     const userId = params.get("user_id");
 
-    console.log("Current URL:", window.location.href);
-    console.log("User ID from params:", userId);
-
     if (userId) {
       localStorage.setItem("userId", userId);
-      console.log("UserID saved to localStorage:", userId);
     }
   }, []);
 

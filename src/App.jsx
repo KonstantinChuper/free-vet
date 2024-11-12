@@ -8,6 +8,7 @@ import L_userRolePage from "./pages/login/l_userRolePage/L_userRolePage";
 import L_createVetBookPage from "./pages/login/l_createVetBookPage/L_createVetBookPage";
 import L_vetVerificationPage from "./pages/login/l_vetVerificationPage/L_vetVerificationPage";
 import MainPage from "./pages/mainPage/MainPage";
+import MainVetPage from "./pages/mainVetPage/MainVetPage";
 import L_vetCodePage from "./pages/login/l_vetCodePage/L_vetCodePage";
 import Q_choiceAnimalPage from "./pages/addQuestion/q_choiceAnimalPage/Q_choiceAnimalPage";
 import Q_closeQuestionPage from "./pages/addQuestion/q_closeQuestionPage/Q_closeQuestionPage";
@@ -114,7 +115,7 @@ function App() {
         />
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/donate-user" element={<DonatePageUser />} />
-        <Route path="/donate-vet" element={<DonatePageVet />} />
+        <Route path="/vet/donate" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
         <Route
           path="/profile/settings/doctor/notification"
@@ -128,7 +129,7 @@ function App() {
           path="/profile/message/add/:questionId"
           element={<P_addMessagePage />}
         />
-        <Route path="/service-vet" element={<AboutServicePageVet />} />
+        <Route path="/vet/service" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route
           path="/profile/settings/doctor/notification"
@@ -142,6 +143,7 @@ function App() {
           path="/profile/selected-questions/action/answer"
           element={<AnswerExpertToQuestion />}
         />
+        <Route path="/vet/main" element={<MainVetPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

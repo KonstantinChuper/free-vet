@@ -256,7 +256,9 @@
     "helpedAnimals": "pomoć pružena životinjama",
     "helpedThisMonth": "životinje pomognute ovog mjeseca",
     "donatedAmount": "eura donirano za razvoj projekta",
-    "thankYou": "Hvala vam na podršci!"
+    "thankYou": "Hvala vam na podršci!",
+    "helpedAnimalsTotal": "životinjama ste pomogli ukupno",
+    "helpedAnimalsMonth": "životinjama ste pomogli ovog mjeseca"
   },
   "accordion": {
     "title": "Dodatni opis",

@@ -42,7 +42,17 @@ const Q_confirmationPage = () => {
         </Link>
       </div>
       <div className={s.question_box}>
-        <Question {...question} />
+        {questions?.map((q) => (
+          <Question
+            {...q}
+            // id={q.id}
+            // files={q.files}
+            // pet_art={q.pet_art}
+            // pet_gender={q.pet_gender}
+            // pet_weight={q.pet_weight}
+            // question={q.question}
+          />
+        ))}
       </div>
     </div>
   );

@@ -6,7 +6,6 @@
   max-width: 375px;
   margin: 0 auto;
   border-radius: 10px;
-
 }
 
 .logoContainer {
@@ -23,14 +22,16 @@
   font-weight: bold;
   color: var(--color-main);
   margin-bottom: 20px;
-      font-size: 36px;
+  font-size: 36px;
 }
 .supportTitle {
-     color: var(--color-main);
-     margin-bottom: 17px;
+  color: var(--color-main);
+  margin-bottom: 17px;
 }
 
-.donateSection, .otherSupportSection, .joinSection {
+.donateSection,
+.otherSupportSection,
+.joinSection {
   width: 100%;
   border-radius: 8px;
   padding: 10px 8px 12px;
@@ -40,39 +41,41 @@
   flex-direction: column;
 }
 .donateInput {
-margin-top: 5px;
+  margin-top: 5px;
 }
 
-.learnMoreButton, .payButton {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.learnMoreButton,
+.payButton {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.learnMoreButton:hover  {
-  transform: translateY(-5px); 
+.learnMoreButton:hover {
+  transform: translateY(-5px);
 }
 .payButton:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
 }
 
 .supportAnytimeText {
   color: var(--color-main);
-   font-size: 16px;
-   font-weight: 600;
-   margin: 17px 12px;
-   text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 17px 12px;
+  text-align: center;
 }
 .joinTitle {
-     color: var(--color-main);
-     margin-bottom: 21px;
+  color: var(--color-main);
+  margin-bottom: 21px;
 }
 
 .joinSection {
-  text-align:left;
+  text-align: left;
 }
-
 
 .joinSection p {
   font-size: 14px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 .buttonGroup {
@@ -83,8 +86,8 @@ margin-top: 5px;
   /* height: auto; */
 }
 
-.fillFormButton, .contactUsButton {
- 
-  padding: 8px; 
-  font-size: 12px; 
+.fillFormButton,
+.contactUsButton {
+  padding: 8px;
+  font-size: 12px;
 }

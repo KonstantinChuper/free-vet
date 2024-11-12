@@ -35,12 +35,12 @@ const P_userPage = () => {
     const fetchQuestions = async () => {
       const response = await getUserQuestions(userId);
       setQuestions(response);
-      setIsLoading(false);
     };
     const fetchUserData = async () => {
       const userData = await getUser(userId);
       console.log(userData);
       setUserInfo(userData);
+      setIsLoading(false);
     };
     fetchUserData();
     fetchQuestions();

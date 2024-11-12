@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Question } from "../../../components/shared/question/Question";
 import CustomTextarea from "../../../components/customTextarea/CustomTextarea";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import s from "./answerExpertToQuestion.module.css";
 import { useTranslation } from "react-i18next";
 import CustomButton from "../../../components/customButton/CustomButton";
@@ -9,7 +9,19 @@ import FileUploader from "../../../components/fileUploader/FileUploader";
 import close from "../../../assets/close.svg";
 
 const AnswerExpertToQuestion = () => {
+  const { questionId } = useParams();
   const { t } = useTranslation();
+  const [question, setQuestion] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    const fetchQuestion = async () => {
+      const response = await getUserQuestions(userId);
+      setQuestion(response);
+    };
+    fetchQuestion();
+  }, [questionId]);
 
   return (
     <div className={s.mainContainer}>
@@ -17,9 +29,7 @@ const AnswerExpertToQuestion = () => {
         <Link to="/profile">
           <div className={s.arrowButton}></div>
         </Link>
-        <h1 className={s.title}>
-          {t("AnswerExpertToQuestion.title")}
-        </h1>
+        <h1 className={s.title}>{t("AnswerExpertToQuestion.title")}</h1>
 
         <img
           src={close}
@@ -59,7 +69,7 @@ const AnswerExpertToQuestion = () => {
             cursor: "pointer",
           }}
         >
-          {t("AnswerExpertToQuestion.ansver Ожидает ответа")}
+          {t("AnswerExpertToQuestion.ansver")}
         </span>
       </div>
 
@@ -90,9 +100,7 @@ const AnswerExpertToQuestion = () => {
       </div>
 
       <CustomTextarea
-        placeholder={t(
-          "AnswerExpertToQuestion.notification"
-        )}
+        placeholder={t("AnswerExpertToQuestion.notification")}
         style={{
           width: "351px",
           height: "344px",
@@ -124,9 +132,7 @@ const AnswerExpertToQuestion = () => {
             marginBottom: "-5px",
           }}
         >
-          {t(
-            "AnswerExpertToQuestion.addFoto"
-          )}
+          {t("AnswerExpertToQuestion.addFoto")}
         </p>
       </div>
 

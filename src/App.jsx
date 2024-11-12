@@ -117,6 +117,7 @@ function App() {
         <Route path="/donate-user" element={<DonatePageUser />} />
         <Route path="/vet/donate" element={<DonatePageVet />} />
         <Route path="/service" element={<AboutServicePage />} />
+        <Route path="/profile/message/add" element={<P_addMessagePage />} />
         <Route
           path="/profile/settings/doctor/notification"
           element={<E_settingsNotificationProfilePage />}
@@ -124,10 +125,6 @@ function App() {
         <Route
           path="/profile/settings/user/notification"
           element={<E_settingsNotificationProfileUserPage />}
-        />
-        <Route
-          path="/profile/message/add/:questionId"
-          element={<P_addMessagePage />}
         />
         <Route path="/vet/service" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
@@ -139,10 +136,21 @@ function App() {
           path="/profile/settings/user/notification"
           element={<E_settingsNotificationProfileUserPage />}
         />
+        {/* <Route
+          path="/profile/settings/doctor/notification"
+          element={<E_settingsNotificationProfilePage />}
+        />
         <Route
-          path="/profile/selected-questions/action/answer"
+          path="/profile/settings/user/notification"
+          element={<E_settingsNotificationProfileUserPage />}
+        /> */}
+        <Route
+          path="/profile/selected-questions/action/answer/:questionId"
           element={<AnswerExpertToQuestion />}
         />
+
+        <Route path="/vet/service" element={<AboutServicePageVet />} />
+        <Route path="/settings" element={<P_settings />} />
         <Route path="/vet/main" element={<MainVetPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

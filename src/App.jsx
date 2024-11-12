@@ -123,7 +123,6 @@ function App() {
           path="/profile/selected-questions/action/answer/:questionId"
           element={<AnswerExpertToQuestion />}
         />
-
         <Route path="/vet/service" element={<AboutServicePageVet />} />
         <Route path="/settings" element={<P_settings />} />
         <Route path="/vet/main" element={<MainVetPage />} />

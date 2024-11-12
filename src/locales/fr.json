@@ -442,5 +442,15 @@
     "notification": "Bonjour ! \n Vous devez continuer à surveiller le chat et nous recontacter si nécessaire",
     "addFoto": "Ajoutez une photo et/ou une vidéo pertinente si nécessaire",
     "sendAnswer": "Envoyer la réponse"
+  },
+  "vetMenu": {
+    "questions": "Questions",
+    "fromUsers": "des utilisateurs",
+    "waitingForAnswer": "En attente de réponse",
+    "appointments": "Rendez-vous",
+    "online": "en ligne",
+    "inDevelopment": "en développement",
+    "forSpecialists": "Pour les spécialistes",
+    "consultations": "Consultations"
   }
 }

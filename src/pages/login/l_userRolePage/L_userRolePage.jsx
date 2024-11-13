@@ -39,8 +39,13 @@ const L_userRolePage = () => {
     zooPsychologist: false,
   });
 
-  const isUserRoleSelected = Object.values(userRoles).some((value) => value);
-  const isVetRoleSelected = Object.values(vetRoles).some((value) => value);
+const isUserRoleSelected = Object.entries(userRoles)
+  .filter(([key]) => key !== "userId")
+  .some(([_, value]) => value === true);
+
+const isVetRoleSelected = Object.entries(vetRoles)
+  .filter(([key]) => key !== "userId")
+  .some(([_, value]) => value === true);
 
   const isAnyRoleSelected = isUserRoleSelected || isVetRoleSelected;
 

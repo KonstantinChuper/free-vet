@@ -59,14 +59,9 @@
     "defaultErrorMessage": "Будь ласка, заповніть це поле"
   },
   "customMessage": {
-<<<<<<< HEAD
     "questionTitle": "Запитання №",
     "awaitingResponse": "Чекає відповіді",
     "responseSent": "Відповідь отримана",
-=======
-    "questionTitle": "Питання №",
-    "awaitingResponse": "Очікування відповіді",
->>>>>>> 6bec45cfbdbb284fb518f86e81dba1d131f98de9
     "homelessAnimal": "Безпритульна тварина",
     "completed": "Завершено"
   },
@@ -213,7 +208,7 @@
     "enterCode": "Будь ласка, введіть отриманий вами<br></br>на вказаний телефон код",
     "confirm": "Підтвердити"
   },
- "vetVerificationPage": {
+  "vetVerificationPage": {
     "header": "Верифікація",
     "notAuthorized": "Схоже, що Ви ще не авторизовані<br></br>в сервісі як спеціаліст :(",
     "additionalData": "Будь ласка, вкажіть додаткові дані,<br></br>для авторизації Вас як спеціаліста",
@@ -268,7 +263,7 @@
     "helpedAnimalsMonth": "тваринам Ви допомогли в цьому місяці",
     "serviceStatistics": "Статистика послуг"
   },
- "accordion": {
+  "accordion": {
     "title": "Додатковий опис",
     "breedlabel": "Порода",
     "breedplaceholder": "Безпородний довгошерстий",
@@ -417,7 +412,7 @@
     "tailbookTitle": "FreeVet – сервіс екосистеми TailBook",
     "tailbookDescription": "TailBook – екосистема, яка полегшує допомогу бездомним тваринам і надає корисні сервіси для домашніх улюбленців."
   },
-    "P_addMessagePage": {
+  "P_addMessagePage": {
     "header": "Додати повідомлення",
     "addPhoto": "Додайте фото та (або) відео",
     "additionalMessage": "Напишіть додаткове повідомлення*",
@@ -477,5 +472,8 @@
     "answer": "Відповісти",
     "closeAnswer": "Завершити питання",
     "bac": "Назад"
+  },
+  "Modal_locales": {
+    "addMessage": "Відповісти на запитання"
   }
 }

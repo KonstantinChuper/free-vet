@@ -60,12 +60,8 @@
   },
   "customMessage": {
     "questionTitle": "Pitanje br.",
-<<<<<<< HEAD
     "awaitingResponse": "Čeka odgovor",
     "responseSent": "Odgovor poslat",
-=======
-    "awaitingResponse": "Čeka se odgovor",
->>>>>>> 6bec45cfbdbb284fb518f86e81dba1d131f98de9
     "homelessAnimal": "Beskućna životinja",
     "completed": "Završeno"
   },
@@ -481,5 +477,7 @@
     "answer": "Odgovori",
     "closeAnswer": "Završi pitanje",
     "bac": "Nazad"
-  }
+  },
+  "Modal_locales": {
+    "addMessage": "Odgovori na pitanje"}
 }

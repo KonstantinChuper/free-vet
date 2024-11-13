@@ -442,5 +442,8 @@
     "answer": "Répondre",
     "closeAnswer": "Clore la question",
     "bac": "Retour"
+  },
+  "Modal_locales": {
+    "addMessage": "Répondre à la question"
   }
 }

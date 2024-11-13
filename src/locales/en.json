@@ -61,11 +61,7 @@
   "customMessage": {
     "questionTitle": "Question №",
     "awaitingResponse": "Awaiting response",
-<<<<<<< HEAD
     "responseSent": "Response received",
-=======
-    "responseSent": "Response sent",
->>>>>>> 6bec45cfbdbb284fb518f86e81dba1d131f98de9
     "homelessAnimal": "Homeless animal",
     "completed": "Completed"
   },
@@ -350,12 +346,7 @@
     "myAnimalsTitle": "My Animals",
     "strayAnimalsTitle": "Stray Animals",
     "actionsButton": "Actions",
-<<<<<<< HEAD
     "additionalQuestion": "Additional Question",
-=======
-    "selectedQuestions": "Selected Questions",
-    "additionalQuestion": "Additional question",
->>>>>>> 6bec45cfbdbb284fb518f86e81dba1d131f98de9
     "modalOptions": {
       "editProfile": "Edit Profile",
       "preferences": "Preferences"
@@ -481,5 +472,6 @@
     "answer": "Reply",
     "closeAnswer": "End Question",
     "bac": "Back"
-  }
+  },
+  "Modal_locales": { "addMessage": "Answer Question" }
 }

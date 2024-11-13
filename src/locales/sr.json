@@ -478,5 +478,8 @@
     "answer": "Odgovori",
     "closeAnswer": "Završi pitanje",
     "bac": "Nazad"
+  },
+  "Modal_locales": {
+    "addMessage": "Odgovori na pitanje"
   }
 }

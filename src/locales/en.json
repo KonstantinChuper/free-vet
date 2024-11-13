@@ -473,5 +473,6 @@
     "answer": "Reply",
     "closeAnswer": "End Question",
     "bac": "Back"
-  }
+  },
+  "Modal_locales": { "addMessage": "Answer Question" }
 }

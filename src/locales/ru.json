@@ -478,5 +478,8 @@
     "answer": "Ответить",
     "closeAnswer": "Завершить вопрос",
     "bac": "Назад"
+  },
+  "Modal_locales": {
+    "addMessage": "Ответить на вопрос"
   }
 }

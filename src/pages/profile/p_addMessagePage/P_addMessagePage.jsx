@@ -108,7 +108,7 @@ const P_addMessagePage = () => {
         <div className={s.btnBox}>
           <CustomButtonSubmit
             text={t("P_addMessagePage.sendMessage")}
-            padding="16px 118px"
+            // padding="16px 118px"
             disabled={!isValid}
           />
         </div>

@@ -60,8 +60,8 @@
   },
   "customMessage": {
     "questionTitle": "Pitanje br.",
+    "awaitingResponse": "Čeka odgovor",
     "responseSent": "Odgovor poslat",
-    "awaitingResponse": "Čeka se odgovor",
     "homelessAnimal": "Beskućna životinja",
     "completed": "Završeno"
   },
@@ -477,5 +477,7 @@
     "answer": "Odgovori",
     "closeAnswer": "Završi pitanje",
     "bac": "Nazad"
-  }
+  },
+  "Modal_locales": {
+    "addMessage": "Odgovori na pitanje"}
 }

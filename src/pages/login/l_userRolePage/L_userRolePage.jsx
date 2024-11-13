@@ -15,16 +15,16 @@ const L_userRolePage = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
-  const userId = searchParams.get("user_id");
+  const user_id = searchParams.get("user_id");
 
   useEffect(() => {
-    if (userId) {
-      localStorage.setItem("userId", userId);
+    if (user_id) {
+      localStorage.setItem("userId", user_id);
     }
   }, []);
 
   const [userRoles, setUserRoles] = useState({
-    userId,
+    user_id,
     homelessAnimals: false,
     pets: false,
     volunteer: false,
@@ -33,19 +33,19 @@ const L_userRolePage = () => {
   });
 
   const [vetRoles, setVetRoles] = useState({
-    userId,
+    user_id,
     vetDoctor: false,
     cynologist: false,
     zooPsychologist: false,
   });
 
-const isUserRoleSelected = Object.entries(userRoles)
-  .filter(([key]) => key !== "userId")
-  .some(([_, value]) => value === true);
+  const isUserRoleSelected = Object.entries(userRoles)
+    .filter(([key]) => key !== "user_id")
+    .some(([_, value]) => value === true);
 
-const isVetRoleSelected = Object.entries(vetRoles)
-  .filter(([key]) => key !== "userId")
-  .some(([_, value]) => value === true);
+  const isVetRoleSelected = Object.entries(vetRoles)
+    .filter(([key]) => key !== "user_id")
+    .some(([_, value]) => value === true);
 
   const isAnyRoleSelected = isUserRoleSelected || isVetRoleSelected;
 
@@ -63,7 +63,7 @@ const isVetRoleSelected = Object.entries(vetRoles)
     }));
     if (checked) {
       setVetRoles({
-        userId,
+        user_id,
         vetDoctor: false,
         cynologist: false,
         zooPsychologist: false,
@@ -79,7 +79,7 @@ const isVetRoleSelected = Object.entries(vetRoles)
     }));
     if (checked) {
       setUserRoles({
-        userId,
+        user_id,
         homelessAnimals: false,
         pets: false,
         volunteer: false,

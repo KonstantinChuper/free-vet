@@ -61,7 +61,7 @@
   "customMessage": {
     "questionTitle": "Question №",
     "awaitingResponse": "Awaiting response",
-    "responseSent": "Response received",
+    "responseSent": "Response sent",
     "homelessAnimal": "Homeless animal",
     "completed": "Completed"
   },
@@ -346,7 +346,8 @@
     "myAnimalsTitle": "My Animals",
     "strayAnimalsTitle": "Stray Animals",
     "actionsButton": "Actions",
-    "additionalQuestion": "Additional Question",
+    "selectedQuestions": "Selected Questions",
+    "additionalQuestion": "Additional question",
     "modalOptions": {
       "editProfile": "Edit Profile",
       "preferences": "Preferences"
